@@ -2,1211 +2,557 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CROISSANTÉ - Croissant Fresh Premium di Cimahi</title>
-<meta name="description" content="Croissant fresh premium, dipanggang setiap hari di Cimahi. 13 varian, Golden Croissant 24K, box hampers mewah. Pesan via WhatsApp.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CROISSANTÉ - Croissant Fresh Premium Cimahi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --black:#0A0A0A;--dark:#111;--elev:#1A1A1A;
-  --gold:#D4AF37;--gold-l:#E8C84A;--amber:#F59E0B;
-  --txt:#F5F0EB;--txt-m:#8A7E6E;--txt-d:#5A5045;
-  --glass:rgba(26,26,26,0.55);--glass-b:rgba(212,175,55,0.12);
-  --tr:0.4s cubic-bezier(0.25,0.46,0.45,0.94);
-}
+:root{--bg:#0A0A0A;--dark:#141414;--gold:#D4AF37;--gold2:#F5E6A3;--amber:#F59E0B;--txt:#F5F0EB;--muted:#8A7E6E;--dim:#5A5045}
 html{scroll-behavior:smooth}
-body{
-  background:var(--black);color:var(--txt);
-  font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;
-  overflow-x:hidden;
-}
-body::after{
-  content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
-  opacity:.04;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--black)}
-::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
-::selection{background:var(--gold);color:var(--black)}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;background-image:radial-gradient(ellipse at top,rgba(212,175,55,.08),transparent 50%)}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
-
-.container{width:min(1240px,92%);margin:0 auto}
-.section{padding:clamp(4rem,8vw,7rem) 0;position:relative}
-.label{
-  font-size:.7rem;font-weight:500;letter-spacing:.35em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;
-}
+.container{width:min(1200px,92%);margin:0 auto}
+section{padding:5rem 0;position:relative}
+.gold-text{background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.label{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
 .label::before{content:'';width:32px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
-h1,h2,h3{font-family:'Cinzel',serif;font-weight:700;letter-spacing:.08em;line-height:1.25}
-.h2{font-size:clamp(1.6rem,3.5vw,2.6rem);margin-bottom:1rem}
-.gold-grad{
-  background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--txt-m);font-size:clamp(1rem,1.6vw,1.15rem);margin-top:.6rem;max-width:600px}
-
-/* BUTTONS */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
-  padding:.9rem 2rem;font-size:.78rem;font-weight:500;letter-spacing:.12em;
-  text-transform:uppercase;border-radius:50px;transition:var(--tr);
-  position:relative;overflow:hidden;cursor:pointer;
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--gold),var(--amber));
-  color:var(--black);font-weight:600;
-  box-shadow:0 4px 24px rgba(212,175,55,.25);
-}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(212,175,55,.45)}
-.btn-primary::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.3) 50%,transparent 70%);
-  transform:translateX(-100%);transition:transform .6s;
-}
-.btn-primary:hover::after{transform:translateX(100%)}
-.btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}
-.btn-outline:hover{background:var(--gold);color:var(--black);transform:translateY(-3px)}
-.btn-ghost{
-  background:transparent;color:var(--txt-m);border:1px solid rgba(212,175,55,.2);
-  font-size:.72rem;padding:.6rem 1.4rem;
-}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-
-/* GLASS */
-.glass{
-  background:var(--glass);backdrop-filter:blur(16px) saturate(140%);
-  -webkit-backdrop-filter:blur(16px) saturate(140%);
-  border:1px solid var(--glass-b);border-radius:16px;transition:var(--tr);
-  position:relative;overflow:hidden;
-}
-.glass::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(212,175,55,.35),transparent);
-}
-.glass:hover{
-  border-color:rgba(212,175,55,.32);transform:translateY(-5px);
-  box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(212,175,55,.08);
-}
-
-/* NAVBAR */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  padding:1rem 0;transition:var(--tr);
-}
-.nav.scrolled{
-  background:rgba(10,10,10,.92);backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(212,175,55,.08);padding:.6rem 0;
-}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.logo{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
-.logo-icon{width:36px;height:36px;color:var(--gold)}
-.logo-text{
-  font-family:'Cinzel',serif;font-size:1.15rem;font-weight:700;
-  letter-spacing:.16em;
-  background:linear-gradient(135deg,var(--gold),var(--gold-l));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.nav-menu{display:flex;align-items:center;gap:1.6rem;list-style:none}
-.nav-menu a{
-  font-size:.72rem;font-weight:400;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--txt-m);transition:var(--tr);
-  position:relative;padding:.3rem 0;
-}
-.nav-menu a::after{
-  content:'';position:absolute;bottom:0;left:0;width:0;height:1px;
-  background:var(--gold);transition:width .3s;
-}
+h1,h2,h3{font-family:'Cinzel',serif;letter-spacing:.08em;line-height:1.25}
+h2.title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1rem}
+.sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.1rem;max-width:600px;margin-top:.5rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.9rem 2rem;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-radius:50px;transition:.4s;cursor:pointer}
+.btn-p{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;font-weight:600;box-shadow:0 4px 24px rgba(212,175,55,.25)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(212,175,55,.5)}
+.btn-o{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.btn-o:hover{background:var(--gold);color:var(--bg)}
+.glass{background:rgba(20,20,20,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(212,175,55,.15);border-radius:16px;transition:.4s;position:relative;overflow:hidden}
+.glass::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.4),transparent)}
+.glass:hover{border-color:rgba(212,175,55,.35);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(212,175,55,.1)}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:.4s;background:rgba(10,10,10,.6);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.08)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{display:flex;align-items:center;gap:.6rem}
+.logo svg{width:36px;height:36px;color:var(--gold)}
+.logo-t{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:700;letter-spacing:.16em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-menu{display:flex;gap:1.6rem;list-style:none}
+.nav-menu a{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);transition:.3s}
 .nav-menu a:hover{color:var(--gold)}
-.nav-menu a:hover::after{width:100%}
-.nav-right{display:flex;align-items:center;gap:.8rem}
-.btn-login{
-  font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--txt-m);border:1px solid rgba(212,175,55,.25);
-  border-radius:50px;padding:.5rem 1.1rem;transition:var(--tr);
-}
-.btn-login:hover{border-color:var(--gold);color:var(--gold)}
-.hamburger{display:none;flex-direction:column;gap:5px;padding:5px}
-.hamburger span{width:24px;height:1.5px;background:var(--gold);display:block;transition:var(--tr)}
-
+.nav-r{display:flex;gap:.8rem;align-items:center}
+.btn-log{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid rgba(212,175,55,.25);border-radius:50px;padding:.5rem 1.1rem;transition:.3s}
+.btn-log:hover{border-color:var(--gold);color:var(--gold)}
+.ham{display:none;flex-direction:column;gap:5px;padding:5px}
+.ham span{width:24px;height:1.5px;background:var(--gold);display:block}
 /* HERO */
-.hero{
-  min-height:100vh;display:flex;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;padding:100px 1.5rem 3rem;
-}
-.hero-glow{
-  position:absolute;width:800px;height:800px;border-radius:50%;
-  background:radial-gradient(circle,rgba(212,175,55,.12) 0%,rgba(245,158,11,.05) 30%,transparent 70%);
-  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
-  animation:pulse 6s ease-in-out infinite;
-}
-@keyframes pulse{
-  0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}
-  50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}
-}
-.hero-content{text-align:center;position:relative;z-index:2;max-width:900px}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:.5rem;
-  padding:.4rem 1.2rem;background:rgba(212,175,55,.1);
-  border:1px solid rgba(212,175,55,.25);border-radius:50px;
-  font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
-  margin-bottom:2rem;
-}
-.hero-badge .dot{
-  width:6px;height:6px;border-radius:50%;background:var(--amber);
-  animation:blink 1.5s ease-in-out infinite;
-}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 1.5rem 3rem;position:relative;overflow:hidden}
+.hero-glow{position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.15),rgba(245,158,11,.05) 30%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 6s ease-in-out infinite;pointer-events:none}
+@keyframes pulse{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
+.hero-c{position:relative;z-index:2;max-width:900px}
+.badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1.2rem;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:50px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
+.badge .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);animation:blink 1.5s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.hero-title{
-  font-family:'Cinzel',serif;font-size:clamp(2.8rem,9vw,6.5rem);
-  font-weight:900;letter-spacing:.12em;line-height:1.05;
-  background:linear-gradient(135deg,#D4AF37 0%,#F5E6A3 30%,#D4AF37 60%,#F59E0B 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  margin-bottom:1.2rem;filter:drop-shadow(0 0 30px rgba(212,175,55,.25));
-}
-.hero-script{
-  font-family:'Italiana',sans-serif;font-size:clamp(1.1rem,2.6vw,1.75rem);
-  color:var(--txt-m);letter-spacing:.05em;margin-bottom:1.3rem;
-}
-.hero-sub{font-size:clamp(.88rem,1.4vw,1rem);color:var(--txt-m);max-width:520px;margin:0 auto 2.2rem}
-.hero-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
-
+.hero h1{font-size:clamp(3rem,10vw,7rem);font-weight:900;letter-spacing:.12em;line-height:1;background:linear-gradient(135deg,#D4AF37,#F5E6A3 30%,#D4AF37 60%,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;filter:drop-shadow(0 0 40px rgba(212,175,55,.3))}
+.script{font-family:'Italiana',sans-serif;font-size:clamp(1.2rem,2.8vw,1.9rem);color:var(--gold);margin-bottom:1.3rem}
+.hero p.sub{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 2.5rem}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 /* VIDEO */
-.video-section{padding:3rem 1.5rem 2rem;display:flex;justify-content:center}
-.video-wrapper{
-  position:relative;width:min(820px,100%);border-radius:16px;overflow:hidden;
-  border:1px solid rgba(212,175,55,.18);
-  box-shadow:0 30px 80px rgba(0,0,0,.75),0 0 60px rgba(212,175,55,.08);
-  transform:perspective(1200px) rotateX(3deg);transition:var(--tr);
-}
-.video-wrapper:hover{transform:perspective(1200px) rotateX(0deg)}
-.video-wrapper video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000}
-.video-overlay{
-  position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,transparent 50%,rgba(10,10,10,.65) 100%);
-  display:flex;align-items:flex-end;padding:1.5rem;
-}
-.video-cap{font-family:'Italiana',sans-serif;color:var(--gold);font-size:1.05rem;letter-spacing:.06em}
-
-/* SECTION HEADER */
-.section-head{margin-bottom:2.5rem}
-.section-head.center{text-align:center}
-.section-head.center .label{justify-content:center}
-.section-head.center .label::before{display:none}
-.section-head.center .label::after{content:'';width:32px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
-.section-head.center .subtitle{margin-left:auto;margin-right:auto}
-
+.vid-wrap{max-width:820px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.2);box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 60px rgba(212,175,55,.1);position:relative}
+.vid-wrap video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#000}
+.vid-cap{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(transparent,rgba(10,10,10,.9));font-family:'Italiana',sans-serif;color:var(--gold);font-size:1.05rem}
 /* FEATURES */
-.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem}
-.feature-card{padding:1.8rem;text-align:center}
-.feature-icon{
-  width:48px;height:48px;margin:0 auto 1.1rem;border-radius:50%;
-  background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.18);
-  display:flex;align-items:center;justify-content:center;color:var(--gold);
-}
-.feature-icon svg{width:22px;height:22px}
-.feature-card h3{font-size:.92rem;margin-bottom:.5rem}
-.feature-card p{font-size:.78rem;color:var(--txt-m);line-height:1.7}
-
+.f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem;margin-top:3rem}
+.f-card{padding:2rem 1.5rem;text-align:center}
+.f-ico{width:52px;height:52px;margin:0 auto 1.2rem;border-radius:50%;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.3rem}
+.f-card h3{font-size:.95rem;margin-bottom:.5rem}
+.f-card p{font-size:.8rem;color:var(--muted)}
 /* MENU */
-.filter-bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
-.filter-btn{
-  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
-  padding:.5rem 1.1rem;border-radius:50px;
-  border:1px solid rgba(212,175,55,.18);background:transparent;color:var(--txt-m);
-  transition:var(--tr);
-}
-.filter-btn:hover,.filter-btn.active{
-  border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,.08);
-}
-.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.3rem}
-.menu-card{overflow:hidden;display:flex;flex-direction:column}
-.menu-img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s;background:var(--elev)}
-.menu-card:hover .menu-img{transform:scale(1.06)}
-.menu-body{padding:1.2rem 1.3rem;display:flex;flex-direction:column;flex-grow:1}
-.menu-cat{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
-.menu-name{font-family:'Cinzel',serif;font-size:.92rem;font-weight:600;letter-spacing:.05em;margin-bottom:.4rem}
-.menu-desc{font-size:.75rem;color:var(--txt-m);line-height:1.6;margin-bottom:.9rem;flex-grow:1}
-.menu-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
-.menu-price{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--gold)}
-.menu-price small{display:block;font-size:.6rem;color:var(--txt-d);font-family:'Inter',sans-serif;font-weight:400;letter-spacing:.1em;text-transform:uppercase}
-.btn-plus{
-  width:38px;height:38px;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold),var(--amber));color:var(--black);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.3rem;font-weight:600;transition:var(--tr);
-  box-shadow:0 4px 16px rgba(212,175,55,.3);
-}
-.btn-plus:hover{transform:scale(1.1) rotate(90deg);box-shadow:0 6px 24px rgba(212,175,55,.5)}
-
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;justify-content:center}
+.f-btn{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.5rem 1.1rem;border-radius:50px;border:1px solid rgba(212,175,55,.2);background:transparent;color:var(--muted);transition:.3s}
+.f-btn:hover,.f-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,.08)}
+.m-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.3rem}
+.m-card{overflow:hidden;display:flex;flex-direction:column}
+.m-card img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s}
+.m-card:hover img{transform:scale(1.06)}
+.m-body{padding:1.3rem;display:flex;flex-direction:column;flex-grow:1}
+.m-cat{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.m-name{font-family:'Cinzel',serif;font-size:.95rem;font-weight:600;margin-bottom:.4rem}
+.m-desc{font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:1rem;flex-grow:1}
+.m-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+.m-price{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--gold)}
+.m-price small{display:block;font-size:.6rem;color:var(--dim);text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:400}
+.m-add{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:600;transition:.3s;box-shadow:0 4px 16px rgba(212,175,55,.3)}
+.m-add:hover{transform:scale(1.1) rotate(90deg)}
 /* GOLDEN */
-.golden-section{
-  padding:5rem 0;position:relative;overflow:hidden;
-  background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.08) 0%,transparent 60%);
-  border-top:1px solid rgba(212,175,55,.1);border-bottom:1px solid rgba(212,175,55,.1);
-}
-.golden-glow{
-  position:absolute;width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(212,175,55,.15) 0%,transparent 70%);
-  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
-  animation:pulse 8s ease-in-out infinite;
-}
-.golden-wrap{
-  display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;
-  position:relative;z-index:2;
-}
-.golden-img{
-  border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.3);
-  box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 80px rgba(212,175,55,.15);
-}
-.golden-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.golden-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
-.badge-gold{
-  font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
-  padding:.35rem .85rem;border-radius:50px;font-weight:600;
-  background:linear-gradient(135deg,var(--gold),var(--amber));color:var(--black);
-}
-.badge-line{
-  font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
-  padding:.35rem .85rem;border-radius:50px;
-  border:1px solid var(--gold);color:var(--gold);
-}
-.golden-title{
-  font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;
-  letter-spacing:.1em;line-height:1.1;
-  background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  margin-bottom:1rem;
-}
-.golden-desc{font-size:.9rem;color:var(--txt-m);line-height:1.85;margin-bottom:1.5rem}
-.golden-info{
-  display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.5rem;
-}
-.golden-info-item{
-  padding:.9rem 1rem;background:rgba(10,10,10,.5);
-  border:1px solid rgba(212,175,55,.12);border-radius:10px;
-}
-.golden-info-label{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--txt-d);margin-bottom:.3rem}
-.golden-info-val{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold)}
-.progress-bar{
-  width:100%;height:6px;background:rgba(212,175,55,.1);border-radius:3px;
-  overflow:hidden;margin-top:.5rem;
-}
-.progress-fill{
-  height:100%;background:linear-gradient(90deg,var(--gold),var(--amber));
-  width:35%;border-radius:3px;transition:width 1s;
-}
-.golden-countdown{
-  text-align:center;padding:1rem;background:rgba(212,175,55,.05);
-  border:1px dashed rgba(212,175,55,.25);border-radius:10px;
-  margin-bottom:1.5rem;
-}
-.golden-countdown-label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--txt-m);margin-bottom:.3rem}
-.golden-countdown-val{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--gold);font-weight:600}
-
+.golden{padding:6rem 0;background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.1),transparent 60%);border-top:1px solid rgba(212,175,55,.12);border-bottom:1px solid rgba(212,175,55,.12);position:relative;overflow:hidden}
+.golden-glow{position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.2),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 8s ease-in-out infinite;pointer-events:none}
+.g-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:2}
+.g-img{border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.4);box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 80px rgba(212,175,55,.2)}
+.g-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.g-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+.b-gold{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .85rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A}
+.b-line{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .85rem;border-radius:50px;border:1px solid var(--gold);color:var(--gold)}
+.g-title{font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:.1em;background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem}
+.g-desc{font-size:.9rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem}
+.g-info{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.5rem}
+.g-item{padding:1rem;background:rgba(10,10,10,.6);border:1px solid rgba(212,175,55,.15);border-radius:10px}
+.g-lbl{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:.3rem}
+.g-val{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--gold)}
+.g-count{text-align:center;padding:1rem;background:rgba(212,175,55,.05);border:1px dashed rgba(212,175,55,.3);border-radius:10px;margin-bottom:1.5rem}
+.g-count small{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem}
+.g-count b{font-family:'Cinzel',serif;font-size:1.15rem;color:var(--gold)}
 /* BUNDLE */
-.bundle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.3rem}
-.bundle-card{padding:2rem 1.5rem;text-align:center;position:relative;display:flex;flex-direction:column}
-.bundle-card.feat{border-color:rgba(212,175,55,.4);box-shadow:0 0 40px rgba(212,175,55,.1)}
-.bundle-tag{
-  position:absolute;top:1rem;right:1rem;font-size:.58rem;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--black);background:var(--gold);
-  padding:.25rem .7rem;border-radius:50px;font-weight:600;
-}
-.bundle-emoji{font-size:2rem;margin-bottom:.8rem}
-.bundle-name{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;margin-bottom:.3rem}
-.bundle-qty{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--txt-m);margin-bottom:.9rem}
-.bundle-price{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--gold);margin-bottom:1rem}
-.bundle-price small{font-size:.65rem;color:var(--txt-d);font-family:'Inter',sans-serif;font-weight:400;letter-spacing:.1em;text-transform:uppercase}
-.bundle-note-bottom{text-align:center;margin-top:1.5rem;font-size:.75rem;color:var(--txt-d);font-style:italic}
-
+.b-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.3rem;margin-top:3rem}
+.b-card{padding:2rem 1.5rem;text-align:center;position:relative;display:flex;flex-direction:column}
+.b-card.feat{border-color:rgba(212,175,55,.4);box-shadow:0 0 50px rgba(212,175,55,.12)}
+.b-tag{position:absolute;top:1rem;right:1rem;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:#0A0A0A;background:var(--gold);padding:.25rem .7rem;border-radius:50px;font-weight:600}
+.b-emoji{font-size:2.2rem;margin-bottom:.8rem}
+.b-name{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;margin-bottom:.3rem}
+.b-qty{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);margin-bottom:.9rem}
+.b-price{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:var(--gold);margin-bottom:1.2rem}
 /* TIMELINE */
-.timeline{
-  display:grid;grid-template-columns:repeat(7,1fr);gap:0;margin-top:2.5rem;position:relative;
-}
-.timeline::before{
-  content:'';position:absolute;top:26px;left:5%;right:5%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold),var(--gold),transparent);
-}
-.timeline-step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;padding:0 .3rem}
-.timeline-num{
-  width:52px;height:52px;border-radius:50%;background:var(--dark);
-  border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;
-  font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;color:var(--gold);
-  margin-bottom:.9rem;transition:var(--tr);
-}
-.timeline-step:hover .timeline-num{
-  background:var(--gold);color:var(--black);
-  box-shadow:0 0 30px rgba(212,175,55,.5);transform:scale(1.12);
-}
-.timeline-label{font-size:.68rem;color:var(--txt-m);letter-spacing:.04em;line-height:1.5}
-
+.tl{display:grid;grid-template-columns:repeat(7,1fr);gap:0;margin-top:3rem;position:relative}
+.tl::before{content:'';position:absolute;top:26px;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold),transparent)}
+.tl-step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;padding:0 .3rem}
+.tl-num{width:52px;height:52px;border-radius:50%;background:var(--dark);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;color:var(--gold);margin-bottom:.9rem;transition:.3s}
+.tl-step:hover .tl-num{background:var(--gold);color:var(--bg);box-shadow:0 0 30px rgba(212,175,55,.6);transform:scale(1.12)}
+.tl-lbl{font-size:.7rem;color:var(--muted);line-height:1.5}
 /* TARGET */
-.target-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.3rem}
-.target-card{padding:1.8rem 1.2rem;text-align:center}
-.target-emoji{font-size:1.8rem;margin-bottom:.8rem;display:block}
-.target-card h3{font-size:.9rem;margin-bottom:.4rem}
-.target-card p{font-size:.75rem;color:var(--txt-m)}
-
+.t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.3rem;margin-top:3rem}
+.t-card{padding:2rem 1.2rem;text-align:center}
+.t-emoji{font-size:2rem;margin-bottom:.8rem;display:block}
+.t-card h3{font-size:.92rem;margin-bottom:.4rem}
+.t-card p{font-size:.78rem;color:var(--muted)}
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.about-img{border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.15)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:3rem}
+.about-img{border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.2);box-shadow:0 30px 80px rgba(0,0,0,.7)}
 .about-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.about-story{font-size:.88rem;color:var(--txt-m);line-height:1.9;margin-bottom:1.3rem}
-.about-quote{
-  font-family:'Italiana',sans-serif;font-size:1.25rem;color:var(--gold);
-  border-left:2px solid var(--gold);padding-left:1.3rem;margin:1.5rem 0;
-  line-height:1.6;
-}
-.signature{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:1.5rem;color:var(--gold);letter-spacing:.05em;
-}
-.signature-sub{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--txt-d);margin-top:.2rem}
-
+.about-story{font-size:.9rem;color:var(--muted);line-height:1.9;margin-bottom:1.3rem}
+.quote{font-family:'Italiana',sans-serif;font-size:1.3rem;color:var(--gold);border-left:2px solid var(--gold);padding-left:1.4rem;margin:2rem 0;line-height:1.6}
+.sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;color:var(--gold);letter-spacing:.05em}
+.sig-sub{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-top:.2rem}
 /* TESTI */
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.3rem}
-.testi-card{padding:1.8rem}
-.testi-stars{color:var(--gold);letter-spacing:.15em;margin-bottom:.9rem}
-.testi-text{font-size:.82rem;color:var(--txt-m);font-style:italic;line-height:1.8;margin-bottom:1.3rem}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.3rem;margin-top:3rem}
+.testi-card{padding:2rem}
+.stars{color:var(--gold);letter-spacing:.15em;margin-bottom:1rem;font-size:.9rem}
+.testi-text{font-size:.85rem;color:var(--muted);font-style:italic;line-height:1.8;margin-bottom:1.3rem}
 .testi-author{display:flex;align-items:center;gap:.8rem}
-.testi-avatar{
-  width:40px;height:40px;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold),var(--amber));
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Cinzel',serif;font-size:.78rem;font-weight:700;color:var(--black);
-}
-.testi-name{font-size:.82rem;font-weight:500}
-.testi-role{font-size:.7rem;color:var(--txt-d)}
-
+.testi-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;color:#0A0A0A}
+.testi-n{font-size:.85rem;font-weight:500}
+.testi-r{font-size:.72rem;color:var(--dim)}
 /* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem}
-.contact-item{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
-.contact-icon{
-  width:42px;height:42px;min-width:42px;border-radius:12px;
-  background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.15);
-  display:flex;align-items:center;justify-content:center;color:var(--gold);
-}
-.contact-icon svg{width:18px;height:18px}
-.contact-label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--txt-d);margin-bottom:.2rem}
-.contact-val{font-size:.88rem;transition:var(--tr)}
-a.contact-val:hover{color:var(--gold)}
-
-/* FORM */
-.form-group{margin-bottom:1.1rem}
-.form-label{display:block;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--txt-m);margin-bottom:.5rem}
-.form-input,.form-select,.form-textarea{
-  width:100%;padding:.85rem 1.1rem;background:rgba(26,26,26,.6);
-  border:1px solid rgba(212,175,55,.15);border-radius:10px;
-  color:var(--txt);font-family:inherit;font-size:.85rem;transition:var(--tr);
-  outline:none;appearance:none;
-}
-.form-input:focus,.form-select:focus,.form-textarea:focus{
-  border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.1);
-}
-.form-textarea{resize:vertical;min-height:90px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-note{font-size:.72rem;color:var(--txt-d);margin-top:.5rem;font-style:italic}
-
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;margin-top:3rem}
+.ci{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
+.ci-ico{width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.18);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem}
+.ci-lbl{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:.2rem}
+.ci-val{font-size:.9rem}
+a.ci-val:hover{color:var(--gold)}
+.fg{margin-bottom:1.1rem}
+.fl{display:block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.fi,.fs,.ft{width:100%;padding:.9rem 1.1rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.18);border-radius:10px;color:var(--txt);font-family:inherit;font-size:.88rem;transition:.3s;outline:none;-webkit-appearance:none;appearance:none}
+.fs{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23D4AF37' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+.fi:focus,.fs:focus,.ft:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.15)}
+.ft{resize:vertical;min-height:90px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 /* FOOTER */
-.footer{
-  padding:4rem 0 2rem;border-top:1px solid rgba(212,175,55,.1);
-  background:linear-gradient(180deg,var(--black) 0%,#0d0d0d 100%);
-  position:relative;
-}
-.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem}
-.footer h4{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.15em;margin-bottom:1rem;color:var(--gold)}
-.footer p,.footer li{font-size:.8rem;color:var(--txt-m);line-height:1.9}
-.footer ul{list-style:none}
-.footer ul a{transition:var(--tr)}
-.footer ul a:hover{color:var(--gold)}
-.footer-script{
-  font-family:'Italiana',sans-serif;color:var(--gold);font-size:1.05rem;
-  margin-bottom:1rem;letter-spacing:.04em;
-}
-.footer-sig{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:1.3rem;color:var(--gold);margin-top:.5rem;
-}
-.footer-bottom{
-  padding-top:1.5rem;border-top:1px solid rgba(212,175,55,.08);
-  display:flex;justify-content:space-between;align-items:center;
-  flex-wrap:wrap;gap:1rem;font-size:.75rem;color:var(--txt-d);
-}
-
-/* WA FLOAT */
-.wa-float{
-  position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;
-  width:56px;height:56px;border-radius:50%;
-  background:linear-gradient(135deg,#25D366,#128C7E);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 8px 32px rgba(37,211,102,.4);transition:var(--tr);
-  animation:floatPulse 2.5s infinite;
-}
-.wa-float:hover{transform:scale(1.1)}
-.wa-float svg{width:28px;height:28px;fill:#fff}
-@keyframes floatPulse{
-  0%,100%{box-shadow:0 8px 32px rgba(37,211,102,.4)}
-  50%{box-shadow:0 8px 40px rgba(37,211,102,.7)}
-}
-
+footer{padding:4rem 0 2rem;border-top:1px solid rgba(212,175,55,.1);background:linear-gradient(180deg,#0A0A0A,#0d0d0d)}
+.ft-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem}
+.ft-grid h4{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.15em;margin-bottom:1rem;color:var(--gold)}
+.ft-grid p,.ft-grid li{font-size:.82rem;color:var(--muted);line-height:1.9}
+.ft-grid ul{list-style:none}
+.ft-grid a:hover{color:var(--gold)}
+.ft-script{font-family:'Italiana',sans-serif;color:var(--gold);font-size:1.05rem;margin-bottom:1rem}
+.ft-sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--gold);margin-top:.5rem}
+.ft-bottom{padding-top:1.5rem;border-top:1px solid rgba(212,175,55,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.75rem;color:var(--dim)}
+/* WA */
+.wa{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.5);transition:.3s;animation:wpulse 2.5s infinite}
+.wa:hover{transform:scale(1.1)}
+.wa svg{width:30px;height:30px;fill:#fff}
+@keyframes wpulse{0%,100%{box-shadow:0 8px 32px rgba(37,211,102,.5)}50%{box-shadow:0 8px 40px rgba(37,211,102,.8)}}
 /* MODAL */
-.modal-bg{
-  position:fixed;inset:0;background:rgba(0,0,0,.85);
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-  z-index:2000;display:none;align-items:center;justify-content:center;
-  padding:1.5rem;animation:fadeIn .3s;
-}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.9);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:1.5rem}
 .modal-bg.show{display:flex}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.modal{
-  background:var(--elev);border:1px solid rgba(212,175,55,.2);
-  border-radius:16px;padding:2rem;width:min(420px,100%);
-  position:relative;animation:modalIn .4s cubic-bezier(0.25,0.46,0.45,0.94);
-  box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 60px rgba(212,175,55,.15);
-}
-@keyframes modalIn{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.modal h3{font-size:1.1rem;margin-bottom:.5rem;text-align:center}
-.modal-sub{text-align:center;color:var(--txt-m);font-size:.8rem;margin-bottom:1.5rem}
-.modal-close{
-  position:absolute;top:1rem;right:1rem;width:30px;height:30px;
-  border-radius:50%;border:1px solid rgba(212,175,55,.2);
-  color:var(--txt-m);display:flex;align-items:center;justify-content:center;
-  transition:var(--tr);
-}
-.modal-close:hover{border-color:var(--gold);color:var(--gold)}
-.modal-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;border-bottom:1px solid rgba(212,175,55,.1)}
-.modal-tab{
-  flex:1;padding:.7rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--txt-m);border-bottom:2px solid transparent;transition:var(--tr);
-}
-.modal-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
-
-/* CART */
-.cart-drawer{
-  position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);
-  background:var(--dark);border-left:1px solid rgba(212,175,55,.15);
-  z-index:1500;transform:translateX(100%);transition:transform .4s cubic-bezier(0.25,0.46,0.45,0.94);
-  display:flex;flex-direction:column;
-}
-.cart-drawer.show{transform:translateX(0)}
-.cart-head{padding:1.5rem;border-bottom:1px solid rgba(212,175,55,.1);display:flex;justify-content:space-between;align-items:center}
-.cart-head h3{font-size:1rem}
-.cart-body{flex:1;overflow-y:auto;padding:1.5rem}
-.cart-empty{text-align:center;color:var(--txt-d);padding:3rem 1rem;font-style:italic}
-.cart-item{
-  display:flex;gap:1rem;padding:1rem 0;
-  border-bottom:1px solid rgba(212,175,55,.08);
-}
-.cart-item-info{flex:1}
-.cart-item-name{font-family:'Cinzel',serif;font-size:.82rem;margin-bottom:.2rem}
-.cart-item-price{font-size:.8rem;color:var(--gold)}
-.cart-item-qty{display:flex;align-items:center;gap:.5rem;margin-top:.4rem}
-.qty-btn{
-  width:24px;height:24px;border-radius:50%;
-  border:1px solid rgba(212,175,55,.3);color:var(--gold);
-  display:flex;align-items:center;justify-content:center;font-size:.9rem;
-}
-.qty-btn:hover{background:var(--gold);color:var(--black)}
-.qty-val{font-size:.8rem;min-width:20px;text-align:center}
-.cart-foot{padding:1.5rem;border-top:1px solid rgba(212,175,55,.1)}
-.cart-total{display:flex;justify-content:space-between;margin-bottom:1rem;font-size:.9rem}
-.cart-total-val{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--gold)}
-
-/* TOAST */
-.toast{
-  position:fixed;bottom:6rem;left:50%;transform:translateX(-50%) translateY(100px);
-  background:var(--elev);border:1px solid var(--gold);border-radius:50px;
-  padding:.8rem 1.5rem;font-size:.82rem;color:var(--gold);
-  z-index:3000;transition:transform .4s;opacity:0;
-}
-.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s,transform .8s}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
+.modal{background:var(--dark);border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:2rem;width:min(420px,100%);box-shadow:0 30px 80px rgba(0,0,0,.8);position:relative}
+.mc{position:absolute;top:1rem;right:1rem;width:32px;height:32px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center}
+.mc:hover{border-color:var(--gold);color:var(--gold)}
 /* RESPONSIVE */
-@media (max-width:900px){
-  .nav-menu{
-    display:none;position:absolute;top:100%;left:0;right:0;
-    flex-direction:column;background:rgba(10,10,10,.98);
-    padding:1.5rem;gap:1rem;border-bottom:1px solid rgba(212,175,55,.1);
-  }
-  .nav-menu.show{display:flex}
-  .hamburger{display:flex}
-  .golden-wrap,.about-grid,.contact-grid{grid-template-columns:1fr;gap:2rem}
-  .timeline{grid-template-columns:repeat(2,1fr);gap:1rem;row-gap:1.5rem}
-  .timeline::before{display:none}
-  .footer-grid{grid-template-columns:1fr;gap:1.5rem}
-  .form-row{grid-template-columns:1fr}
-  .hero{padding-top:90px}
-  .video-wrapper{transform:none}
+@media(max-width:900px){
+.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(10,10,10,.98);padding:1.5rem;gap:1rem;border-bottom:1px solid rgba(212,175,55,.15)}
+.nav-menu.show{display:flex}
+.ham{display:flex}
+.g-wrap,.about,.contact{grid-template-columns:1fr}
+.tl{grid-template-columns:repeat(2,1fr);gap:1rem;row-gap:1.5rem}
+.tl::before{display:none}
+.ft-grid{grid-template-columns:1fr}
+.fr{grid-template-columns:1fr}
 }
-@media (max-width:600px){
-  .hero-title{font-size:2.5rem}
-  .timeline{grid-template-columns:1fr}
-  .btn{padding:.8rem 1.5rem;font-size:.72rem}
+@media(max-width:600px){
+.tl{grid-template-columns:1fr}
 }
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.reveal.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="nav" id="nav">
-  <div class="container nav-inner">
-    <a href="#" class="logo">
-      <svg class="logo-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M8 42 Q32 20 56 42 Q50 54 32 54 Q14 54 8 42 Z" fill="none"/>
-        <path d="M20 40 Q32 26 44 40" fill="none"/>
-        <path d="M26 38 L32 30 L38 38" fill="none"/>
-      </svg>
-      <span class="logo-text">CROISSANTÉ</span>
-    </a>
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#golden">Golden</a></li>
-      <li><a href="#bundling">Bundling</a></li>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="btn-login" onclick="openModal('login')">Login</button>
-      <button class="btn btn-primary" onclick="openCart()">Pesan Sekarang</button>
-      <button class="hamburger" onclick="document.getElementById('navMenu').classList.toggle('show')">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
+<nav class="nav">
+<div class="container nav-in">
+<a href="#" class="logo">
+<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 42 Q32 20 56 42 Q50 54 32 54 Q14 54 8 42 Z"/><path d="M20 40 Q32 26 44 40"/></svg>
+<span class="logo-t">CROISSANTÉ</span>
+</a>
+<ul class="nav-menu" id="nm">
+<li><a href="#home">Home</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#golden">Golden</a></li>
+<li><a href="#bundling">Bundling</a></li>
+<li><a href="#tentang">Tentang</a></li>
+<li><a href="#kontak">Kontak</a></li>
+</ul>
+<div class="nav-r">
+<button class="btn-log" onclick="openLogin()">Login</button>
+<button class="btn btn-p" onclick="openCart()">Pesan Sekarang</button>
+<button class="ham" onclick="document.getElementById('nm').classList.toggle('show')"><span></span><span></span><span></span></button>
+</div>
+</div>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-badge"><span class="dot"></span> Fresh from the oven</div>
-    <h1 class="hero-title">CROISSANTÉ</h1>
-    <p class="hero-script">"Croissant Fresh, Renyah di Luar, Lembut di Dalam."</p>
-    <p class="hero-sub">Croissant premium, dipanggang fresh setiap hari. Kini hadir di Cimahi.</p>
-    <div class="hero-btns">
-      <a href="#menu" class="btn btn-primary">Lihat Menu</a>
-      <a href="https://wa.me/6289668211725?text=Halo%20CROISSANTÉ,%20saya%20ingin%20pre-order%20croissant." target="_blank" class="btn btn-outline">Pesan via WhatsApp</a>
-    </div>
-  </div>
+<div class="hero-glow"></div>
+<div class="hero-c">
+<div class="badge"><span class="dot"></span> Fresh from the oven</div>
+<h1>CROISSANTÉ</h1>
+<p class="script">"Croissant Fresh, Renyah di Luar, Lembut di Dalam."</p>
+<p class="sub">Croissant premium, dipanggang fresh setiap hari. Kini hadir di Cimahi.</p>
+<div class="hero-btns">
+<a href="#menu" class="btn btn-p">Lihat Menu</a>
+<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTÉ,%20saya%20ingin%20pre-order%20croissant." target="_blank" class="btn btn-o">Pesan via WhatsApp</a>
+</div>
+</div>
 </section>
 
-<!-- VIDEO -->
-<section class="video-section">
-  <div class="video-wrapper reveal">
-    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1600&q=80">
-      <source src="https://cdn.pixabay.com/video/2023/10/22/186089-877698384_large.mp4" type="video/mp4">
-      <source src="https://cdn.pixabay.com/video/2024/01/30/199110-908247728_large.mp4" type="video/mp4">
-    </video>
-    <div class="video-overlay">
-      <span class="video-cap">— Fresh from the oven, setiap hari.</span>
-    </div>
-  </div>
+<section style="padding:2rem 1.5rem 4rem">
+<div class="container">
+<div class="vid-wrap reveal">
+<video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1600&q=80">
+<source src="https://cdn.pixabay.com/video/2023/10/22/186089-877698384_large.mp4" type="video/mp4">
+</video>
+<div class="vid-cap">— Fresh from the oven, setiap hari.</div>
+</div>
+</div>
 </section>
 
-<!-- FEATURES -->
-<section class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="label">Kenapa Kami</div>
-      <h2 class="h2 gold-grad">Kenapa CROISSANTÉ?</h2>
-      <p class="subtitle">Empat alasan pelanggan setia memilih kami setiap hari.</p>
-    </div>
-    <div class="feature-grid">
-      <div class="feature-card glass reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M12 3v18"/></svg></div>
-        <h3>Varian Beragam</h3>
-        <p>13+ varian croissant dari classic hingga seasonal, jelas & lengkap.</p>
-      </div>
-      <div class="feature-card glass reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-        <h3>Dipanggang Fresh</h3>
-        <p>Setiap box dipanggang hari yang sama, jaminan renyah di luar, lembut di dalam.</p>
-      </div>
-      <div class="feature-card glass reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/></svg></div>
-        <h3>Bundling Praktis</h3>
-        <p>Pilih paket box sesuai kebutuhan — personal, sharing, atau hampers.</p>
-      </div>
-      <div class="feature-card glass reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <h3>Harga Transparan</h3>
-        <p>Semua harga tertera jelas. Tanpa biaya tersembunyi, tanpa kejutan.</p>
-      </div>
-    </div>
-  </div>
+<section>
+<div class="container">
+<div class="reveal" style="text-align:center">
+<div class="label" style="justify-content:center">Kenapa Kami</div>
+<h2 class="title gold-text">Kenapa CROISSANTÉ?</h2>
+<p class="sub" style="margin-left:auto;margin-right:auto">Empat alasan pelanggan setia memilih kami setiap hari.</p>
+</div>
+<div class="f-grid">
+<div class="f-card glass reveal"><div class="f-ico">🥐</div><h3>Varian Beragam</h3><p>13+ varian croissant dari classic hingga seasonal, jelas & lengkap.</p></div>
+<div class="f-card glass reveal"><div class="f-ico">🔥</div><h3>Dipanggang Fresh</h3><p>Setiap box dipanggang hari yang sama, renyah di luar, lembut di dalam.</p></div>
+<div class="f-card glass reveal"><div class="f-ico">🎁</div><h3>Bundling Praktis</h3><p>Pilih paket box sesuai kebutuhan — personal, sharing, atau hampers.</p></div>
+<div class="f-card glass reveal"><div class="f-ico">💰</div><h3>Harga Transparan</h3><p>Semua harga tertera jelas. Tanpa biaya tersembunyi, tanpa kejutan.</p></div>
+</div>
+</div>
 </section>
 
-<!-- MENU -->
-<section class="section" id="menu">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="label">Katalog</div>
-      <h2 class="h2 gold-grad">Varian Croissant</h2>
-      <p class="subtitle">Pilih favoritmu dari 13 varian yang dipanggang fresh setiap hari.</p>
-    </div>
-    <div class="filter-bar reveal">
-      <button class="filter-btn active" data-cat="all">Semua</button>
-      <button class="filter-btn" data-cat="classic">Classic</button>
-      <button class="filter-btn" data-cat="sweet">Sweet</button>
-      <button class="filter-btn" data-cat="savory">Savory</button>
-      <button class="filter-btn" data-cat="seasonal">Seasonal</button>
-    </div>
-    <div class="menu-grid" id="menuGrid"></div>
-  </div>
+<section id="menu">
+<div class="container">
+<div class="reveal" style="text-align:center">
+<div class="label" style="justify-content:center">Katalog</div>
+<h2 class="title gold-text">Varian Croissant</h2>
+<p class="sub" style="margin-left:auto;margin-right:auto">Pilih favoritmu dari 13 varian yang dipanggang fresh setiap hari.</p>
+</div>
+<div class="filters reveal">
+<button class="f-btn active" data-c="all">Semua</button>
+<button class="f-btn" data-c="classic">Classic</button>
+<button class="f-btn" data-c="sweet">Sweet</button>
+<button class="f-btn" data-c="savory">Savory</button>
+<button class="f-btn" data-c="seasonal">Seasonal</button>
+</div>
+<div class="m-grid" id="mg"></div>
+</div>
 </section>
 
-<!-- GOLDEN -->
-<section class="golden-section" id="golden">
-  <div class="golden-glow"></div>
-  <div class="container">
-    <div class="golden-wrap">
-      <div class="golden-img reveal">
-        <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=1000&q=85" alt="Golden Croissant 24K">
-      </div>
-      <div class="reveal">
-        <div class="golden-badges">
-          <span class="badge-gold">Limited 1x Per Bulan</span>
-          <span class="badge-line">24K Edible Gold</span>
-          <span class="badge-line">Member Only</span>
-        </div>
-        <h2 class="golden-title">GOLDEN CROISSANT</h2>
-        <p class="golden-desc">Croissant 24 lapis butter Prancis, dilapisi edible 24K gold leaf, diisi truffle butter & crème de marrons, ditaburi sea salt Guérande. Disajikan dalam box hitam matte dengan wax seal emas.</p>
-        <div class="golden-info">
-          <div class="golden-info-item">
-            <div class="golden-info-label">Harga</div>
-            <div class="golden-info-val">Rp 275.000</div>
-          </div>
-          <div class="golden-info-item">
-            <div class="golden-info-label">Sisa Bulan Ini</div>
-            <div class="golden-info-val" id="goldenStock">7/20</div>
-            <div class="progress-bar"><div class="progress-fill" id="goldenProgress"></div></div>
-          </div>
-          <div class="golden-info-item">
-            <div class="golden-info-label">Pengambilan</div>
-            <div class="golden-info-val">H+3 s/d H+7</div>
-          </div>
-          <div class="golden-info-item">
-            <div class="golden-info-label">Sertifikat</div>
-            <div class="golden-info-val">Emas + Serial</div>
-          </div>
-        </div>
-        <div class="golden-countdown">
-          <div class="golden-countdown-label">Bulan ini tersisa</div>
-          <div class="golden-countdown-val" id="goldenCountdown">— hari</div>
-        </div>
-        <button class="btn btn-primary" id="goldenBtn" onclick="addToCart('Golden Croissant',275000,'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=400&q=80')">Pesan Golden Croissant</button>
-      </div>
-    </div>
-  </div>
+<section class="golden" id="golden">
+<div class="golden-glow"></div>
+<div class="container">
+<div class="g-wrap">
+<div class="g-img reveal"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=1000&q=85" alt="Golden Croissant"></div>
+<div class="reveal">
+<div class="g-badges">
+<span class="b-gold">Limited 1x Per Bulan</span>
+<span class="b-line">24K Edible Gold</span>
+<span class="b-line">Member Only</span>
+</div>
+<h2 class="g-title">GOLDEN CROISSANT</h2>
+<p class="g-desc">Croissant 24 lapis butter Prancis, dilapisi edible 24K gold leaf, diisi truffle butter & crème de marrons, ditaburi sea salt Guérande. Disajikan dalam box hitam matte dengan wax seal emas.</p>
+<div class="g-info">
+<div class="g-item"><div class="g-lbl">Harga</div><div class="g-val">Rp 275.000</div></div>
+<div class="g-item"><div class="g-lbl">Sisa Bulan Ini</div><div class="g-val">7/20</div></div>
+<div class="g-item"><div class="g-lbl">Pengambilan</div><div class="g-val">H+3 s/d H+7</div></div>
+<div class="g-item"><div class="g-lbl">Sertifikat</div><div class="g-val">Emas + Serial</div></div>
+</div>
+<div class="g-count"><small>Bulan ini tersisa</small><b id="gc">— hari</b></div>
+<button class="btn btn-p" onclick="addC('Golden Croissant',275000,'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=400&q=80')">Pesan Golden Croissant</button>
+</div>
+</div>
+</div>
 </section>
 
-<!-- BUNDLING -->
-<section class="section" id="bundling">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="label">Paket</div>
-      <h2 class="h2 gold-grad">Pilih Paket Box Favoritmu</h2>
-      <p class="subtitle">Tiga pilihan box sesuai kebutuhan — personal, sharing, atau hampers.</p>
-    </div>
-    <div class="bundle-grid">
-      <div class="bundle-card glass reveal">
-        <div class="bundle-emoji">🥐</div>
-        <div class="bundle-name">Box Personal</div>
-        <div class="bundle-qty">Isi 2–3 pcs</div>
-        <div class="bundle-price">Rp 55.000 <small>mulai dari</small></div>
-        <p style="font-size:.75rem;color:var(--txt-m);margin-bottom:1.3rem">Untuk camilan pribadi atau teman kerja.</p>
-        <button class="btn btn-outline" onclick="addToCart('Box Personal',55000,'')">Pesan Paket Ini</button>
-      </div>
-      <div class="bundle-card glass feat reveal">
-        <div class="bundle-tag">Best Value</div>
-        <div class="bundle-emoji">🎁</div>
-        <div class="bundle-name">Box Sharing</div>
-        <div class="bundle-qty">Isi 6 pcs</div>
-        <div class="bundle-price">Rp 110.000 <small>mulai dari</small></div>
-        <p style="font-size:.75rem;color:var(--txt-m);margin-bottom:1.3rem">Untuk keluarga, teman, atau rapat kecil.</p>
-        <button class="btn btn-primary" onclick="addToCart('Box Sharing',110000,'')">Pesan Paket Ini</button>
-      </div>
-      <div class="bundle-card glass reveal">
-        <div class="bundle-emoji">👑</div>
-        <div class="bundle-name">Box Hampers</div>
-        <div class="bundle-qty">Isi 12 pcs</div>
-        <div class="bundle-price">Rp 210.000 <small>mulai dari</small></div>
-        <p style="font-size:.75rem;color:var(--txt-m);margin-bottom:1.3rem">Untuk acara, corporate, dan hadiah spesial.</p>
-        <button class="btn btn-outline" onclick="addToCart('Box Hampers',210000,'')">Pesan Paket Ini</button>
-      </div>
-    </div>
-    <p class="bundle-note-bottom">Harga dapat menyesuaikan berdasarkan varian & kuantitas.</p>
-  </div>
+<section id="bundling">
+<div class="container">
+<div class="reveal" style="text-align:center">
+<div class="label" style="justify-content:center">Paket</div>
+<h2 class="title gold-text">Pilih Paket Box Favoritmu</h2>
+<p class="sub" style="margin-left:auto;margin-right:auto">Tiga pilihan box sesuai kebutuhan.</p>
+</div>
+<div class="b-grid">
+<div class="b-card glass reveal"><div class="b-emoji">🥐</div><div class="b-name">Box Personal</div><div class="b-qty">Isi 2–3 pcs</div><div class="b-price">Rp 55.000</div><button class="btn btn-o" onclick="addC('Box Personal',55000,'')">Pesan Paket</button></div>
+<div class="b-card glass feat reveal"><div class="b-tag">Best Value</div><div class="b-emoji">🎁</div><div class="b-name">Box Sharing</div><div class="b-qty">Isi 6 pcs</div><div class="b-price">Rp 110.000</div><button class="btn btn-p" onclick="addC('Box Sharing',110000,'')">Pesan Paket</button></div>
+<div class="b-card glass reveal"><div class="b-emoji">👑</div><div class="b-name">Box Hampers</div><div class="b-qty">Isi 12 pcs</div><div class="b-price">Rp 210.000</div><button class="btn btn-o" onclick="addC('Box Hampers',210000,'')">Pesan Paket</button></div>
+</div>
+</div>
 </section>
 
-<!-- TIMELINE -->
-<section class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="label">Proses</div>
-      <h2 class="h2 gold-grad">Cara Pesan Mudah</h2>
-      <p class="subtitle">Tujuh langkah simpel dari website ke meja makanmu.</p>
-    </div>
-    <div class="timeline reveal">
-      <div class="timeline-step"><div class="timeline-num">01</div><div class="timeline-label">Kunjungi Website</div></div>
-      <div class="timeline-step"><div class="timeline-num">02</div><div class="timeline-label">Pilih Varian Rasa</div></div>
-      <div class="timeline-step"><div class="timeline-num">03</div><div class="timeline-label">Pilih Paket Box</div></div>
-      <div class="timeline-step"><div class="timeline-num">04</div><div class="timeline-label">Cek Harga & Isi</div></div>
-      <div class="timeline-step"><div class="timeline-num">05</div><div class="timeline-label">Order Online</div></div>
-      <div class="timeline-step"><div class="timeline-num">06</div><div class="timeline-label">Konfirmasi Admin</div></div>
-      <div class="timeline-step"><div class="timeline-num">07</div><div class="timeline-label">Siap Dinikmati</div></div>
-    </div>
-  </div>
+<section>
+<div class="container">
+<div class="reveal" style="text-align:center">
+<div class="label" style="justify-content:center">Proses</div>
+<h2 class="title gold-text">Cara Pesan Mudah</h2>
+</div>
+<div class="tl reveal">
+<div class="tl-step"><div class="tl-num">01</div><div class="tl-lbl">Kunjungi Website</div></div>
+<div class="tl-step"><div class="tl-num">02</div><div class="tl-lbl">Pilih Varian</div></div>
+<div class="tl-step"><div class="tl-num">03</div><div class="tl-lbl">Pilih Paket</div></div>
+<div class="tl-step"><div class="tl-num">04</div><div class="tl-lbl">Cek Harga</div></div>
+<div class="tl-step"><div class="tl-num">05</div><div class="tl-lbl">Order Online</div></div>
+<div class="tl-step"><div class="tl-num">06</div><div class="tl-lbl">Konfirmasi</div></div>
+<div class="tl-step"><div class="tl-num">07</div><div class="tl-lbl">Siap Dinikmati</div></div>
+</div>
+</div>
 </section>
 
-<!-- TARGET -->
-<section class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="label">Untuk Siapa</div>
-      <h2 class="h2 gold-grad">Untuk Siapa CROISSANTÉ?</h2>
-      <p class="subtitle">Setiap orang punya alasan berbeda untuk jatuh cinta pada croissant.</p>
-    </div>
-    <div class="target-grid">
-      <div class="target-card glass reveal"><span class="target-emoji">🎓</span><h3>Pelajar & Mahasiswa</h3><p>Snack manis untuk belajar & nongkrong.</p></div>
-      <div class="target-card glass reveal"><span class="target-emoji">💼</span><h3>Pekerja Kantoran</h3><p>Breakfast elegan atau camilan rapat.</p></div>
-      <div class="target-card glass reveal"><span class="target-emoji">👨‍👩‍👧</span><h3>Keluarga & Teman</h3><p>Sharing box untuk momen hangat.</p></div>
-      <div class="target-card glass reveal"><span class="target-emoji">🥐</span><h3>Pecinta Pastry</h3><p>Yang tahu croissant Prancis asli.</p></div>
-    </div>
-  </div>
+<section>
+<div class="container">
+<div class="reveal" style="text-align:center">
+<div class="label" style="justify-content:center">Untuk Siapa</div>
+<h2 class="title gold-text">Untuk Siapa CROISSANTÉ?</h2>
+</div>
+<div class="t-grid">
+<div class="t-card glass reveal"><span class="t-emoji">🎓</span><h3>Pelajar & Mahasiswa</h3><p>Snack manis untuk belajar & nongkrong.</p></div>
+<div class="t-card glass reveal"><span class="t-emoji">💼</span><h3>Pekerja Kantoran</h3><p>Breakfast elegan atau camilan rapat.</p></div>
+<div class="t-card glass reveal"><span class="t-emoji">👨‍👩‍👧</span><h3>Keluarga & Teman</h3><p>Sharing box untuk momen hangat.</p></div>
+<div class="t-card glass reveal"><span class="t-emoji">🥐</span><h3>Pecinta Pastry</h3><p>Yang tahu croissant Prancis asli.</p></div>
+</div>
+</div>
 </section>
 
-<!-- ABOUT -->
-<section class="section" id="tentang">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="label">Tentang Kami</div>
-      <h2 class="h2 gold-grad">Cerita CROISSANTÉ</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-img reveal">
-        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=85" alt="Hendra Lesmana">
-      </div>
-      <div class="reveal">
-        <p class="about-story">CROISSANTÉ lahir dari kecintaan mendalam pada croissant Prancis asli — laminasi butter yang renyah di luar, lembut di dalam. Setiap hari, kami memanggang dalam batch kecil agar setiap croissant sampai ke tanganmu dalam kondisi terbaik.</p>
-        <p class="about-story">Dari dapur sederhana di Cimahi, kami percaya bahwa croissant bukan sekadar pastry — ia adalah momen. Momen untuk dinikmati perlahan, ditemani kopi hangat, atau dibagikan pada orang tersayang.</p>
-        <p class="about-quote">"Setiap croissant kami adalah hasil dari cinta, ketelitian, dan dedikasi."</p>
-        <div class="signature">Hendra Lesmana</div>
-        <div class="signature-sub">Founder & Head Baker</div>
-      </div>
-    </div>
-  </div>
+<section id="tentang">
+<div class="container">
+<div class="reveal" style="text-align:center">
+<div class="label" style="justify-content:center">Tentang Kami</div>
+<h2 class="title gold-text">Cerita CROISSANTÉ</h2>
+</div>
+<div class="about">
+<div class="about-img reveal"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=85" alt="Hendra Lesmana"></div>
+<div class="reveal">
+<p class="about-story">CROISSANTÉ lahir dari kecintaan mendalam pada croissant Prancis asli — laminasi butter yang renyah di luar, lembut di dalam. Setiap hari, kami memanggang dalam batch kecil agar setiap croissant sampai ke tanganmu dalam kondisi terbaik.</p>
+<p class="about-story">Dari dapur sederhana di Cimahi, kami percaya bahwa croissant bukan sekadar pastry — ia adalah momen. Momen untuk dinikmati perlahan, ditemani kopi hangat, atau dibagikan pada orang tersayang.</p>
+<p class="quote">"Setiap croissant kami adalah hasil dari cinta, ketelitian, dan dedikasi."</p>
+<div class="sig">Hendra Lesmana</div>
+<div class="sig-sub">Founder & Head Baker</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- TESTIMONI -->
-<section class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="label">Testimoni</div>
-      <h2 class="h2 gold-grad">Kata Mereka</h2>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card glass reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Classic Butter-nya juara. Renyah di luar, lembut di dalam. Persis croissant yang aku makan di Paris."</p>
-        <div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Ayu P.</div><div class="testi-role">Cimahi</div></div></div>
-      </div>
-      <div class="testi-card glass reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Pesan Box Sharing buat keluarga, semua pada rebutan. Next mau coba Golden Croissant-nya!"</p>
-        <div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Rizky H.</div><div class="testi-role">Bandung</div></div></div>
-      </div>
-      <div class="testi-card glass reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Packaging-nya cantik banget, cocok buat hampers. Croissant-nya juga fresh, ga bikin eneg."</p>
-        <div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">Sarah M.</div><div class="testi-role">Cimahi</div></div></div>
-      </div>
-    </div>
-  </div>
+<section>
+<div class="container">
+<div class="reveal" style="text-align:center">
+<div class="label" style="justify-content:center">Testimoni</div>
+<h2 class="title gold-text">Kata Mereka</h2>
+</div>
+<div class="testi-grid">
+<div class="testi-card glass reveal"><div class="stars">★★★★★</div><p class="testi-text">"Classic Butter-nya juara. Renyah di luar, lembut di dalam."</p><div class="testi-author"><div class="testi-av">A</div><div><div class="testi-n">Ayu P.</div><div class="testi-r">Cimahi</div></div></div></div>
+<div class="testi-card glass reveal"><div class="stars">★★★★★</div><p class="testi-text">"Pesan Box Sharing buat keluarga, semua pada rebutan."</p><div class="testi-author"><div class="testi-av">R</div><div><div class="testi-n">Rizky H.</div><div class="testi-r">Bandung</div></div></div></div>
+<div class="testi-card glass reveal"><div class="stars">★★★★★</div><p class="testi-text">"Packaging-nya cantik banget, cocok buat hampers."</p><div class="testi-author"><div class="testi-av">S</div><div><div class="testi-n">Sarah M.</div><div class="testi-r">Cimahi</div></div></div></div>
+</div>
+</div>
 </section>
 
-<!-- CONTACT -->
-<section class="section" id="kontak">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="label">Kontak</div>
-      <h2 class="h2 gold-grad">Pesan Sekarang, Croissant Fresh Menantimu</h2>
-      <p class="subtitle">Isi form di bawah, pesananmu langsung terkirim via WhatsApp.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="reveal">
-        <div class="contact-item">
-          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
-          <div><div class="contact-label">Contact Person</div><a class="contact-val" href="https://wa.me/6289668211725">Hendra Lesmana — 0896 6821 1725</a></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="contact-label">Lokasi</div><div class="contact-val">Cimahi, Jawa Barat</div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <div><div class="contact-label">Owner</div><div class="contact-val">Hendra Lesmana</div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.7a8.16 8.16 0 0 0 4.77 1.52V6.77a4.85 4.85 0 0 1-1.84-.08Z"/></svg></div>
-          <div><div class="contact-label">TikTok</div><a class="contact-val" href="https://tiktok.com" target="_blank">@croissante.cimahi</a></div>
-        </div>
-      </div>
-      <form class="reveal" id="orderForm" onsubmit="return submitOrder(event)">
-        <div class="form-group">
-          <label class="form-label">Nama Lengkap</label>
-          <input type="text" class="form-input" id="fName" required placeholder="Nama kamu">
-        </div>
-        <div class="form-group">
-          <label class="form-label">No. HP / WhatsApp</label>
-          <input type="tel" class="form-input" id="fPhone" required placeholder="08xxxxxxxxxx">
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">Varian</label>
-            <select class="form-select" id="fVarian" required>
-              <option value="">Pilih varian...</option>
-              <option>Classic Butter</option>
-              <option>Chocolate</option>
-              <option>Cheese</option>
-              <option>Matcha Velvet</option>
-              <option>Almond</option>
-              <option>Pain au Chocolat</option>
-              <option>Ham & Cheese</option>
-              <option>Spinach Feta</option>
-              <option>Cinnamon Roll</option>
-              <option>Raspberry</option>
-              <option>Pistachio</option>
-              <option>Tiramisu</option>
-              <option>Croffle</option>
-              <option>Golden Croissant (24K)</option>
-              <option>Campuran / Box Bundling</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Jumlah Box</label>
-            <input type="number" class="form-input" id="fQty" min="1" value="1" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Tanggal Pengambilan (H+1 s/d H+7)</label>
-          <input type="date" class="form-input" id="fDate" required>
-          <p class="form-note">Minimal besok, maksimal 7 hari dari sekarang.</p>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Catatan (opsional)</label>
-          <textarea class="form-textarea" id="fNote" placeholder="Alamat, permintaan khusus, atau pesan tambahan..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%">Kirim Pesanan via WhatsApp</button>
-      </form>
-    </div>
-  </div>
+<section id="kontak">
+<div class="container">
+<div class="reveal" style="text-align:center">
+<div class="label" style="justify-content:center">Kontak</div>
+<h2 class="title gold-text">Pesan Sekarang</h2>
+<p class="sub" style="margin-left:auto;margin-right:auto">Isi form, pesanan langsung terkirim via WhatsApp.</p>
+</div>
+<div class="contact">
+<div class="reveal">
+<div class="ci"><div class="ci-ico">📞</div><div><div class="ci-lbl">Contact Person</div><a class="ci-val" href="https://wa.me/6289668211725">Hendra Lesmana — 0896 6821 1725</a></div></div>
+<div class="ci"><div class="ci-ico">📍</div><div><div class="ci-lbl">Lokasi</div><div class="ci-val">Cimahi, Jawa Barat</div></div></div>
+<div class="ci"><div class="ci-ico">👤</div><div><div class="ci-lbl">Owner</div><div class="ci-val">Hendra Lesmana</div></div></div>
+<div class="ci"><div class="ci-ico">🎵</div><div><div class="ci-lbl">TikTok</div><a class="ci-val" href="https://tiktok.com" target="_blank">@croissante.cimahi</a></div></div>
+</div>
+<form class="reveal" onsubmit="return submitOrder(event)">
+<div class="fg"><label class="fl">Nama Lengkap</label><input type="text" class="fi" id="fn" required placeholder="Nama kamu"></div>
+<div class="fg"><label class="fl">No. HP / WhatsApp</label><input type="tel" class="fi" id="fp" required placeholder="08xxxxxxxxxx"></div>
+<div class="fr">
+<div class="fg"><label class="fl">Varian</label><select class="fs" id="fv" required><option value="">Pilih varian...</option><option>Classic Butter</option><option>Chocolate</option><option>Cheese</option><option>Matcha Velvet</option><option>Almond</option><option>Pain au Chocolat</option><option>Ham & Cheese</option><option>Spinach Feta</option><option>Cinnamon Roll</option><option>Raspberry</option><option>Pistachio</option><option>Tiramisu</option><option>Croffle</option><option>Golden Croissant (24K)</option><option>Box Bundling</option></select></div>
+<div class="fg"><label class="fl">Jumlah Box</label><input type="number" class="fi" id="fq" min="1" value="1" required></div>
+</div>
+<div class="fg"><label class="fl">Tanggal Pengambilan</label><input type="date" class="fi" id="fd" required></div>
+<div class="fg"><label class="fl">Catatan (opsional)</label><textarea class="ft" id="fnote" placeholder="Alamat atau permintaan khusus..."></textarea></div>
+<button type="submit" class="btn btn-p" style="width:100%">Kirim Pesanan via WhatsApp</button>
+</form>
+</div>
+</div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="logo" style="margin-bottom:1rem">
-          <svg class="logo-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M8 42 Q32 20 56 42 Q50 54 32 54 Q14 54 8 42 Z"/>
-            <path d="M20 40 Q32 26 44 40"/>
-          </svg>
-          <span class="logo-text">CROISSANTÉ</span>
-        </div>
-        <p class="footer-script">"Choose your flavor.<br>Choose your box.<br>Enjoy your croissant."</p>
-        <p style="margin-top:1rem"><strong style="color:var(--gold)">Owner:</strong> Hendra Lesmana</p>
-        <div class="footer-sig">Hendra Lesmana</div>
-        <div style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--txt-d);margin-top:.2rem">Founder & Head Baker</div>
-      </div>
-      <div>
-        <h4>Menu Cepat</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#menu">Menu Varian</a></li>
-          <li><a href="#golden">Golden Croissant</a></li>
-          <li><a href="#bundling">Bundling</a></li>
-          <li><a href="#tentang">Tentang</a></li>
-          <li><a href="#kontak">Kontak</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Kontak</h4>
-        <p>CP: Hendra Lesmana<br>0896 6821 1725</p>
-        <p style="margin-top:.8rem">Cimahi, Jawa Barat</p>
-        <p style="margin-top:.8rem"><a href="https://wa.me/6289668211725">WhatsApp</a></p>
-        <p><a href="https://tiktok.com" target="_blank">TikTok</a></p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 CROISSANTÉ. All rights reserved.</span>
-      <span>Crafted with 🥐 in Cimahi</span>
-    </div>
-  </div>
+<footer>
+<div class="container">
+<div class="ft-grid">
+<div>
+<div class="logo" style="margin-bottom:1rem">
+<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" style="width:36px;height:36px;color:#D4AF37"><path d="M8 42 Q32 20 56 42 Q50 54 32 54 Q14 54 8 42 Z"/><path d="M20 40 Q32 26 44 40"/></svg>
+<span class="logo-t">CROISSANTÉ</span>
+</div>
+<p class="ft-script">"Choose your flavor.<br>Choose your box.<br>Enjoy your croissant."</p>
+<p style="margin-top:1rem"><strong style="color:#D4AF37">Owner:</strong> Hendra Lesmana</p>
+<div class="ft-sig">Hendra Lesmana</div>
+<div style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:#5A5045;margin-top:.2rem">Founder & Head Baker</div>
+</div>
+<div>
+<h4>Menu Cepat</h4>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#menu">Menu Varian</a></li>
+<li><a href="#golden">Golden Croissant</a></li>
+<li><a href="#bundling">Bundling</a></li>
+<li><a href="#tentang">Tentang</a></li>
+<li><a href="#kontak">Kontak</a></li>
+</ul>
+</div>
+<div>
+<h4>Kontak</h4>
+<p>CP: Hendra Lesmana<br>0896 6821 1725</p>
+<p style="margin-top:.8rem">Cimahi, Jawa Barat</p>
+<p style="margin-top:.8rem"><a href="https://wa.me/6289668211725">WhatsApp</a></p>
+<p><a href="https://tiktok.com" target="_blank">TikTok</a></p>
+</div>
+</div>
+<div class="ft-bottom">
+<span>© 2026 CROISSANTÉ. All rights reserved.</span>
+<span>Crafted with 🥐 in Cimahi</span>
+</div>
+</div>
 </footer>
 
-<!-- WA FLOAT -->
-<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTÉ,%20saya%20ingin%20pre-order%20croissant." target="_blank" class="wa-float" aria-label="Chat WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTÉ,%20saya%20ingin%20pre-order%20croissant." target="_blank" class="wa">
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
-<!-- LOGIN MODAL -->
-<div class="modal-bg" id="loginModal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('login')">✕</button>
-    <h3 class="gold-grad">Selamat Datang</h3>
-    <p class="modal-sub">Masuk untuk akses Golden Croissant & fitur member</p>
-    <div class="modal-tabs">
-      <button class="modal-tab active" onclick="switchTab('login')">Login</button>
-      <button class="modal-tab" onclick="switchTab('register')">Daftar</button>
-    </div>
-    <div id="tabLogin">
-      <div class="form-group">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-input" placeholder="nama@email.com">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-input" placeholder="••••••••">
-      </div>
-      <button class="btn btn-primary" style="width:100%" onclick="fakeLogin()">Masuk</button>
-    </div>
-    <div id="tabRegister" style="display:none">
-      <div class="form-group">
-        <label class="form-label">Nama Lengkap</label>
-        <input type="text" class="form-input" placeholder="Nama kamu">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-input" placeholder="nama@email.com">
-      </div>
-      <div class="form-group">
-        <label class="form-label">No. HP</label>
-        <input type="tel" class="form-input" placeholder="08xxxxxxxxxx">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-input" placeholder="Min. 8 karakter">
-      </div>
-      <button class="btn btn-primary" style="width:100%" onclick="fakeLogin()">Daftar</button>
-    </div>
-    <p style="text-align:center;font-size:.72rem;color:var(--txt-d);margin-top:1rem">
-      Login pelanggan & admin. Untuk admin gunakan email terdaftar.
-    </p>
-  </div>
+<div class="modal-bg" id="lm">
+<div class="modal">
+<button class="mc" onclick="closeLogin()">✕</button>
+<h2 class="gold-text" style="text-align:center;font-size:1.2rem;margin-bottom:.5rem">Selamat Datang</h2>
+<p style="text-align:center;color:#8A7E6E;font-size:.85rem;margin-bottom:1.5rem">Masuk untuk akses Golden Croissant</p>
+<div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="nama@email.com"></div>
+<div class="fg"><label class="fl">Password</label><input type="password" class="fi" placeholder="••••••••"></div>
+<button class="btn btn-p" style="width:100%" onclick="fakeLogin()">Masuk</button>
+</div>
 </div>
 
-<!-- CART -->
-<div class="cart-drawer" id="cartDrawer">
-  <div class="cart-head">
-    <h3>Pesanan Kamu</h3>
-    <button class="modal-close" onclick="closeCart()">✕</button>
-  </div>
-  <div class="cart-body" id="cartBody">
-    <div class="cart-empty">Keranjang masih kosong.<br>Yuk pilih croissant favoritmu 🥐</div>
-  </div>
-  <div class="cart-foot">
-    <div class="cart-total">
-      <span>Total</span>
-      <span class="cart-total-val" id="cartTotal">Rp 0</span>
-    </div>
-    <button class="btn btn-primary" style="width:100%" onclick="checkoutCart()">Checkout via WhatsApp</button>
-  </div>
+<div class="modal-bg" id="cm">
+<div class="modal">
+<button class="mc" onclick="closeCart()">✕</button>
+<h2 class="gold-text" style="text-align:center;font-size:1.2rem;margin-bottom:.5rem">Pesanan Kamu</h2>
+<div id="cartBody" style="margin:1rem 0;max-height:300px;overflow-y:auto"></div>
+<div style="display:flex;justify-content:space-between;margin-bottom:1rem;padding-top:1rem;border-top:1px solid rgba(212,175,55,.2)">
+<span>Total</span><strong id="cartTotal" style="color:#D4AF37;font-family:'Cormorant Garamond',serif;font-size:1.4rem">Rp 0</strong>
+</div>
+<button class="btn btn-p" style="width:100%" onclick="checkout()">Checkout via WhatsApp</button>
+</div>
 </div>
 
-<!-- TOAST -->
-<div class="toast" id="toast">Ditambahkan ke pesanan ✓</div>
+<div id="toast" style="position:fixed;bottom:6rem;left:50%;transform:translateX(-50%) translateY(100px);background:#141414;border:1px solid #D4AF37;border-radius:50px;padding:.8rem 1.5rem;font-size:.85rem;color:#D4AF37;z-index:2000;transition:.4s;opacity:0;pointer-events:none">Ditambahkan ✓</div>
 
 <script>
-/* ========== MENU DATA ========== */
-const MENU = [
-  {name:'Classic Butter',cat:'classic',desc:'Laminasi butter Prancis 24 lapis, renyah keemasan, lembut di dalam.',price:18000,img:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80'},
-  {name:'Chocolate',cat:'sweet',desc:'Dark chocolate Belgia meleleh di lipatan croissant renyah.',price:22000,img:'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=800&q=80'},
-  {name:'Cheese',cat:'savory',desc:'Gruyère meleleh dengan sentuhan butter karamel.',price:24000,img:'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80'},
-  {name:'Matcha Velvet',cat:'seasonal',desc:'Matcha uji premium dengan red velvet lembut.',price:26000,img:'https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=800&q=80'},
-  {name:'Almond',cat:'sweet',desc:'Almond panggang dengan taburan gula halus.',price:24000,img:'https://images.unsplash.com/photo-1592842232653-1e0baebf4a21?w=800&q=80'},
-  {name:'Pain au Chocolat',cat:'classic',desc:'Dua batang dark chocolate Prancis di dalam laminasi butter.',price:23000,img:'https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=800&q=80'},
-  {name:'Ham & Cheese',cat:'savory',desc:'Ham sapi pilihan + mozzarella meleleh sempurna.',price:25000,img:'https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=800&q=80'},
-  {name:'Spinach Feta',cat:'savory',desc:'Bayam segar + feta Yunani, gurih & creamy.',price:24000,img:'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&q=80'},
-  {name:'Cinnamon Roll',cat:'sweet',desc:'Kayu manis hangat dengan glaze gula manis.',price:22000,img:'https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=800&q=80'},
-  {name:'Raspberry',cat:'sweet',desc:'Selai raspberry homemade, asam-manis seimbang.',price:25000,img:'https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=800&q=80'},
-  {name:'Pistachio',cat:'sweet',desc:'Krim pistachio Sisilia, creamy & aromatic.',price:27000,img:'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80'},
-  {name:'Tiramisu',cat:'sweet',desc:'Krim mascarpone + kopi espresso Italia.',price:26000,img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&q=80'},
-  {name:'Croffle',cat:'seasonal',desc:'Croissant waffle, crispy di luar lembut di dalam.',price:24000,img:'https://images.unsplash.com/photo-1568051243851-f9b136146e97?w=800&q=80'}
+const MENU=[
+{name:'Classic Butter',cat:'classic',desc:'Laminasi butter Prancis 24 lapis, renyah keemasan, lembut di dalam.',price:18000,img:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80'},
+{name:'Chocolate',cat:'sweet',desc:'Dark chocolate Belgia meleleh di lipatan croissant renyah.',price:22000,img:'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&q=80'},
+{name:'Cheese',cat:'savory',desc:'Gruyère meleleh dengan sentuhan butter karamel.',price:24000,img:'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80'},
+{name:'Matcha Velvet',cat:'seasonal',desc:'Matcha uji premium dengan red velvet lembut.',price:26000,img:'https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=600&q=80'},
+{name:'Almond',cat:'sweet',desc:'Almond panggang dengan taburan gula halus.',price:24000,img:'https://images.unsplash.com/photo-1592842232653-1e0baebf4a21?w=600&q=80'},
+{name:'Pain au Chocolat',cat:'classic',desc:'Dua batang dark chocolate Prancis di dalam laminasi butter.',price:23000,img:'https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600&q=80'},
+{name:'Ham & Cheese',cat:'savory',desc:'Ham sapi pilihan + mozzarella meleleh sempurna.',price:25000,img:'https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=600&q=80'},
+{name:'Spinach Feta',cat:'savory',desc:'Bayam segar + feta Yunani, gurih & creamy.',price:24000,img:'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80'},
+{name:'Cinnamon Roll',cat:'sweet',desc:'Kayu manis hangat dengan glaze gula manis.',price:22000,img:'https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600&q=80'},
+{name:'Raspberry',cat:'sweet',desc:'Selai raspberry homemade, asam-manis seimbang.',price:25000,img:'https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=600&q=80'},
+{name:'Pistachio',cat:'sweet',desc:'Krim pistachio Sisilia, creamy & aromatic.',price:27000,img:'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80'},
+{name:'Tiramisu',cat:'sweet',desc:'Krim mascarpone + kopi espresso Italia.',price:26000,img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80'},
+{name:'Croffle',cat:'seasonal',desc:'Croissant waffle, crispy di luar lembut di dalam.',price:24000,img:'https://images.unsplash.com/photo-1568051243851-f9b136146e97?w=600&q=80'}
 ];
-
-/* ========== RENDER MENU ========== */
-function renderMenu(filter='all'){
-  const grid=document.getElementById('menuGrid');
-  grid.innerHTML='';
-  MENU.filter(m=>filter==='all'||m.cat===filter).forEach(m=>{
-    const card=document.createElement('div');
-    card.className='menu-card glass reveal visible';
-    card.innerHTML=`
-      <img class="menu-img" src="${m.img}" alt="${m.name}" loading="lazy">
-      <div class="menu-body">
-        <div class="menu-cat">${m.cat}</div>
-        <div class="menu-name">${m.name}</div>
-        <div class="menu-desc">${m.desc}</div>
-        <div class="menu-foot">
-          <div class="menu-price"><small>Mulai dari</small>Rp ${m.price.toLocaleString('id-ID')}</div>
-          <button class="btn-plus" onclick="addToCart('${m.name}',${m.price},'${m.img}')">+</button>
-        </div>
-      </div>`;
-    grid.appendChild(card);
-  });
-}
-
-/* ========== FILTER ========== */
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.onclick=()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    renderMenu(btn.dataset.cat);
-  };
+function renderMenu(f='all'){
+const g=document.getElementById('mg');g.innerHTML='';
+MENU.filter(m=>f==='all'||m.cat===f).forEach(m=>{
+g.innerHTML+=`<div class="m-card glass"><img src="${m.img}" alt="${m.name}" loading="lazy"><div class="m-body"><div class="m-cat">${m.cat}</div><div class="m-name">${m.name}</div><div class="m-desc">${m.desc}</div><div class="m-foot"><div class="m-price"><small>Mulai dari</small>Rp ${m.price.toLocaleString('id-ID')}</div><button class="m-add" onclick="addC('${m.name}',${m.price},'${m.img}')">+</button></div></div></div>`;
 });
-
-/* ========== CART ========== */
+}
+document.querySelectorAll('.f-btn').forEach(b=>{
+b.onclick=()=>{document.querySelectorAll('.f-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderMenu(b.dataset.c);};
+});
 let cart=JSON.parse(localStorage.getItem('croissante_cart')||'[]');
-function addToCart(name,price,img){
-  const ex=cart.find(i=>i.name===name);
-  if(ex)ex.qty++;
-  else cart.push({name,price,img,qty:1});
-  saveCart();renderCart();showToast('Ditambahkan ke pesanan ✓');
+function addC(n,p,i){
+const e=cart.find(x=>x.name===n);
+if(e)e.qty++;else cart.push({name:n,price:p,img:i,qty:1});
+localStorage.setItem('croissante_cart',JSON.stringify(cart));
+showToast(n+' ditambahkan ✓');
 }
-function removeFromCart(name){
-  cart=cart.filter(i=>i.name!==name);
-  saveCart();renderCart();
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.style.opacity=1;t.style.transform='translateX(-50%) translateY(0)';setTimeout(()=>{t.style.opacity=0;t.style.transform='translateX(-50%) translateY(100px)';},2000);}
+function openCart(){
+const b=document.getElementById('cartBody');
+const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+document.getElementById('cartTotal').textContent='Rp '+total.toLocaleString('id-ID');
+if(!cart.length){b.innerHTML='<p style="text-align:center;color:#5A5045;padding:2rem;font-style:italic">Keranjang kosong 🥐</p>';}
+else{b.innerHTML=cart.map(i=>`<div style="display:flex;justify-content:space-between;padding:.8rem 0;border-bottom:1px solid rgba(212,175,55,.1)"><div><div style="font-family:'Cinzel',serif;font-size:.85rem">${i.name}</div><div style="color:#D4AF37;font-size:.82rem">Rp ${i.price.toLocaleString('id-ID')} x ${i.qty}</div></div><button onclick="rmC('${i.name}')" style="color:#8A7E6E;font-size:1.2rem">×</button></div>`).join('');}
+document.getElementById('cm').classList.add('show');
 }
-function changeQty(name,d){
-  const it=cart.find(i=>i.name===name);
-  if(!it)return;
-  it.qty+=d;
-  if(it.qty<=0)removeFromCart(name);
-  else{saveCart();renderCart();}
+function rmC(n){cart=cart.filter(x=>x.name!==n);localStorage.setItem('croissante_cart',JSON.stringify(cart));openCart();}
+function closeCart(){document.getElementById('cm').classList.remove('show');}
+function checkout(){
+if(!cart.length){showToast('Keranjang kosong');return;}
+let m='Halo CROISSANTÉ, saya ingin pre-order croissant:%0A%0A';
+cart.forEach(i=>{m+=`• ${i.name} x${i.qty} — Rp ${(i.price*i.qty).toLocaleString('id-ID')}%0A`;});
+const t=cart.reduce((s,i)=>s+i.price*i.qty,0);
+m+=`%0ATotal: Rp ${t.toLocaleString('id-ID')}%0A%0ATerima kasih!`;
+window.open('https://wa.me/6289668211725?text='+m,'_blank');
 }
-function saveCart(){localStorage.setItem('croissante_cart',JSON.stringify(cart))}
-function renderCart(){
-  const body=document.getElementById('cartBody');
-  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
-  document.getElementById('cartTotal').textContent='Rp '+total.toLocaleString('id-ID');
-  if(!cart.length){body.innerHTML='<div class="cart-empty">Keranjang masih kosong.<br>Yuk pilih croissant favoritmu 🥐</div>';return;}
-  body.innerHTML=cart.map(i=>`
-    <div class="cart-item">
-      ${i.img?`<img src="${i.img}" style="width:60px;height:60px;object-fit:cover;border-radius:8px">`:''}
-      <div class="cart-item-info">
-        <div class="cart-item-name">${i.name}</div>
-        <div class="cart-item-price">Rp ${i.price.toLocaleString('id-ID')}</div>
-        <div class="cart-item-qty">
-          <button class="qty-btn" onclick="changeQty('${i.name}',-1)">−</button>
-          <span class="qty-val">${i.qty}</span>
-          <button class="qty-btn" onclick="changeQty('${i.name}',1)">+</button>
-        </div>
-      </div>
-    </div>`).join('');
-}
-function openCart(){document.getElementById('cartDrawer').classList.add('show')}
-function closeCart(){document.getElementById('cartDrawer').classList.remove('show')}
-function checkoutCart(){
-  if(!cart.length){showToast('Keranjang kosong');return;}
-  let msg='Halo CROISSANTÉ, saya ingin pre-order croissant:%0A%0A';
-  cart.forEach(i=>{msg+=`• ${i.name} x${i.qty} — Rp ${(i.price*i.qty).toLocaleString('id-ID')}%0A`});
-  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
-  msg+=`%0ATotal: Rp ${total.toLocaleString('id-ID')}%0A%0ATerima kasih!`;
-  window.open('https://wa.me/6289668211725?text='+msg,'_blank');
-}
-
-/* ========== MODAL LOGIN ========== */
-function openModal(){document.getElementById('loginModal').classList.add('show')}
-function closeModal(){document.getElementById('loginModal').classList.remove('show')}
-function switchTab(t){
-  document.querySelectorAll('.modal-tab').forEach(x=>x.classList.remove('active'));
-  event.target.classList.add('active');
-  document.getElementById('tabLogin').style.display=t==='login'?'block':'none';
-  document.getElementById('tabRegister').style.display=t==='register'?'block':'none';
-}
-function fakeLogin(){
-  showToast('Login berhasil — selamat datang! 🥐');
-  closeModal();
-}
-document.getElementById('loginModal').addEventListener('click',e=>{
-  if(e.target.id==='loginModal')closeModal();
-});
-
-/* ========== TOAST ========== */
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2500);
-}
-
-/* ========== FORM SUBMIT ========== */
+function openLogin(){document.getElementById('lm').classList.add('show');}
+function closeLogin(){document.getElementById('lm').classList.remove('show');}
+function fakeLogin(){showToast('Login berhasil 🥐');closeLogin();}
+document.getElementById('lm').addEventListener('click',e=>{if(e.target.id==='lm')closeLogin();});
+document.getElementById('cm').addEventListener('click',e=>{if(e.target.id==='cm')closeCart();});
 function submitOrder(e){
-  e.preventDefault();
-  const name=document.getElementById('fName').value;
-  const phone=document.getElementById('fPhone').value;
-  const varian=document.getElementById('fVarian').value;
-  const qty=document.getElementById('fQty').value;
-  const date=document.getElementById('fDate').value;
-  const note=document.getElementById('fNote').value||'-';
-  const msg=`Halo CROISSANTÉ, saya ingin pre-order croissant:%0A%0ANama: ${name}%0ANo. HP: ${phone}%0AVarian: ${varian}%0AJumlah Box: ${qty}%0ATanggal Ambil: ${date}%0ACatatan: ${note}%0A%0ATerima kasih!`;
-  window.open('https://wa.me/6289668211725?text='+msg,'_blank');
-  return false;
+e.preventDefault();
+const n=document.getElementById('fn').value,p=document.getElementById('fp').value,v=document.getElementById('fv').value,q=document.getElementById('fq').value,d=document.getElementById('fd').value,note=document.getElementById('fnote').value||'-';
+const m=`Halo CROISSANTÉ, saya ingin pre-order croissant:%0A%0ANama: ${n}%0ANo. HP: ${p}%0AVarian: ${v}%0AJumlah Box: ${q}%0ATanggal Ambil: ${d}%0ACatatan: ${note}%0A%0ATerima kasih!`;
+window.open('https://wa.me/6289668211725?text='+m,'_blank');
+return false;
 }
-
-/* ========== DATE MIN/MAX ========== */
 (function(){
-  const d=document.getElementById('fDate');
-  const today=new Date();
-  const min=new Date(today);min.setDate(min.getDate()+1);
-  const max=new Date(today);max.setDate(max.getDate()+7);
-  d.min=min.toISOString().split('T')[0];
-  d.max=max.toISOString().split('T')[0];
+const d=document.getElementById('fd');const t=new Date();
+const mn=new Date(t);mn.setDate(mn.getDate()+1);
+const mx=new Date(t);mx.setDate(mx.getDate()+7);
+d.min=mn.toISOString().split('T')[0];d.max=mx.toISOString().split('T')[0];
 })();
-
-/* ========== NAV SCROLL ========== */
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
-});
-
-/* ========== REVEAL ========== */
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
-  });
-},{threshold:.12});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-/* ========== NAV CLOSE ON CLICK (MOBILE) ========== */
-document.querySelectorAll('.nav-menu a').forEach(a=>{
-  a.addEventListener('click',()=>document.getElementById('navMenu').classList.remove('show'));
-});
-
-/* ========== GOLDEN COUNTDOWN ========== */
-(function(){
-  const now=new Date();
-  const last=new Date(now.getFullYear(),now.getMonth()+1,0);
-  const days=Math.ceil((last-now)/(1000*60*60*24));
-  document.getElementById('goldenCountdown').textContent=days+' hari';
-  document.getElementById('goldenProgress').style.width='35%';
-})();
-
-/* ========== INIT ========== */
+document.querySelectorAll('.nav-menu a').forEach(a=>{a.onclick=()=>document.getElementById('nm').classList.remove('show');});
+(function(){const n=new Date();const l=new Date(n.getFullYear(),n.getMonth()+1,0);const d=Math.ceil((l-n)/86400000);document.getElementById('gc').textContent=d+' hari';})();
 renderMenu();
-renderCart();
 </script>
 </body>
 </html>
