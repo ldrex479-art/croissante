@@ -2,825 +2,527 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CROISSANTÉ - Croissant Fresh Premium di Cimahi</title>
-<meta name="description" content="Croissant premium, dipanggang fresh setiap hari di Cimahi. 5 varian premium, Golden Croissant 24K.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CROISSANTÉ — L'Art du Croissant</title>
+<meta name="description" content="Croissant premium handmade, dipanggang segar setiap hari di Cimahi.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Italiana&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0A0A0A;--dark:#141414;--gold:#D4AF37;--amber:#F59E0B;--txt:#F5F0EB;--muted:#8A7E6E;--dim:#5A5045;--tr:.4s cubic-bezier(.25,.46,.45,.94)}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden}
-body::after{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
-input,select,textarea{font-family:inherit}
-.c{width:min(1200px,92%);margin:0 auto}
-.sec{padding:5rem 0}
-.gold{background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-h1,h2,h3{font-family:'Cinzel',serif;letter-spacing:.08em;line-height:1.25;font-weight:700}
-h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:1rem;text-align:center}
-.sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.05rem;margin:.5rem auto 2.5rem;max-width:600px;text-align:center;display:block}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.9rem 2rem;font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-radius:50px;transition:var(--tr);cursor:pointer;border:none}
-.btn-p{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;font-weight:600;box-shadow:0 4px 24px rgba(212,175,55,.3)}
-.btn-p:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(212,175,55,.5)}
-.btn-o{background:transparent;color:#D4AF37;border:1px solid #D4AF37}
-.btn-o:hover{background:#D4AF37;color:#0A0A0A}
-.card{background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.15);border-radius:16px;transition:var(--tr);overflow:hidden;backdrop-filter:blur(16px)}
-.card:hover{border-color:rgba(212,175,55,.4);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.6)}
-.flash{position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,#8B6914,#D4AF37,#F59E0B,#D4AF37,#8B6914);background-size:200% auto;color:#0A0A0A;text-align:center;padding:.55rem 1rem;font-size:.75rem;font-weight:600;animation:shine 3s linear infinite}
-@keyframes shine{0%{background-position:0% center}100%{background-position:200% center}}
-#flashTimer{font-family:'Courier New',monospace;background:rgba(255,255,255,.5);padding:.15rem .5rem;border-radius:4px;margin:0 .3rem}
-.flash .cls{position:absolute;right:1rem;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.1rem}
-.nav{position:fixed;top:32px;left:0;right:0;z-index:100;padding:1rem 0;transition:var(--tr)}
-.nav.scrolled{background:rgba(10,10,10,.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.1);padding:.6rem 0;top:0}
-.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.logo{display:flex;flex-direction:column}
-.logo-t{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:700;letter-spacing:.16em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.logo-s{font-size:.55rem;letter-spacing:.35em;color:var(--muted);text-transform:uppercase}
-.nav-menu{display:flex;gap:1.4rem;list-style:none}
-.nav-menu a{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);transition:.3s;padding:.3rem 0}
-.nav-menu a:hover{color:#D4AF37}
-.nav-r{display:flex;gap:.5rem;align-items:center}
-.icon-btn{width:36px;height:36px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.3s;font-size:.95rem;background:transparent}
-.icon-btn:hover{border-color:#D4AF37;color:#D4AF37}
-.btn-log{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid rgba(212,175,55,.25);border-radius:50px;padding:.5rem 1rem;cursor:pointer;transition:.3s}
-.btn-log:hover{border-color:#D4AF37;color:#D4AF37}
-.ham{display:none;flex-direction:column;gap:5px;padding:5px;cursor:pointer}
-.ham span{width:24px;height:1.5px;background:#D4AF37;display:block}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 1.5rem 3rem;position:relative;overflow:hidden}
-.hero-glow{position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.15),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pls 6s ease-in-out infinite;pointer-events:none}
-@keyframes pls{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
-.hero-c{position:relative;z-index:2;max-width:900px}
-.bdg-row{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
-.bdg{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.2rem;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:50px;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37}
-.bdg-dot{width:6px;height:6px;border-radius:50%;background:#F59E0B;animation:bl 1.5s infinite}
-.bdg-live{background:rgba(37,211,102,.1);border-color:rgba(37,211,102,.4);color:#25D366}
-.bdg-live .bdg-dot{background:#25D366}
-@keyframes bl{0%,100%{opacity:1}50%{opacity:.2}}
-.hero h1{font-size:clamp(3rem,10vw,6.5rem);font-weight:900;letter-spacing:.12em;line-height:1;background:linear-gradient(135deg,#D4AF37,#F5E6A3 30%,#D4AF37 60%,#F59E0B);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;filter:drop-shadow(0 0 40px rgba(212,175,55,.3));animation:shine 3s linear infinite}
-.script{font-family:'Italiana',sans-serif;font-size:clamp(1.1rem,2.6vw,1.7rem);color:#D4AF37;margin-bottom:1.5rem}
-.hero-sub{font-size:.95rem;color:var(--muted);max-width:520px;margin:0 auto 2.5rem}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.3rem}
-.grid-5{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.3rem}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.3rem}
-.f-card{padding:2rem 1.4rem;text-align:center}
-.f-card h3{font-size:.92rem;margin-bottom:.5rem}
-.f-card p{font-size:.78rem;color:var(--muted)}
-.icon3d{width:72px;height:72px;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 40%,#8B6914);box-shadow:0 8px 24px rgba(212,175,55,.4),inset 0 -3px 8px rgba(0,0,0,.4);padding:12px}
-.icon3d img{width:100%;height:100%;object-fit:contain}
-.filters{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem}
-.f-btn{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;padding:.5rem 1.1rem;border-radius:50px;border:1px solid rgba(212,175,55,.2);color:var(--muted);transition:.3s;cursor:pointer}
-.f-btn:hover,.f-btn.active{border-color:#D4AF37;color:#D4AF37;background:rgba(212,175,55,.08)}
-.m-card{overflow:hidden;display:flex;flex-direction:column}
-.m-card-img{position:relative;overflow:hidden;aspect-ratio:4/3;background:#1A1A1A;cursor:zoom-in}
-.m-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s;position:absolute;top:0;left:0}
-.m-card:hover img{transform:scale(1.06)}
-.m-tag{position:absolute;top:.8rem;left:.8rem;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .8rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;z-index:2}
-.m-body{padding:1.3rem}
-.m-cat{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:.4rem}
-.m-name{font-family:'Cinzel',serif;font-size:.95rem;font-weight:600;margin-bottom:.5rem}
-.m-desc{font-size:.75rem;color:var(--muted);line-height:1.6;margin-bottom:1rem}
-.m-foot{display:flex;justify-content:space-between;align-items:center}
-.m-price{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#D4AF37}
-.m-price small{display:block;font-size:.6rem;color:var(--dim);text-transform:uppercase}
-.m-add{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:600;cursor:pointer}
-.golden{padding:6rem 0;background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.12),transparent 60%);border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15);position:relative;overflow:hidden}
-.golden::before{content:'CROISSANTÉ';position:absolute;font-family:'Cinzel',serif;font-size:18rem;font-weight:900;color:rgba(212,175,55,.03);top:50%;left:50%;transform:translate(-50%,-50%) rotate(-15deg);pointer-events:none;white-space:nowrap}
-.golden-in{position:relative;z-index:2;text-align:center;max-width:800px;margin:0 auto}
-.golden-badges{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.5rem}
-.b-gold{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A}
-.b-line{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;border:1px solid #D4AF37;color:#D4AF37}
-.g-title{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:.1em;background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;animation:shine 3s linear infinite}
-.g-img{max-width:450px;margin:0 auto 1.5rem;border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.4);box-shadow:0 20px 60px rgba(0,0,0,.8)}
-.g-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.g-desc{font-size:.9rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem;max-width:600px;margin-left:auto;margin-right:auto}
-.g-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.8rem;margin-bottom:1.5rem;max-width:650px;margin-left:auto;margin-right:auto}
-.g-item{padding:1rem;background:rgba(10,10,10,.6);border:1px solid rgba(212,175,55,.2);border-radius:12px}
-.g-lbl{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:.4rem}
-.g-val{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#D4AF37}
-.loyalty{max-width:650px;margin:2rem auto;padding:2rem;background:linear-gradient(135deg,rgba(212,175,55,.1),transparent);border:1px solid rgba(212,175,55,.3);border-radius:16px;text-align:center}
-.stamp-row{display:flex;gap:.8rem;justify-content:center;margin:1.5rem 0;flex-wrap:wrap}
-.stamp{width:48px;height:48px;border-radius:50%;border:2px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-.stamp.on{background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37);border-color:#D4AF37;box-shadow:0 0 20px rgba(212,175,55,.6)}
-.loyalty-prog{width:100%;height:8px;background:rgba(212,175,55,.1);border-radius:4px;overflow:hidden;margin:1rem 0}
-.loyalty-prog-f{height:100%;background:linear-gradient(90deg,#D4AF37,#F59E0B);width:60%}
-.b-card{padding:2rem 1.4rem;text-align:center;position:relative}
-.tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;margin-top:2rem}
-.tl-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:1rem .5rem}
-.tl-num{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.85rem;font-weight:700;color:#0A0A0A;margin-bottom:.8rem}
-.tl-lbl{font-size:.68rem;color:var(--muted)}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;margin-top:2rem}
-.about-img{border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.3)}
-.about-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.about-story{font-size:.88rem;color:var(--muted);line-height:1.9;margin-bottom:1.2rem}
-.quote{font-family:'Italiana',sans-serif;font-size:1.2rem;color:#D4AF37;border-left:2px solid #D4AF37;padding-left:1.3rem;margin:1.5rem 0;line-height:1.6}
-.sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;color:#D4AF37}
-.sig-sub{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);margin-top:.3rem}
-.testi-slider{position:relative;max-width:650px;margin:0 auto;overflow:hidden}
-.testi-track{display:flex;transition:transform .6s}
-.testi-slide{min-width:100%;padding:.8rem}
-.testi-dots{display:flex;gap:.5rem;justify-content:center;margin-top:1.5rem}
-.testi-dot{width:8px;height:8px;border-radius:50%;background:rgba(212,175,55,.3);cursor:pointer;transition:.3s}
-.testi-dot.active{background:#D4AF37;width:24px;border-radius:4px}
-.stars{color:#D4AF37;letter-spacing:.15em;margin-bottom:.8rem}
-.testi-text{font-size:.9rem;color:var(--muted);font-style:italic;line-height:1.8;margin-bottom:1.2rem}
-.testi-auth{display:flex;align-items:center;gap:.8rem;justify-content:center}
-.testi-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;color:#0A0A0A}
-.faq-item{background:rgba(20,20,20,.6);border:1px solid rgba(212,175,55,.15);border-radius:12px;margin-bottom:.7rem;overflow:hidden}
-.faq-q{padding:1.1rem 1.4rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Cinzel',serif;font-size:.85rem}
-.faq-icon{color:#D4AF37;font-size:1.3rem;transition:transform .3s}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s,padding .4s;padding:0 1.4rem;color:var(--muted);font-size:.82rem;line-height:1.8}
-.faq-item.open .faq-a{max-height:200px;padding:0 1.4rem 1.3rem}
-.pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem}
-.pay-card{padding:1.6rem 1.3rem;text-align:center}
-.pay-icon{font-size:2rem;margin-bottom:.8rem;display:block}
-.pay-card h3{font-size:.9rem;margin-bottom:.5rem}
-.pay-card p{font-size:.72rem;color:var(--muted);line-height:1.7}
-.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:2.5rem;margin-top:2rem}
-.ci{display:flex;gap:1rem;margin-bottom:1.4rem;align-items:flex-start}
-.ci-ic{width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.25);display:flex;align-items:center;justify-content:center;color:#D4AF37;font-size:1.1rem}
-.ci-lb{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:.3rem}
-.ci-val{font-size:.88rem}
-.fg{margin-bottom:1rem}
-.fl{display:block;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-.fi{width:100%;padding:.9rem 1.1rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.2);border-radius:10px;color:var(--txt);font-size:.88rem;outline:none}
-.fi:focus{border-color:#D4AF37}
-.fr{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.total-box{padding:.9rem 1.1rem;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.3);border-radius:10px;margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center}
-.total-box span:first-child{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.total-box span:last-child{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#D4AF37}
-.map-wrap{border-radius:12px;overflow:hidden;border:1px solid rgba(212,175,55,.2);margin-top:1.5rem;filter:grayscale(1) invert(.9) contrast(1.1)}
-.map-wrap iframe{width:100%;height:220px;border:0;display:block}
-footer{padding:3.5rem 0 2rem;border-top:1px solid rgba(212,175,55,.15);position:relative;text-align:center}
-footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:translateX(-50%);color:#D4AF37;background:var(--bg);padding:0 1rem;font-size:.8rem}
-.ft-logo{font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;letter-spacing:.2em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.5rem}
-.ft-est{font-size:.6rem;letter-spacing:.35em;color:var(--dim);text-transform:uppercase;margin-bottom:1.2rem}
-.ft-script{font-family:'Italiana',sans-serif;color:#D4AF37;font-size:1rem;margin:1rem 0;line-height:1.7}
-.ft-sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;color:#D4AF37;margin-top:1rem}
-.ft-sub{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-top:.3rem}
-.ft-news{max-width:380px;margin:1.5rem auto 0;display:flex;gap:.5rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.25);border-radius:50px;padding:.4rem .4rem .4rem 1.1rem}
-.ft-news input{flex:1;background:transparent;border:none;color:var(--txt);font-size:.82rem;outline:none}
-.ft-news button{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;border-radius:50px;padding:.55rem 1.1rem;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
-.ft-info{margin-top:1.5rem;font-size:.78rem;color:var(--muted);line-height:1.9}
-.ft-sosmed{display:flex;gap:.8rem;justify-content:center;margin-top:1.2rem}
-.ft-sosmed a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:center;color:#D4AF37;font-size:1rem;transition:.3s}
-.ft-sosmed a:hover{background:#D4AF37;color:#0A0A0A}
-.ft-bottom{margin-top:2rem;padding-top:1.2rem;border-top:1px solid rgba(212,175,55,.1);font-size:.72rem;color:var(--dim)}
-.wa{position:fixed;bottom:1.2rem;right:1.2rem;z-index:99;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.5);cursor:pointer}
-.wa svg{width:28px;height:28px;fill:#fff}
-.cart-float{position:fixed;bottom:1.2rem;right:5.5rem;z-index:99;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(212,175,55,.5);cursor:pointer;font-size:1.3rem}
-.cart-float .badge{position:absolute;top:-5px;right:-5px;min-width:20px;height:20px;border-radius:10px;background:#25D366;color:#fff;font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 5px;border:2px solid #0A0A0A}
-.back-top{position:fixed;bottom:5.5rem;right:1.2rem;z-index:98;width:46px;height:46px;border-radius:50%;background:rgba(20,20,20,.9);border:1px solid rgba(212,175,55,.4);color:#D4AF37;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;transition:.3s;opacity:0;pointer-events:none}
-.back-top.show{opacity:1;pointer-events:auto}
-.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.9);backdrop-filter:blur(10px);z-index:1000;display:none;align-items:center;justify-content:center;padding:1.2rem}
-.modal-bg.show{display:flex}
-.modal{background:linear-gradient(135deg,#1A1A1A,#0F0F0F);border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:2rem;width:min(440px,100%);max-height:90vh;overflow-y:auto;position:relative}
-.mc{position:absolute;top:.9rem;right:.9rem;width:32px;height:32px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;background:transparent;font-size:.95rem}
-.mc:hover{border-color:#D4AF37;color:#D4AF37}
-.modal h3{text-align:center;font-size:1.2rem;margin-bottom:.5rem;background:linear-gradient(135deg,#D4AF37,#F5E6A3);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.modal-sub{text-align:center;color:var(--muted);font-size:.82rem;margin-bottom:1.5rem}
-.m-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;border-bottom:1px solid rgba(212,175,55,.15)}
-.m-tab{flex:1;padding:.7rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid transparent;cursor:pointer;background:transparent;font-family:inherit;border:none}
-.m-tab.active{color:#D4AF37;border-bottom-color:#D4AF37}
-.order-code{font-family:'Courier New',monospace;font-size:1.2rem;color:#D4AF37;background:rgba(212,175,55,.1);padding:.7rem 1.3rem;border-radius:10px;border:1px dashed rgba(212,175,55,.4);margin:1rem 0;letter-spacing:.15em;display:inline-block;text-align:center}
-.success-icon{width:70px;height:70px;margin:0 auto 1.3rem;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:#fff}
-.search-ov{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding-top:15vh}
-.search-ov.show{display:flex}
-.search-box{width:min(600px,92%);position:relative}
-.search-box input{width:100%;padding:1.3rem;background:rgba(20,20,20,.8);border:2px solid rgba(212,175,55,.3);border-radius:16px;color:var(--txt);font-size:1rem;outline:none}
-.search-box input:focus{border-color:#D4AF37}
-.search-close{position:absolute;top:-45px;right:0;color:var(--muted);font-size:1.8rem;cursor:pointer}
-.search-res{margin-top:1rem;max-height:50vh;overflow-y:auto;background:rgba(20,20,20,.9);border-radius:16px;border:1px solid rgba(212,175,55,.2)}
-.search-item{padding:.9rem 1.3rem;border-bottom:1px solid rgba(212,175,55,.08);display:flex;gap:.8rem;cursor:pointer}
-.search-item:hover{background:rgba(212,175,55,.08)}
-.search-item img{width:54px;height:54px;border-radius:8px;object-fit:cover}
-.zoom-ov{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:2000;display:none;align-items:center;justify-content:center;padding:1.5rem;cursor:zoom-out}
-.zoom-ov.show{display:flex}
-.zoom-ov img{max-width:90vw;max-height:90vh;border-radius:12px;border:1px solid rgba(212,175,55,.3)}
-.cart{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:#0F0F0F;border-left:1px solid rgba(212,175,55,.2);z-index:1000;transform:translateX(100%);transition:transform .4s;display:flex;flex-direction:column}
-.cart.show{transform:translateX(0)}
-.cart-h{padding:1.3rem;border-bottom:1px solid rgba(212,175,55,.15);display:flex;justify-content:space-between;align-items:center}
-.cart-h h3{font-size:.95rem;font-family:'Cinzel',serif}
-.cart-b{flex:1;overflow-y:auto;padding:1.3rem}
-.cart-empty{text-align:center;color:var(--dim);padding:3rem 1rem;font-style:italic}
-.cart-item{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(212,175,55,.08);align-items:center}
-.cart-info{flex:1}
-.cart-nm{font-family:'Cinzel',serif;font-size:.82rem;margin-bottom:.3rem}
-.cart-pr{font-size:.78rem;color:#D4AF37}
-.cart-f{padding:1.3rem;border-top:1px solid rgba(212,175,55,.15)}
-.cart-total{display:flex;justify-content:space-between;margin-bottom:1rem;font-size:.88rem}
-.cart-tv{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:#D4AF37}
-.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%) translateY(100px);background:#141414;border:1px solid #D4AF37;border-radius:50px;padding:.8rem 1.4rem;font-size:.82rem;color:#D4AF37;z-index:2000;transition:.4s;opacity:0;pointer-events:none}
-.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.bot-window{position:fixed;bottom:5.5rem;left:1.2rem;width:300px;max-height:380px;background:#141414;border:1px solid rgba(212,175,55,.3);border-radius:16px;z-index:1500;display:none;flex-direction:column;box-shadow:0 15px 40px rgba(0,0,0,.8)}
-.bot-window.show{display:flex}
-.bot-head{padding:.9rem;border-bottom:1px solid rgba(212,175,55,.15);font-family:'Cinzel',serif;font-size:.82rem;color:#D4AF37;display:flex;justify-content:space-between;align-items:center}
-.bot-body{flex:1;overflow-y:auto;padding:.9rem;max-height:280px}
-.bot-msg{padding:.55rem .85rem;border-radius:12px;margin-bottom:.5rem;font-size:.78rem;max-width:85%}
-.bot-msg.bot{background:rgba(212,175,55,.15);color:#F5F0EB;border:1px solid rgba(212,175,55,.3)}
-.bot-msg.user{background:rgba(37,211,102,.15);color:#F5F0EB;border:1px solid rgba(37,211,102,.3);margin-left:auto}
-.bot-input{padding:.55rem;border-top:1px solid rgba(212,175,55,.15);display:flex;gap:.5rem}
-.bot-input input{flex:1;padding:.55rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.2);border-radius:20px;color:#F5F0EB;font-size:.78rem;outline:none}
-.bot-input button{width:34px;height:34px;border-radius:50%;background:#D4AF37;color:#0A0A0A;cursor:pointer}
-.admin-chat{position:fixed;bottom:1.2rem;left:1.2rem;z-index:98;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#8B6914);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(212,175,55,.4);cursor:pointer;font-size:1.3rem}
-@media(max-width:900px){
-.nav{top:34px}
-.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(10,10,10,.98);padding:1.3rem;gap:1rem;border-bottom:1px solid rgba(212,175,55,.15)}
-.nav-menu.show{display:flex}
-.ham{display:flex}
-.about,.contact-grid{grid-template-columns:1fr;gap:1.8rem}
-.fr{grid-template-columns:1fr}
-.hero{padding-top:140px}
-.bot-window{left:1rem;right:1rem;width:auto}
-}
-@media(max-width:600px){
-.hero h1{font-size:2.4rem}
-.btn{padding:.8rem 1.5rem;font-size:.7rem}
-.golden::before{font-size:9rem}
-.flash{font-size:.65rem;padding:.5rem 1.8rem .5rem .5rem}
-}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --bg:#0a0a0a;
+    --bg2:#111111;
+    --gold:#D4AF37;
+    --gold-soft:#b8952e;
+    --cream:#f5f1e8;
+    --muted:#8a8578;
+    --line:rgba(212,175,55,0.18);
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    font-weight:300;
+    overflow-x:hidden;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    cursor:none;
+  }
+  a{color:inherit;text-decoration:none;cursor:none;}
+  img{max-width:100%;display:block;}
+
+  /* ===== PRELOADER ===== */
+  #loader{
+    position:fixed;inset:0;background:var(--bg);z-index:9999;
+    display:flex;align-items:center;justify-content:center;flex-direction:column;
+    transition:opacity 1s ease, visibility 1s ease;
+  }
+  #loader.hide{opacity:0;visibility:hidden;}
+  #loader .mono{
+    font-family:'Cinzel',serif;font-size:38px;letter-spacing:12px;
+    color:var(--gold);padding-left:12px;
+    animation:fadeUp 1.5s ease forwards;opacity:0;
+  }
+  #loader .sub{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:var(--muted);font-size:14px;letter-spacing:3px;margin-top:15px;
+    animation:fadeUp 1.5s 0.4s ease forwards;opacity:0;
+  }
+  @keyframes fadeUp{from{opacity:0;transform:translateY(15px);}to{opacity:1;transform:translateY(0);}}
+
+  /* ===== CUSTOM CURSOR ===== */
+  .cursor-dot,.cursor-ring{
+    position:fixed;top:0;left:0;pointer-events:none;z-index:10000;
+    border-radius:50%;transform:translate(-50%,-50%);
+    transition:width .3s ease,height .3s ease,background .3s ease,border-color .3s;
+  }
+  .cursor-dot{width:6px;height:6px;background:var(--gold);}
+  .cursor-ring{width:36px;height:36px;border:1px solid var(--gold);opacity:.5;}
+  .cursor-ring.hover{width:60px;height:60px;background:rgba(212,175,55,0.08);opacity:.8;}
+  @media (max-width:768px){.cursor-dot,.cursor-ring{display:none;} body,a{cursor:auto;}}
+
+  /* ===== SCROLL PROGRESS ===== */
+  #progress{
+    position:fixed;top:0;left:0;height:1px;background:var(--gold);
+    width:0%;z-index:9998;transition:width .1s linear;
+  }
+
+  /* ===== NAV ===== */
+  nav{
+    position:fixed;top:0;left:0;width:100%;z-index:900;
+    padding:30px 60px;display:flex;justify-content:space-between;align-items:center;
+    transition:background .5s ease,padding .5s ease,border-color .5s ease;
+    border-bottom:1px solid transparent;
+  }
+  nav.scrolled{
+    background:rgba(10,10,10,0.9);backdrop-filter:blur(15px);
+    padding:20px 60px;border-bottom:1px solid var(--line);
+  }
+  nav .logo{
+    font-family:'Cinzel',serif;font-size:20px;letter-spacing:8px;
+    color:var(--gold);padding-left:8px;
+  }
+  nav ul{display:flex;gap:45px;list-style:none;}
+  nav ul a{
+    font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--cream);opacity:.75;transition:opacity .3s,color .3s;
+    position:relative;font-weight:400;
+  }
+  nav ul a:hover{opacity:1;color:var(--gold);}
+  nav ul a::after{
+    content:'';position:absolute;bottom:-6px;left:0;width:0;height:1px;
+    background:var(--gold);transition:width .4s ease;
+  }
+  nav ul a:hover::after{width:100%;}
+  .nav-right{display:flex;gap:35px;align-items:center;}
+  .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;}
+  .menu-toggle span{width:24px;height:1px;background:var(--cream);}
+  @media (max-width:900px){
+    nav{padding:20px 25px;}
+    nav.scrolled{padding:15px 25px;}
+    nav ul{display:none;}
+    .menu-toggle{display:flex;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    height:100vh;min-height:700px;position:relative;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:0 20px;overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 50% 40%, rgba(212,175,55,0.08), transparent 60%),
+      linear-gradient(180deg, #0a0a0a 0%, #0f0e0a 50%, #0a0a0a 100%);
+    z-index:-2;
+  }
+  .hero::after{
+    content:'';position:absolute;inset:0;
+    background-image:url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1600&q=80');
+    background-size:cover;background-position:center;
+    opacity:0.18;z-index:-1;
+    animation:slowZoom 20s ease-in-out infinite alternate;
+  }
+  @keyframes slowZoom{from{transform:scale(1);}to{transform:scale(1.1);}}
+
+  .hero .eyebrow{
+    font-size:11px;letter-spacing:8px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:30px;opacity:0;
+    animation:fadeUp 1.5s 1.8s ease forwards;
+  }
+  .hero h1{
+    font-family:'Cormorant Garamond',serif;font-weight:300;
+    font-size:clamp(48px,9vw,130px);line-height:0.95;letter-spacing:2px;
+    color:var(--cream);opacity:0;
+    animation:fadeUp 1.8s 2s ease forwards;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold);font-weight:300;}
+  .hero .tagline{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:clamp(16px,2vw,22px);color:var(--muted);
+    margin-top:35px;max-width:600px;opacity:0;
+    animation:fadeUp 1.5s 2.4s ease forwards;
+  }
+  .hero .cta{
+    margin-top:60px;display:inline-flex;align-items:center;gap:15px;
+    font-size:11px;letter-spacing:5px;text-transform:uppercase;
+    color:var(--gold);padding:18px 40px;border:1px solid var(--gold);
+    position:relative;overflow:hidden;opacity:0;
+    animation:fadeUp 1.5s 2.8s ease forwards;
+    transition:color .5s ease;
+  }
+  .hero .cta span{position:relative;z-index:2;}
+  .hero .cta::before{
+    content:'';position:absolute;inset:0;background:var(--gold);
+    transform:translateY(100%);transition:transform .5s cubic-bezier(.7,0,.3,1);
+  }
+  .hero .cta:hover{color:#0a0a0a;}
+  .hero .cta:hover::before{transform:translateY(0);}
+
+  .scroll-indicator{
+    position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+    display:flex;flex-direction:column;align-items:center;gap:15px;
+    font-size:10px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;
+    opacity:0;animation:fadeUp 1.5s 3.2s ease forwards;
+  }
+  .scroll-indicator .line{
+    width:1px;height:50px;background:linear-gradient(180deg,var(--gold),transparent);
+    animation:scrollLine 2s ease-in-out infinite;
+  }
+  @keyframes scrollLine{0%,100%{transform:scaleY(0.3);transform-origin:top;}50%{transform:scaleY(1);}}
+
+  /* ===== SECTION COMMON ===== */
+  section{padding:140px 60px;position:relative;}
+  .container{max-width:1400px;margin:0 auto;}
+  .section-label{
+    font-size:11px;letter-spacing:6px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:25px;display:flex;align-items:center;gap:15px;
+  }
+  .section-label::before{content:'';width:40px;height:1px;background:var(--gold);}
+  h2{
+    font-family:'Cormorant Garamond',serif;font-weight:300;
+    font-size:clamp(36px,5vw,72px);line-height:1.05;letter-spacing:1px;
+    margin-bottom:30px;
+  }
+  h2 em{font-style:italic;color:var(--gold);}
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity 1.2s ease,transform 1.2s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ===== STORY ===== */
+  .story{padding-top:180px;}
+  .story-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;
+  }
+  .story-text p{
+    color:#c9c4b8;font-size:16px;margin-bottom:25px;font-weight:300;
+  }
+  .story-text .signature{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:var(--gold);font-size:20px;margin-top:20px;
+  }
+  .story-img{
+    position:relative;aspect-ratio:3/4;overflow:hidden;
+  }
+  .story-img img{
+    width:100%;height:100%;object-fit:cover;
+    filter:grayscale(20%) contrast(1.05);
+    transition:transform 1.5s ease,filter 1.5s ease;
+  }
+  .story-img:hover img{transform:scale(1.05);filter:grayscale(0%) contrast(1.1);}
+  .story-img::after{
+    content:'';position:absolute;inset:15px;border:1px solid var(--line);pointer-events:none;
+  }
+  @media (max-width:900px){
+    .story-grid{grid-template-columns:1fr;gap:60px;}
+  }
+
+  /* ===== COLLECTION ===== */
+  .collection{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .collection-head{text-align:center;margin-bottom:90px;}
+  .collection-head .section-label{justify-content:center;}
+  .collection-head .section-label::before{display:none;}
+  .collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+  .card{position:relative;cursor:none;text-align:center;}
+  .card-img{
+    aspect-ratio:1/1;overflow:hidden;position:relative;background:#161616;margin-bottom:30px;
+  }
+  .card-img img{
+    width:100%;height:100%;object-fit:cover;
+    filter:grayscale(40%) brightness(0.9);
+    transition:transform 1.4s ease,filter 1.4s ease;
+  }
+  .card:hover .card-img img{transform:scale(1.08);filter:grayscale(0%) brightness(1);}
+  .card-img::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 60%,rgba(10,10,10,0.6));
+    pointer-events:none;
+  }
+  .card h3{
+    font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;
+    letter-spacing:1px;margin-bottom:12px;
+  }
+  .card .price{
+    font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;
+  }
+  .card .desc{color:var(--muted);font-size:13px;margin-top:15px;font-style:italic;font-family:'Cormorant Garamond',serif;}
+  @media (max-width:900px){
+    .collection-grid{grid-template-columns:1fr;gap:60px;max-width:400px;margin:0 auto;}
+  }
+
+  /* ===== QUOTE ===== */
+  .quote{
+    text-align:center;padding:180px 60px;
+    background:linear-gradient(180deg,#0a0a0a,#0f0e0a,#0a0a0a);
+    position:relative;overflow:hidden;
+  }
+  .quote::before{
+    content:'"';position:absolute;top:60px;left:50%;transform:translateX(-50%);
+    font-family:'Cormorant Garamond',serif;font-size:300px;color:var(--gold);
+    opacity:0.06;line-height:1;pointer-events:none;
+  }
+  .quote blockquote{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-weight:300;font-size:clamp(24px,3.5vw,48px);
+    line-height:1.4;max-width:900px;margin:0 auto;color:var(--cream);
+    position:relative;z-index:1;
+  }
+  .quote cite{
+    display:block;margin-top:40px;font-family:'Inter',sans-serif;
+    font-style:normal;font-size:11px;letter-spacing:5px;
+    text-transform:uppercase;color:var(--gold);
+  }
+
+  /* ===== VISIT ===== */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;}
+  .visit-info .item{margin-bottom:35px;}
+  .visit-info .item h4{
+    font-size:11px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:12px;font-weight:400;
+  }
+  .visit-info .item p{color:#c9c4b8;font-size:15px;}
+  .visit-img{aspect-ratio:4/5;overflow:hidden;position:relative;}
+  .visit-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(30%) brightness(0.85);transition:filter 1.5s ease;}
+  .visit-img:hover img{filter:grayscale(0%) brightness(1);}
+  .visit-img::after{content:'';position:absolute;inset:15px;border:1px solid var(--line);}
+  @media (max-width:900px){.visit-grid{grid-template-columns:1fr;gap:60px;}}
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:#050505;padding:80px 60px 40px;
+    border-top:1px solid var(--line);
+  }
+  .foot-top{
+    max-width:1400px;margin:0 auto;
+    display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;
+    padding-bottom:60px;border-bottom:1px solid var(--line);
+  }
+  .foot-brand .logo{
+    font-family:'Cinzel',serif;font-size:24px;letter-spacing:10px;
+    color:var(--gold);margin-bottom:20px;padding-left:10px;
+  }
+  .foot-brand p{color:var(--muted);font-size:13px;max-width:350px;}
+  .foot-col h5{
+    font-size:11px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:20px;font-weight:400;
+  }
+  .foot-col ul{list-style:none;}
+  .foot-col ul li{margin-bottom:12px;}
+  .foot-col ul a{color:var(--muted);font-size:13px;transition:color .3s;}
+  .foot-col ul a:hover{color:var(--gold);}
+  .foot-bottom{
+    max-width:1400px;margin:0 auto;padding-top:30px;
+    display:flex;justify-content:space-between;font-size:11px;
+    letter-spacing:2px;color:var(--muted);text-transform:uppercase;
+  }
+  @media (max-width:900px){
+    footer{padding:60px 25px 30px;}
+    .foot-top{grid-template-columns:1fr;gap:40px;}
+    .foot-bottom{flex-direction:column;gap:15px;text-align:center;}
+  }
+  section{padding:140px 60px;}
+  @media (max-width:900px){section{padding:100px 25px;}}
 </style>
 </head>
 <body>
 
-<div class="flash" id="flash">
-Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
-<span class="cls" onclick="document.getElementById('flash').style.display='none';document.getElementById('nav').style.top='0'">✕</span>
+<div id="loader">
+  <div class="mono">CROISSANTÉ</div>
+  <div class="sub">— depuis 2024 —</div>
 </div>
 
-<div class="search-ov" id="searchOv">
-<div class="search-box">
-<div class="search-close" onclick="closeSearch()">✕</div>
-<input type="text" id="searchInput" placeholder="Cari croissant..." oninput="doSearch()">
-<div class="search-res" id="searchRes"></div>
-</div>
-</div>
+<div id="progress"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
 
-<div class="zoom-ov" id="zoomOv" onclick="closeZoom()"><img id="zoomImg" src="" alt=""></div>
-
-<nav class="nav" id="nav">
-<div class="c nav-in">
-<a href="#" class="logo"><span class="logo-t">CROISSANTÉ</span><span class="logo-s">Est. 2026 · Cimahi</span></a>
-<ul class="nav-menu" id="nm">
-<li><a href="#menu">Menu</a></li>
-<li><a href="#golden">Golden</a></li>
-<li><a href="#loyalty">Loyalty</a></li>
-<li><a href="#bundling">Bundling</a></li>
-<li><a href="#tentang">Tentang</a></li>
-<li><a href="#kontak">Kontak</a></li>
-</ul>
-<div class="nav-r">
-<button class="icon-btn" onclick="openSearch()" title="Cari">🔎</button>
-<button class="icon-btn" onclick="openBot()" title="Chatbot">🤖</button>
-<button class="btn-log" onclick="openLogin()">Login</button>
-<button class="btn btn-p" onclick="openCart()">Pesan</button>
-<button class="ham" onclick="document.getElementById('nm').classList.toggle('show')"><span></span><span></span><span></span></button>
-</div>
-</div>
+<nav id="nav">
+  <a href="#" class="logo">CROISSANTÉ</a>
+  <ul>
+    <li><a href="#story">Sejarah</a></li>
+    <li><a href="#collection">Koleksi</a></li>
+    <li><a href="#visit">Kunjungi</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#visit" style="font-size:11px;letter-spacing:3px;color:var(--gold);">PESAN</a>
+  </div>
 </nav>
 
 <section class="hero">
-<div class="hero-glow"></div>
-<div class="hero-c">
-<div class="bdg-row">
-<div class="bdg"><span class="bdg-dot"></span> Fresh from the oven</div>
-<div class="bdg bdg-live"><span class="bdg-dot"></span> <span id="liveCount">23</span> order minggu ini</div>
-</div>
-<h1>CROISSANTÉ</h1>
-<p class="script">"Croissant Fresh, Renyah di Luar, Lembut di Dalam."</p>
-<p class="hero-sub">Croissant premium, dipanggang fresh setiap hari. Kini hadir di Cimahi.</p>
-<div class="hero-btns">
-<a href="#menu" class="btn btn-p">Lihat Menu</a>
-<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTE,%20saya%20ingin%20order." class="btn btn-o">Pesan via WhatsApp</a>
-</div>
-</div>
+  <div class="eyebrow">Artisan Boulangerie · Cimahi</div>
+  <h1>L'Art du<br><em>Croissant</em></h1>
+  <p class="tagline">Setiap lembar, dilipat dengan tangan. Setiap pagi, dipanggang dengan jiwa.</p>
+  <a href="#collection" class="cta"><span>Jelajahi Koleksi</span></a>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
 </section>
 
-<section class="sec">
-<div class="c">
-<h2 class="gold">Kenapa CROISSANTÉ?</h2>
-<p class="sub">Empat alasan pelanggan setia memilih kami.</p>
-<div class="grid-4">
-<div class="card f-card reveal"><div class="icon3d"><img src="https://img.icons8.com/3d-fluency/94/croissant.png" alt="Croissant" onerror="this.parentElement.innerHTML='🥐'"></div><h3>Varian Beragam</h3><p>5 varian premium dari classic hingga seasonal.</p></div>
-<div class="card f-card reveal"><div class="icon3d"><img src="https://img.icons8.com/3d-fluency/94/fire-element.png" alt="Fresh" onerror="this.parentElement.innerHTML='🔥'"></div><h3>Selalu Fresh</h3><p>Dipanggang hari yang sama, renyah & lembut.</p></div>
-<div class="card f-card reveal"><div class="icon3d"><img src="https://img.icons8.com/3d-fluency/94/gift.png" alt="Bundling" onerror="this.parentElement.innerHTML='🎁'"></div><h3>Bundling Hemat</h3><p>Paket box sesuai kebutuhan Anda.</p></div>
-<div class="card f-card reveal"><div class="icon3d"><img src="https://img.icons8.com/3d-fluency/94/coins.png" alt="Harga" onerror="this.parentElement.innerHTML='💎'"></div><h3>Harga Transparan</h3><p>Tanpa biaya tersembunyi.</p></div>
-</div>
-</div>
+<section class="story" id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text reveal">
+        <div class="section-label">Sejarah Kami</div>
+        <h2>Kesempurnaan<br>dalam <em>72 Lapisan</em></h2>
+        <p>Dimulai dari dapur kecil di Cimahi, kami percaya bahwa croissant bukan sekadar roti—ia adalah karya seni yang lahir dari kesabaran, mentega Prancis premium, dan teknik lipat yang diwariskan turun-temurun.</p>
+        <p>Setiap croissant kami melewati fermentasi 24 jam, dilipat 27 kali, dan dipanggang dua kali sehari. Hasilnya: kerak keemasan yang renyah, dengan interior berongga lembut yang meleleh di mulut.</p>
+        <p>Kami tidak terburu-buru. Karena kemewahan sejati butuh waktu.</p>
+        <div class="signature">— Chef Antoine & Tim Croissanté</div>
+      </div>
+      <div class="story-img reveal">
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80" alt="Proses pembuatan croissant" loading="lazy">
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="sec" id="menu">
-<div class="c">
-<h2 class="gold">Varian Croissant</h2>
-<p class="sub">Pilih favoritmu dari 5 varian premium.</p>
-<div class="filters">
-<button class="f-btn active" data-c="all">Semua</button>
-<button class="f-btn" data-c="classic">Classic</button>
-<button class="f-btn" data-c="sweet">Sweet</button>
-<button class="f-btn" data-c="savory">Savory</button>
-<button class="f-btn" data-c="seasonal">Seasonal</button>
-</div>
-<div class="grid-5" id="mg"></div>
-</div>
+<section class="collection" id="collection">
+  <div class="container">
+    <div class="collection-head reveal">
+      <div class="section-label">Signature Collection</div>
+      <h2>Koleksi <em>Istimewa</em></h2>
+    </div>
+    <div class="collection-grid">
+      <div class="card reveal">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80" alt="Croissant Classique" loading="lazy">
+        </div>
+        <h3>Le Classique</h3>
+        <div class="price">Rp 28.000</div>
+        <p class="desc">Mentega Prancis murni, 27 lapisan, kerak keemasan sempurna.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80" alt="Pain au Chocolat" loading="lazy">
+        </div>
+        <h3>Pain au Chocolat</h3>
+        <div class="price">Rp 32.000</div>
+        <p class="desc">Cokelat single-origin 70% dari Jawa, dibalut adonan butter.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&q=80" alt="Almond Croissant" loading="lazy">
+        </div>
+        <h3>Amande Royale</h3>
+        <div class="price">Rp 35.000</div>
+        <p class="desc">Krim almond panggang, gula halus, dan taburan kacang premium.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="golden" id="golden">
-<div class="c">
-<div class="golden-in">
-<div class="golden-badges">
-<span class="b-gold">Limited 1x Per Bulan</span>
-<span class="b-line">24K Edible Gold</span>
-<span class="b-line">Member Only</span>
-</div>
-<h2 class="g-title">GOLDEN CROISSANT</h2>
-<div class="g-img"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=1200&q=90" alt="Golden Croissant"></div>
-<p class="g-desc">Croissant 24 lapis butter Prancis, dilapisi edible 24K gold leaf, diisi truffle butter & crème de marrons, ditaburi sea salt Guérande.</p>
-<div class="g-info">
-<div class="g-item"><div class="g-lbl">Harga</div><div class="g-val">Rp 321.000</div></div>
-<div class="g-item"><div class="g-lbl">Sisa Bulan Ini</div><div class="g-val">7/20</div></div>
-<div class="g-item"><div class="g-lbl">Pengambilan</div><div class="g-val">H+3 s/d H+7</div></div>
-<div class="g-item"><div class="g-lbl">Sertifikat</div><div class="g-val">Emas + Serial</div></div>
-</div>
-<button class="btn btn-p" onclick="addC('Golden Croissant',321000,'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=400&q=90')">Pesan Golden Croissant</button>
-</div>
-</div>
+<section class="quote">
+  <blockquote>
+    "Le vrai luxe n'est pas dans l'abondance,<br>mais dans la perfection du détail."
+    <cite>— Croissanté Philosophy</cite>
+  </blockquote>
 </section>
 
-<section class="sec" id="loyalty">
-<div class="c">
-<h2 class="gold">Loyalty & Membership</h2>
-<p class="sub">Beli 5 box, gratis 1 box. Berlaku kumulatif.</p>
-<div class="loyalty">
-<h3 style="font-family:'Cinzel',serif;font-size:1rem;margin-bottom:.5rem">Kartu Loyalitas Kamu</h3>
-<div class="stamp-row">
-<div class="stamp on">🥐</div><div class="stamp on">🥐</div><div class="stamp on">🥐</div><div class="stamp">🥐</div><div class="stamp">🥐</div>
-</div>
-<div class="loyalty-prog"><div class="loyalty-prog-f"></div></div>
-<p style="font-size:.82rem;color:var(--muted)">Kamu punya <b style="color:#D4AF37">3 dari 5</b> stamp</p>
-<p style="font-size:.78rem;color:var(--dim);margin-top:.5rem">2 box lagi → GRATIS 1 box 🎁</p>
-</div>
-</div>
-</section>
-
-<section class="sec" id="bundling">
-<div class="c">
-<h2 class="gold">Pilih Paket Box Favoritmu</h2>
-<p class="sub">Tiga pilihan box sesuai kebutuhan.</p>
-<div class="grid-3">
-<div class="card b-card">
-<div style="font-size:2.2rem;margin-bottom:.8rem">🥐</div>
-<h3 style="font-family:'Cinzel',serif;font-size:1rem">Box Personal</h3>
-<div style="color:var(--muted);font-style:italic;margin:.5rem 0 .8rem;font-size:.85rem">Isi 2–3 pcs</div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:#D4AF37;margin-bottom:1.2rem">Rp 55.000</div>
-<button class="btn btn-o" onclick="addC('Box Personal',55000,'')">Pesan Paket</button>
-</div>
-<div class="card b-card" style="border-color:rgba(212,175,55,.4)">
-<div style="position:absolute;top:.9rem;right:.9rem;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:#0A0A0A;background:#D4AF37;padding:.25rem .7rem;border-radius:50px;font-weight:600">Best Value</div>
-<div style="font-size:2.2rem;margin-bottom:.8rem">🎁</div>
-<h3 style="font-family:'Cinzel',serif;font-size:1rem">Box Sharing</h3>
-<div style="color:var(--muted);font-style:italic;margin:.5rem 0 .8rem;font-size:.85rem">Isi 6 pcs</div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:#D4AF37;margin-bottom:1.2rem">Rp 110.000</div>
-<button class="btn btn-p" onclick="addC('Box Sharing',110000,'')">Pesan Paket</button>
-</div>
-<div class="card b-card">
-<div style="font-size:2.2rem;margin-bottom:.8rem">👑</div>
-<h3 style="font-family:'Cinzel',serif;font-size:1rem">Box Hampers</h3>
-<div style="color:var(--muted);font-style:italic;margin:.5rem 0 .8rem;font-size:.85rem">Isi 12 pcs</div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:#D4AF37;margin-bottom:1.2rem">Rp 210.000</div>
-<button class="btn btn-o" onclick="addC('Box Hampers',210000,'')">Pesan Paket</button>
-</div>
-</div>
-</div>
-</section>
-
-<section class="sec">
-<div class="c">
-<h2 class="gold">Cara Pesan Mudah</h2>
-<p class="sub">Tujuh langkah simpel.</p>
-<div class="tl">
-<div class="tl-step"><div class="tl-num">01</div><div class="tl-lbl">Kunjungi Website</div></div>
-<div class="tl-step"><div class="tl-num">02</div><div class="tl-lbl">Pilih Varian</div></div>
-<div class="tl-step"><div class="tl-num">03</div><div class="tl-lbl">Pilih Paket</div></div>
-<div class="tl-step"><div class="tl-num">04</div><div class="tl-lbl">Cek Harga</div></div>
-<div class="tl-step"><div class="tl-num">05</div><div class="tl-lbl">Order Online</div></div>
-<div class="tl-step"><div class="tl-num">06</div><div class="tl-lbl">Konfirmasi</div></div>
-<div class="tl-step"><div class="tl-num">07</div><div class="tl-lbl">Siap Dinikmati</div></div>
-</div>
-</div>
-</section>
-
-<section class="sec" id="tentang">
-<div class="c">
-<h2 class="gold">Cerita CROISSANTÉ</h2>
-<p class="sub">Dari dapur sederhana di Cimahi untuk kamu.</p>
-<div class="about">
-<div class="about-img"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=85" alt="Hendra Lesmana"></div>
-<div>
-<p class="about-story">CROISSANTÉ lahir dari kecintaan mendalam pada croissant Prancis asli — laminasi butter yang renyah di luar, lembut di dalam.</p>
-<p class="about-story">Dari dapur sederhana di Cimahi, kami percaya croissant bukan sekadar pastry — ia adalah momen untuk dinikmati perlahan.</p>
-<p class="quote">"Setiap croissant kami adalah hasil dari cinta, ketelitian, dan dedikasi."</p>
-<div class="sig">Hendra Lesmana</div>
-<div class="sig-sub">Founder & Head Baker</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="sec">
-<div class="c">
-<h2 class="gold">Kata Mereka</h2>
-<p class="sub">Cerita dari pelanggan setia kami.</p>
-<div class="testi-slider">
-<div class="testi-track" id="testiTrack">
-<div class="testi-slide"><div class="card" style="padding:1.8rem;text-align:center"><div class="stars">★★★★★</div><p class="testi-text">"Classic Butter-nya juara. Renyah di luar, lembut di dalam."</p><div class="testi-auth"><div class="testi-av">A</div><div><div style="font-size:.82rem;font-weight:500">Ayu P.</div><div style="font-size:.68rem;color:var(--dim)">Cimahi ✓</div></div></div></div></div>
-<div class="testi-slide"><div class="card" style="padding:1.8rem;text-align:center"><div class="stars">★★★★★</div><p class="testi-text">"Pesan Box Sharing buat keluarga, semua pada rebutan!"</p><div class="testi-auth"><div class="testi-av">R</div><div><div style="font-size:.82rem;font-weight:500">Rizky H.</div><div style="font-size:.68rem;color:var(--dim)">Bandung ✓</div></div></div></div></div>
-<div class="testi-slide"><div class="card" style="padding:1.8rem;text-align:center"><div class="stars">★★★★★</div><p class="testi-text">"Packaging-nya cantik banget, cocok buat hampers."</p><div class="testi-auth"><div class="testi-av">S</div><div><div style="font-size:.82rem;font-weight:500">Sarah M.</div><div style="font-size:.68rem;color:var(--dim)">Cimahi ✓</div></div></div></div></div>
-</div>
-<div class="testi-dots" id="testiDots"></div>
-</div>
-</div>
-</section>
-
-<section class="sec">
-<div class="c" style="max-width:750px">
-<h2 class="gold">Pertanyaan Umum</h2>
-<div style="margin-top:1.5rem">
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Berapa lama waktu pengambilan? <span class="faq-icon">+</span></div><div class="faq-a">Pengambilan H+1 sampai H+7 setelah order. Kami memanggang fresh di hari pengambilan.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Bisa kirim ke luar Cimahi? <span class="faq-icon">+</span></div><div class="faq-a">Bisa. Untuk area Bandung & sekitarnya, ongkir menyesuaikan jarak.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Metode pembayaran? <span class="faq-icon">+</span></div><div class="faq-a">Transfer bank (BCA, Mandiri, BRI), QRIS, dan COD untuk area Cimahi.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Minimum order? <span class="faq-icon">+</span></div><div class="faq-a">Minimum 1 box. Free ongkir area Cimahi minimal 3 box.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Ada diskon pembelian berulang? <span class="faq-icon">+</span></div><div class="faq-a">Ya! Beli 5 box, gratis 1 box. Berlaku kumulatif per pelanggan.</div></div>
-</div>
-</div>
-</section>
-
-<section class="sec">
-<div class="c">
-<h2 class="gold">Cara Pembayaran</h2>
-<div class="pay-grid" style="margin-top:1.5rem">
-<div class="card pay-card"><span class="pay-icon">💳</span><h3>Transfer Bank</h3><p>BCA: 1234567890<br>Mandiri: 0987654321<br>BRI: 1122334455<br><em style="color:#D4AF37;font-size:.68rem">a.n. Hendra Lesmana</em></p></div>
-<div class="card pay-card"><span class="pay-icon">📱</span><h3>QRIS</h3><p>Scan kode QRIS<br>Semua e-wallet<br>Konfirmasi via WhatsApp</p></div>
-<div class="card pay-card"><span class="pay-icon">💰</span><h3>E-Wallet</h3><p>GoPay: 089668211725<br>OVO: 089668211725<br>Dana: 089668211725</p></div>
-<div class="card pay-card"><span class="pay-icon">🏠</span><h3>COD</h3><p>Area Cimahi<br>Bayar saat pickup<br>Maks Rp 500.000</p></div>
-</div>
-</div>
-</section>
-
-<section class="sec" id="kontak">
-<div class="c">
-<h2 class="gold">Pesan Sekarang</h2>
-<p class="sub">Isi form di bawah, pesanan langsung terkirim via WhatsApp.</p>
-<div class="contact-grid">
-<div>
-<div class="ci"><div class="ci-ic">📞</div><div><div class="ci-lb">Contact Person</div><a class="ci-val" href="https://wa.me/6289668211725">Hendra Lesmana — 0896 6821 1725</a></div></div>
-<div class="ci"><div class="ci-ic">📍</div><div><div class="ci-lb">Lokasi</div><div class="ci-val">Cimahi, Jawa Barat</div></div></div>
-<div class="ci"><div class="ci-ic">👤</div><div><div class="ci-lb">Owner</div><div class="ci-val">Hendra Lesmana</div></div></div>
-<div class="ci"><div class="ci-ic">🎵</div><div><div class="ci-lb">TikTok</div><a class="ci-val" href="https://tiktok.com" target="_blank">@croissante.cimahi</a></div></div>
-<div class="map-wrap"><iframe src="https://www.google.com/maps?q=Cimahi,Indonesia&output=embed" loading="lazy"></iframe></div>
-</div>
-<form onsubmit="return order(event)">
-<div class="fg"><label class="fl">Nama Lengkap</label><input type="text" class="fi" id="fn" required></div>
-<div class="fg"><label class="fl">No. HP / WhatsApp</label><input type="tel" class="fi" id="fp" required></div>
-<div class="fr">
-<div class="fg"><label class="fl">Varian</label><select class="fi" id="fv" required onchange="updateTotal()"><option value="">Pilih...</option><option value="Classic Butter|18000">Classic Butter — Rp 18.000</option><option value="Chocolate|22000">Chocolate — Rp 22.000</option><option value="Cheese|24000">Cheese — Rp 24.000</option><option value="Matcha Velvet|26000">Matcha Velvet — Rp 26.000</option><option value="Almond|24000">Almond — Rp 24.000</option><option value="Golden Croissant|321000">Golden Croissant — Rp 321.000</option><option value="Box Bundling|110000">Box Bundling — Rp 110.000</option></select></div>
-<div class="fg"><label class="fl">Jumlah Box</label><input type="number" class="fi" id="fq" min="1" value="1" required onchange="updateTotal()" oninput="updateTotal()"></div>
-</div>
-<div class="total-box"><span>Total</span><span id="totalHarga">Rp 0</span></div>
-<div class="fr">
-<div class="fg"><label class="fl">Tanggal Ambil</label><input type="date" class="fi" id="fd" required></div>
-<div class="fg"><label class="fl">Jam Ambil</label><select class="fi" id="fj" required><option value="">Pilih...</option><option>09:00</option><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option><option>18:00</option><option>19:00</option><option>20:00</option></select></div>
-</div>
-<div class="fg"><label class="fl">Catatan (opsional)</label><textarea class="fi" id="fnote" rows="3" placeholder="Alamat / permintaan khusus..."></textarea></div>
-<button type="submit" class="btn btn-p" style="width:100%">Kirim Pesanan via WhatsApp</button>
-</form>
-</div>
-</div>
+<section class="visit" id="visit">
+  <div class="container">
+    <div class="visit-grid">
+      <div class="visit-img reveal">
+        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800&q=80" alt="Butik Croissanté" loading="lazy">
+      </div>
+      <div class="visit-info reveal">
+        <div class="section-label">Kunjungi Kami</div>
+        <h2>Temukan Kami<br>di <em>Cimahi</em></h2>
+        <div class="item">
+          <h4>Butik Utama</h4>
+          <p>Jl. Raya Cimahi No. 24<br>Cimahi, Jawa Barat 40511</p>
+        </div>
+        <div class="item">
+          <h4>Jam Buka</h4>
+          <p>Senin – Sabtu · 06.00 – 21.00<br>Minggu · 07.00 – 20.00</p>
+        </div>
+        <div class="item">
+          <h4>Reservasi</h4>
+          <p>+62 812 3456 7890<br>hello@croissante.id</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
-<div class="c">
-<div class="ft-logo">CROISSANTÉ</div>
-<div class="ft-est">Est. 2026 · Cimahi</div>
-<p class="ft-script">"Choose your flavor.<br>Choose your box.<br>Enjoy your croissant."</p>
-<div class="ft-sig">Hendra Lesmana</div>
-<div class="ft-sub">Founder & Head Baker</div>
-<div class="ft-news">
-<input type="email" id="nl" placeholder="Email untuk update varian">
-<button onclick="subscribe()">Kirim</button>
-</div>
-<div class="ft-info">Owner: Hendra Lesmana · CP: 0896 6821 1725 · Cimahi, Jawa Barat</div>
-<div class="ft-sosmed">
-<a href="https://wa.me/6289668211725" target="_blank">💬</a>
-<a href="https://tiktok.com" target="_blank">🎵</a>
-</div>
-<div class="ft-bottom">© 2026 CROISSANTÉ. All rights reserved. · Crafted with 🥐 in Cimahi</div>
-</div>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="logo">CROISSANTÉ</div>
+      <p>Artisan boulangerie yang mendedikasikan diri pada seni croissant. Dibuat dengan tangan, disajikan dengan cinta.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Jelajahi</h5>
+      <ul>
+        <li><a href="#story">Sejarah</a></li>
+        <li><a href="#collection">Koleksi</a></li>
+        <li><a href="#visit">Kunjungi</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Ikuti</h5>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2024 Croissanté</span>
+    <span>Crafted with patience</span>
+  </div>
 </footer>
 
-<div class="cart-float" onclick="openCart()">🛒<span class="badge" id="cartBadge">0</span></div>
-<div class="back-top" id="backTop">⬆</div>
-<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTE" target="_blank" class="wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
-<div class="admin-chat" onclick="openBot()" title="Chatbot">🤖</div>
-
-<div class="bot-window" id="botWindow">
-<div class="bot-head">🤖 CROISSANTÉ Bot <span onclick="closeBot()" style="cursor:pointer">✕</span></div>
-<div class="bot-body" id="botBody">
-<div class="bot-msg bot">Halo! Saya asisten CROISSANTÉ 🥐<br>Tanya: <b>menu</b>, <b>harga</b>, <b>lokasi</b>, <b>order</b></div>
-</div>
-<div class="bot-input">
-<input type="text" id="botInput" placeholder="Tanya sesuatu..." onkeypress="if(event.key==='Enter')botSend()">
-<button onclick="botSend()">➤</button>
-</div>
-</div>
-
-<div class="modal-bg" id="loginModal">
-<div class="modal">
-<button class="mc" onclick="closeLogin()">✕</button>
-<h3>Selamat Datang</h3>
-<p class="modal-sub">Masuk untuk akses Golden Croissant</p>
-<div class="m-tabs">
-<button class="m-tab active" onclick="switchTab('login',event)">Login</button>
-<button class="m-tab" onclick="switchTab('register',event)">Daftar</button>
-</div>
-<div id="tabLogin">
-<div class="fg"><label class="fl">Email</label><input type="email" class="fi"></div>
-<div class="fg"><label class="fl">Password</label><input type="password" class="fi"></div>
-<button class="btn btn-p" style="width:100%" onclick="fakeLogin()">Masuk</button>
-</div>
-<div id="tabRegister" style="display:none">
-<div class="fg"><label class="fl">Nama Lengkap</label><input type="text" class="fi"></div>
-<div class="fg"><label class="fl">Email</label><input type="email" class="fi"></div>
-<div class="fg"><label class="fl">No. HP</label><input type="tel" class="fi"></div>
-<div class="fg"><label class="fl">Password</label><input type="password" class="fi"></div>
-<button class="btn btn-p" style="width:100%" onclick="fakeLogin()">Daftar</button>
-</div>
-</div>
-</div>
-
-<div class="modal-bg" id="successModal">
-<div class="modal">
-<button class="mc" onclick="closeSuccess()">✕</button>
-<div style="text-align:center">
-<div class="success-icon">✓</div>
-<h3 class="gold">Pesanan Terkirim!</h3>
-<p class="modal-sub">Silakan konfirmasi via WhatsApp</p>
-<div class="order-code" id="orderCode">CR-2026-001</div>
-<button class="btn btn-p" style="width:100%;margin-top:1rem" onclick="closeSuccess()">OK</button>
-</div>
-</div>
-</div>
-
-<div class="cart" id="cartDrawer">
-<div class="cart-h"><h3>Pesanan Kamu</h3><button class="mc" style="position:static" onclick="closeCart()">✕</button></div>
-<div class="cart-b" id="cartBody"></div>
-<div class="cart-f">
-<div class="cart-total"><span>Total</span><span class="cart-tv" id="cartTotal">Rp 0</span></div>
-<button class="btn btn-p" style="width:100%" onclick="checkout()">Checkout via WhatsApp</button>
-</div>
-</div>
-
-<div class="toast" id="toast">Ditambahkan ✓</div>
-
 <script>
-var MENU=[
-{name:'Classic Butter',cat:'classic',desc:'Laminasi butter Prancis 24 lapis, renyah keemasan, lembut di dalam.',price:18000,img:'https://www.aliceboulangerie.com.sg/wp-content/uploads/2023/01/Classic-Croissant--scaled-600x600.jpg',tag:'Best Seller'},
-{name:'Chocolate',cat:'sweet',desc:'Dark chocolate Belgia meleleh di lipatan croissant renyah.',price:22000,img:'https://www.homemadeinterest.com/wp-content/uploads/2021/10/Easy-Chocolate-Croissant_IG-3.jpg',tag:''},
-{name:'Cheese',cat:'savory',desc:'Gruyère meleleh dengan sentuhan butter karamel.',price:24000,img:'https://hips.hearstapps.com/hmg-prod/images/ham-and-cheese-croissants-recipe-2-66e1ea4e56d04.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=1200:*',tag:''},
-{name:'Matcha Velvet',cat:'seasonal',desc:'Matcha uji premium dengan red velvet lembut.',price:26000,img:'https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=800&q=85',tag:'New'},
-{name:'Almond',cat:'sweet',desc:'Almond panggang dengan taburan gula halus.',price:24000,img:'https://teakandthyme.com/wp-content/uploads/2025/05/chocolate-almond-croissants-DSC_4863-1x1-1200.jpg',tag:''}
-];
-function renderMenu(f){
-f=f||'all';
-var g=document.getElementById('mg'),html='';
-MENU.filter(function(m){return f==='all'||m.cat===f;}).forEach(function(m){
-html+='<div class="m-card card"><div class="m-card-img" onclick="zoomImage(\''+m.img+'\')">'+(m.tag?'<span class="m-tag">'+m.tag+'</span>':'')+'<img src="'+m.img+'" alt="'+m.name+'" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80\'"></div><div class="m-body"><div class="m-cat">'+m.cat+'</div><div class="m-name">'+m.name+'</div><div class="m-desc">'+m.desc+'</div><div class="m-foot"><div class="m-price"><small>Mulai dari</small>Rp '+m.price.toLocaleString('id-ID')+'</div><button class="m-add" onclick="addC(\''+m.name+'\','+m.price+',\''+m.img+'\')">+</button></div></div></div>';
-});
-g.innerHTML=html;
-}
-document.querySelectorAll('.f-btn').forEach(function(b){
-b.onclick=function(){
-document.querySelectorAll('.f-btn').forEach(function(x){x.classList.remove('active');});
-b.classList.add('active');renderMenu(b.dataset.c);
-};
-});
-var cart=[];
-try{cart=JSON.parse(localStorage.getItem('croissante_cart')||'[]');}catch(e){cart=[];}
-function addC(n,p,i){
-var e=null;
-for(var k=0;k<cart.length;k++){if(cart[k].name===n){e=cart[k];break;}}
-if(e)e.qty++;else cart.push({name:n,price:p,img:i,qty:1});
-saveC();renderCart();showToast(n+' ditambahkan ✓');
-}
-function saveC(){try{localStorage.setItem('croissante_cart',JSON.stringify(cart));}catch(e){}}
-function rmC(n){cart=cart.filter(function(x){return x.name!==n;});saveC();renderCart();}
-function chQ(n,d){
-for(var k=0;k<cart.length;k++){
-if(cart[k].name===n){
-cart[k].qty+=d;
-if(cart[k].qty<=0)rmC(n);
-else{saveC();renderCart();}
-return;
-}
-}
-}
-function renderCart(){
-var b=document.getElementById('cartBody'),t=0,qty=0;
-cart.forEach(function(i){t+=i.price*i.qty;qty+=i.qty;});
-document.getElementById('cartTotal').textContent='Rp '+t.toLocaleString('id-ID');
-document.getElementById('cartBadge').textContent=qty;
-if(!cart.length){b.innerHTML='<div class="cart-empty">Keranjang masih kosong.<br>Yuk pilih croissant favoritmu 🥐</div>';return;}
-var html='';
-cart.forEach(function(i){
-html+='<div class="cart-item"><div class="cart-info"><div class="cart-nm">'+i.name+'</div><div class="cart-pr">Rp '+i.price.toLocaleString('id-ID')+' x '+i.qty+'</div><div style="display:flex;gap:.5rem;margin-top:.6rem;align-items:center"><button class="mc" style="position:static;width:26px;height:26px" onclick="chQ(\''+i.name+'\',-1)">−</button><span style="min-width:24px;text-align:center">'+i.qty+'</span><button class="mc" style="position:static;width:26px;height:26px" onclick="chQ(\''+i.name+'\',1)">+</button><button class="mc" style="position:static;width:26px;height:26px;margin-left:auto" onclick="rmC(\''+i.name+'\')">✕</button></div></div></div>';
-});
-b.innerHTML=html;
-}
-function openCart(){renderCart();document.getElementById('cartDrawer').classList.add('show');}
-function closeCart(){document.getElementById('cartDrawer').classList.remove('show');}
-function checkout(){
-if(!cart.length){showToast('Keranjang kosong');return;}
-var code='CR-'+new Date().getFullYear()+'-'+String(Math.floor(Math.random()*999)+1).padStart(3,'0');
-var m='Halo CROISSANTÉ, saya ingin pre-order:%0A📦 Kode: '+code+'%0A%0A',t=0;
-cart.forEach(function(i){m+='• '+i.name+' x'+i.qty+' — Rp '+(i.price*i.qty).toLocaleString('id-ID')+'%0A';t+=i.price*i.qty;});
-m+='%0ATotal: Rp '+t.toLocaleString('id-ID')+'%0A%0ATerima kasih!';
-window.open('https://wa.me/6289668211725?text='+m,'_blank');
-document.getElementById('orderCode').textContent=code;
-document.getElementById('successModal').classList.add('show');
-cart=[];saveC();renderCart();
-}
-function closeSuccess(){document.getElementById('successModal').classList.remove('show');}
-function openLogin(){document.getElementById('loginModal').classList.add('show');}
-function closeLogin(){document.getElementById('loginModal').classList.remove('show');}
-function switchTab(t,e){
-document.querySelectorAll('.m-tab').forEach(function(x){x.classList.remove('active');});
-e.target.classList.add('active');
-document.getElementById('tabLogin').style.display=t==='login'?'block':'none';
-document.getElementById('tabRegister').style.display=t==='register'?'block':'none';
-}
-function fakeLogin(){showToast('Login berhasil 🥐');closeLogin();}
-function toggleFaq(el){
-var item=el.parentElement;
-var wasOpen=item.classList.contains('open');
-document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
-if(!wasOpen)item.classList.add('open');
-}
-function updateTotal(){
-var v=document.getElementById('fv').value,q=parseInt(document.getElementById('fq').value)||0,total=0;
-if(v){var p=v.split('|');total=parseInt(p[1])*q;}
-document.getElementById('totalHarga').textContent='Rp '+total.toLocaleString('id-ID');
-}
-function showToast(msg){
-var t=document.getElementById('toast');
-t.textContent=msg;
-t.classList.add('show');
-setTimeout(function(){t.classList.remove('show');},2200);
-}
-function subscribe(){
-var e=document.getElementById('nl').value;
-if(!e||e.indexOf('@')<0){showToast('Email tidak valid');return;}
-showToast('Terima kasih! Kami akan kirim update 🥐');
-document.getElementById('nl').value='';
-}
-function order(e){
-e.preventDefault();
-var n=document.getElementById('fn').value,
-p=document.getElementById('fp').value,
-v=document.getElementById('fv').value.split('|')[0],
-q=document.getElementById('fq').value,
-d=document.getElementById('fd').value,
-j=document.getElementById('fj').value,
-note=document.getElementById('fnote').value||'-';
-var code='CR-'+new Date().getFullYear()+'-'+String(Math.floor(Math.random()*999)+1).padStart(3,'0');
-var m='Halo CROISSANTÉ, saya ingin pre-order croissant:%0A📦 Kode: '+code+'%0A%0A👤 Nama: '+n+'%0A📱 No. HP: '+p+'%0A🥐 Varian: '+v+'%0A📦 Jumlah Box: '+q+'%0A📅 Tanggal Ambil: '+d+'%0A⏰ Jam Ambil: '+j+'%0A📝 Catatan: '+note+'%0A%0ATerima kasih!';
-window.open('https://wa.me/6289668211725?text='+m,'_blank');
-document.getElementById('orderCode').textContent=code;
-document.getElementById('successModal').classList.add('show');
-return false;
-}
-(function(){
-var d=document.getElementById('fd');
-if(!d)return;
-var t=new Date(),mn=new Date(t),mx=new Date(t);
-mn.setDate(mn.getDate()+1);mx.setDate(mx.getDate()+7);
-d.min=mn.toISOString().split('T')[0];
-d.max=mx.toISOString().split('T')[0];
-})();
-window.addEventListener('scroll',function(){
-document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
-document.getElementById('backTop').classList.toggle('show',window.scrollY>400);
-});
-document.getElementById('backTop').onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
-if('IntersectionObserver' in window){
-var obs=new IntersectionObserver(function(es){
-es.forEach(function(e){
-if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
-});
-},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
-}else{
-document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
-}
-document.querySelectorAll('.nav-menu a').forEach(function(a){
-a.onclick=function(){document.getElementById('nm').classList.remove('show');};
-});
-(function(){
-var end=new Date();
-end.setHours(end.getHours()+2);
-setInterval(function(){
-var now=new Date(),diff=end-now;
-if(diff<0)diff=0;
-var h=Math.floor(diff/3600000),
-m=Math.floor((diff%3600000)/60000),
-s=Math.floor((diff%60000)/1000);
-document.getElementById('flashTimer').textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
-},1000);
-})();
-(function(){
-var base=23;
-setInterval(function(){
-base+=(Math.random()>.7?1:0);
-document.getElementById('liveCount').textContent=base;
-},15000);
-})();
-function openSearch(){document.getElementById('searchOv').classList.add('show');document.getElementById('searchInput').focus();}
-function closeSearch(){document.getElementById('searchOv').classList.remove('show');}
-function doSearch(){
-var q=document.getElementById('searchInput').value.toLowerCase().trim();
-var r=document.getElementById('searchRes');
-if(!q){r.innerHTML='';return;}
-var found=MENU.filter(function(m){return m.name.toLowerCase().indexOf(q)>=0||m.desc.toLowerCase().indexOf(q)>=0;});
-if(!found.length){r.innerHTML='<div style="padding:1rem;color:var(--muted);text-align:center">Tidak ditemukan 😔</div>';return;}
-r.innerHTML=found.map(function(m){
-return '<div class="search-item" onclick="closeSearch();document.getElementById(\'menu\').scrollIntoView({behavior:\'smooth\'})"><img src="'+m.img+'"><div><div style="font-family:Cinzel,serif;font-size:.88rem">'+m.name+'</div><div style="font-size:.72rem;color:#8A7E6E">Rp '+m.price.toLocaleString('id-ID')+'</div></div></div>';
-}).join('');
-}
-function zoomImage(src){
-document.getElementById('zoomImg').src=src;
-document.getElementById('zoomOv').classList.add('show');
-}
-function closeZoom(){document.getElementById('zoomOv').classList.remove('show');}
-var testiIdx=0;
-(function(){
-var track=document.getElementById('testiTrack'),
-dots=document.getElementById('testiDots');
-if(!track)return;
-var slides=track.children.length;
-for(var i=0;i<slides;i++){
-var d=document.createElement('div');
-d.className='testi-dot'+(i===0?' active':'');
-d.dataset.i=i;
-d.onclick=function(){goTesti(parseInt(this.dataset.i));};
-dots.appendChild(d);
-}
-window.goTesti=function(i){
-testiIdx=i;
-track.style.transform='translateX(-'+i*100+'%)';
-document.querySelectorAll('.testi-dot').forEach(function(d,j){d.classList.toggle('active',j===i);});
-};
-setInterval(function(){goTesti((testiIdx+1)%slides);},5000);
-})();
-function openBot(){document.getElementById('botWindow').classList.add('show');}
-function closeBot(){document.getElementById('botWindow').classList.remove('show');}
-function botSend(){
-var inp=document.getElementById('botInput'),
-txt=inp.value.trim();
-if(!txt)return;
-addBotMsg(txt,'user');
-inp.value='';
-setTimeout(function(){addBotMsg(getBotReply(txt),'bot');},600);
-}
-function addBotMsg(txt,who){
-var b=document.getElementById('botBody');
-var d=document.createElement('div');
-d.className='bot-msg '+who;
-d.innerHTML=txt;
-b.appendChild(d);
-b.scrollTop=b.scrollHeight;
-}
-function getBotReply(t){
-t=t.toLowerCase();
-if(t.indexOf('menu')>=0||t.indexOf('varian')>=0)return 'Kami punya 5 varian: Classic Butter, Chocolate, Cheese, Matcha Velvet, dan Almond. Mau yang mana? 🥐';
-if(t.indexOf('harga')>=0)return 'Harga mulai Rp 18.000 — Rp 321.000 (Golden Croissant 24K). Lihat detail di menu ya!';
-if(t.indexOf('lokasi')>=0||t.indexOf('alamat')>=0)return 'Kami di Cimahi, Jawa Barat 📍 Bisa pickup atau kirim.';
-if(t.indexOf('wa')>=0||t.indexOf('whatsapp')>=0||t.indexOf('order')>=0)return 'Order cepat via WhatsApp: <a href="https://wa.me/6289668211725" target="_blank" style="color:#D4AF37">Klik di sini</a> 🥐';
-if(t.indexOf('golden')>=0)return 'Golden Croissant — edible 24K gold leaf, Rp 321.000. Limited 20 pcs/bulan ✨';
-if(t.indexOf('jam')>=0||t.indexOf('buka')>=0)return 'Open order setiap hari. Pengambilan H+1 s/d H+7 (09:00-20:00).';
-if(t.indexOf('halo')>=0||t.indexOf('hai')>=0)return 'Halo! Selamat datang di CROISSANTÉ 🥐 Ada yang bisa dibantu?';
-return 'Coba tanya: <b>menu</b>, <b>harga</b>, <b>lokasi</b>, <b>order</b>, atau <b>golden</b>';
-}
-document.getElementById('loginModal').addEventListener('click',function(e){if(e.target.id==='loginModal')closeLogin();});
-document.getElementById('successModal').addEventListener('click',function(e){if(e.target.id==='successModal')closeSuccess();});
-document.getElementById('searchOv').addEventListener('click',function(e){if(e.target.id==='searchOv')closeSearch();});
-document.getElementById('cartDrawer').addEventListener('click',function(e){if(e.target.id==='cartDrawer')closeCart();});
-renderMenu('all');
-renderCart();
+  // Preloader
+  window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('loader').classList.add('hide'), 2200);
+  });
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  const progress = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > 80) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+    const docH = document.body.scrollHeight - window.innerHeight;
+    progress.style.width = (y / docH * 100) + '%';
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Custom cursor
+  const dot = document.querySelector('.cursor-dot');
+  const ring = document.querySelector('.cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  function animateCursor(){
+    rx += (mx - rx) * 0.15;
+    ry += (my - ry) * 0.15;
+    dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+  document.querySelectorAll('a, .card, .cta, button').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+  });
+
+  // Smooth scroll nav
+  document.querySelectorAll('nav a[href^="#"], .cta').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
 </script>
+
 </body>
 </html>
