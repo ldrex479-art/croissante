@@ -5,12 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CROISSANTÉ - Croissant Fresh Premium di Cimahi</title>
 <meta name="description" content="Croissant premium, dipanggang fresh setiap hari di Cimahi. 5 varian premium, Golden Croissant 24K, box hampers mewah.">
+<meta property="og:title" content="CROISSANTÉ - Croissant Fresh Premium di Cimahi">
+<meta property="og:description" content="Croissant premium, dipanggang fresh setiap hari.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1200&q=85">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Italiana&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0A0A0A;--dark:#141414;--elev:#1A1A1A;--gold:#D4AF37;--gold2:#F5E6A3;--amber:#F59E0B;--txt:#F5F0EB;--muted:#8A7E6E;--dim:#5A5045;--tr:.4s cubic-bezier(.25,.46,.45,.94)}
+:root{--bg:#0A0A0A;--dark:#141414;--gold:#D4AF37;--amber:#F59E0B;--txt:#F5F0EB;--muted:#8A7E6E;--dim:#5A5045;--tr:.4s cubic-bezier(.25,.46,.45,.94)}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden}
 body::after{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -22,50 +25,41 @@ input,select,textarea{font-family:inherit}
 .sec{padding:6rem 0;position:relative}
 .gold{background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .lbl{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:#D4AF37;margin-bottom:1rem;display:inline-block}
-.lbl::before,.lbl::after{content:'';display:inline-block;width:30px;height:1px;background:#D4AF37;vertical-align:middle;margin:0 .8rem}
-.lbl::before{margin-left:0}
 h1,h2,h3{font-family:'Cinzel',serif;letter-spacing:.08em;line-height:1.25;font-weight:700}
 h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;text-align:center}
 .sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.1rem;margin:.5rem auto 3rem;max-width:600px;text-align:center;display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 2.2rem;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-radius:50px;transition:var(--tr);cursor:pointer;border:none;position:relative;overflow:hidden}
 .btn-p{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;font-weight:600;box-shadow:0 4px 24px rgba(212,175,55,.3)}
 .btn-p:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(212,175,55,.5)}
-.btn-p::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.3) 50%,transparent 70%);transform:translateX(-100%);transition:transform .6s}
-.btn-p:hover::after{transform:translateX(100%)}
 .btn-o{background:transparent;color:#D4AF37;border:1px solid #D4AF37}
 .btn-o:hover{background:#D4AF37;color:#0A0A0A;transform:translateY(-3px)}
 .card{background:rgba(20,20,20,.6);border:1px solid rgba(212,175,55,.15);border-radius:16px;transition:var(--tr);position:relative;overflow:hidden;backdrop-filter:blur(16px)}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.35),transparent)}
 .card:hover{border-color:rgba(212,175,55,.4);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(212,175,55,.1)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:var(--tr)}
 .nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.1);padding:.6rem 0}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.logo{display:flex;flex-direction:column;align-items:flex-start;gap:.1rem}
+.logo{display:flex;flex-direction:column;align-items:flex-start}
 .logo-t{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:700;letter-spacing:.16em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .logo-s{font-size:.55rem;letter-spacing:.35em;color:var(--muted);text-transform:uppercase}
 .nav-menu{display:flex;gap:1.6rem;list-style:none}
-.nav-menu a{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);transition:.3s;position:relative;padding:.3rem 0}
-.nav-menu a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:#D4AF37;transition:width .3s}
+.nav-menu a{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);transition:.3s;padding:.3rem 0;position:relative}
 .nav-menu a:hover{color:#D4AF37}
-.nav-menu a:hover::after{width:100%}
 .nav-r{display:flex;gap:.7rem;align-items:center}
-.btn-log{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid rgba(212,175,55,.25);border-radius:50px;padding:.5rem 1.1rem;transition:.3s;background:transparent;cursor:pointer}
+.btn-log{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid rgba(212,175,55,.25);border-radius:50px;padding:.5rem 1.1rem;transition:.3s;cursor:pointer}
 .btn-log:hover{border-color:#D4AF37;color:#D4AF37}
-.ham{display:none;flex-direction:column;gap:5px;padding:5px;background:transparent;border:none;cursor:pointer}
+.ham{display:none;flex-direction:column;gap:5px;padding:5px;cursor:pointer}
 .ham span{width:24px;height:1.5px;background:#D4AF37;display:block}
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 1.5rem 3rem;position:relative;overflow:hidden}
 .hero-glow{position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.15),rgba(245,158,11,.05) 30%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pls 6s ease-in-out infinite;pointer-events:none}
 @keyframes pls{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
 .particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .particles span{position:absolute;width:4px;height:4px;background:#D4AF37;border-radius:50%;opacity:.5;animation:float 15s linear infinite;box-shadow:0 0 10px #D4AF37}
-.particles span:nth-child(1){left:10%;animation-delay:0s;animation-duration:14s}
-.particles span:nth-child(2){left:25%;animation-delay:2s;animation-duration:18s}
-.particles span:nth-child(3){left:40%;animation-delay:4s;animation-duration:12s}
-.particles span:nth-child(4){left:60%;animation-delay:1s;animation-duration:16s}
-.particles span:nth-child(5){left:75%;animation-delay:3s;animation-duration:20s}
-.particles span:nth-child(6){left:90%;animation-delay:5s;animation-duration:15s}
-.particles span:nth-child(7){left:15%;animation-delay:6s;animation-duration:17s}
-.particles span:nth-child(8){left:50%;animation-delay:7s;animation-duration:13s}
+.particles span:nth-child(1){left:10%;animation-delay:0s}
+.particles span:nth-child(2){left:25%;animation-delay:2s}
+.particles span:nth-child(3){left:40%;animation-delay:4s}
+.particles span:nth-child(4){left:60%;animation-delay:1s}
+.particles span:nth-child(5){left:75%;animation-delay:3s}
+.particles span:nth-child(6){left:90%;animation-delay:5s}
 @keyframes float{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(-10vh) scale(1);opacity:0}}
 .hero-c{position:relative;z-index:2;max-width:900px}
 .bdg{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.3rem;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:50px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:2rem;animation:fadeIn 1s .3s both}
@@ -79,8 +73,9 @@ h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;text-align:center}
 .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeIn 1s 1.2s both}
 .scroll-ind{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:#D4AF37;font-size:.7rem;letter-spacing:.2em;animation:bounce 2s infinite}
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
-.icon3d{width:64px;height:64px;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 40%,#8B6914 100%);box-shadow:0 8px 24px rgba(212,175,55,.4),inset 0 -3px 8px rgba(0,0,0,.4),inset 0 3px 8px rgba(255,255,255,.3);font-size:1.6rem;transition:transform .6s}
-.card:hover .icon3d{transform:rotateY(360deg) scale(1.05)}
+.icon3d{width:80px;height:80px;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 40%,#8B6914 100%);box-shadow:0 8px 24px rgba(212,175,55,.4),inset 0 -3px 8px rgba(0,0,0,.4),inset 0 3px 8px rgba(255,255,255,.3);transition:transform .6s;overflow:hidden;padding:12px}
+.icon3d img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4))}
+.card:hover .icon3d{transform:rotateY(360deg) scale(1.08)}
 .grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
 .grid-5{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
 .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
@@ -91,19 +86,19 @@ h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;text-align:center}
 .f-btn{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.55rem 1.2rem;border-radius:50px;border:1px solid rgba(212,175,55,.2);background:transparent;color:var(--muted);transition:.3s;cursor:pointer}
 .f-btn:hover,.f-btn.active{border-color:#D4AF37;color:#D4AF37;background:rgba(212,175,55,.08)}
 .m-card{overflow:hidden;display:flex;flex-direction:column}
-.m-card-img{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--elev)}
+.m-card-img{position:relative;overflow:hidden;aspect-ratio:4/3;background:#1A1A1A}
 .m-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s;position:absolute;top:0;left:0}
 .m-card:hover img{transform:scale(1.06)}
 .m-tag{position:absolute;top:.8rem;left:.8rem;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .8rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;z-index:2}
 .m-body{padding:1.4rem;display:flex;flex-direction:column;flex-grow:1}
 .m-cat{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:.5rem}
-.m-name{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.05em}
+.m-name{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;margin-bottom:.5rem}
 .m-desc{font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:1.1rem;flex-grow:1}
 .m-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
 .m-price{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:#D4AF37}
-.m-price small{display:block;font-size:.6rem;color:var(--dim);text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:400;letter-spacing:.1em}
-.m-add{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:600;transition:.3s;box-shadow:0 4px 16px rgba(212,175,55,.3);cursor:pointer;border:none}
-.m-add:hover{transform:scale(1.1) rotate(90deg);box-shadow:0 6px 24px rgba(212,175,55,.5)}
+.m-price small{display:block;font-size:.6rem;color:var(--dim);text-transform:uppercase;font-family:'Inter',sans-serif}
+.m-add{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:600;transition:.3s;box-shadow:0 4px 16px rgba(212,175,55,.3);cursor:pointer}
+.m-add:hover{transform:scale(1.1) rotate(90deg)}
 .golden{padding:7rem 0;background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.12),transparent 60%);border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15);position:relative;overflow:hidden}
 .golden::before{content:'CROISSANTÉ';position:absolute;font-family:'Cinzel',serif;font-size:20rem;font-weight:900;color:rgba(212,175,55,.03);top:50%;left:50%;transform:translate(-50%,-50%) rotate(-15deg);pointer-events:none;white-space:nowrap}
 .golden-in{position:relative;z-index:2;text-align:center;max-width:800px;margin:0 auto}
@@ -111,11 +106,11 @@ h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;text-align:center}
 .b-gold{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A}
 .b-line{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;border:1px solid #D4AF37;color:#D4AF37}
 .g-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:.1em;background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;animation:shine 3s linear infinite}
-.g-desc{font-size:.95rem;color:var(--muted);line-height:1.9;margin-bottom:2rem;max-width:650px;margin-left:auto;margin-right:auto}
 .g-img{max-width:500px;margin:0 auto 2rem;border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.4);box-shadow:0 20px 60px rgba(0,0,0,.8),0 0 60px rgba(212,175,55,.2)}
 .g-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.g-desc{font-size:.95rem;color:var(--muted);line-height:1.9;margin-bottom:2rem;max-width:650px;margin-left:auto;margin-right:auto}
 .g-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto}
-.g-item{padding:1.2rem;background:rgba(10,10,10,.6);border:1px solid rgba(212,175,55,.2);border-radius:12px;backdrop-filter:blur(16px)}
+.g-item{padding:1.2rem;background:rgba(10,10,10,.6);border:1px solid rgba(212,175,55,.2);border-radius:12px}
 .g-lbl{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:.5rem}
 .g-val{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:#D4AF37}
 .prog{width:100%;height:6px;background:rgba(212,175,55,.1);border-radius:3px;overflow:hidden;margin-top:.6rem}
@@ -123,31 +118,30 @@ h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;text-align:center}
 .g-count{text-align:center;padding:1.2rem;background:rgba(212,175,55,.05);border:1px dashed rgba(212,175,55,.3);border-radius:12px;margin-bottom:2rem;max-width:400px;margin-left:auto;margin-right:auto}
 .g-count small{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.4rem}
 .g-count b{font-family:'Cinzel',serif;font-size:1.3rem;color:#D4AF37}
-.tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;margin-top:2rem;position:relative}
+.tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;margin-top:2rem}
 .tl-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:1rem .5rem}
-.tl-num{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);border:1px solid #D4AF37;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:#0A0A0A;margin-bottom:1rem;transition:.3s;box-shadow:0 4px 16px rgba(212,175,55,.3)}
+.tl-num{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);border:1px solid #D4AF37;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:#0A0A0A;margin-bottom:1rem;transition:.3s}
 .tl-step:hover .tl-num{transform:scale(1.12);box-shadow:0 0 30px rgba(212,175,55,.6)}
-.tl-lbl{font-size:.7rem;color:var(--muted);line-height:1.5;letter-spacing:.04em}
+.tl-lbl{font-size:.7rem;color:var(--muted);line-height:1.5}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:2rem}
 .about-img{border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.3);box-shadow:0 30px 80px rgba(0,0,0,.7)}
 .about-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .about-story{font-size:.92rem;color:var(--muted);line-height:1.9;margin-bottom:1.3rem}
 .quote{font-family:'Italiana',sans-serif;font-size:1.3rem;color:#D4AF37;border-left:2px solid #D4AF37;padding-left:1.4rem;margin:2rem 0;line-height:1.6}
-.sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.7rem;color:#D4AF37;letter-spacing:.05em;text-shadow:0 2px 4px rgba(212,175,55,.3)}
+.sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.7rem;color:#D4AF37}
 .sig-sub{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);margin-top:.3rem}
 .faq-item{background:rgba(20,20,20,.6);border:1px solid rgba(212,175,55,.15);border-radius:12px;margin-bottom:.8rem;overflow:hidden;transition:.3s}
-.faq-item:hover{border-color:rgba(212,175,55,.35)}
-.faq-q{padding:1.2rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.05em}
-.faq-icon{color:#D4AF37;font-size:1.4rem;transition:transform .3s;font-weight:300}
+.faq-q{padding:1.2rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Cinzel',serif;font-size:.9rem}
+.faq-icon{color:#D4AF37;font-size:1.4rem;transition:transform .3s}
 .faq-item.open .faq-icon{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;padding:0 1.5rem;color:var(--muted);font-size:.85rem;line-height:1.8}
 .faq-item.open .faq-a{max-height:200px;padding:0 1.5rem 1.5rem}
 .pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
 .pay-card{padding:1.8rem 1.4rem;text-align:center}
-.pay-icon{font-size:2rem;margin-bottom:1rem;display:block;filter:drop-shadow(0 4px 10px rgba(212,175,55,.4))}
+.pay-icon{font-size:2rem;margin-bottom:1rem;display:block}
 .pay-card h3{font-size:.95rem;margin-bottom:.5rem}
 .pay-card p{font-size:.75rem;color:var(--muted);line-height:1.7}
-.stars{color:#D4AF37;letter-spacing:.15em;margin-bottom:1rem;font-size:.95rem}
+.stars{color:#D4AF37;letter-spacing:.15em;margin-bottom:1rem}
 .testi-text{font-size:.85rem;color:var(--muted);font-style:italic;line-height:1.8;margin-bottom:1.3rem}
 .testi-auth{display:flex;align-items:center;gap:.8rem}
 .testi-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.85rem;font-weight:700;color:#0A0A0A}
@@ -169,12 +163,15 @@ a.ci-val:hover{color:#D4AF37}
 .total-box span:last-child{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:#D4AF37}
 footer{padding:4rem 0 2rem;border-top:1px solid rgba(212,175,55,.15);background:linear-gradient(180deg,#0A0A0A,#050505);position:relative;text-align:center}
 footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:translateX(-50%);color:#D4AF37;background:var(--bg);padding:0 1rem;font-size:.8rem}
-.ft-logo{font-family:'Cinzel',serif;font-size:1.8rem;font-weight:700;letter-spacing:.2em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.5rem;filter:drop-shadow(0 0 20px rgba(212,175,55,.3))}
+.ft-logo{font-family:'Cinzel',serif;font-size:1.8rem;font-weight:700;letter-spacing:.2em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.5rem}
 .ft-est{font-size:.6rem;letter-spacing:.35em;color:var(--dim);text-transform:uppercase;margin-bottom:1.5rem}
 .ft-script{font-family:'Italiana',sans-serif;color:#D4AF37;font-size:1.1rem;margin:1rem 0;line-height:1.7}
-.ft-sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:#D4AF37;margin-top:1rem;text-shadow:0 2px 4px rgba(212,175,55,.3)}
+.ft-sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:#D4AF37;margin-top:1rem}
 .ft-sub{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-top:.3rem}
 .ft-info{margin-top:2rem;font-size:.8rem;color:var(--muted);line-height:2}
+.ft-news{max-width:400px;margin:2rem auto 0;display:flex;gap:.5rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.25);border-radius:50px;padding:.4rem .4rem .4rem 1.2rem}
+.ft-news input{flex:1;background:transparent;border:none;color:var(--txt);font-size:.85rem;outline:none}
+.ft-news button{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;border-radius:50px;padding:.6rem 1.2rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
 .ft-sosmed{display:flex;gap:1rem;justify-content:center;margin-top:1.5rem}
 .ft-sosmed a{width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:center;color:#D4AF37;font-size:1.1rem;transition:.3s}
 .ft-sosmed a:hover{background:#D4AF37;color:#0A0A0A;transform:translateY(-3px)}
@@ -187,7 +184,7 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 .modal-bg.show{display:flex;animation:fadeIn .3s}
 .modal{background:var(--dark);border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:2.2rem;width:min(440px,100%);box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 60px rgba(212,175,55,.15);position:relative;animation:modalIn .5s cubic-bezier(.25,.46,.45,.94)}
 @keyframes modalIn{from{opacity:0;transform:rotateY(-90deg)}to{opacity:1;transform:rotateY(0)}}
-.mc{position:absolute;top:1rem;right:1rem;width:34px;height:34px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center;background:transparent;cursor:pointer;font-size:1rem;transition:.3s}
+.mc{position:absolute;top:1rem;right:1rem;width:34px;height:34px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.3s;background:transparent}
 .mc:hover{border-color:#D4AF37;color:#D4AF37;transform:rotate(90deg)}
 .modal h3{text-align:center;font-size:1.3rem;margin-bottom:.5rem;background:linear-gradient(135deg,#D4AF37,#F5E6A3);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .modal-sub{text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:1.8rem}
@@ -197,7 +194,7 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 .cart{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:var(--dark);border-left:1px solid rgba(212,175,55,.2);z-index:1000;transform:translateX(100%);transition:transform .4s cubic-bezier(.25,.46,.45,.94);display:flex;flex-direction:column}
 .cart.show{transform:translateX(0)}
 .cart-h{padding:1.5rem;border-bottom:1px solid rgba(212,175,55,.15);display:flex;justify-content:space-between;align-items:center}
-.cart-h h3{font-size:1rem;font-family:'Cinzel',serif;letter-spacing:.1em}
+.cart-h h3{font-size:1rem;font-family:'Cinzel',serif}
 .cart-b{flex:1;overflow-y:auto;padding:1.5rem}
 .cart-empty{text-align:center;color:var(--dim);padding:3rem 1rem;font-style:italic}
 .cart-item{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(212,175,55,.08);align-items:center}
@@ -207,7 +204,7 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 .cart-f{padding:1.5rem;border-top:1px solid rgba(212,175,55,.15)}
 .cart-total{display:flex;justify-content:space-between;margin-bottom:1.2rem;font-size:.9rem}
 .cart-tv{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#D4AF37}
-.toast{position:fixed;bottom:6rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--dark);border:1px solid #D4AF37;border-radius:50px;padding:.9rem 1.6rem;font-size:.85rem;color:#D4AF37;z-index:2000;transition:.4s cubic-bezier(.25,.46,.45,.94);opacity:0;pointer-events:none;box-shadow:0 8px 32px rgba(212,175,55,.3)}
+.toast{position:fixed;bottom:6rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--dark);border:1px solid #D4AF37;border-radius:50px;padding:.9rem 1.6rem;font-size:.85rem;color:#D4AF37;z-index:2000;transition:.4s;opacity:0;pointer-events:none}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -230,10 +227,7 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 
 <nav class="nav" id="nav">
 <div class="c nav-in">
-<a href="#" class="logo">
-<span class="logo-t">CROISSANTÉ</span>
-<span class="logo-s">Est. 2026 · Cimahi</span>
-</a>
+<a href="#" class="logo"><span class="logo-t">CROISSANTÉ</span><span class="logo-s">Est. 2026 · Cimahi</span></a>
 <ul class="nav-menu" id="nm">
 <li><a href="#menu">Menu</a></li>
 <li><a href="#golden">Golden</a></li>
@@ -251,7 +245,7 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 
 <section class="hero">
 <div class="hero-glow"></div>
-<div class="particles"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<div class="particles"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 <div class="hero-c">
 <div class="bdg"><span class="bdg-dot"></span> Fresh from the oven</div>
 <h1>CROISSANTÉ</h1>
@@ -267,21 +261,19 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 
 <section class="sec" id="keunggulan">
 <div class="c">
-<span class="lbl" style="display:block;text-align:center">Kenapa Kami</span>
 <h2 class="gold">Kenapa CROISSANTÉ?</h2>
 <p class="sub">Empat alasan pelanggan setia memilih kami.</p>
 <div class="grid-4">
-<div class="card f-card reveal"><div class="icon3d">🥐</div><h3>Varian Beragam</h3><p>5 varian premium dari classic hingga seasonal, jelas & lengkap.</p></div>
-<div class="card f-card reveal"><div class="icon3d">🔥</div><h3>Selalu Fresh</h3><p>Dipanggang hari yang sama, renyah di luar, lembut di dalam.</p></div>
-<div class="card f-card reveal"><div class="icon3d">🎁</div><h3>Bundling Hemat</h3><p>Paket box sesuai kebutuhan — personal, sharing, hampers.</p></div>
-<div class="card f-card reveal"><div class="icon3d">💎</div><h3>Harga Transparan</h3><p>Semua harga jelas. Tanpa biaya tersembunyi.</p></div>
+<div class="card f-card reveal"><div class="icon3d"><img src="https://img.icons8.com/3d-fluency/94/croissant.png" alt="Croissant" onerror="this.parentElement.innerHTML='🥐'"></div><h3>Varian Beragam</h3><p>5 varian premium dari classic hingga seasonal.</p></div>
+<div class="card f-card reveal"><div class="icon3d"><img src="https://img.icons8.com/3d-fluency/94/fire-element.png" alt="Fresh" onerror="this.parentElement.innerHTML='🔥'"></div><h3>Selalu Fresh</h3><p>Dipanggang hari yang sama, renyah & lembut.</p></div>
+<div class="card f-card reveal"><div class="icon3d"><img src="https://img.icons8.com/3d-fluency/94/gift.png" alt="Bundling" onerror="this.parentElement.innerHTML='🎁'"></div><h3>Bundling Hemat</h3><p>Paket box sesuai kebutuhan Anda.</p></div>
+<div class="card f-card reveal"><div class="icon3d"><img src="https://img.icons8.com/3d-fluency/94/coins.png" alt="Harga" onerror="this.parentElement.innerHTML='💎'"></div><h3>Harga Transparan</h3><p>Tanpa biaya tersembunyi.</p></div>
 </div>
 </div>
 </section>
 
 <section class="sec" id="menu">
 <div class="c">
-<span class="lbl" style="display:block;text-align:center">Menu Premium</span>
 <h2 class="gold">Varian Croissant</h2>
 <p class="sub">Pilih favoritmu dari 5 varian premium.</p>
 <div class="filters">
@@ -320,29 +312,28 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 
 <section class="sec" id="bundling">
 <div class="c">
-<span class="lbl" style="display:block;text-align:center">Curated Selection</span>
 <h2 class="gold">Pilih Paket Box Favoritmu</h2>
 <p class="sub">Tiga pilihan box sesuai kebutuhan.</p>
 <div class="grid-3">
 <div class="card" style="padding:2.2rem 1.5rem;text-align:center">
 <div style="font-size:2.4rem;margin-bottom:1rem">🥐</div>
-<h3 style="font-family:'Cinzel',serif;font-size:1.05rem;margin-bottom:.4rem">Box Personal</h3>
-<div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);margin-bottom:1rem">Isi 2–3 pcs</div>
+<h3 style="font-family:'Cinzel',serif;font-size:1.05rem">Box Personal</h3>
+<div style="color:var(--muted);font-style:italic;margin:.5rem 0 1rem">Isi 2–3 pcs</div>
 <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:#D4AF37;margin-bottom:1.3rem">Rp 55.000</div>
 <button class="btn btn-o" onclick="addC('Box Personal',55000,'')">Pesan Paket</button>
 </div>
 <div class="card" style="padding:2.2rem 1.5rem;text-align:center;border-color:rgba(212,175,55,.4)">
 <div style="position:absolute;top:1rem;right:1rem;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:#0A0A0A;background:#D4AF37;padding:.3rem .8rem;border-radius:50px;font-weight:600">Best Value</div>
 <div style="font-size:2.4rem;margin-bottom:1rem">🎁</div>
-<h3 style="font-family:'Cinzel',serif;font-size:1.05rem;margin-bottom:.4rem">Box Sharing</h3>
-<div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);margin-bottom:1rem">Isi 6 pcs</div>
+<h3 style="font-family:'Cinzel',serif;font-size:1.05rem">Box Sharing</h3>
+<div style="color:var(--muted);font-style:italic;margin:.5rem 0 1rem">Isi 6 pcs</div>
 <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:#D4AF37;margin-bottom:1.3rem">Rp 110.000</div>
 <button class="btn btn-p" onclick="addC('Box Sharing',110000,'')">Pesan Paket</button>
 </div>
 <div class="card" style="padding:2.2rem 1.5rem;text-align:center">
 <div style="font-size:2.4rem;margin-bottom:1rem">👑</div>
-<h3 style="font-family:'Cinzel',serif;font-size:1.05rem;margin-bottom:.4rem">Box Hampers</h3>
-<div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);margin-bottom:1rem">Isi 12 pcs</div>
+<h3 style="font-family:'Cinzel',serif;font-size:1.05rem">Box Hampers</h3>
+<div style="color:var(--muted);font-style:italic;margin:.5rem 0 1rem">Isi 12 pcs</div>
 <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:#D4AF37;margin-bottom:1.3rem">Rp 210.000</div>
 <button class="btn btn-o" onclick="addC('Box Hampers',210000,'')">Pesan Paket</button>
 </div>
@@ -352,7 +343,6 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 
 <section class="sec">
 <div class="c">
-<span class="lbl" style="display:block;text-align:center">Proses</span>
 <h2 class="gold">Cara Pesan Mudah</h2>
 <p class="sub">Tujuh langkah simpel dari website ke meja makanmu.</p>
 <div class="tl">
@@ -369,7 +359,6 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 
 <section class="sec" id="tentang">
 <div class="c">
-<span class="lbl" style="display:block;text-align:center">Tentang Kami</span>
 <h2 class="gold">Cerita CROISSANTÉ</h2>
 <p class="sub">Dari dapur sederhana di Cimahi untuk kamu.</p>
 <div class="about">
@@ -387,7 +376,6 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 
 <section class="sec">
 <div class="c">
-<span class="lbl" style="display:block;text-align:center">Testimoni</span>
 <h2 class="gold">Kata Mereka</h2>
 <p class="sub">Cerita dari pelanggan setia kami.</p>
 <div class="grid-3">
@@ -400,15 +388,14 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 
 <section class="sec" id="faq">
 <div class="c" style="max-width:800px">
-<span class="lbl" style="display:block;text-align:center">FAQ</span>
 <h2 class="gold">Pertanyaan Umum</h2>
 <p class="sub">Hal-hal yang sering ditanyakan pelanggan.</p>
 <div style="margin-top:2rem">
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Berapa lama waktu pengambilan? <span class="faq-icon">+</span></div><div class="faq-a">Pengambilan H+1 sampai H+7 setelah order. Kami memanggang fresh di hari pengambilan agar kualitas tetap terjaga.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Bisa kirim ke luar Cimahi? <span class="faq-icon">+</span></div><div class="faq-a">Bisa. Untuk area Bandung & sekitarnya, ongkir menyesuaikan jarak. Hubungi kami via WhatsApp untuk info lebih lanjut.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Metode pembayaran apa saja? <span class="faq-icon">+</span></div><div class="faq-a">Transfer bank (BCA, Mandiri, BRI), QRIS, dan COD untuk area Cimahi.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Bisa custom varian atau order banyak? <span class="faq-icon">+</span></div><div class="faq-a">Bisa! Untuk order 10+ box, kami terima custom varian. Hubungi WhatsApp untuk diskusi.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Minimum order berapa box? <span class="faq-icon">+</span></div><div class="faq-a">Minimum 1 box. Untuk free ongkir area Cimahi minimal 3 box.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Berapa lama waktu pengambilan? <span class="faq-icon">+</span></div><div class="faq-a">Pengambilan H+1 sampai H+7 setelah order. Kami memanggang fresh di hari pengambilan.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Bisa kirim ke luar Cimahi? <span class="faq-icon">+</span></div><div class="faq-a">Bisa. Untuk area Bandung & sekitarnya, ongkir menyesuaikan jarak. Hubungi via WhatsApp.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Metode pembayaran? <span class="faq-icon">+</span></div><div class="faq-a">Transfer bank (BCA, Mandiri, BRI), QRIS, dan COD untuk area Cimahi.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Bisa custom varian atau order banyak? <span class="faq-icon">+</span></div><div class="faq-a">Bisa! Untuk order 10+ box, kami terima custom varian. Hubungi WhatsApp.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Minimum order? <span class="faq-icon">+</span></div><div class="faq-a">Minimum 1 box. Free ongkir area Cimahi minimal 3 box.</div></div>
 <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Ada diskon pembelian berulang? <span class="faq-icon">+</span></div><div class="faq-a">Ya! Beli 5 box, gratis 1 box. Berlaku kumulatif per pelanggan.</div></div>
 </div>
 </div>
@@ -416,21 +403,19 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 
 <section class="sec" id="payment">
 <div class="c">
-<span class="lbl" style="display:block;text-align:center">Pembayaran</span>
 <h2 class="gold">Cara Pembayaran</h2>
 <p class="sub">Pilih metode yang paling nyaman untukmu.</p>
 <div class="pay-grid" style="margin-top:2rem">
 <div class="card pay-card reveal"><span class="pay-icon">💳</span><h3>Transfer Bank</h3><p>BCA: 1234567890<br>Mandiri: 0987654321<br>BRI: 1122334455<br><em style="color:#D4AF37;font-size:.7rem">a.n. Hendra Lesmana</em></p></div>
 <div class="card pay-card reveal"><span class="pay-icon">📱</span><h3>QRIS</h3><p>Scan kode QRIS<br>Semua e-wallet<br>Konfirmasi via WhatsApp</p></div>
 <div class="card pay-card reveal"><span class="pay-icon">💰</span><h3>E-Wallet</h3><p>GoPay: 089668211725<br>OVO: 089668211725<br>Dana: 089668211725</p></div>
-<div class="card pay-card reveal"><span class="pay-icon">🏠</span><h3>COD</h3><p>Area Cimahi saja<br>Bayar saat pickup<br>Maks Rp 500.000</p></div>
+<div class="card pay-card reveal"><span class="pay-icon">🏠</span><h3>COD</h3><p>Area Cimahi<br>Bayar saat pickup<br>Maks Rp 500.000</p></div>
 </div>
 </div>
 </section>
 
 <section class="sec" id="kontak">
 <div class="c">
-<span class="lbl" style="display:block;text-align:center">Kontak</span>
 <h2 class="gold">Pesan Sekarang</h2>
 <p class="sub">Isi form di bawah, pesananmu langsung terkirim via WhatsApp.</p>
 <div class="contact-grid">
@@ -466,10 +451,11 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 <p class="ft-script">"Choose your flavor.<br>Choose your box.<br>Enjoy your croissant."</p>
 <div class="ft-sig">Hendra Lesmana</div>
 <div class="ft-sub">Founder & Head Baker</div>
-<div class="ft-info">
-Owner: Hendra Lesmana · CP: 0896 6821 1725<br>
-Cimahi, Jawa Barat
+<div class="ft-news">
+<input type="email" id="nl" placeholder="Email untuk update varian baru">
+<button onclick="subscribe()">Kirim</button>
 </div>
+<div class="ft-info">Owner: Hendra Lesmana · CP: 0896 6821 1725 · Cimahi, Jawa Barat</div>
 <div class="ft-sosmed">
 <a href="https://wa.me/6289668211725" target="_blank" title="WhatsApp">💬</a>
 <a href="https://tiktok.com" target="_blank" title="TikTok">🎵</a>
@@ -527,8 +513,7 @@ var MENU=[
 ];
 function renderMenu(f){
 f=f||'all';
-var g=document.getElementById('mg');
-var html='';
+var g=document.getElementById('mg'),html='';
 MENU.filter(function(m){return f==='all'||m.cat===f;}).forEach(function(m){
 html+='<div class="m-card card"><div class="m-card-img">'+(m.tag?'<span class="m-tag">'+m.tag+'</span>':'')+'<img src="'+m.img+'" alt="'+m.name+'" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80\'"></div><div class="m-body"><div class="m-cat">'+m.cat+'</div><div class="m-name">'+m.name+'</div><div class="m-desc">'+m.desc+'</div><div class="m-foot"><div class="m-price"><small>Mulai dari</small>Rp '+m.price.toLocaleString('id-ID')+'</div><button class="m-add" onclick="addC(\''+m.name+'\','+m.price+',\''+m.img+'\')">+</button></div></div></div>';
 });
@@ -552,13 +537,13 @@ function saveC(){try{localStorage.setItem('croissante_cart',JSON.stringify(cart)
 function rmC(n){cart=cart.filter(function(x){return x.name!==n;});saveC();renderCart();}
 function chQ(n,d){for(var k=0;k<cart.length;k++){if(cart[k].name===n){cart[k].qty+=d;if(cart[k].qty<=0)rmC(n);else{saveC();renderCart();}return;}}}
 function renderCart(){
-var b=document.getElementById('cartBody');
-var t=0;cart.forEach(function(i){t+=i.price*i.qty;});
+var b=document.getElementById('cartBody'),t=0;
+cart.forEach(function(i){t+=i.price*i.qty;});
 document.getElementById('cartTotal').textContent='Rp '+t.toLocaleString('id-ID');
 if(!cart.length){b.innerHTML='<div class="cart-empty">Keranjang masih kosong.<br>Yuk pilih croissant favoritmu 🥐</div>';return;}
 var html='';
 cart.forEach(function(i){
-html+='<div class="cart-item"><div class="cart-info"><div class="cart-nm">'+i.name+'</div><div class="cart-pr">Rp '+i.price.toLocaleString('id-ID')+' x '+i.qty+'</div><div style="display:flex;gap:.5rem;margin-top:.6rem;align-items:center"><button class="mc" style="position:static;width:26px;height:26px;font-size:.9rem" onclick="chQ(\''+i.name+'\',-1)">−</button><span style="min-width:24px;text-align:center">'+i.qty+'</span><button class="mc" style="position:static;width:26px;height:26px;font-size:.9rem" onclick="chQ(\''+i.name+'\',1)">+</button><button class="mc" style="position:static;width:26px;height:26px;font-size:.9rem;margin-left:auto" onclick="rmC(\''+i.name+'\')">✕</button></div></div></div>';
+html+='<div class="cart-item"><div class="cart-info"><div class="cart-nm">'+i.name+'</div><div class="cart-pr">Rp '+i.price.toLocaleString('id-ID')+' x '+i.qty+'</div><div style="display:flex;gap:.5rem;margin-top:.6rem;align-items:center"><button class="mc" style="position:static;width:26px;height:26px" onclick="chQ(\''+i.name+'\',-1)">−</button><span style="min-width:24px;text-align:center">'+i.qty+'</span><button class="mc" style="position:static;width:26px;height:26px" onclick="chQ(\''+i.name+'\',1)">+</button><button class="mc" style="position:static;width:26px;height:26px;margin-left:auto" onclick="rmC(\''+i.name+'\')">✕</button></div></div></div>';
 });
 b.innerHTML=html;
 }
@@ -566,8 +551,7 @@ function openCart(){renderCart();document.getElementById('cartDrawer').classList
 function closeCart(){document.getElementById('cartDrawer').classList.remove('show');}
 function checkout(){
 if(!cart.length){showToast('Keranjang kosong');return;}
-var m='Halo CROISSANTÉ, saya ingin pre-order croissant:%0A%0A';
-var t=0;
+var m='Halo CROISSANTÉ, saya ingin pre-order croissant:%0A%0A',t=0;
 cart.forEach(function(i){m+='• '+i.name+' x'+i.qty+' — Rp '+(i.price*i.qty).toLocaleString('id-ID')+'%0A';t+=i.price*i.qty;});
 m+='%0ATotal: Rp '+t.toLocaleString('id-ID')+'%0A%0ATerima kasih!';
 window.open('https://wa.me/6289668211725?text='+m,'_blank');
@@ -590,27 +574,24 @@ document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('o
 if(!wasOpen)item.classList.add('open');
 }
 function updateTotal(){
-var v=document.getElementById('fv').value;
-var q=parseInt(document.getElementById('fq').value)||0;
-var total=0;
-if(v){var parts=v.split('|');total=parseInt(parts[1])*q;}
+var v=document.getElementById('fv').value,q=parseInt(document.getElementById('fq').value)||0,total=0;
+if(v){var p=v.split('|');total=parseInt(p[1])*q;}
 document.getElementById('totalHarga').textContent='Rp '+total.toLocaleString('id-ID');
 }
 function showToast(msg){
 var t=document.getElementById('toast');
-t.textContent=msg;
-t.classList.add('show');
+t.textContent=msg;t.classList.add('show');
 setTimeout(function(){t.classList.remove('show');},2200);
+}
+function subscribe(){
+var e=document.getElementById('nl').value;
+if(!e||e.indexOf('@')<0){showToast('Email tidak valid');return;}
+showToast('Terima kasih! Kami akan kirim update 🥐');
+document.getElementById('nl').value='';
 }
 function order(e){
 e.preventDefault();
-var n=document.getElementById('fn').value;
-var p=document.getElementById('fp').value;
-var v=document.getElementById('fv').value.split('|')[0];
-var q=document.getElementById('fq').value;
-var d=document.getElementById('fd').value;
-var j=document.getElementById('fj').value;
-var note=document.getElementById('fnote').value||'-';
+var n=document.getElementById('fn').value,p=document.getElementById('fp').value,v=document.getElementById('fv').value.split('|')[0],q=document.getElementById('fq').value,d=document.getElementById('fd').value,j=document.getElementById('fj').value,note=document.getElementById('fnote').value||'-';
 var m='Halo CROISSANTÉ, saya ingin pre-order croissant:%0A%0ANama: '+n+'%0ANo. HP: '+p+'%0AVarian: '+v+'%0AJumlah Box: '+q+'%0ATanggal Ambil: '+d+'%0AJam Ambil: '+j+'%0ACatatan: '+note+'%0A%0ATerima kasih!';
 window.open('https://wa.me/6289668211725?text='+m,'_blank');
 return false;
@@ -618,20 +599,14 @@ return false;
 (function(){
 var d=document.getElementById('fd');
 if(!d)return;
-var t=new Date();
-var mn=new Date(t);mn.setDate(mn.getDate()+1);
-var mx=new Date(t);mx.setDate(mx.getDate()+7);
-d.min=mn.toISOString().split('T')[0];
-d.max=mx.toISOString().split('T')[0];
+var t=new Date(),mn=new Date(t),mx=new Date(t);
+mn.setDate(mn.getDate()+1);mx.setDate(mx.getDate()+7);
+d.min=mn.toISOString().split('T')[0];d.max=mx.toISOString().split('T')[0];
 })();
-window.addEventListener('scroll',function(){
-document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
-});
+window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);});
 if('IntersectionObserver' in window){
 var obs=new IntersectionObserver(function(es){
-es.forEach(function(e){
-if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
-});
+es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
 },{threshold:.1});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 }else{
@@ -641,8 +616,7 @@ document.querySelectorAll('.nav-menu a').forEach(function(a){
 a.onclick=function(){document.getElementById('nm').classList.remove('show');};
 });
 (function(){
-var n=new Date();
-var l=new Date(n.getFullYear(),n.getMonth()+1,0);
+var n=new Date(),l=new Date(n.getFullYear(),n.getMonth()+1,0);
 var d=Math.ceil((l-n)/86400000);
 var el=document.getElementById('gc');
 if(el)el.textContent=d+' hari';
