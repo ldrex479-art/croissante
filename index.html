@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CROISSANTÉ — L'Édition Noire</title>
-<meta name="description" content="Artisan boulangerie. Edisi hitam eksklusif.">
+<title>CROISSANTÉ — Artisan Boulangerie</title>
+<meta name="description" content="Artisan boulangerie premium di Cimahi. Croissant handmade, dipanggang segar setiap hari.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
-    --black:#0B0B0B;
-    --black-soft:#141414;
-    --black-card:#1A1A1A;
-    --copper:#C5A059;
-    --copper-soft:#9e7e3f;
-    --cream:#F4F1EA;
-    --muted:#7A7A7A;
-    --line:rgba(197,160,89,0.2);
+    --bg:#0E0E0C;
+    --bg-2:#161613;
+    --bg-card:#1C1C18;
+    --gold:#D4A84B;
+    --gold-soft:#8a6f30;
+    --cream:#F5F0E4;
+    --muted:#8a8577;
+    --line:rgba(212,168,75,0.15);
   }
   html{scroll-behavior:smooth;}
   body{
-    background:var(--black);
+    background:var(--bg);
     color:var(--cream);
     font-family:'Inter',sans-serif;
     font-weight:300;
@@ -33,467 +33,628 @@
   a{color:inherit;text-decoration:none;}
   img{max-width:100%;display:block;}
 
-  /* ===== PRELOADER ===== */
+  /* ===== LOADER ===== */
   #loader{
-    position:fixed;inset:0;background:var(--black);z-index:9999;
+    position:fixed;inset:0;background:var(--bg);z-index:9999;
     display:flex;align-items:center;justify-content:center;flex-direction:column;
-    transition:opacity 1.2s ease, visibility 1.2s ease;
+    transition:opacity 1s ease,visibility 1s ease;
   }
   #loader.hide{opacity:0;visibility:hidden;}
   #loader .logo{
-    font-family:'Playfair Display',serif;font-size:32px;letter-spacing:14px;
-    color:var(--copper);padding-left:14px;opacity:0;
-    animation:fadeIn 1.8s ease forwards;
+    font-family:'Fraunces',serif;font-size:30px;letter-spacing:14px;
+    color:var(--gold);padding-left:14px;
+    animation:pulse 1.8s ease infinite;
   }
-  #loader .line{
-    width:0;height:1px;background:var(--copper);margin-top:25px;
-    animation:lineGrow 2s 0.5s ease forwards;
-  }
-  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-  @keyframes lineGrow{from{width:0;}to{width:120px;}}
+  @keyframes pulse{0%,100%{opacity:0.5;}50%{opacity:1;}}
 
   /* ===== NAV ===== */
   nav{
     position:fixed;top:0;left:0;width:100%;z-index:900;
-    padding:35px 60px;display:flex;justify-content:space-between;align-items:center;
-    transition:background .6s ease,padding .6s ease,backdrop-filter .6s ease;
-  }
-  nav.scrolled{
-    background:rgba(11,11,11,0.85);backdrop-filter:blur(20px);
-    padding:22px 60px;border-bottom:1px solid var(--line);
-  }
-  nav .logo{
-    font-family:'Playfair Display',serif;font-size:18px;letter-spacing:10px;
-    color:var(--copper);padding-left:10px;font-weight:400;
-  }
-  nav ul{display:flex;gap:50px;list-style:none;}
-  nav ul a{
-    font-size:10px;letter-spacing:4px;text-transform:uppercase;
-    color:var(--cream);opacity:.7;transition:opacity .4s,color .4s;
-    position:relative;font-weight:400;
-  }
-  nav ul a:hover{opacity:1;color:var(--copper);}
-  nav .nav-cta{
-    font-size:10px;letter-spacing:4px;text-transform:uppercase;
-    color:var(--copper);border:1px solid var(--copper);padding:12px 25px;
+    padding:28px 60px;display:flex;justify-content:space-between;align-items:center;
     transition:all .5s ease;
   }
-  nav .nav-cta:hover{background:var(--copper);color:var(--black);}
-  .menu-toggle{display:none;flex-direction:column;gap:6px;background:none;border:none;cursor:pointer;}
-  .menu-toggle span{width:26px;height:1px;background:var(--cream);}
+  nav.scrolled{
+    background:rgba(14,14,12,0.85);backdrop-filter:blur(20px);
+    padding:18px 60px;border-bottom:1px solid var(--line);
+  }
+  nav .logo{
+    font-family:'Fraunces',serif;font-size:19px;letter-spacing:8px;
+    color:var(--gold);font-weight:500;padding-left:8px;
+  }
+  nav ul{display:flex;gap:45px;list-style:none;}
+  nav ul a{
+    font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--cream);opacity:.7;transition:all .3s;font-weight:400;
+  }
+  nav ul a:hover{opacity:1;color:var(--gold);}
+  nav .nav-cart{
+    display:flex;align-items:center;gap:10px;
+    font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--gold);border:1px solid var(--gold);
+    padding:10px 22px;transition:all .4s;
+  }
+  nav .nav-cart:hover{background:var(--gold);color:var(--bg);}
   @media (max-width:900px){
-    nav, nav.scrolled{padding:20px 25px;}
+    nav, nav.scrolled{padding:18px 25px;}
     nav ul{display:none;}
-    .menu-toggle{display:flex;}
   }
 
   /* ===== HERO ===== */
   .hero{
-    min-height:100vh;padding:180px 60px 100px;
-    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+    min-height:100vh;padding:140px 60px 60px;
+    display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;
     position:relative;overflow:hidden;
   }
   .hero::before{
-    content:'';position:absolute;top:-30%;right:-20%;width:80%;height:160%;
-    background:radial-gradient(circle, rgba(197,160,89,0.06), transparent 60%);
+    content:'';position:absolute;top:50%;left:30%;
+    width:600px;height:600px;transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(212,168,75,0.08), transparent 70%);
     pointer-events:none;
   }
   .hero-left{position:relative;z-index:2;}
-  .hero .eyebrow{
-    font-size:10px;letter-spacing:6px;text-transform:uppercase;
-    color:var(--copper);margin-bottom:30px;display:flex;align-items:center;gap:15px;
+  .hero .badge{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:10px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--gold);border:1px solid var(--line);
+    padding:8px 18px;border-radius:50px;margin-bottom:35px;
+    background:rgba(212,168,75,0.04);
   }
-  .hero .eyebrow::before{content:'';width:40px;height:1px;background:var(--copper);}
+  .hero .badge::before{
+    content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;
+    animation:pulse 1.5s ease infinite;
+  }
   .hero h1{
-    font-family:'Playfair Display',serif;font-weight:400;
-    font-size:clamp(48px,7vw,110px);line-height:0.95;letter-spacing:-1px;
-    margin-bottom:35px;
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(52px,7vw,110px);line-height:0.95;
+    letter-spacing:-2px;margin-bottom:30px;
   }
   .hero h1 em{
-    font-family:'Cormorant Garamond',serif;font-style:italic;
-    color:var(--copper);font-weight:300;
+    font-style:italic;color:var(--gold);font-weight:300;
+    font-family:'Fraunces',serif;
   }
   .hero p{
-    font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;
-    color:#b0b0b0;max-width:450px;margin-bottom:50px;line-height:1.7;
+    font-size:16px;color:#b5b0a2;max-width:460px;
+    margin-bottom:45px;line-height:1.75;
   }
-  .hero .btn{
-    display:inline-flex;align-items:center;gap:20px;
-    font-size:10px;letter-spacing:5px;text-transform:uppercase;
-    color:var(--cream);padding:20px 0;border-bottom:1px solid var(--line);
-    transition:all .5s ease;position:relative;
+  .hero .actions{display:flex;gap:18px;flex-wrap:wrap;}
+  .hero .btn-primary{
+    display:inline-flex;align-items:center;gap:12px;
+    background:var(--gold);color:var(--bg);
+    padding:18px 32px;font-size:11px;letter-spacing:3px;
+    text-transform:uppercase;font-weight:500;
+    transition:all .3s ease;
   }
-  .hero .btn::after{
-    content:'→';font-size:16px;color:var(--copper);
-    transition:transform .5s ease;
+  .hero .btn-primary:hover{background:var(--cream);transform:translateY(-2px);}
+  .hero .btn-secondary{
+    display:inline-flex;align-items:center;gap:12px;
+    color:var(--cream);padding:18px 32px;
+    border:1px solid var(--line);
+    font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    transition:all .3s ease;
   }
-  .hero .btn:hover{border-color:var(--copper);padding-left:15px;}
-  .hero .btn:hover::after{transform:translateX(10px);}
+  .hero .btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
 
   .hero-right{
-    position:relative;aspect-ratio:3/4;overflow:hidden;
+    position:relative;aspect-ratio:4/5;
+    display:flex;align-items:center;justify-content:center;
   }
-  .hero-right img{
+  .hero-img-main{
+    position:absolute;top:0;right:0;
+    width:85%;height:90%;overflow:hidden;
+    border-radius:200px 200px 20px 20px;
+  }
+  .hero-img-main img{
     width:100%;height:100%;object-fit:cover;
-    filter:grayscale(40%) brightness(0.85) contrast(1.1);
-    transition:transform 2s ease,filter 2s ease;
+    filter:brightness(0.85) contrast(1.05);
+    transition:transform 1.5s ease;
   }
-  .hero-right:hover img{transform:scale(1.06);filter:grayscale(0%) brightness(1);}
-  .hero-right::after{
-    content:'';position:absolute;inset:20px;border:1px solid var(--line);
-    pointer-events:none;z-index:2;
+  .hero-img-main:hover img{transform:scale(1.05);}
+  .hero-img-small{
+    position:absolute;bottom:0;left:0;
+    width:45%;aspect-ratio:1/1;overflow:hidden;
+    border-radius:20px;border:6px solid var(--bg);
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
   }
-  .hero-right .caption{
-    position:absolute;bottom:40px;left:40px;z-index:3;
-    font-family:'Cormorant Garamond',serif;font-style:italic;
-    font-size:14px;color:var(--cream);letter-spacing:1px;
+  .hero-img-small img{
+    width:100%;height:100%;object-fit:cover;
+    filter:brightness(0.9);
   }
+  .hero-tag{
+    position:absolute;top:15%;left:-10px;
+    background:var(--bg-card);padding:16px 22px;
+    border-radius:14px;border:1px solid var(--line);
+    box-shadow:0 20px 60px rgba(0,0,0,0.4);
+    z-index:3;
+  }
+  .hero-tag .stars{color:var(--gold);font-size:13px;letter-spacing:2px;}
+  .hero-tag .txt{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:1px;}
   @media (max-width:900px){
-    .hero{grid-template-columns:1fr;padding:140px 25px 80px;gap:50px;min-height:auto;}
-    .hero h1{font-size:clamp(44px,12vw,80px);}
+    .hero{grid-template-columns:1fr;padding:120px 25px 60px;gap:80px;min-height:auto;}
+    .hero-img-main{position:relative;width:100%;height:auto;aspect-ratio:4/5;border-radius:20px;}
+    .hero-img-small,.hero-tag{display:none;}
   }
 
   /* ===== MARQUEE ===== */
   .marquee{
-    padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    overflow:hidden;white-space:nowrap;background:var(--black-soft);
+    padding:35px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    overflow:hidden;white-space:nowrap;background:var(--bg-2);
   }
-  .marquee-track{
-    display:inline-block;animation:scroll 40s linear infinite;
-  }
+  .marquee-track{display:inline-block;animation:scroll 35s linear infinite;}
   .marquee span{
-    font-family:'Playfair Display',serif;font-size:60px;font-weight:400;
-    color:transparent;-webkit-text-stroke:1px rgba(197,160,89,0.4);
-    margin:0 40px;letter-spacing:4px;
+    font-family:'Fraunces',serif;font-size:44px;font-weight:300;
+    color:transparent;-webkit-text-stroke:1px rgba(212,168,75,0.5);
+    margin:0 35px;letter-spacing:2px;font-style:italic;
   }
-  .marquee span.fill{color:var(--copper);-webkit-text-stroke:0;}
+  .marquee span.fill{color:var(--gold);-webkit-text-stroke:0;}
   @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
   /* ===== SECTION COMMON ===== */
-  section{padding:140px 60px;position:relative;}
+  section{padding:130px 60px;position:relative;}
   .container{max-width:1400px;margin:0 auto;}
+  .section-head{text-align:center;margin-bottom:80px;}
   .section-label{
-    font-size:10px;letter-spacing:6px;text-transform:uppercase;
-    color:var(--copper);margin-bottom:25px;display:flex;align-items:center;gap:15px;
+    display:inline-flex;align-items:center;gap:12px;
+    font-size:10px;letter-spacing:5px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:22px;
   }
-  .section-label::before{content:'';width:40px;height:1px;background:var(--copper);}
+  .section-label::before,.section-label::after{
+    content:'';width:30px;height:1px;background:var(--gold-soft);
+  }
   h2{
-    font-family:'Playfair Display',serif;font-weight:400;
-    font-size:clamp(34px,4.5vw,68px);line-height:1.1;letter-spacing:-1px;
-    margin-bottom:30px;
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(36px,5vw,68px);line-height:1.05;
+    letter-spacing:-1.5px;
   }
-  h2 em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--copper);}
-  .reveal{opacity:0;transform:translateY(50px);transition:opacity 1.4s ease,transform 1.4s ease;}
+  h2 em{font-style:italic;color:var(--gold);}
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity 1.2s ease,transform 1.2s ease;}
   .reveal.in{opacity:1;transform:translateY(0);}
   @media (max-width:900px){section{padding:90px 25px;}}
 
-  /* ===== EDITORIAL 01 ===== */
-  .editorial{background:var(--black-soft);}
-  .editorial-grid{
-    display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:50px;align-items:center;
+  /* ===== FEATURES ===== */
+  .features{background:var(--bg-2);}
+  .features-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:30px;
   }
-  .editorial-img{
-    aspect-ratio:3/4;overflow:hidden;position:relative;
+  .feature{
+    text-align:center;padding:40px 25px;
+    border:1px solid var(--line);border-radius:16px;
+    transition:all .5s ease;background:rgba(255,255,255,0.01);
   }
-  .editorial-img img{
+  .feature:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+    background:rgba(212,168,75,0.03);
+  }
+  .feature .icon{
+    width:56px;height:56px;margin:0 auto 22px;
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--gold);border-radius:50%;
+    font-size:22px;
+  }
+  .feature h4{
+    font-family:'Fraunces',serif;font-size:18px;
+    font-weight:400;margin-bottom:12px;
+  }
+  .feature p{font-size:13px;color:var(--muted);line-height:1.7;}
+  @media (max-width:900px){.features-grid{grid-template-columns:repeat(2,1fr);gap:20px;}}
+  @media (max-width:500px){.features-grid{grid-template-columns:1fr;}}
+
+  /* ===== MENU / COLLECTION ===== */
+  .menu-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:30px;
+  }
+  .menu-card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+    transition:all .5s ease;
+    position:relative;
+  }
+  .menu-card:hover{
+    transform:translateY(-10px);
+    border-color:var(--gold);
+    box-shadow:0 30px 60px rgba(0,0,0,0.5);
+  }
+  .menu-img{
+    aspect-ratio:4/3;overflow:hidden;position:relative;
+  }
+  .menu-img img{
     width:100%;height:100%;object-fit:cover;
-    filter:grayscale(60%) brightness(0.8);
-    transition:filter 1.5s ease,transform 1.5s ease;
+    filter:brightness(0.85);
+    transition:transform 1.2s ease,filter 1.2s ease;
   }
-  .editorial-img:hover img{filter:grayscale(0%) brightness(0.95);transform:scale(1.05);}
-  .editorial-text h2{font-size:clamp(30px,3.5vw,52px);}
-  .editorial-text p{color:#a8a8a8;font-size:15px;margin-bottom:25px;line-height:1.8;}
-  .editorial-text .num{
-    font-family:'Playfair Display',serif;font-size:80px;
-    color:var(--copper);opacity:0.15;line-height:0.8;margin-bottom:20px;
+  .menu-card:hover .menu-img img{
+    transform:scale(1.08);
+    filter:brightness(1);
+  }
+  .menu-badge{
+    position:absolute;top:15px;left:15px;
+    background:var(--gold);color:var(--bg);
+    padding:6px 14px;border-radius:50px;
+    font-size:10px;font-weight:500;
+    letter-spacing:2px;text-transform:uppercase;
+  }
+  .menu-body{padding:28px;}
+  .menu-body h3{
+    font-family:'Fraunces',serif;font-size:22px;
+    font-weight:400;margin-bottom:10px;letter-spacing:-0.3px;
+  }
+  .menu-body p{
+    font-size:13px;color:var(--muted);line-height:1.7;
+    margin-bottom:22px;min-height:44px;
+  }
+  .menu-foot{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:20px;border-top:1px solid var(--line);
+  }
+  .menu-foot .price{
+    font-family:'Fraunces',serif;font-size:22px;
+    color:var(--gold);font-weight:400;
+  }
+  .menu-foot .btn-order{
+    display:flex;align-items:center;justify-content:center;
+    width:40px;height:40px;border-radius:50%;
+    background:rgba(212,168,75,0.1);
+    border:1px solid var(--gold);color:var(--gold);
+    font-size:18px;transition:all .3s ease;
+  }
+  .menu-card:hover .btn-order{background:var(--gold);color:var(--bg);}
+  @media (max-width:900px){.menu-grid{grid-template-columns:1fr;gap:25px;max-width:420px;margin:0 auto;}}
+
+  /* ===== ABOUT ===== */
+  .about{background:var(--bg-2);}
+  .about-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+  }
+  .about-img{
+    position:relative;aspect-ratio:4/5;
+    border-radius:20px;overflow:hidden;
+  }
+  .about-img img{
+    width:100%;height:100%;object-fit:cover;
+    filter:brightness(0.85) contrast(1.05);
+    transition:transform 1.5s ease;
+  }
+  .about-img:hover img{transform:scale(1.05);}
+  .about-img::after{
+    content:'';position:absolute;inset:20px;
+    border:1px solid var(--line);border-radius:8px;pointer-events:none;
+  }
+  .about-text .section-label{text-align:left;}
+  .about-text .section-label::before{display:none;}
+  .about-text h2{margin-bottom:28px;}
+  .about-text p{
+    font-size:15px;color:#b5b0a2;line-height:1.85;
+    margin-bottom:22px;
+  }
+  .about-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:25px;margin-top:45px;padding-top:45px;
+    border-top:1px solid var(--line);
+  }
+  .about-stats .stat h4{
+    font-family:'Fraunces',serif;font-size:38px;
+    color:var(--gold);font-weight:400;letter-spacing:-1px;
+  }
+  .about-stats .stat p{
+    font-size:11px;color:var(--muted);
+    letter-spacing:2px;text-transform:uppercase;
+    margin-top:5px;
   }
   @media (max-width:900px){
-    .editorial-grid{grid-template-columns:1fr;gap:40px;}
-    .editorial-img{aspect-ratio:4/3;}
+    .about-grid{grid-template-columns:1fr;gap:50px;}
+    .about-img{aspect-ratio:1/1;}
   }
 
-  /* ===== COLLECTION ===== */
-  .collection-head{text-align:center;margin-bottom:90px;}
-  .collection-head .section-label{justify-content:center;}
-  .collection-head .section-label::before{display:none;}
-  .collection-grid{
-    display:grid;grid-template-columns:repeat(2,1fr);gap:60px;max-width:1100px;margin:0 auto;
-  }
-  .card{position:relative;}
-  .card-img{
-    aspect-ratio:4/5;overflow:hidden;position:relative;background:#181818;
-  }
-  .card-img img{
-    width:100%;height:100%;object-fit:cover;
-    filter:grayscale(50%) brightness(0.85);
-    transition:transform 1.6s ease,filter 1.6s ease;
-  }
-  .card:hover .card-img img{transform:scale(1.07);filter:grayscale(0%) brightness(1);}
-  .card-info{
-    display:flex;justify-content:space-between;align-items:flex-start;
-    padding-top:25px;border-top:1px solid var(--line);margin-top:25px;
-  }
-  .card-info h3{
-    font-family:'Playfair Display',serif;font-size:24px;font-weight:400;
-    letter-spacing:0.5px;margin-bottom:8px;
-  }
-  .card-info .sub{
-    font-family:'Cormorant Garamond',serif;font-style:italic;
-    color:var(--muted);font-size:14px;
-  }
-  .card-info .price{
-    font-size:11px;letter-spacing:3px;color:var(--copper);
-    text-transform:uppercase;white-space:nowrap;
-  }
-  @media (max-width:900px){
-    .collection-grid{grid-template-columns:1fr;gap:60px;}
-  }
-
-  /* ===== QUOTE ===== */
-  .quote{
-    text-align:center;padding:200px 60px;
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  /* ===== TESTIMONIAL ===== */
+  .testimonial{
+    text-align:center;padding:150px 60px;
     position:relative;overflow:hidden;
   }
-  .quote::before{
-    content:'“';position:absolute;top:50px;left:50%;transform:translateX(-50%);
-    font-family:'Playfair Display',serif;font-size:400px;color:var(--copper);
-    opacity:0.05;line-height:1;pointer-events:none;
+  .testimonial::before{
+    content:'"';position:absolute;top:80px;left:50%;
+    transform:translateX(-50%);
+    font-family:'Fraunces',serif;font-size:400px;
+    color:var(--gold);opacity:0.04;line-height:1;
+    pointer-events:none;font-style:italic;
   }
-  .quote blockquote{
-    font-family:'Playfair Display',serif;font-weight:400;
-    font-size:clamp(24px,3.2vw,44px);line-height:1.35;
-    max-width:950px;margin:0 auto;position:relative;z-index:1;
+  .testimonial blockquote{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-style:italic;
+    font-size:clamp(24px,3vw,40px);
+    line-height:1.4;max-width:900px;margin:0 auto;
+    position:relative;z-index:1;
   }
-  .quote blockquote em{font-style:italic;color:var(--copper);font-family:'Cormorant Garamond',serif;}
-  .quote cite{
-    display:block;margin-top:45px;font-family:'Inter',sans-serif;
-    font-style:normal;font-size:10px;letter-spacing:6px;
-    text-transform:uppercase;color:var(--copper);
+  .testimonial blockquote em{
+    color:var(--gold);font-style:italic;
   }
+  .testimonial cite{
+    display:block;margin-top:40px;
+    font-family:'Inter',sans-serif;font-style:normal;
+    font-size:11px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--muted);
+  }
+  .testimonial cite strong{color:var(--gold);font-weight:500;}
 
-  /* ===== VISIT ===== */
-  .visit-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:100px;align-items:center;}
-  .visit-img{aspect-ratio:4/3;overflow:hidden;position:relative;}
-  .visit-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(40%) brightness(0.8);transition:filter 1.5s ease;}
-  .visit-img:hover img{filter:grayscale(0%) brightness(0.95);}
-  .visit-img::after{content:'';position:absolute;inset:20px;border:1px solid var(--line);}
-  .visit-info .item{margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--line);}
-  .visit-info .item:last-child{border-bottom:none;}
-  .visit-info .item h4{
-    font-size:10px;letter-spacing:5px;text-transform:uppercase;
-    color:var(--copper);margin-bottom:15px;font-weight:400;
+  /* ===== CTA ===== */
+  .cta-section{
+    padding:0 60px;
   }
-  .visit-info .item p{color:#c0c0c0;font-size:15px;line-height:1.8;}
-  @media (max-width:900px){.visit-grid{grid-template-columns:1fr;gap:60px;}}
+  .cta-box{
+    max-width:1400px;margin:0 auto;
+    background:linear-gradient(135deg,#1a1a15 0%,#0e0e0c 100%);
+    border:1px solid var(--line);
+    border-radius:30px;
+    padding:100px 60px;
+    text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .cta-box::before{
+    content:'';position:absolute;top:-50%;right:-10%;
+    width:500px;height:500px;border-radius:50%;
+    background:radial-gradient(circle, rgba(212,168,75,0.1), transparent 70%);
+  }
+  .cta-box h2{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(34px,5vw,64px);line-height:1.1;
+    margin-bottom:25px;position:relative;z-index:1;
+    letter-spacing:-1.5px;
+  }
+  .cta-box h2 em{font-style:italic;color:var(--gold);}
+  .cta-box p{
+    font-size:16px;color:#b5b0a2;max-width:520px;
+    margin:0 auto 40px;position:relative;z-index:1;
+  }
+  .cta-box .cta-buttons{
+    display:flex;gap:15px;justify-content:center;
+    flex-wrap:wrap;position:relative;z-index:1;
+  }
+  @media (max-width:900px){
+    .cta-section{padding:0 25px;}
+    .cta-box{padding:70px 30px;border-radius:20px;}
+  }
 
   /* ===== FOOTER ===== */
-  footer{background:#050505;padding:90px 60px 40px;border-top:1px solid var(--line);}
+  footer{
+    background:#080806;padding:80px 60px 35px;
+    border-top:1px solid var(--line);margin-top:100px;
+  }
   .foot-top{
     max-width:1400px;margin:0 auto;
-    display:grid;grid-template-columns:2fr 1fr 1fr;gap:80px;
-    padding-bottom:70px;border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:60px;padding-bottom:60px;
+    border-bottom:1px solid var(--line);
   }
   .foot-brand .logo{
-    font-family:'Playfair Display',serif;font-size:22px;letter-spacing:12px;
-    color:var(--copper);margin-bottom:25px;padding-left:12px;
+    font-family:'Fraunces',serif;font-size:22px;
+    letter-spacing:10px;color:var(--gold);
+    margin-bottom:22px;padding-left:10px;
   }
-  .foot-brand p{color:var(--muted);font-size:13px;max-width:350px;line-height:1.8;}
+  .foot-brand p{color:var(--muted);font-size:13px;max-width:320px;line-height:1.8;}
   .foot-col h5{
-    font-size:10px;letter-spacing:5px;text-transform:uppercase;
-    color:var(--copper);margin-bottom:25px;font-weight:400;
+    font-size:10px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:22px;font-weight:400;
   }
   .foot-col ul{list-style:none;}
-  .foot-col ul li{margin-bottom:14px;}
+  .foot-col ul li{margin-bottom:12px;}
   .foot-col ul a{color:var(--muted);font-size:13px;transition:color .3s;}
-  .foot-col ul a:hover{color:var(--copper);}
+  .foot-col ul a:hover{color:var(--gold);}
   .foot-bottom{
-    max-width:1400px;margin:0 auto;padding-top:35px;
-    display:flex;justify-content:space-between;font-size:10px;
-    letter-spacing:3px;color:var(--muted);text-transform:uppercase;
+    max-width:1400px;margin:0 auto;padding-top:30px;
+    display:flex;justify-content:space-between;
+    font-size:10px;letter-spacing:2px;
+    color:var(--muted);text-transform:uppercase;
   }
   @media (max-width:900px){
     footer{padding:60px 25px 30px;}
-    .foot-top{grid-template-columns:1fr;gap:40px;}
+    .foot-top{grid-template-columns:1fr 1fr;gap:40px;}
+    .foot-brand{grid-column:1/-1;}
     .foot-bottom{flex-direction:column;gap:15px;text-align:center;}
   }
-
-  /* ===== CUSTOM CURSOR ===== */
-  .cursor{position:fixed;width:8px;height:8px;background:var(--copper);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;}
-  .cursor-ring{position:fixed;width:40px;height:40px;border:1px solid var(--copper);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .4s ease,height .4s ease,opacity .4s ease;opacity:0.4;}
-  .cursor-ring.hover{width:70px;height:70px;background:rgba(197,160,89,0.08);opacity:0.8;}
-  @media (max-width:768px){.cursor,.cursor-ring{display:none;}}
 </style>
 </head>
 <body>
 
 <div id="loader">
   <div class="logo">CROISSANTÉ</div>
-  <div class="line"></div>
 </div>
-
-<div class="cursor"></div>
-<div class="cursor-ring"></div>
 
 <nav id="nav">
   <a href="#" class="logo">CROISSANTÉ</a>
   <ul>
-    <li><a href="#story">Maison</a></li>
-    <li><a href="#collection">Collection</a></li>
-    <li><a href="#visit">Visite</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#about">Cerita</a></li>
+    <li><a href="#contact">Kontak</a></li>
   </ul>
-  <a href="#visit" class="nav-cta">Réserver</a>
-  <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  <a href="#menu" class="nav-cart">🛒 Pesan</a>
 </nav>
 
 <section class="hero">
-  <div class="hero-left reveal">
-    <div class="eyebrow">L'Édition Noire · MMXXIV</div>
-    <h1>L'art de<br>la <em>patience.</em></h1>
-    <p>Di balik setiap lapisan keemasan, tersimpan cerita tentang waktu, ketelitian, dan cinta pada detail yang tak tergesa-gesa.</p>
-    <a href="#collection" class="btn">Découvrir la Collection</a>
+  <div class="hero-left">
+    <div class="badge">Fresh Daily · Cimahi</div>
+    <h1>Nikmati<br>seni <em>croissant</em><br>sejati.</h1>
+    <p>Setiap gigitan adalah perjalanan. Dibuat dengan mentega Prancis premium, dilipat dengan tangan, dan dipanggang setiap pagi di dapur kami.</p>
+    <div class="actions">
+      <a href="#menu" class="btn-primary">Lihat Menu →</a>
+      <a href="#about" class="btn-secondary">Cerita Kami</a>
+    </div>
   </div>
-  <div class="hero-right reveal">
-    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=900&q=80" alt="Croissant signature" loading="lazy">
-    <div class="caption">— Le Classique, dipanggang setiap pagi</div>
+  <div class="hero-right">
+    <div class="hero-tag">
+      <div class="stars">★★★★★</div>
+      <div class="txt">2.500+ pelanggan</div>
+    </div>
+    <div class="hero-img-main">
+      <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=900&q=80" alt="Croissant">
+    </div>
+    <div class="hero-img-small">
+      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80" alt="Pain au chocolat">
+    </div>
   </div>
 </section>
 
 <div class="marquee">
   <div class="marquee-track">
-    <span>PATIENCE</span><span class="fill">·</span><span>PRÉCISION</span><span class="fill">·</span><span>PASSION</span><span class="fill">·</span>
-    <span>PATIENCE</span><span class="fill">·</span><span>PRÉCISION</span><span class="fill">·</span><span>PASSION</span><span class="fill">·</span>
+    <span>Handcrafted</span><span class="fill">·</span>
+    <span>Premium</span><span class="fill">·</span>
+    <span>Fresh Daily</span><span class="fill">·</span>
+    <span>Handcrafted</span><span class="fill">·</span>
+    <span>Premium</span><span class="fill">·</span>
+    <span>Fresh Daily</span><span class="fill">·</span>
   </div>
 </div>
 
-<section class="editorial" id="story">
+<section class="features">
   <div class="container">
-    <div class="editorial-grid">
-      <div class="editorial-img reveal">
-        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80" alt="Proses" loading="lazy">
+    <div class="features-grid">
+      <div class="feature reveal">
+        <div class="icon">🥐</div>
+        <h4>Handmade</h4>
+        <p>Dilipat tangan setiap hari dengan teknik tradisional Prancis.</p>
       </div>
-      <div class="editorial-text reveal">
-        <div class="num">01</div>
-        <div class="section-label">La Maison</div>
-        <h2>Di mana waktu<br>berhenti <em>sejenak.</em></h2>
-        <p>Kami percaya bahwa croissant terbaik tidak lahir dari kecepatan, melainkan dari kesabaran. Setiap pagi pukul 03.00, dapur kami mulai bernyanyi—mentega Prancis dilelehkan, adonan dilipat, dan waktu mulai berjalan.</p>
-        <p>Dua puluh tujuh lapisan. Fermentasi 24 jam. Dipanggang dua kali. Bukan resep rahasia, tapi dedikasi yang jujur.</p>
+      <div class="feature reveal">
+        <div class="icon">🌾</div>
+        <h4>Premium</h4>
+        <p>Mentega Prancis & tepung pilihan dari petani lokal.</p>
       </div>
-      <div class="editorial-img reveal">
-        <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=800&q=80" alt="Detail" loading="lazy">
+      <div class="feature reveal">
+        <div class="icon">⏱️</div>
+        <h4>Fresh Daily</h4>
+        <p>Dipanggang setiap pagi, tidak pernah disimpan semalam.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="icon">🚚</div>
+        <h4>Fast Delivery</h4>
+        <p>Pesan online, kami antar ke depan pintu rumahmu.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="collection" id="collection">
+<section class="menu" id="menu">
   <div class="container">
-    <div class="collection-head reveal">
-      <div class="section-label">Signature Collection</div>
-      <h2>Empat <em>Mahakarya.</em></h2>
+    <div class="section-head reveal">
+      <div class="section-label">Menu Kami</div>
+      <h2>Pilihan <em>signature.</em></h2>
     </div>
-    <div class="collection-grid">
-      <div class="card reveal">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80" alt="Le Classique" loading="lazy">
+    <div class="menu-grid">
+      <div class="menu-card reveal">
+        <div class="menu-img">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700&q=80" alt="Le Classique">
+          <div class="menu-badge">Best Seller</div>
         </div>
-        <div class="card-info">
-          <div>
-            <h3>Le Classique</h3>
-            <div class="sub">Mentega Prancis murni</div>
+        <div class="menu-body">
+          <h3>Le Classique</h3>
+          <p>Croissant mentega murni, 27 lapisan, kerak keemasan sempurna.</p>
+          <div class="menu-foot">
+            <div class="price">Rp 28rb</div>
+            <div class="btn-order">+</div>
           </div>
-          <div class="price">Rp 28.000</div>
         </div>
       </div>
-      <div class="card reveal">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80" alt="Pain au Chocolat" loading="lazy">
+      <div class="menu-card reveal">
+        <div class="menu-img">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=700&q=80" alt="Pain au Chocolat">
         </div>
-        <div class="card-info">
-          <div>
-            <h3>Pain au Chocolat</h3>
-            <div class="sub">Cokelat single-origin 70%</div>
+        <div class="menu-body">
+          <h3>Pain au Chocolat</h3>
+          <p>Cokelat single-origin 70% dari Jawa, dibalut adonan butter.</p>
+          <div class="menu-foot">
+            <div class="price">Rp 32rb</div>
+            <div class="btn-order">+</div>
           </div>
-          <div class="price">Rp 32.000</div>
         </div>
       </div>
-      <div class="card reveal">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=800&q=80" alt="Amande Royale" loading="lazy">
+      <div class="menu-card reveal">
+        <div class="menu-img">
+          <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=700&q=80" alt="Amande Royale">
         </div>
-        <div class="card-info">
-          <div>
-            <h3>Amande Royale</h3>
-            <div class="sub">Krim almond & gula halus</div>
+        <div class="menu-body">
+          <h3>Amande Royale</h3>
+          <p>Krim almond panggang, gula halus, dan taburan kacang premium.</p>
+          <div class="menu-foot">
+            <div class="price">Rp 35rb</div>
+            <div class="btn-order">+</div>
           </div>
-          <div class="price">Rp 35.000</div>
-        </div>
-      </div>
-      <div class="card reveal">
-        <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80" alt="Édition Limitée" loading="lazy">
-        </div>
-        <div class="card-info">
-          <div>
-            <h3>Édition Limitée</h3>
-            <div class="sub">Rasa berganti setiap bulan</div>
-          </div>
-          <div class="price">Rp 42.000</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="quote">
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img reveal">
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80" alt="Proses pembuatan">
+      </div>
+      <div class="about-text reveal">
+        <div class="section-label">Cerita Kami</div>
+        <h2>Dibuat dengan <em>kesabaran.</em></h2>
+        <p>Dimulai dari dapur kecil di Cimahi, kami percaya croissant bukan sekadar roti—ia adalah karya seni yang lahir dari kesabaran, mentega premium, dan teknik lipat yang diwariskan.</p>
+        <p>Setiap croissant melewati fermentasi 24 jam, dilipat 27 kali, dan dipanggang dua kali sehari. Kami tidak terburu-buru. Karena kualitas sejati butuh waktu.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <h4>27</h4>
+            <p>Lapisan</p>
+          </div>
+          <div class="stat">
+            <h4>24h</h4>
+            <p>Fermentasi</p>
+          </div>
+          <div class="stat">
+            <h4>2.5k+</h4>
+            <p>Pelanggan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial">
   <blockquote>
-    "Le luxe véritable, c'est le temps<br>que l'on <em>offre</em> à chaque détail."
-    <cite>— La philosophie de la Maison</cite>
+    "Croissant terbaik yang pernah saya coba di Bandung. Renyah di luar, <em>lembut</em> di dalam. Bintang lima!"
   </blockquote>
+  <cite><strong>Sari W.</strong> · Pelanggan Setia</cite>
 </section>
 
-<section class="visit" id="visit">
-  <div class="container">
-    <div class="visit-grid">
-      <div class="visit-img reveal">
-        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=900&q=80" alt="Butik" loading="lazy">
-      </div>
-      <div class="visit-info reveal">
-        <div class="section-label">Visite</div>
-        <h2>Temukan kami<br>di <em>Cimahi.</em></h2>
-        <div class="item">
-          <h4>Butik Utama</h4>
-          <p>Jl. Raya Cimahi No. 24<br>Cimahi, Jawa Barat 40511</p>
-        </div>
-        <div class="item">
-          <h4>Jam Buka</h4>
-          <p>Senin – Sabtu · 06.00 – 21.00<br>Minggu · 07.00 – 20.00</p>
-        </div>
-        <div class="item">
-          <h4>Réservation</h4>
-          <p>+62 812 3456 7890<br>hello@croissante.id</p>
-        </div>
-      </div>
+<section class="cta-section">
+  <div class="cta-box reveal">
+    <h2>Pesan <em>sekarang</em><br>sebelum kehabisan.</h2>
+    <p>Kami hanya memanggang dalam jumlah terbatas setiap hari. Pesan lebih awal untuk memastikan croissant favoritmu tersedia.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary">Pesan via WhatsApp →</a>
+      <a href="#menu" class="btn-secondary">Lihat Menu</a>
     </div>
   </div>
 </section>
 
-<footer>
+<footer id="contact">
   <div class="foot-top">
     <div class="foot-brand">
       <div class="logo">CROISSANTÉ</div>
-      <p>Artisan boulangerie. Edisi hitam eksklusif untuk mereka yang menghargai detail dan waktu.</p>
+      <p>Artisan boulangerie yang mendedikasikan diri pada seni croissant. Dibuat dengan tangan, disajikan dengan cinta.</p>
     </div>
     <div class="foot-col">
-      <h5>Explorer</h5>
+      <h5>Menu</h5>
       <ul>
-        <li><a href="#story">Maison</a></li>
-        <li><a href="#collection">Collection</a></li>
-        <li><a href="#visit">Visite</a></li>
+        <li><a href="#menu">Croissant</a></li>
+        <li><a href="#menu">Pastry</a></li>
+        <li><a href="#menu">Kopi</a></li>
       </ul>
     </div>
     <div class="foot-col">
-      <h5>Suivre</h5>
+      <h5>Info</h5>
+      <ul>
+        <li><a href="#about">Cerita</a></li>
+        <li><a href="#contact">Kontak</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Sosial</h5>
       <ul>
         <li><a href="#">Instagram</a></li>
         <li><a href="#">TikTok</a></li>
@@ -502,59 +663,38 @@
     </div>
   </div>
   <div class="foot-bottom">
-    <span>© MMXXIV Croissanté</span>
-    <span>L'Édition Noire</span>
+    <span>© 2024 Croissanté</span>
+    <span>Made with ♥ in Cimahi</span>
   </div>
 </footer>
 
 <script>
-  // Preloader
+  // Loader
   window.addEventListener('load', () => {
-    setTimeout(() => document.getElementById('loader').classList.add('hide'), 2400);
+    setTimeout(() => document.getElementById('loader').classList.add('hide'), 1200);
   });
 
   // Nav scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) nav.classList.add('scrolled');
+    if (window.scrollY > 60) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
   });
 
-  // Reveal
+  // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Custom cursor
-  const cur = document.querySelector('.cursor');
-  const ring = document.querySelector('.cursor-ring');
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
-  function loop(){
-    rx+=(mx-rx)*0.15; ry+=(my-ry)*0.15;
-    cur.style.left=mx+'px'; cur.style.top=my+'px';
-    ring.style.left=rx+'px'; ring.style.top=ry+'px';
-    requestAnimationFrame(loop);
-  }
-  loop();
-  document.querySelectorAll('a, .card, .btn, button').forEach(el=>{
-    el.addEventListener('mouseenter', ()=>ring.classList.add('hover'));
-    el.addEventListener('mouseleave', ()=>ring.classList.remove('hover'));
-  });
-
   // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
       const t = document.querySelector(a.getAttribute('href'));
-      if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
-
-  // Menu toggle (mobile - simple)
-  document.getElementById('menuToggle').addEventListener('click', ()=>{
-    alert('Menu: Maison, Collection, Visite');
-  });
 </script>
+
 </body>
 </html>
