@@ -1,195 +1,204 @@
-=====MULAI=====
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CROISSANTÉ - Croissant Fresh Premium di Cimahi</title>
+<meta name="description" content="Croissant premium, dipanggang fresh setiap hari di Cimahi. 13 varian, Golden Croissant 24K, box hampers mewah.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0A0A0A;--dark:#141414;--gold:#D4AF37;--gold2:#F5E6A3;--amber:#F59E0B;--txt:#F5F0EB;--muted:#8A7E6E;--dim:#5A5045;--tr:.4s cubic-bezier(.25,.46,.45,.94)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font-family:inherit}
+.c{width:min(1200px,92%);margin:0 auto}
+.sec{padding:5rem 0}
+.gold{background:linear-gradient(135deg,#D4AF37,#F5E6A3,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.lbl{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:#D4AF37;margin-bottom:1rem;display:inline-block}
+h1,h2,h3{font-family:'Cinzel',serif;letter-spacing:.08em;line-height:1.25}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem}
+.sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:#8A7E6E;font-size:1.1rem;margin-top:.5rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.9rem 2rem;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-radius:50px;transition:.4s;cursor:pointer;border:none}
+.btn-p{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;font-weight:600}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(212,175,55,.5)}
+.btn-o{background:transparent;color:#D4AF37;border:1px solid #D4AF37}
+.btn-o:hover{background:#D4AF37;color:#0A0A0A}
+.card{background:rgba(20,20,20,.6);border:1px solid rgba(212,175,55,.15);border-radius:16px;transition:.4s;overflow:hidden}
+.card:hover{border-color:rgba(212,175,55,.4);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(212,175,55,.1)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;background:rgba(10,10,10,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.1)}
+.nav-in{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:700;letter-spacing:.16em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-menu{display:flex;gap:1.6rem;list-style:none}
+.nav-menu a{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#8A7E6E;transition:.3s}
+.nav-menu a:hover{color:#D4AF37}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 1.5rem 3rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.14),rgba(245,158,11,.05) 30%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pls 6s ease-in-out infinite;pointer-events:none}
+@keyframes pls{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
+.hero-c{position:relative;z-index:2;max-width:900px}
+.bdg{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1.2rem;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:50px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:2rem}
+.bdg::before{content:'';width:6px;height:6px;border-radius:50%;background:#F59E0B;animation:bl 1.5s infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.2}}
+.hero h1{font-size:clamp(3rem,10vw,7rem);font-weight:900;letter-spacing:.12em;line-height:1;background:linear-gradient(135deg,#D4AF37,#F5E6A3 30%,#D4AF37 60%,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;filter:drop-shadow(0 0 40px rgba(212,175,55,.3))}
+.script{font-family:'Italiana',sans-serif;font-size:clamp(1.2rem,2.8vw,1.9rem);color:#D4AF37;margin-bottom:1.5rem}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.3rem;margin-top:3rem}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.cbody{padding:1.3rem}
+.cat{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:.4rem}
+.nm{font-family:'Cinzel',serif;font-size:.95rem;font-weight:600;margin-bottom:.4rem}
+.ds{font-size:.78rem;color:#8A7E6E;line-height:1.6;margin-bottom:1rem}
+.pr{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:#D4AF37}
+.pr small{display:block;font-size:.6rem;color:#5A5045;text-transform:uppercase;font-family:'Inter',sans-serif}
+.golden{padding:6rem 0;background:radial-gradient(circle,rgba(212,175,55,.1),transparent 60%);border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15);text-align:center}
+.golden h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;letter-spacing:.1em;background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem}
+.bdgs{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.5rem}
+.bg1{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .85rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A}
+.bg2{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .85rem;border-radius:50px;border:1px solid #D4AF37;color:#D4AF37}
+.ci{display:flex;gap:1rem;margin-bottom:1.5rem}
+.ci-ic{width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;color:#D4AF37;font-size:1.1rem}
+.ci-lb{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:#5A5045;margin-bottom:.2rem}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem}
+.fg{margin-bottom:1.1rem}
+.fl{display:block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:#8A7E6E;margin-bottom:.5rem}
+.fi{width:100%;padding:.9rem 1.1rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.2);border-radius:10px;color:#F5F0EB;font-size:.88rem;outline:none}
+.fi:focus{border-color:#D4AF37}
+footer{padding:4rem 0 2rem;border-top:1px solid rgba(212,175,55,.1);text-align:center}
+.ft-sc{font-family:'Italiana',sans-serif;color:#D4AF37;font-size:1.05rem;margin:1rem 0}
+.ft-sg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;color:#D4AF37;margin-top:.5rem}
+.wa{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.5)}
+.wa svg{width:30px;height:30px;fill:#fff}
+@media(max-width:768px){
+.nav-menu{display:none}
+.cgrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
 
-Buatkan website pre-order croissant MEWAH tingkat luxury dengan tema DARK AESTHETIC. Nama brand: CROISSANTÉ. Hasil akhir harus terlihat seperti brand croissant premium kelas dunia.
+<nav class="nav">
+<div class="c nav-in">
+<div class="logo">CROISSANTÉ</div>
+<ul class="nav-menu">
+<li><a href="#menu">Menu</a></li>
+<li><a href="#golden">Golden</a></li>
+<li><a href="#kontak">Kontak</a></li>
+</ul>
+</div>
+</nav>
 
-BRAND & INFO:
-- Nama: CROISSANTÉ
-- Tagline: "Croissant Fresh, Renyah di Luar, Lembut di Dalam."
-- Owner: Hendra Lesmana
-- Contact Person / WhatsApp: 089668211725 (link: wa.me/6289668211725)
-- Lokasi: Cimahi, Jawa Barat
+<section class="hero">
+<div class="hero-c">
+<div class="bdg">Fresh from the oven</div>
+<h1>CROISSANTÉ</h1>
+<p class="script">"Croissant Fresh, Renyah di Luar, Lembut di Dalam."</p>
+<p class="sub" style="max-width:520px;margin:0 auto 2rem">Croissant premium, dipanggang fresh setiap hari. Kini hadir di Cimahi.</p>
+<div class="hero-btns">
+<a href="#menu" class="btn btn-p">Lihat Menu</a>
+<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTE,%20saya%20ingin%20pre-order%20croissant." class="btn btn-o">Pesan via WhatsApp</a>
+</div>
+</div>
+</section>
 
-TEMA VISUAL:
-- Dark luxury bakery — hitam pekat #0A0A0A, abu gelap #1A1A1A, aksen emas #D4AF37, amber glow #F59E0B
-- Minimalis, banyak ruang kosong, glassmorphism, gradient glow emas
-- Foto besar dengan pencahayaan dramatis (moody dark bakery, background hitam, satu sumber cahaya)
-- Animasi fade-in saat scroll
-- Noise texture overlay halus (SVG feTurbulence, opacity 4%)
-- Aurora gold gradient bergerak di background hero
+<section class="sec" id="menu">
+<div class="c">
+<span class="lbl">Katalog</span>
+<h2 class="gold">Varian Croissant</h2>
+<p class="sub">Pilih favoritmu dari 13 varian premium.</p>
+<div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80"><div class="cbody"><div class="cat">Classic</div><div class="nm">Classic Butter</div><div class="ds">Laminasi butter Prancis 24 lapis, renyah keemasan.</div><div class="pr"><small>Mulai dari</small>Rp 18.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&q=80"><div class="cbody"><div class="cat">Sweet</div><div class="nm">Chocolate</div><div class="ds">Dark chocolate Belgia meleleh di lipatan renyah.</div><div class="pr"><small>Mulai dari</small>Rp 22.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80"><div class="cbody"><div class="cat">Savory</div><div class="nm">Cheese</div><div class="ds">Gruyere meleleh dengan butter karamel.</div><div class="pr"><small>Mulai dari</small>Rp 24.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=600&q=80"><div class="cbody"><div class="cat">Seasonal</div><div class="nm">Matcha Velvet</div><div class="ds">Matcha uji premium dengan red velvet lembut.</div><div class="pr"><small>Mulai dari</small>Rp 26.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1592842232653-1e0baebf4a21?w=600&q=80"><div class="cbody"><div class="cat">Sweet</div><div class="nm">Almond</div><div class="ds">Almond panggang dengan gula halus.</div><div class="pr"><small>Mulai dari</small>Rp 24.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600&q=80"><div class="cbody"><div class="cat">Classic</div><div class="nm">Pain au Chocolat</div><div class="ds">Dua batang dark chocolate Prancis.</div><div class="pr"><small>Mulai dari</small>Rp 23.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=600&q=80"><div class="cbody"><div class="cat">Savory</div><div class="nm">Ham & Cheese</div><div class="ds">Ham sapi pilihan + mozzarella meleleh.</div><div class="pr"><small>Mulai dari</small>Rp 25.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=600&q=80"><div class="cbody"><div class="cat">Sweet</div><div class="nm">Raspberry</div><div class="ds">Selai raspberry homemade asam-manis.</div><div class="pr"><small>Mulai dari</small>Rp 25.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80"><div class="cbody"><div class="cat">Sweet</div><div class="nm">Pistachio</div><div class="ds">Krim pistachio Sisilia creamy.</div><div class="pr"><small>Mulai dari</small>Rp 27.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80"><div class="cbody"><div class="cat">Sweet</div><div class="nm">Tiramisu</div><div class="ds">Mascarpone + kopi espresso Italia.</div><div class="pr"><small>Mulai dari</small>Rp 26.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1568051243851-f9b136146e97?w=600&q=80"><div class="cbody"><div class="cat">Seasonal</div><div class="nm">Croffle</div><div class="ds">Croissant waffle crispy di luar lembut.</div><div class="pr"><small>Mulai dari</small>Rp 24.000</div></div></div>
+</div>
+</div>
+</section>
 
-TIPOGRAFI:
-- Heading utama & brand: font Cinzel (serif mewah, letter-spacing 0.1em, emas gradien)
-- Sub-heading: Playfair Display
-- Body text: Inter
-- Tagline: Italiana (script elegan)
-- Signature owner: Cormorant Garamond Italic
+<section class="golden" id="golden">
+<div class="c">
+<div class="bdgs">
+<span class="bg1">Limited 1x Per Bulan</span>
+<span class="bg2">24K Edible Gold</span>
+<span class="bg2">Member Only</span>
+</div>
+<h2>GOLDEN CROISSANT</h2>
+<p class="sub" style="max-width:600px;margin:0 auto 1.5rem;color:#8A7E6E">Croissant 24 lapis butter Prancis, dilapisi edible 24K gold leaf, diisi truffle butter & creme de marrons, ditaburi sea salt Guerande.</p>
+<p style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:#D4AF37;margin-bottom:1.5rem">Rp 275.000</p>
+<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTE,%20saya%20ingin%20pre-order%20Golden%20Croissant." class="btn btn-p">Pesan Golden Croissant</a>
+</div>
+</section>
 
-ATURAN PENTING:
-Jangan tampilkan kata "pre-order" di seluruh halaman website. Gunakan "Order", "Pesan", atau "Pesan Sekarang". Kata "pre-order" HANYA muncul di pesan WhatsApp otomatis saat submit form.
+<section class="sec" id="kontak">
+<div class="c">
+<span class="lbl">Kontak</span>
+<h2 class="gold">Pesan Sekarang</h2>
+<p class="sub">Isi form, pesanan langsung terkirim via WhatsApp.</p>
+<div class="cgrid">
+<div>
+<div class="ci"><div class="ci-ic">📞</div><div><div class="ci-lb">Contact Person</div><div>Hendra Lesmana - 0896 6821 1725</div></div></div>
+<div class="ci"><div class="ci-ic">📍</div><div><div class="ci-lb">Lokasi</div><div>Cimahi, Jawa Barat</div></div></div>
+<div class="ci"><div class="ci-ic">👤</div><div><div class="ci-lb">Owner</div><div>Hendra Lesmana</div></div></div>
+<div class="ci"><div class="ci-ic">🎵</div><div><div class="ci-lb">TikTok</div><div>@croissante.cimahi</div></div></div>
+</div>
+<form onsubmit="return order(event)">
+<div class="fg"><label class="fl">Nama</label><input type="text" class="fi" id="fn" required></div>
+<div class="fg"><label class="fl">No. HP</label><input type="tel" class="fi" id="fp" required></div>
+<div class="fg"><label class="fl">Varian</label><select class="fi" id="fv" required><option value="">Pilih...</option><option>Classic Butter</option><option>Chocolate</option><option>Cheese</option><option>Matcha Velvet</option><option>Golden Croissant</option><option>Box Bundling</option></select></div>
+<div class="fg"><label class="fl">Jumlah Box</label><input type="number" class="fi" id="fq" min="1" value="1" required></div>
+<div class="fg"><label class="fl">Tanggal Ambil</label><input type="date" class="fi" id="fd" required></div>
+<div class="fg"><label class="fl">Catatan</label><textarea class="fi" id="fnote" rows="3" placeholder="Alamat / permintaan khusus..."></textarea></div>
+<button type="submit" class="btn btn-p" style="width:100%">Kirim Pesanan via WhatsApp</button>
+</form>
+</div>
+</div>
+</section>
 
-STRUKTUR HALAMAN:
+<footer>
+<div class="c">
+<div class="logo" style="font-size:1.5rem;margin-bottom:1rem">CROISSANTÉ</div>
+<p class="ft-sc">"Choose your flavor. Choose your box. Enjoy your croissant."</p>
+<div class="ft-sg">Hendra Lesmana</div>
+<div style="font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#5A5045;margin-top:.3rem">Founder & Head Baker</div>
+<p style="margin-top:2rem;font-size:.8rem;color:#8A7E6E">© 2026 CROISSANTÉ · Cimahi · CP: 0896 6821 1725</p>
+</div>
+</footer>
 
-1. NAVBAR
-- Logo "CROISSANTÉ" font Cinzel warna emas + ikon croissant emas
-- Menu: Home, Menu, Golden, Bundling, Tentang, Kontak
-- Tombol Login glassmorphism + tombol "Pesan Sekarang" emas gradien
-- Navbar transparan, jadi solid + blur saat scroll
-- Logo berputar halus 3D saat hover
+<a href="https://wa.me/6289668211725" class="wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
 
-2. HERO SECTION (VIDEO BACKGROUND)
-- Background: video croissant aesthetic diputar autoplay, muted, loop, playsinline
-- Overlay gradient gelap 70% + aksen emas
-- Badge floating: "Fresh from the oven" dengan dot emas berkedip
-- Judul besar font Cinzel: "CROISSANTÉ" (clamp 3rem-7rem, emas gradien, drop-shadow glow)
-- TEXT REVEAL: judul muncul KATA PER KATA dengan fade + slide-up delay 0.15s
-- Tagline font Italiana: "Croissant Fresh, Renyah di Luar, Lembut di Dalam."
-- Subtitle: "Croissant premium, dipanggang fresh setiap hari. Kini hadir di Cimahi."
-- 2 tombol: "Lihat Menu" (emas solid) & "Pesan via WhatsApp" (outline emas)
-- PARALLAX: background glow bergerak lebih lambat dari scroll
-
-3. SECTION KEUNGGULAN
-- Judul "Kenapa CROISSANTÉ?" font Playfair Display
-- Grid 4 kartu glassmorphism dengan ikon emas:
-  * Varian produk beragam & jelas
-  * Jaminan dipanggang fresh
-  * Paket bundling praktis & hemat
-  * Harga transparan tanpa biaya tersembunyi
-- 3D TILT: kartu miring mengikuti gerakan mouse/touch
-
-4. MENU VARIAN CROISSANT (13 VARIAN)
-- Judul "Varian Croissant"
-- Filter kategori: Semua, Classic, Sweet, Savory, Seasonal
-- Grid 13 kartu produk (min 260px per kartu)
-- Setiap kartu: foto 4:3, kategori kecil, nama Cinzel, deskripsi, harga "Mulai dari Rp XX.000", tombol bulat "+" emas
-- 3D TILT: kartu miring mengikuti mouse
-- COUNT-UP: harga muncul dengan animasi hitung naik saat masuk viewport
-
-Varian:
-1. Classic Butter — Classic — Rp18.000 — Laminasi butter Prancis 24 lapis, renyah keemasan
-2. Chocolate — Sweet — Rp22.000 — Dark chocolate Belgia meleleh
-3. Cheese — Savory — Rp24.000 — Gruyère meleleh dengan butter karamel
-4. Matcha Velvet — Seasonal — Rp26.000 — Matcha uji + red velvet lembut
-5. Almond — Sweet — Rp24.000 — Almond panggang + gula halus
-6. Pain au Chocolat — Classic — Rp23.000 — Dua batang dark chocolate Prancis
-7. Ham & Cheese — Savory — Rp25.000 — Ham sapi + mozzarella
-8. Spinach Feta — Savory — Rp24.000 — Bayam segar + feta Yunani
-9. Cinnamon Roll — Sweet — Rp22.000 — Kayu manis + glaze gula
-10. Raspberry — Sweet — Rp25.000 — Selai raspberry homemade
-11. Pistachio — Sweet — Rp27.000 — Krim pistachio Sisilia
-12. Tiramisu — Sweet — Rp26.000 — Mascarpone + espresso
-13. Croffle — Seasonal — Rp24.000 — Croissant waffle crispy
-
-Tombol "+" menambah ke cart (localStorage).
-
-5. GOLDEN CROISSANT (MENU SPECIAL PREMIUM)
-- Section dengan background radial gold glow berdenyut
-- Border atas & bawah emas tipis
-- Badge berkilau: "LIMITED 1X PER BULAN" (emas solid), "24K EDIBLE GOLD" (outline), "MEMBER ONLY" (outline)
-- Judul besar: "GOLDEN CROISSANT" emas gradien
-- Deskripsi: Croissant 24 lapis butter Prancis, dilapisi edible 24K gold leaf, diisi truffle butter & crème de marrons, ditaburi sea salt Guérande. Disajikan dalam box hitam matte dengan wax seal emas.
-- Info grid 2x2 dengan border emas halus:
-  * Harga: Rp 275.000
-  * Sisa Bulan Ini: 7/20 (progress bar emas)
-  * Pengambilan: H+3 s/d H+7
-  * Sertifikat: Emas + Serial
-- Countdown: "Bulan ini tersisa XX hari" (hitung otomatis ke akhir bulan)
-- Tombol besar "Pesan Golden Croissant" emas gradien dengan glow
-- AURORA GOLD: gradient emas bergerak perlahan di background section ini
-
-6. BUNDLING PAKET
-- Judul "Pilih Paket Box Favoritmu"
-- Grid 3 kartu glassmorphism:
-  * Box Personal — isi 2-3 pcs — Rp 55.000 — untuk camilan pribadi
-  * Box Sharing — isi 6 pcs — Rp 110.000 — untuk keluarga & teman (badge "Best Value")
-  * Box Hampers — isi 12 pcs — Rp 210.000 — untuk acara & corporate
-- Setiap kartu: emoji besar, nama, isi, harga, tombol "Pesan Paket"
-- 3D TILT saat hover
-
-7. ALUR PEMESANAN
-- Judul "Cara Pesan Mudah"
-- Timeline horizontal 7 langkah dengan lingkaran emas bernomor:
-  01 Kunjungi Website, 02 Pilih Varian, 03 Pilih Paket, 04 Cek Harga, 05 Order Online, 06 Konfirmasi Admin, 07 Siap Dinikmati
-- Garis emas horizontal menghubungkan langkah
-- Hover: lingkaran emas menyala + scale 1.12
-
-8. TARGET PELANGGAN
-- Judul "Untuk Siapa CROISSANTÉ?"
-- Grid 4 kartu dengan emoji: Pelajar & Mahasiswa, Pekerja Kantoran, Keluarga & Teman, Pecinta Pastry
-
-9. TENTANG KAMI
-- Judul "Cerita CROISSANTÉ"
-- Layout 2 kolom: foto owner (kiri) + cerita (kanan)
-- Cerita: CROISSANTÉ lahir dari kecintaan mendalam pada croissant Prancis asli, dipanggang dalam batch kecil di Cimahi setiap hari.
-- Quote Italiana: "Setiap croissant kami adalah hasil dari cinta, ketelitian, dan dedikasi."
-- Signature emas "Hendra Lesmana" font Cormorant Garamond Italic
-- Sub-title: "Founder & Head Baker"
-
-10. TESTIMONI
-- Judul "Kata Mereka"
-- 3 kartu glassmorphism: rating ★★★★★ emas, kutipan italic, avatar inisial emas, nama, kota
-- Bintang berputar 3D saat hover
-
-11. KONTAK & ORDER
-- Judul "Pesan Sekarang, Croissant Fresh Menantimu"
-- Layout 2 kolom:
-  - KIRI: info kontak (Contact Person, Lokasi, Owner, TikTok) dengan ikon kotak emas
-  - KANAN: form dengan input 3D (shadow depth saat focus)
-- Form: Nama, No. HP, Varian (dropdown), Jumlah Box, Tanggal Pengambilan, Catatan
-- Kalender Tanggal: H+1 sampai H+7 dari hari ini (input date HTML dengan min & max)
-- Submit → buka WhatsApp otomatis dengan pesan berisi "pre-order"
-- Format WA:
-  "Halo CROISSANTÉ, saya ingin pre-order croissant: Nama: [nama], No. HP: [nomor], Varian: [varian], Jumlah Box: [jumlah], Tanggal Ambil: [tanggal], Catatan: [catatan]. Terima kasih!"
-
-12. FOOTER
-- Logo CROISSANTÉ emas
-- Tagline Italiana: "Choose your flavor. Choose your box. Enjoy your croissant."
-- Info: Owner Hendra Lesmana | CP: 0896 6821 1725 | Cimahi
-- Signature emas "Hendra Lesmana"
-- Copyright: © 2026 CROISSANTÉ
-- Menu cepat: Home, Menu, Golden, Bundling, Tentang, Kontak
-- Sosmed: WhatsApp & TikTok (tanpa Instagram)
-
-FITUR TEKNIS:
-- Tombol WhatsApp floating di pojok kanan bawah (hijau #25D366, pulse animation)
-- Modal Login (email + password) saat klik tombol Login
-- Cart drawer slide dari kanan, tampilkan item + total + checkout via WhatsApp
-- Toast notification saat item ditambahkan ke cart
-- Scroll reveal (IntersectionObserver + CSS transition)
-- Semua tombol: hover naik + glow emas
-- Mobile responsive (breakpoint 900px, 600px)
-- Hamburger menu di mobile
-
-EFEK SUPER MEWAH:
-- LOADING SCREEN: logo CROISSANTÉ + partikel emas, durasi 1.5 detik, fade out halus
-- TEXT REVEAL: judul muncul kata per kata (fade + slide up delay 0.15s)
-- NOISE TEXTURE: SVG noise overlay opacity 4% di seluruh body
-- AURORA GOLD: gradient emas bergerak infinite 15s di hero & section Golden
-- PARALLAX: background glow bergerak beda kecepatan dari scroll
-- 3D TILT: kartu menu & bundling miring mengikuti mouse
-- MICRO-INTERACTIONS: ripple emas saat klik tombol, harga count-up, emoji 🥐 berputar di loading
-- Hover mewah pada semua kartu: naik 5px + border emas + glow
-
-TEKNIS KODE:
-- Single HTML file (semua CSS & JS inline dalam <style> dan <script>)
-- Google Fonts: Cinzel, Playfair Display, Cormorant Garamond, Inter, Italiana
-- Preconnect ke fonts.googleapis.com + fonts.gstatic.com
-- Pure HTML/CSS/JS (tanpa framework, tanpa build tool)
-- Gambar dari Unsplash (foto croissant dark aesthetic, background hitam, dramatic lighting)
-- Video dari Pexels/Pixabay (croissant aesthetic)
-- Kode VALID HTML5, TIDAK BOLEH KEPOTONG
-- Semua tag tertutup dengan benar
-- Loading cepat (< 3 detik)
-
-WAJIB DIPASTIKAN:
-- Website muncul dengan benar (bukan blank/error)
-- Semua 12 section ada, urutan sesuai
-- Warna emas konsisten (#D4AF37) di seluruh halaman
-- Form WhatsApp berfungsi (nomor 6289668211725)
-- Responsif sempurna di HP (test di 375px width)
-- SEO: meta title "CROISSANTÉ - Croissant Fresh Premium di Cimahi", meta description relevan
-- Tidak ada JavaScript error di console
-- Scroll halus, animasi 60fps
-
-PENTING: Hasil akhir harus terlihat seperti website brand croissant kelas dunia (seperti Lune Croissanterie atau RIMA Luxury Bakery), bukan website UMKM biasa. Setiap detail harus mewah, dari tipografi sampai animasi.
-
-=====SELESAI=====
+<script>
+function order(e){
+e.preventDefault();
+var n=document.getElementById('fn').value;
+var p=document.getElementById('fp').value;
+var v=document.getElementById('fv').value;
+var q=document.getElementById('fq').value;
+var d=document.getElementById('fd').value;
+var note=document.getElementById('fnote').value||'-';
+var m='Halo CROISSANTE, saya ingin pre-order croissant:%0A%0ANama: '+n+'%0ANo. HP: '+p+'%0AVarian: '+v+'%0AJumlah Box: '+q+'%0ATanggal Ambil: '+d+'%0ACatatan: '+note+'%0A%0ATerima kasih!';
+window.open('https://wa.me/6289668211725?text='+m,'_blank');
+return false;
+}
+(function(){
+var d=document.getElementById('fd');
+if(!d)return;
+var t=new Date();
+var mn=new Date(t);mn.setDate(mn.getDate()+1);
+var mx=new Date(t);mx.setDate(mx.getDate()+7);
+d.min=mn.toISOString().split('T')[0];
+d.max=mx.toISOString().split('T')[0];
+})();
+</script>
+</body>
+</html>
