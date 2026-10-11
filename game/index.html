@@ -1,1 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Adu Penalti 4D</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: #000; font-family: 'Arial', sans-serif; user-select: none; }
+    #ui {
+      position: absolute; top: 20px; left: 0; width: 100%; text-align: center;
+      color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); pointer-events: none;
+    }
+    #score { font-size: 28px; font-weight: bold; }
+    #message { font-size: 40px; font-weight: 900; margin-top: 10px; color: #FFD700; opacity: 0; transition: opacity 0.3s; }
+    #controls {
+      position: absolute; bottom: 30px; left: 0; width: 100%;
+      display: flex; justify-content: center; gap: 15px; padding: 0 20px; box-sizing: border-box;
+    }
+    button {
+      flex: 1; max-width: 120px; padding: 15px 0; font-size: 18px; font-weight: bold;
+      border: none; border-radius: 10px; background: rgba(255,255,255,0.9); color: #111;
+      cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: transform 0.1s;
+    }
+    button:active { transform: scale(0.95); background: #FFD700; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <div id="ui">
+    <div id="score">Skor: 0</div>
+    <div id="message"></div>
+  </div>
+  <div id="controls">
+    <button id="btnLeft" onclick="shoot('L')">⬅ KIRI</button>
+    <button id="btnCenter" onclick="shoot('C')">⬆ TENGAH</button>
+    <button id="btnRight" onclick="shoot('R')">➡ KANAN</button>
+  </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    // --- 1. SETUP DASAR THREE.JS ---
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x87CEEB); // Langit biru
+    scene.fog = new THREE.Fog(0x87CEEB, 20, 50);
+
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(0, 3, 8);
+    camera.lookAt(0, 1.5, -5);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    document.body.appendChild(renderer.domElement);
+
+    // --- 2. LAMPU & BAYANGAN ---
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    dirLight.position.set(5, 15, 10);
+    dirLight.castShadow = true;
+    dirLight.shadow.mapSize.width = 1024;
+    dirLight.shadow.mapSize.height = 1024;
+    scene.add(dirLight);
+
+    // --- 3. LAPANGAN & GAWANG ---
+    // Rumput
+    const fieldGeo = new THREE.PlaneGeometry(40, 40);
+    const fieldMat = new THREE.MeshStandardMaterial({ color: 0x2E8B57, roughness: 0.8 });
+    const field = new THREE.Mesh(fieldGeo, fieldMat);
+    field.rotation.x = -Math.PI / 2;
+    field.receiveShadow = true;
+    scene.add(field);
+
+    // Garis-garis lapangan (putih)
+    const lineMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const lineGeo = new THREE.PlaneGeometry(0.1, 40);
+    const line1 = new THREE.Mesh(lineGeo, lineMat); line1.rotation.x = -Math.PI/2; line1.position.set(0, 0.01, 0); scene.add(line1);
+    const line2 = new THREE.Mesh(new THREE.PlaneGeometry(40, 0.1), lineMat); line2.rotation.x = -Math.PI/2; line2.position.set(0, 0.01, -5); scene.add(line2);
+
+    // Gawang
+    const goalGroup = new THREE.Group();
+    const postMat = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.5, roughness: 0.2 });
+    const postGeo = new THREE.CylinderGeometry(0.15, 0.15, 3, 8);
+    
+    const postL = new THREE.Mesh(postGeo, postMat); postL.position.set(-3.5, 1.5, -5); postL.castShadow = true; goalGroup.add(postL);
+    const postR = new THREE.Mesh(postGeo, postMat); postR.position.set(3.5, 1.5, -5); postR.castShadow = true; goalGroup.add(postR);
+    
+    const crossbarGeo = new THREE.CylinderGeometry(0.15, 0.15, 7, 8);
+    const crossbar = new THREE.Mesh(crossbarGeo, postMat); crossbar.rotation.z = Math.PI / 2; crossbar.position.set(0, 3, -5); crossbar.castShadow = true; goalGroup.add(crossbar);
+    scene.add(goalGroup);
+
+    // Jaring (Transparan)
+    const netMat = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: 0.3 });
+    const netGeo = new THREE.PlaneGeometry(7, 3, 10, 5);
+    const net = new THREE.Mesh(netGeo, netMat);
+    net.position.set(0, 1.5, -5.2);
+    scene.add(net);
+
+    // --- 4. KIPER ---
+    const keeper = new THREE.Group();
+    const keeperMat = new THREE.MeshStandardMaterial({ color: 0x00FF00 }); // Hijau neon
+    const skinMat = new THREE.MeshStandardMaterial({ color: 0xFFDAB9 }); // Warna kulit
+
+    // Badan
+    const body = new THREE.Mesh(new THREE.BoxGeometry(0.8, 1.2, 0.4), keeperMat);
+    body.position.y = 0.8; body.castShadow = true; keeper.add(body);
+    // Kepala
+    const head = new THREE.Mesh(new THREE.SphereGeometry(0.3), skinMat);
+    head.position.y = 1.6; head.castShadow = true; keeper.add(head);
+    // Tangan Kiri & Kanan
+    const armGeo = new THREE.BoxGeometry(0.2, 0.8, 0.2);
+    const armL = new THREE.Mesh(armGeo, keeperMat); armL.position.set(-0.6, 1.0, 0); armL.castShadow = true; keeper.add(armL);
+    const armR = new THREE.Mesh(armGeo, keeperMat); armR.position.set(0.6, 1.0, 0); armR.castShadow = true; keeper.add(armR);
+    // Kaki
+    const legGeo = new THREE.BoxGeometry(0.3, 0.8, 0.3);
+    const legL = new THREE.Mesh(legGeo, new THREE.MeshStandardMaterial({color: 0x000000})); legL.position.set(-0.25, 0.4, 0); legL.castShadow = true; keeper.add(legL);
+    const legR = new THREE.Mesh(legGeo, new THREE.MeshStandardMaterial({color: 0x000000})); legR.position.set(0.25, 0.4, 0); legR.castShadow = true; keeper.add(legR);
+
+    keeper.position.set(0, 0, -4.8);
+    scene.add(keeper);
+
+    // --- 5. BOLA ---
+    const ballGeo = new THREE.SphereGeometry(0.2, 32, 32);
+    const ballMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.2 });
+    const ball = new THREE.Mesh(ballGeo, ballMat);
+    ball.position.set(0, 0.2, 4);
+    ball.castShadow = true;
+    scene.add(ball);
+
+    // Titik Penalti
+    const spotGeo = new THREE.CircleGeometry(0.15, 16);
+    const spotMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const spot = new THREE.Mesh(spotGeo, spotMat);
+    spot.rotation.x = -Math.PI / 2; spot.position.set(0, 0.02, 4);
+    scene.add(spot);
+
+    // --- 6. LOGIKA GAME ---
+    let score = 0;
+    let isShooting = false;
+    let isGameOver = false;
+    let animProgress = 0; // 0 to 1
+    let startPos = new THREE.Vector3(0, 0.2, 4);
+    let targetPos = new THREE.Vector3();
+    let keeperTargetX = 0;
+
+    const scoreEl = document.getElementById('score');
+    const msgEl = document.getElementById('message');
+    const btnLeft = document.getElementById('btnLeft');
+    const btnCenter = document.getElementById('btnCenter');
+    const btnRight = document.getElementById('btnRight');
+
+    function updateUI() {
+      scoreEl.textContent = 'Skor: ' + score;
+    }
+
+    function showMessage(text, color) {
+      msgEl.textContent = text;
+      msgEl.style.color = color;
+      msgEl.style.opacity = 1;
+      setTimeout(() => { msgEl.style.opacity = 0; }, 1500);
+    }
+
+    function resetBall() {
+      ball.position.set(0, 0.2, 4);
+      startPos.set(0, 0.2, 4);
+      ball.rotation.set(0, 0, 0);
+      keeper.position.set(0, 0, -4.8);
+      isShooting = false;
+      animProgress = 0;
+      btnLeft.disabled = false;
+      btnCenter.disabled = false;
+      btnRight.disabled = false;
+    }
+
+    window.shoot = function(direction) {
+      if (isShooting || isGameOver) return;
+      isShooting = true;
+      btnLeft.disabled = true;
+      btnCenter.disabled = true;
+      btnRight.disabled = true;
+
+      // Tentukan target bola
+      if (direction === 'L') targetPos.set(-2.5, 0.8, -5);
+      else if (direction === 'C') targetPos.set(0, 0.8, -5);
+      else if (direction === 'R') targetPos.set(2.5, 0.8, -5);
+
+      // Kiper memilih arah secara acak
+      const keeperDir = ['L', 'C', 'R'][Math.floor(Math.random() * 3)];
+      if (keeperDir === 'L') keeperTargetX = -2.5;
+      else if (keeperDir === 'C') keeperTargetX = 0;
+      else if (keeperDir === 'R') keeperTargetX = 2.5;
+
+      // Simpan arah tembakan & kiper untuk cek hasil
+      ball.userData.shootDir = direction;
+      ball.userData.keeperDir = keeperDir;
+    };
+
+    // --- 7. ANIMASI & GAME LOOP ---
+    const clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const delta = clock.getDelta();
+
+      if (isShooting) {
+        // Animasi bola maju
+        animProgress += delta * 1.5; // Kecepatan bola
+        if (animProgress > 1) animProgress = 1;
+
+        // Interpolasi posisi bola
+        ball.position.lerpVectors(startPos, targetPos, animProgress);
+        ball.rotation.x -= delta * 10; // Bola berputar
+
+        // Animasi kiper dive
+        keeper.position.x = THREE.MathUtils.lerp(0, keeperTargetX, Math.min(animProgress * 2, 1));
+
+        // Cek hasil saat bola setengah jalan
+        if (animProgress >= 0.5 && !ball.userData.scored) {
+          ball.userData.scored = true; // Tandai sudah dicek
+          
+          if (ball.userData.shootDir === ball.userData.keeperDir) {
+            // KIPER MENANGKAP
+            showMessage('DITANGKAP! 🧤', '#FF4444');
+            // Bola mental ke samping
+            targetPos.x += (Math.random() > 0.5 ? 2 : -2);
+            targetPos.z += 2;
+            animProgress = 0.5; // Reset animasi untuk pantulan
+            startPos.copy(ball.position);
+          } else {
+            // GOL!
+            score += 10;
+            updateUI();
+            showMessage('GOL!!! ⚽', '#00FF00');
+          }
+        }
+
+        // Jika animasi selesai
+        if (animProgress >= 1) {
+          setTimeout(() => {
+            resetBall();
+            ball.userData.scored = false;
+          }, 1500);
+        }
+      }
+
+      renderer.render(scene, camera);
+    }
+
+    // Handle Resize
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    animate();
+  </script>
+</body>
+</html>
