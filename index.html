@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CROISSANTÉ - Croissant Fresh Premium di Cimahi</title>
 <meta name="description" content="Croissant premium, dipanggang fresh setiap hari di Cimahi. 5 varian premium, Golden Croissant 24K.">
-<link rel="manifest" href="data:application/json,%7B%22name%22%3A%22CROISSANT%C3%89%22%2C%22short_name%22%3A%22CROISSANT%C3%89%22%2C%22theme_color%22%3A%22%23D4AF37%22%2C%22background_color%22%3A%22%230A0A0A%22%2C%22display%22%3A%22standalone%22%2C%22start_url%22%3A%22.%22%7D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Italiana&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -19,26 +18,24 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 input,select,textarea{font-family:inherit}
 .c{width:min(1200px,92%);margin:0 auto}
-.sec{padding:6rem 0;position:relative}
+.sec{padding:5rem 0}
 .gold{background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 h1,h2,h3{font-family:'Cinzel',serif;letter-spacing:.08em;line-height:1.25;font-weight:700}
-h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;text-align:center}
-.sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.1rem;margin:.5rem auto 3rem;max-width:600px;text-align:center;display:block}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 2.2rem;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-radius:50px;transition:var(--tr);cursor:pointer;border:none;position:relative;overflow:hidden}
+h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:1rem;text-align:center}
+.sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.05rem;margin:.5rem auto 2.5rem;max-width:600px;text-align:center;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.9rem 2rem;font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-radius:50px;transition:var(--tr);cursor:pointer;border:none}
 .btn-p{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;font-weight:600;box-shadow:0 4px 24px rgba(212,175,55,.3)}
 .btn-p:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(212,175,55,.5)}
 .btn-o{background:transparent;color:#D4AF37;border:1px solid #D4AF37}
-.btn-o:hover{background:#D4AF37;color:#0A0A0A;transform:translateY(-3px)}
-.card{background:linear-gradient(135deg,rgba(30,30,30,.7),rgba(15,15,15,.9));border:1px solid rgba(212,175,55,.15);border-radius:16px;transition:var(--tr);position:relative;overflow:hidden;backdrop-filter:blur(16px)}
-.card:hover{border-color:rgba(212,175,55,.4);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(212,175,55,.15)}
-
-.flash{position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,#8B6914,#D4AF37,#F59E0B,#D4AF37,#8B6914);background-size:200% auto;color:#0A0A0A;text-align:center;padding:.6rem 1rem;font-size:.8rem;font-weight:600;animation:shine 3s linear infinite}
+.btn-o:hover{background:#D4AF37;color:#0A0A0A}
+.card{background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.15);border-radius:16px;transition:var(--tr);overflow:hidden;backdrop-filter:blur(16px)}
+.card:hover{border-color:rgba(212,175,55,.4);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.flash{position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,#8B6914,#D4AF37,#F59E0B,#D4AF37,#8B6914);background-size:200% auto;color:#0A0A0A;text-align:center;padding:.55rem 1rem;font-size:.75rem;font-weight:600;animation:shine 3s linear infinite}
 @keyframes shine{0%{background-position:0% center}100%{background-position:200% center}}
 #flashTimer{font-family:'Courier New',monospace;background:rgba(255,255,255,.5);padding:.15rem .5rem;border-radius:4px;margin:0 .3rem}
-.flash .cls{position:absolute;right:1rem;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.2rem;opacity:.7}
-
-.nav{position:fixed;top:35px;left:0;right:0;z-index:100;padding:1rem 0;transition:var(--tr)}
-.nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.1);padding:.6rem 0;top:0}
+.flash .cls{position:absolute;right:1rem;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.1rem}
+.nav{position:fixed;top:32px;left:0;right:0;z-index:100;padding:1rem 0;transition:var(--tr)}
+.nav.scrolled{background:rgba(10,10,10,.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.1);padding:.6rem 0;top:0}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .logo{display:flex;flex-direction:column}
 .logo-t{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:700;letter-spacing:.16em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -47,331 +44,207 @@ h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;text-align:center}
 .nav-menu a{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);transition:.3s;padding:.3rem 0}
 .nav-menu a:hover{color:#D4AF37}
 .nav-r{display:flex;gap:.5rem;align-items:center}
-.icon-btn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.3s;font-size:1rem;background:transparent}
-.icon-btn:hover{border-color:#D4AF37;color:#D4AF37;transform:scale(1.05)}
-.btn-log{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid rgba(212,175,55,.25);border-radius:50px;padding:.5rem 1.1rem;cursor:pointer;transition:.3s}
+.icon-btn{width:36px;height:36px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.3s;font-size:.95rem;background:transparent}
+.icon-btn:hover{border-color:#D4AF37;color:#D4AF37}
+.btn-log{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid rgba(212,175,55,.25);border-radius:50px;padding:.5rem 1rem;cursor:pointer;transition:.3s}
 .btn-log:hover{border-color:#D4AF37;color:#D4AF37}
 .ham{display:none;flex-direction:column;gap:5px;padding:5px;cursor:pointer}
 .ham span{width:24px;height:1.5px;background:#D4AF37;display:block}
-
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:150px 1.5rem 3rem;position:relative;overflow:hidden}
-.hero-video{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hero-video video{width:100%;height:100%;object-fit:cover;opacity:.35;filter:brightness(.6) contrast(1.1)}
-.hero-video::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(10,10,10,.5),rgba(10,10,10,.95))}
-.hero-glow{position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.18),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pls 6s ease-in-out infinite;pointer-events:none;z-index:1}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 1.5rem 3rem;position:relative;overflow:hidden}
+.hero-glow{position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.15),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pls 6s ease-in-out infinite;pointer-events:none}
 @keyframes pls{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
-.aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:.5;z-index:1}
-.aurora::before{content:'';position:absolute;width:150%;height:150%;top:-25%;left:-25%;background:conic-gradient(from 0deg,transparent,rgba(212,175,55,.15),transparent,rgba(245,158,11,.1),transparent);animation:rotate 30s linear infinite}
-@keyframes rotate{to{transform:rotate(360deg)}}
-.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
-.particles span{position:absolute;width:4px;height:4px;background:#D4AF37;border-radius:50%;opacity:.6;animation:float 15s linear infinite;box-shadow:0 0 10px #D4AF37}
-.particles span:nth-child(1){left:10%}.particles span:nth-child(2){left:25%;animation-delay:2s}.particles span:nth-child(3){left:40%;animation-delay:4s}.particles span:nth-child(4){left:60%;animation-delay:1s}.particles span:nth-child(5){left:75%;animation-delay:3s}.particles span:nth-child(6){left:90%;animation-delay:5s}
-@keyframes float{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(-10vh) scale(1);opacity:0}}
 .hero-c{position:relative;z-index:2;max-width:900px}
 .bdg-row{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
-.bdg{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.3rem;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:50px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37}
-.bdg-dot{width:6px;height:6px;border-radius:50%;background:#F59E0B;animation:bl 1.5s infinite;box-shadow:0 0 10px #F59E0B}
+.bdg{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.2rem;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:50px;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37}
+.bdg-dot{width:6px;height:6px;border-radius:50%;background:#F59E0B;animation:bl 1.5s infinite}
 .bdg-live{background:rgba(37,211,102,.1);border-color:rgba(37,211,102,.4);color:#25D366}
-.bdg-live .bdg-dot{background:#25D366;box-shadow:0 0 10px #25D366}
+.bdg-live .bdg-dot{background:#25D366}
 @keyframes bl{0%,100%{opacity:1}50%{opacity:.2}}
-.hero h1{font-size:clamp(3rem,10vw,7rem);font-weight:900;letter-spacing:.12em;line-height:1;background:linear-gradient(135deg,#D4AF37 0%,#F5E6A3 30%,#D4AF37 60%,#F59E0B 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;filter:drop-shadow(0 0 40px rgba(212,175,55,.3));animation:shine 3s linear infinite}
-.script{font-family:'Italiana',sans-serif;font-size:clamp(1.2rem,2.8vw,1.9rem);color:#D4AF37;margin-bottom:1.5rem}
-.hero-sub{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 2.5rem}
+.hero h1{font-size:clamp(3rem,10vw,6.5rem);font-weight:900;letter-spacing:.12em;line-height:1;background:linear-gradient(135deg,#D4AF37,#F5E6A3 30%,#D4AF37 60%,#F59E0B);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;filter:drop-shadow(0 0 40px rgba(212,175,55,.3));animation:shine 3s linear infinite}
+.script{font-family:'Italiana',sans-serif;font-size:clamp(1.1rem,2.6vw,1.7rem);color:#D4AF37;margin-bottom:1.5rem}
+.hero-sub{font-size:.95rem;color:var(--muted);max-width:520px;margin:0 auto 2.5rem}
 .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.weather-widget{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.2);border-radius:50px;font-size:.7rem;color:var(--muted);margin-top:1.5rem}
-.scroll-ind{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:#D4AF37;font-size:.7rem;letter-spacing:.2em;animation:bounce 2s infinite;z-index:2}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
-
-.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
-.grid-5{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-.f-card{padding:2.2rem 1.5rem;text-align:center}
-.f-card h3{font-size:.95rem;margin-bottom:.6rem}
-.f-card p{font-size:.8rem;color:var(--muted)}
-.icon3d{width:80px;height:80px;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 40%,#8B6914 100%);box-shadow:0 8px 24px rgba(212,175,55,.4),inset 0 -3px 8px rgba(0,0,0,.4),inset 0 3px 8px rgba(255,255,255,.3);transition:transform .6s;overflow:hidden;padding:12px}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.3rem}
+.grid-5{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.3rem}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.3rem}
+.f-card{padding:2rem 1.4rem;text-align:center}
+.f-card h3{font-size:.92rem;margin-bottom:.5rem}
+.f-card p{font-size:.78rem;color:var(--muted)}
+.icon3d{width:72px;height:72px;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 40%,#8B6914);box-shadow:0 8px 24px rgba(212,175,55,.4),inset 0 -3px 8px rgba(0,0,0,.4);padding:12px}
 .icon3d img{width:100%;height:100%;object-fit:contain}
-.card:hover .icon3d{transform:rotateY(360deg) scale(1.08)}
-
-.filters{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem}
-.f-btn{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.55rem 1.2rem;border-radius:50px;border:1px solid rgba(212,175,55,.2);color:var(--muted);transition:.3s;cursor:pointer}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem}
+.f-btn{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;padding:.5rem 1.1rem;border-radius:50px;border:1px solid rgba(212,175,55,.2);color:var(--muted);transition:.3s;cursor:pointer}
 .f-btn:hover,.f-btn.active{border-color:#D4AF37;color:#D4AF37;background:rgba(212,175,55,.08)}
 .m-card{overflow:hidden;display:flex;flex-direction:column}
 .m-card-img{position:relative;overflow:hidden;aspect-ratio:4/3;background:#1A1A1A;cursor:zoom-in}
 .m-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s;position:absolute;top:0;left:0}
 .m-card:hover img{transform:scale(1.06)}
 .m-tag{position:absolute;top:.8rem;left:.8rem;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .8rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;z-index:2}
-.m-share{position:absolute;top:.8rem;right:.8rem;width:34px;height:34px;border-radius:50%;background:rgba(10,10,10,.7);backdrop-filter:blur(10px);border:1px solid rgba(212,175,55,.3);color:#D4AF37;display:flex;align-items:center;justify-content:center;font-size:.9rem;cursor:pointer;opacity:0;transition:.3s;z-index:2}
-.m-card:hover .m-share{opacity:1}
-.m-share:hover{background:#D4AF37;color:#0A0A0A}
-.m-compare{position:absolute;bottom:.8rem;left:.8rem;font-size:.6rem;padding:.3rem .7rem;background:rgba(10,10,10,.8);border:1px solid rgba(212,175,55,.3);border-radius:50px;color:#D4AF37;cursor:pointer;opacity:0;transition:.3s;z-index:2}
-.m-card:hover .m-compare{opacity:1}
-.m-body{padding:1.4rem;display:flex;flex-direction:column;flex-grow:1}
-.m-cat{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:.5rem}
-.m-name{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;margin-bottom:.5rem}
-.m-desc{font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:1.1rem;flex-grow:1}
-.m-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
-.m-price{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:#D4AF37}
+.m-body{padding:1.3rem}
+.m-cat{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:.4rem}
+.m-name{font-family:'Cinzel',serif;font-size:.95rem;font-weight:600;margin-bottom:.5rem}
+.m-desc{font-size:.75rem;color:var(--muted);line-height:1.6;margin-bottom:1rem}
+.m-foot{display:flex;justify-content:space-between;align-items:center}
+.m-price{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#D4AF37}
 .m-price small{display:block;font-size:.6rem;color:var(--dim);text-transform:uppercase}
-.m-add{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:600;transition:.3s;cursor:pointer}
-.m-add:hover{transform:scale(1.1) rotate(90deg)}
-
-/* ZOOM */
-.zoom-ov{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:2000;display:none;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
-.zoom-ov.show{display:flex}
-.zoom-ov img{max-width:90vw;max-height:90vh;border-radius:12px;border:1px solid rgba(212,175,55,.3);box-shadow:0 0 80px rgba(212,175,55,.3)}
-
-/* GOLDEN */
-.golden{padding:7rem 0;background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.12),transparent 60%);border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15);position:relative;overflow:hidden}
-.golden::before{content:'CROISSANTÉ';position:absolute;font-family:'Cinzel',serif;font-size:20rem;font-weight:900;color:rgba(212,175,55,.03);top:50%;left:50%;transform:translate(-50%,-50%) rotate(-15deg);pointer-events:none;white-space:nowrap}
+.m-add{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:600;cursor:pointer}
+.golden{padding:6rem 0;background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.12),transparent 60%);border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15);position:relative;overflow:hidden}
+.golden::before{content:'CROISSANTÉ';position:absolute;font-family:'Cinzel',serif;font-size:18rem;font-weight:900;color:rgba(212,175,55,.03);top:50%;left:50%;transform:translate(-50%,-50%) rotate(-15deg);pointer-events:none;white-space:nowrap}
 .golden-in{position:relative;z-index:2;text-align:center;max-width:800px;margin:0 auto}
-.golden-badges{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2rem}
-.b-gold{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A}
-.b-line{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;border:1px solid #D4AF37;color:#D4AF37}
-.g-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:.1em;background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;animation:shine 3s linear infinite}
-.g-img{max-width:500px;margin:0 auto 2rem;border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.4);box-shadow:0 20px 60px rgba(0,0,0,.8),0 0 60px rgba(212,175,55,.2);cursor:zoom-in}
+.golden-badges{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.5rem}
+.b-gold{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A}
+.b-line{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;border:1px solid #D4AF37;color:#D4AF37}
+.g-title{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:.1em;background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;animation:shine 3s linear infinite}
+.g-img{max-width:450px;margin:0 auto 1.5rem;border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.4);box-shadow:0 20px 60px rgba(0,0,0,.8)}
 .g-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.g-desc{font-size:.95rem;color:var(--muted);line-height:1.9;margin-bottom:2rem;max-width:650px;margin-left:auto;margin-right:auto}
-.g-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto}
-.g-item{padding:1.2rem;background:rgba(10,10,10,.6);border:1px solid rgba(212,175,55,.2);border-radius:12px}
-.g-lbl{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:.5rem}
-.g-val{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:#D4AF37}
-.prog{width:100%;height:6px;background:rgba(212,175,55,.1);border-radius:3px;overflow:hidden;margin-top:.6rem}
-.prog-f{height:100%;background:linear-gradient(90deg,#D4AF37,#F59E0B);width:35%;border-radius:3px}
-.g-count{text-align:center;padding:1.2rem;background:rgba(212,175,55,.05);border:1px dashed rgba(212,175,55,.3);border-radius:12px;margin-bottom:2rem;max-width:400px;margin-left:auto;margin-right:auto}
-.g-count small{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.4rem}
-.g-count b{font-family:'Cinzel',serif;font-size:1.3rem;color:#D4AF37}
-
-/* LOYALTY */
-.loyalty{max-width:700px;margin:2rem auto;padding:2rem;background:linear-gradient(135deg,rgba(212,175,55,.1),transparent);border:1px solid rgba(212,175,55,.3);border-radius:16px;text-align:center;position:relative;overflow:hidden}
-.tier-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
-.tier{padding:1rem;border-radius:12px;border:1px solid rgba(212,175,55,.2);background:rgba(20,20,20,.5);transition:.3s}
-.tier.active{border-color:#D4AF37;box-shadow:0 0 20px rgba(212,175,55,.3)}
-.tier.silver{border-color:rgba(192,192,192,.4)}
-.tier.gold{border-color:rgba(212,175,55,.4)}
-.tier.platinum{border-color:rgba(229,228,226,.4)}
-.tier-name{font-family:'Cinzel',serif;font-size:.9rem;margin-bottom:.3rem}
-.tier-benefit{font-size:.7rem;color:var(--muted);line-height:1.5}
-.tier-icon{font-size:1.5rem;margin-bottom:.5rem}
-.stamp-row{display:flex;gap:1rem;justify-content:center;margin:1.5rem 0;flex-wrap:wrap}
-.stamp{width:50px;height:50px;border-radius:50%;border:2px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:center;font-size:1.3rem;transition:.3s}
+.g-desc{font-size:.9rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem;max-width:600px;margin-left:auto;margin-right:auto}
+.g-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.8rem;margin-bottom:1.5rem;max-width:650px;margin-left:auto;margin-right:auto}
+.g-item{padding:1rem;background:rgba(10,10,10,.6);border:1px solid rgba(212,175,55,.2);border-radius:12px}
+.g-lbl{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:.4rem}
+.g-val{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#D4AF37}
+.loyalty{max-width:650px;margin:2rem auto;padding:2rem;background:linear-gradient(135deg,rgba(212,175,55,.1),transparent);border:1px solid rgba(212,175,55,.3);border-radius:16px;text-align:center}
+.stamp-row{display:flex;gap:.8rem;justify-content:center;margin:1.5rem 0;flex-wrap:wrap}
+.stamp{width:48px;height:48px;border-radius:50%;border:2px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
 .stamp.on{background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37);border-color:#D4AF37;box-shadow:0 0 20px rgba(212,175,55,.6)}
 .loyalty-prog{width:100%;height:8px;background:rgba(212,175,55,.1);border-radius:4px;overflow:hidden;margin:1rem 0}
-.loyalty-prog-f{height:100%;background:linear-gradient(90deg,#D4AF37,#F59E0B);border-radius:4px;box-shadow:0 0 10px #D4AF37}
-
-/* CALENDAR */
-.calendar{max-width:600px;margin:2rem auto;background:rgba(20,20,20,.6);border:1px solid rgba(212,175,55,.25);border-radius:16px;padding:2rem}
-.cal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
-.cal-title{font-family:'Cinzel',serif;font-size:1rem;color:#D4AF37}
-.cal-nav{display:flex;gap:.5rem}
-.cal-nav button{width:32px;height:32px;border-radius:50%;border:1px solid rgba(212,175,55,.3);color:#D4AF37;cursor:pointer}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.5rem}
-.cal-day{padding:.8rem .4rem;text-align:center;font-size:.8rem;border-radius:8px;color:var(--muted);cursor:pointer;transition:.2s}
-.cal-day.head{font-family:'Cinzel',serif;font-size:.7rem;color:#D4AF37;letter-spacing:.1em;cursor:default}
-.cal-day.available:hover{background:rgba(212,175,55,.15);color:#D4AF37}
-.cal-day.selected{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;font-weight:600}
-.cal-day.disabled{opacity:.2;cursor:not-allowed}
-
-/* COMPARE */
-.compare-bar{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(200px);background:linear-gradient(135deg,#1A1A1A,#0F0F0F);border:1px solid rgba(212,175,55,.4);border-radius:50px;padding:.8rem 1.5rem;display:flex;gap:1rem;align-items:center;z-index:1500;transition:.4s;box-shadow:0 15px 40px rgba(0,0,0,.8)}
-.compare-bar.show{transform:translateX(-50%) translateY(0)}
-.compare-bar .item{font-size:.8rem;color:#D4AF37}
-
-/* QUIZ */
-.quiz-box{max-width:600px;margin:2rem auto;background:linear-gradient(135deg,rgba(212,175,55,.08),transparent);border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:2rem;text-align:center}
-.quiz-q{font-family:'Cinzel',serif;font-size:1.1rem;margin-bottom:1.5rem}
-.quiz-opt{padding:1rem;margin-bottom:.8rem;background:rgba(20,20,20,.6);border:1px solid rgba(212,175,55,.2);border-radius:10px;cursor:pointer;transition:.3s;font-size:.9rem}
-.quiz-opt:hover{border-color:#D4AF37;background:rgba(212,175,55,.1);transform:translateX(4px)}
-
-/* SUBSCRIPTION */
-.sub-option{padding:1.5rem;border:1px solid rgba(212,175,55,.2);border-radius:12px;margin-bottom:1rem;cursor:pointer;transition:.3s;display:flex;justify-content:space-between;align-items:center}
-.sub-option:hover{border-color:#D4AF37;background:rgba(212,175,55,.05)}
-.sub-option.active{border-color:#D4AF37;background:rgba(212,175,55,.1)}
-
-/* STORY MODE */
-.story-row{display:flex;gap:1rem;overflow-x:auto;padding:1rem 0;scrollbar-width:none}
-.story-row::-webkit-scrollbar{display:none}
-.story{min-width:100px;text-align:center;cursor:pointer}
-.story-ring{width:80px;height:80px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#D4AF37,#F59E0B);margin:0 auto .5rem;position:relative}
-.story-ring::after{content:'';position:absolute;inset:6px;border-radius:50%;border:2px solid #0A0A0A;background:url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=200&q=80') center/cover}
-.story-ring.viewed{background:rgba(90,80,69,.5)}
-.story-name{font-size:.7rem;color:var(--muted)}
-
-/* CHATBOT */
-.bot-window{position:fixed;bottom:6rem;left:1.5rem;width:320px;max-height:400px;background:#141414;border:1px solid rgba(212,175,55,.3);border-radius:16px;z-index:1500;display:none;flex-direction:column;box-shadow:0 15px 40px rgba(0,0,0,.8)}
-.bot-window.show{display:flex}
-.bot-head{padding:1rem;border-bottom:1px solid rgba(212,175,55,.15);font-family:'Cinzel',serif;font-size:.85rem;color:#D4AF37;display:flex;justify-content:space-between;align-items:center}
-.bot-body{flex:1;overflow-y:auto;padding:1rem}
-.bot-msg{padding:.6rem .9rem;border-radius:12px;margin-bottom:.6rem;font-size:.8rem;max-width:85%}
-.bot-msg.bot{background:rgba(212,175,55,.15);color:#F5F0EB;border:1px solid rgba(212,175,55,.3)}
-.bot-msg.user{background:rgba(37,211,102,.15);color:#F5F0EB;border:1px solid rgba(37,211,102,.3);margin-left:auto}
-.bot-input{padding:.6rem;border-top:1px solid rgba(212,175,55,.15);display:flex;gap:.5rem}
-.bot-input input{flex:1;padding:.6rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.2);border-radius:20px;color:#F5F0EB;font-size:.8rem;outline:none}
-.bot-input button{width:36px;height:36px;border-radius:50%;background:#D4AF37;color:#0A0A0A;cursor:pointer}
-
-/* RECIPE, BLOG */
-.recipe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
-.step-list{text-align:left;font-size:.85rem;color:var(--muted);line-height:1.9}
-.step-list li{margin-bottom:.5rem}
-
-/* STORY MODAL */
-.story-modal{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:2500;display:none;align-items:center;justify-content:center;padding:1rem}
-.story-modal.show{display:flex}
-.story-content{width:min(400px,100%);aspect-ratio:9/16;background:linear-gradient(135deg,#141414,#0A0A0A);border-radius:16px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;border:1px solid rgba(212,175,55,.3)}
-.story-close{position:absolute;top:1rem;right:1rem;color:#D4AF37;font-size:1.5rem;cursor:pointer}
-
-/* PRE-ORDER FORM */
-.preorder-form{max-width:600px;margin:2rem auto;background:rgba(20,20,20,.6);border:1px solid rgba(212,175,55,.25);border-radius:16px;padding:2rem}
-.time-slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:.5rem;margin-top:1rem}
-.time-slot{padding:.6rem;text-align:center;border:1px solid rgba(212,175,55,.2);border-radius:8px;font-size:.8rem;cursor:pointer;transition:.3s}
-.time-slot:hover,.time-slot.active{border-color:#D4AF37;background:rgba(212,175,55,.1);color:#D4AF37}
-
-.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:2rem}
-.about-img{border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.3);box-shadow:0 30px 80px rgba(0,0,0,.7)}
+.loyalty-prog-f{height:100%;background:linear-gradient(90deg,#D4AF37,#F59E0B);width:60%}
+.b-card{padding:2rem 1.4rem;text-align:center;position:relative}
+.tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;margin-top:2rem}
+.tl-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:1rem .5rem}
+.tl-num{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.85rem;font-weight:700;color:#0A0A0A;margin-bottom:.8rem}
+.tl-lbl{font-size:.68rem;color:var(--muted)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;margin-top:2rem}
+.about-img{border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.3)}
 .about-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.about-story{font-size:.92rem;color:var(--muted);line-height:1.9;margin-bottom:1.3rem}
-.quote{font-family:'Italiana',sans-serif;font-size:1.3rem;color:#D4AF37;border-left:2px solid #D4AF37;padding-left:1.4rem;margin:2rem 0;line-height:1.6}
-.sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.7rem;color:#D4AF37}
-.sig-sub{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);margin-top:.3rem}
-
-/* TESTI */
-.testi-slider{position:relative;max-width:700px;margin:0 auto;overflow:hidden}
-.testi-track{display:flex;transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
-.testi-slide{min-width:100%;padding:1rem}
+.about-story{font-size:.88rem;color:var(--muted);line-height:1.9;margin-bottom:1.2rem}
+.quote{font-family:'Italiana',sans-serif;font-size:1.2rem;color:#D4AF37;border-left:2px solid #D4AF37;padding-left:1.3rem;margin:1.5rem 0;line-height:1.6}
+.sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;color:#D4AF37}
+.sig-sub{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);margin-top:.3rem}
+.testi-slider{position:relative;max-width:650px;margin:0 auto;overflow:hidden}
+.testi-track{display:flex;transition:transform .6s}
+.testi-slide{min-width:100%;padding:.8rem}
 .testi-dots{display:flex;gap:.5rem;justify-content:center;margin-top:1.5rem}
 .testi-dot{width:8px;height:8px;border-radius:50%;background:rgba(212,175,55,.3);cursor:pointer;transition:.3s}
 .testi-dot.active{background:#D4AF37;width:24px;border-radius:4px}
-.stars{color:#D4AF37;letter-spacing:.15em;margin-bottom:1rem}
-.testi-text{font-size:.95rem;color:var(--muted);font-style:italic;line-height:1.8;margin-bottom:1.3rem}
+.stars{color:#D4AF37;letter-spacing:.15em;margin-bottom:.8rem}
+.testi-text{font-size:.9rem;color:var(--muted);font-style:italic;line-height:1.8;margin-bottom:1.2rem}
 .testi-auth{display:flex;align-items:center;gap:.8rem;justify-content:center}
-.testi-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.85rem;font-weight:700;color:#0A0A0A}
-
-.faq-item{background:linear-gradient(135deg,rgba(30,30,30,.6),rgba(15,15,15,.8));border:1px solid rgba(212,175,55,.15);border-radius:12px;margin-bottom:.8rem;overflow:hidden}
-.faq-q{padding:1.2rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Cinzel',serif;font-size:.9rem}
-.faq-icon{color:#D4AF37;font-size:1.4rem;transition:transform .3s}
+.testi-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;color:#0A0A0A}
+.faq-item{background:rgba(20,20,20,.6);border:1px solid rgba(212,175,55,.15);border-radius:12px;margin-bottom:.7rem;overflow:hidden}
+.faq-q{padding:1.1rem 1.4rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Cinzel',serif;font-size:.85rem}
+.faq-icon{color:#D4AF37;font-size:1.3rem;transition:transform .3s}
 .faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s,padding .4s;padding:0 1.5rem;color:var(--muted);font-size:.85rem;line-height:1.8}
-.faq-item.open .faq-a{max-height:200px;padding:0 1.5rem 1.5rem}
-
-.pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
-.pay-card{padding:1.8rem 1.4rem;text-align:center}
-.pay-icon{font-size:2rem;margin-bottom:1rem;display:block}
-.pay-card h3{font-size:.95rem;margin-bottom:.5rem}
-.pay-card p{font-size:.75rem;color:var(--muted);line-height:1.7}
-
-.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;margin-top:2rem}
-.ci{display:flex;gap:1rem;margin-bottom:1.6rem;align-items:flex-start}
-.ci-ic{width:46px;height:46px;min-width:46px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.25);display:flex;align-items:center;justify-content:center;color:#D4AF37;font-size:1.2rem}
-.ci-lb{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:.3rem}
-.ci-val{font-size:.9rem}
-.fg{margin-bottom:1.1rem}
-.fl{display:block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-.fi{width:100%;padding:1rem 1.2rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.2);border-radius:10px;color:var(--txt);font-size:.9rem;outline:none;transition:.3s}
-.fi:focus{border-color:#D4AF37;box-shadow:0 0 0 3px rgba(212,175,55,.15)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s,padding .4s;padding:0 1.4rem;color:var(--muted);font-size:.82rem;line-height:1.8}
+.faq-item.open .faq-a{max-height:200px;padding:0 1.4rem 1.3rem}
+.pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem}
+.pay-card{padding:1.6rem 1.3rem;text-align:center}
+.pay-icon{font-size:2rem;margin-bottom:.8rem;display:block}
+.pay-card h3{font-size:.9rem;margin-bottom:.5rem}
+.pay-card p{font-size:.72rem;color:var(--muted);line-height:1.7}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:2.5rem;margin-top:2rem}
+.ci{display:flex;gap:1rem;margin-bottom:1.4rem;align-items:flex-start}
+.ci-ic{width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.25);display:flex;align-items:center;justify-content:center;color:#D4AF37;font-size:1.1rem}
+.ci-lb{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:.3rem}
+.ci-val{font-size:.88rem}
+.fg{margin-bottom:1rem}
+.fl{display:block;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.fi{width:100%;padding:.9rem 1.1rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.2);border-radius:10px;color:var(--txt);font-size:.88rem;outline:none}
+.fi:focus{border-color:#D4AF37}
 .fr{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.total-box{padding:1rem 1.2rem;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.3);border-radius:10px;margin-bottom:1.2rem;display:flex;justify-content:space-between;align-items:center}
-.total-box span:first-child{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.total-box span:last-child{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:#D4AF37}
+.total-box{padding:.9rem 1.1rem;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.3);border-radius:10px;margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center}
+.total-box span:first-child{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.total-box span:last-child{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#D4AF37}
 .map-wrap{border-radius:12px;overflow:hidden;border:1px solid rgba(212,175,55,.2);margin-top:1.5rem;filter:grayscale(1) invert(.9) contrast(1.1)}
-.map-wrap iframe{width:100%;height:250px;border:0;display:block}
-
-footer{padding:4rem 0 2rem;border-top:1px solid rgba(212,175,55,.15);background:linear-gradient(180deg,transparent,rgba(0,0,0,.3));position:relative;text-align:center}
+.map-wrap iframe{width:100%;height:220px;border:0;display:block}
+footer{padding:3.5rem 0 2rem;border-top:1px solid rgba(212,175,55,.15);position:relative;text-align:center}
 footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:translateX(-50%);color:#D4AF37;background:var(--bg);padding:0 1rem;font-size:.8rem}
-.ft-logo{font-family:'Cinzel',serif;font-size:1.8rem;font-weight:700;letter-spacing:.2em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.5rem}
-.ft-est{font-size:.6rem;letter-spacing:.35em;color:var(--dim);text-transform:uppercase;margin-bottom:1.5rem}
-.ft-script{font-family:'Italiana',sans-serif;color:#D4AF37;font-size:1.1rem;margin:1rem 0;line-height:1.7}
-.ft-sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:#D4AF37;margin-top:1rem}
-.ft-sub{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-top:.3rem}
-.ft-news{max-width:400px;margin:2rem auto 0;display:flex;gap:.5rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.25);border-radius:50px;padding:.4rem .4rem .4rem 1.2rem}
-.ft-news input{flex:1;background:transparent;border:none;color:var(--txt);font-size:.85rem;outline:none}
-.ft-news button{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;border-radius:50px;padding:.6rem 1.2rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
-.ft-info{margin-top:2rem;font-size:.8rem;color:var(--muted);line-height:2}
-.ft-sosmed{display:flex;gap:1rem;justify-content:center;margin-top:1.5rem}
-.ft-sosmed a{width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:center;color:#D4AF37;font-size:1.1rem;transition:.3s}
-.ft-sosmed a:hover{background:#D4AF37;color:#0A0A0A;transform:translateY(-3px)}
-.ft-bottom{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(212,175,55,.1);font-size:.75rem;color:var(--dim)}
-
-.wa{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.5);transition:.3s;animation:wpulse 2.5s infinite;cursor:pointer}
-.wa:hover{transform:scale(1.1)}
-.wa svg{width:30px;height:30px;fill:#fff}
-@keyframes wpulse{0%,100%{box-shadow:0 8px 32px rgba(37,211,102,.5)}50%{box-shadow:0 8px 40px rgba(37,211,102,.8)}}
-.cart-float{position:fixed;bottom:1.5rem;right:6rem;z-index:99;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(212,175,55,.5);cursor:pointer;transition:.3s;font-size:1.4rem}
-.cart-float:hover{transform:scale(1.1)}
-.cart-float .badge{position:absolute;top:-6px;right:-6px;min-width:22px;height:22px;border-radius:11px;background:#25D366;color:#fff;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 6px;border:2px solid #0A0A0A}
-.back-top{position:fixed;bottom:6rem;right:1.5rem;z-index:98;width:48px;height:48px;border-radius:50%;background:rgba(20,20,20,.9);backdrop-filter:blur(10px);border:1px solid rgba(212,175,55,.4);color:#D4AF37;display:flex;align-items:center;justify-content:center;font-size:1.2rem;cursor:pointer;transition:.3s;opacity:0;pointer-events:none}
+.ft-logo{font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;letter-spacing:.2em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.5rem}
+.ft-est{font-size:.6rem;letter-spacing:.35em;color:var(--dim);text-transform:uppercase;margin-bottom:1.2rem}
+.ft-script{font-family:'Italiana',sans-serif;color:#D4AF37;font-size:1rem;margin:1rem 0;line-height:1.7}
+.ft-sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;color:#D4AF37;margin-top:1rem}
+.ft-sub{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-top:.3rem}
+.ft-news{max-width:380px;margin:1.5rem auto 0;display:flex;gap:.5rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.25);border-radius:50px;padding:.4rem .4rem .4rem 1.1rem}
+.ft-news input{flex:1;background:transparent;border:none;color:var(--txt);font-size:.82rem;outline:none}
+.ft-news button{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;border-radius:50px;padding:.55rem 1.1rem;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.ft-info{margin-top:1.5rem;font-size:.78rem;color:var(--muted);line-height:1.9}
+.ft-sosmed{display:flex;gap:.8rem;justify-content:center;margin-top:1.2rem}
+.ft-sosmed a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:center;color:#D4AF37;font-size:1rem;transition:.3s}
+.ft-sosmed a:hover{background:#D4AF37;color:#0A0A0A}
+.ft-bottom{margin-top:2rem;padding-top:1.2rem;border-top:1px solid rgba(212,175,55,.1);font-size:.72rem;color:var(--dim)}
+.wa{position:fixed;bottom:1.2rem;right:1.2rem;z-index:99;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.5);cursor:pointer}
+.wa svg{width:28px;height:28px;fill:#fff}
+.cart-float{position:fixed;bottom:1.2rem;right:5.5rem;z-index:99;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(212,175,55,.5);cursor:pointer;font-size:1.3rem}
+.cart-float .badge{position:absolute;top:-5px;right:-5px;min-width:20px;height:20px;border-radius:10px;background:#25D366;color:#fff;font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 5px;border:2px solid #0A0A0A}
+.back-top{position:fixed;bottom:5.5rem;right:1.2rem;z-index:98;width:46px;height:46px;border-radius:50%;background:rgba(20,20,20,.9);border:1px solid rgba(212,175,55,.4);color:#D4AF37;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;transition:.3s;opacity:0;pointer-events:none}
 .back-top.show{opacity:1;pointer-events:auto}
-.back-top:hover{background:#D4AF37;color:#0A0A0A;transform:translateY(-4px)}
-.admin-chat{position:fixed;bottom:1.5rem;left:1.5rem;z-index:98;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#8B6914);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(212,175,55,.4);cursor:pointer;transition:.3s;font-size:1.4rem}
-.admin-chat:hover{transform:scale(1.1)}
-
-.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.9);backdrop-filter:blur(10px);z-index:1000;display:none;align-items:center;justify-content:center;padding:1.5rem}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.9);backdrop-filter:blur(10px);z-index:1000;display:none;align-items:center;justify-content:center;padding:1.2rem}
 .modal-bg.show{display:flex}
-.modal{background:linear-gradient(135deg,#1A1A1A,#0F0F0F);border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:2.2rem;width:min(440px,100%);box-shadow:0 30px 80px rgba(0,0,0,.8);position:relative;animation:modalIn .5s;max-height:90vh;overflow-y:auto}
-@keyframes modalIn{from{opacity:0;transform:rotateY(-90deg)}to{opacity:1;transform:rotateY(0)}}
-.mc{position:absolute;top:1rem;right:1rem;width:34px;height:34px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;background:transparent;font-size:1rem}
-.mc:hover{border-color:#D4AF37;color:#D4AF37;transform:rotate(90deg)}
-.modal h3{text-align:center;font-size:1.3rem;margin-bottom:.5rem;background:linear-gradient(135deg,#D4AF37,#F5E6A3);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.modal-sub{text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:1.8rem}
-.m-tabs{display:flex;gap:.5rem;margin-bottom:1.8rem;border-bottom:1px solid rgba(212,175,55,.15)}
-.m-tab{flex:1;padding:.8rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid transparent;cursor:pointer;background:transparent;font-family:inherit;border:none}
+.modal{background:linear-gradient(135deg,#1A1A1A,#0F0F0F);border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:2rem;width:min(440px,100%);max-height:90vh;overflow-y:auto;position:relative}
+.mc{position:absolute;top:.9rem;right:.9rem;width:32px;height:32px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;background:transparent;font-size:.95rem}
+.mc:hover{border-color:#D4AF37;color:#D4AF37}
+.modal h3{text-align:center;font-size:1.2rem;margin-bottom:.5rem;background:linear-gradient(135deg,#D4AF37,#F5E6A3);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.modal-sub{text-align:center;color:var(--muted);font-size:.82rem;margin-bottom:1.5rem}
+.m-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;border-bottom:1px solid rgba(212,175,55,.15)}
+.m-tab{flex:1;padding:.7rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid transparent;cursor:pointer;background:transparent;font-family:inherit;border:none}
 .m-tab.active{color:#D4AF37;border-bottom-color:#D4AF37}
-
-.order-success{text-align:center}
-.success-icon{width:80px;height:80px;margin:0 auto 1.5rem;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:#fff}
-.order-code{font-family:'Courier New',monospace;font-size:1.3rem;color:#D4AF37;background:rgba(212,175,55,.1);padding:.8rem 1.5rem;border-radius:10px;border:1px dashed rgba(212,175,55,.4);margin:1rem 0;letter-spacing:.15em;display:inline-block}
-
-.bday-modal{text-align:center}
-.bday-cake{font-size:5rem;margin:1rem 0;animation:bounce2 1.5s infinite}
-@keyframes bounce2{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
-.confetti{position:fixed;inset:0;pointer-events:none;z-index:1500}
-.confetti span{position:absolute;width:10px;height:10px;background:#D4AF37;animation:fall 3s linear infinite}
-@keyframes fall{0%{transform:translateY(-10vh) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
-
-.gc-visual{background:linear-gradient(135deg,#8B6914,#D4AF37,#F5E6A3,#D4AF37,#8B6914);background-size:200% auto;animation:shine 4s linear infinite;padding:2rem;border-radius:12px;color:#0A0A0A;text-align:left;margin-bottom:1.5rem;box-shadow:0 15px 40px rgba(212,175,55,.4)}
-.gc-visual h4{font-family:'Cinzel',serif;font-size:1.2rem;margin-bottom:.5rem}
-.gc-visual .amt{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700}
-
+.order-code{font-family:'Courier New',monospace;font-size:1.2rem;color:#D4AF37;background:rgba(212,175,55,.1);padding:.7rem 1.3rem;border-radius:10px;border:1px dashed rgba(212,175,55,.4);margin:1rem 0;letter-spacing:.15em;display:inline-block;text-align:center}
+.success-icon{width:70px;height:70px;margin:0 auto 1.3rem;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:#fff}
+.search-ov{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding-top:15vh}
+.search-ov.show{display:flex}
+.search-box{width:min(600px,92%);position:relative}
+.search-box input{width:100%;padding:1.3rem;background:rgba(20,20,20,.8);border:2px solid rgba(212,175,55,.3);border-radius:16px;color:var(--txt);font-size:1rem;outline:none}
+.search-box input:focus{border-color:#D4AF37}
+.search-close{position:absolute;top:-45px;right:0;color:var(--muted);font-size:1.8rem;cursor:pointer}
+.search-res{margin-top:1rem;max-height:50vh;overflow-y:auto;background:rgba(20,20,20,.9);border-radius:16px;border:1px solid rgba(212,175,55,.2)}
+.search-item{padding:.9rem 1.3rem;border-bottom:1px solid rgba(212,175,55,.08);display:flex;gap:.8rem;cursor:pointer}
+.search-item:hover{background:rgba(212,175,55,.08)}
+.search-item img{width:54px;height:54px;border-radius:8px;object-fit:cover}
+.zoom-ov{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:2000;display:none;align-items:center;justify-content:center;padding:1.5rem;cursor:zoom-out}
+.zoom-ov.show{display:flex}
+.zoom-ov img{max-width:90vw;max-height:90vh;border-radius:12px;border:1px solid rgba(212,175,55,.3)}
 .cart{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:#0F0F0F;border-left:1px solid rgba(212,175,55,.2);z-index:1000;transform:translateX(100%);transition:transform .4s;display:flex;flex-direction:column}
 .cart.show{transform:translateX(0)}
-.cart-h{padding:1.5rem;border-bottom:1px solid rgba(212,175,55,.15);display:flex;justify-content:space-between;align-items:center}
-.cart-h h3{font-size:1rem;font-family:'Cinzel',serif}
-.cart-b{flex:1;overflow-y:auto;padding:1.5rem}
+.cart-h{padding:1.3rem;border-bottom:1px solid rgba(212,175,55,.15);display:flex;justify-content:space-between;align-items:center}
+.cart-h h3{font-size:.95rem;font-family:'Cinzel',serif}
+.cart-b{flex:1;overflow-y:auto;padding:1.3rem}
 .cart-empty{text-align:center;color:var(--dim);padding:3rem 1rem;font-style:italic}
 .cart-item{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(212,175,55,.08);align-items:center}
 .cart-info{flex:1}
-.cart-nm{font-family:'Cinzel',serif;font-size:.85rem;margin-bottom:.3rem}
-.cart-pr{font-size:.8rem;color:#D4AF37}
-.cart-f{padding:1.5rem;border-top:1px solid rgba(212,175,55,.15)}
-.cart-total{display:flex;justify-content:space-between;margin-bottom:1.2rem;font-size:.9rem}
-.cart-tv{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#D4AF37}
-.toast{position:fixed;bottom:6rem;left:50%;transform:translateX(-50%) translateY(100px);background:#141414;border:1px solid #D4AF37;border-radius:50px;padding:.9rem 1.6rem;font-size:.85rem;color:#D4AF37;z-index:2000;transition:.4s;opacity:0;pointer-events:none}
+.cart-nm{font-family:'Cinzel',serif;font-size:.82rem;margin-bottom:.3rem}
+.cart-pr{font-size:.78rem;color:#D4AF37}
+.cart-f{padding:1.3rem;border-top:1px solid rgba(212,175,55,.15)}
+.cart-total{display:flex;justify-content:space-between;margin-bottom:1rem;font-size:.88rem}
+.cart-tv{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:#D4AF37}
+.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%) translateY(100px);background:#141414;border:1px solid #D4AF37;border-radius:50px;padding:.8rem 1.4rem;font-size:.82rem;color:#D4AF37;z-index:2000;transition:.4s;opacity:0;pointer-events:none}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
 .reveal.visible{opacity:1;transform:translateY(0)}
-
-.story-row-wrap{overflow-x:auto;padding:0 1rem;scrollbar-width:none;display:flex;gap:1rem}
-.story-row-wrap::-webkit-scrollbar{display:none}
-
+.bot-window{position:fixed;bottom:5.5rem;left:1.2rem;width:300px;max-height:380px;background:#141414;border:1px solid rgba(212,175,55,.3);border-radius:16px;z-index:1500;display:none;flex-direction:column;box-shadow:0 15px 40px rgba(0,0,0,.8)}
+.bot-window.show{display:flex}
+.bot-head{padding:.9rem;border-bottom:1px solid rgba(212,175,55,.15);font-family:'Cinzel',serif;font-size:.82rem;color:#D4AF37;display:flex;justify-content:space-between;align-items:center}
+.bot-body{flex:1;overflow-y:auto;padding:.9rem;max-height:280px}
+.bot-msg{padding:.55rem .85rem;border-radius:12px;margin-bottom:.5rem;font-size:.78rem;max-width:85%}
+.bot-msg.bot{background:rgba(212,175,55,.15);color:#F5F0EB;border:1px solid rgba(212,175,55,.3)}
+.bot-msg.user{background:rgba(37,211,102,.15);color:#F5F0EB;border:1px solid rgba(37,211,102,.3);margin-left:auto}
+.bot-input{padding:.55rem;border-top:1px solid rgba(212,175,55,.15);display:flex;gap:.5rem}
+.bot-input input{flex:1;padding:.55rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.2);border-radius:20px;color:#F5F0EB;font-size:.78rem;outline:none}
+.bot-input button{width:34px;height:34px;border-radius:50%;background:#D4AF37;color:#0A0A0A;cursor:pointer}
+.admin-chat{position:fixed;bottom:1.2rem;left:1.2rem;z-index:98;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#8B6914);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(212,175,55,.4);cursor:pointer;font-size:1.3rem}
 @media(max-width:900px){
-.nav{top:38px}
-.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(10,10,10,.98);padding:1.5rem;gap:1rem;border-bottom:1px solid rgba(212,175,55,.15)}
+.nav{top:34px}
+.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(10,10,10,.98);padding:1.3rem;gap:1rem;border-bottom:1px solid rgba(212,175,55,.15)}
 .nav-menu.show{display:flex}
 .ham{display:flex}
-.about,.contact-grid{grid-template-columns:1fr;gap:2rem}
+.about,.contact-grid{grid-template-columns:1fr;gap:1.8rem}
 .fr{grid-template-columns:1fr}
-.hero{padding-top:150px}
-.tier-row{grid-template-columns:1fr}
-.bot-window{width:280px;left:1rem;right:1rem;width:auto}
-.compare-bar{width:90%;flex-direction:column;gap:.5rem;padding:1rem;border-radius:16px}
+.hero{padding-top:140px}
+.bot-window{left:1rem;right:1rem;width:auto}
 }
 @media(max-width:600px){
-.hero h1{font-size:2.5rem}
-.btn{padding:.85rem 1.6rem;font-size:.72rem}
-.golden::before{font-size:10rem}
-.flash{font-size:.7rem;padding:.5rem 2rem .5rem .5rem}
-.cart-float{right:5.5rem;width:50px;height:50px}
-.wa{width:52px;height:52px}
-.admin-chat{width:48px;height:48px;font-size:1.2rem}
+.hero h1{font-size:2.4rem}
+.btn{padding:.8rem 1.5rem;font-size:.7rem}
+.golden::before{font-size:9rem}
+.flash{font-size:.65rem;padding:.5rem 1.8rem .5rem .5rem}
 }
 </style>
 </head>
@@ -385,8 +258,7 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 <div class="search-ov" id="searchOv">
 <div class="search-box">
 <div class="search-close" onclick="closeSearch()">✕</div>
-<input type="text" id="searchInput" placeholder="Cari croissant... (voice: tap 🎤)" oninput="doSearch()">
-<button onclick="voiceSearch()" style="position:absolute;right:1rem;top:1rem;color:#D4AF37;font-size:1.5rem;background:none;border:none;cursor:pointer" id="micBtn">🎤</button>
+<input type="text" id="searchInput" placeholder="Cari croissant..." oninput="doSearch()">
 <div class="search-res" id="searchRes"></div>
 </div>
 </div>
@@ -400,10 +272,8 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 <li><a href="#menu">Menu</a></li>
 <li><a href="#golden">Golden</a></li>
 <li><a href="#loyalty">Loyalty</a></li>
-<li><a href="#preorder">Pre-Order</a></li>
-<li><a href="#quiz">Quiz</a></li>
-<li><a href="#recipe">Resep</a></li>
-<li><a href="#corporate">Corporate</a></li>
+<li><a href="#bundling">Bundling</a></li>
+<li><a href="#tentang">Tentang</a></li>
 <li><a href="#kontak">Kontak</a></li>
 </ul>
 <div class="nav-r">
@@ -416,16 +286,8 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-<div class="hero-video">
-<video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1920&q=80">
-<source src="https://cdn.pixabay.com/video/2023/10/22/186089-877698384_large.mp4" type="video/mp4">
-</video>
-</div>
-<div class="aurora"></div>
 <div class="hero-glow"></div>
-<div class="particles"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 <div class="hero-c">
 <div class="bdg-row">
 <div class="bdg"><span class="bdg-dot"></span> Fresh from the oven</div>
@@ -436,33 +298,12 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 <p class="hero-sub">Croissant premium, dipanggang fresh setiap hari. Kini hadir di Cimahi.</p>
 <div class="hero-btns">
 <a href="#menu" class="btn btn-p">Lihat Menu</a>
-<a href="javascript:;" onclick="waVoice()" class="btn btn-o">Pesan via WhatsApp</a>
-</div>
-<div class="weather-widget">
-<span>🌤️</span> <span id="weatherTxt">Memuat cuaca Cimahi...</span>
-</div>
-</div>
-<div class="scroll-ind">▼ SCROLL</div>
-</section>
-
-<!-- STORY ROW -->
-<section class="sec" style="padding:2rem 0">
-<div class="c">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-<h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:#D4AF37">📸 Cerita Hari Ini</h3>
-<span style="font-size:.75rem;color:var(--muted)">Tap untuk lihat →</span>
-</div>
-<div class="story-row-wrap">
-<div class="story" onclick="openStory('Fresh dari Oven 🔥','Croissant baru keluar dari oven jam 6 pagi! Aroma butter memenuhi seluruh dapur.','https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80')"><div class="story-ring"></div><div class="story-name">Fresh Oven</div></div>
-<div class="story" onclick="openStory('Golden Croissant ✨','Edible 24K gold leaf dipasang satu per satu dengan pinset. Eksklusif hanya 20 pcs/bulan.','https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=800&q=80')"><div class="story-ring"></div><div class="story-name">Golden</div></div>
-<div class="story" onclick="openStory('Butter Prancis 🧈','Kami pakai butter Prancis 82% fat — inilah rahasia croissant renyah berlapis.','https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80')"><div class="story-ring"></div><div class="story-name">Butter</div></div>
-<div class="story" onclick="openStory('Packing Mewah 🎁','Setiap box dilapisi kertas tahan minyak + ribbon satin emas. Cocok untuk hadiah.','https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=800&q=80')"><div class="story-ring"></div><div class="story-name">Packing</div></div>
+<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTE,%20saya%20ingin%20order." class="btn btn-o">Pesan via WhatsApp</a>
 </div>
 </div>
 </section>
 
-<!-- KEUNGGULAN -->
-<section class="sec" style="padding-top:2rem">
+<section class="sec">
 <div class="c">
 <h2 class="gold">Kenapa CROISSANTÉ?</h2>
 <p class="sub">Empat alasan pelanggan setia memilih kami.</p>
@@ -475,7 +316,6 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 </div>
 </section>
 
-<!-- MENU -->
 <section class="sec" id="menu">
 <div class="c">
 <h2 class="gold">Varian Croissant</h2>
@@ -491,7 +331,6 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 </div>
 </section>
 
-<!-- GOLDEN -->
 <section class="golden" id="golden">
 <div class="c">
 <div class="golden-in">
@@ -501,238 +340,91 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 <span class="b-line">Member Only</span>
 </div>
 <h2 class="g-title">GOLDEN CROISSANT</h2>
-<div class="g-img" onclick="zoomImage(this.querySelector('img').src)"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=1200&q=90" alt="Golden Croissant"></div>
+<div class="g-img"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=1200&q=90" alt="Golden Croissant"></div>
 <p class="g-desc">Croissant 24 lapis butter Prancis, dilapisi edible 24K gold leaf, diisi truffle butter & crème de marrons, ditaburi sea salt Guérande.</p>
 <div class="g-info">
 <div class="g-item"><div class="g-lbl">Harga</div><div class="g-val">Rp 321.000</div></div>
-<div class="g-item"><div class="g-lbl">Sisa Bulan Ini</div><div class="g-val">7/20</div><div class="prog"><div class="prog-f"></div></div></div>
+<div class="g-item"><div class="g-lbl">Sisa Bulan Ini</div><div class="g-val">7/20</div></div>
 <div class="g-item"><div class="g-lbl">Pengambilan</div><div class="g-val">H+3 s/d H+7</div></div>
 <div class="g-item"><div class="g-lbl">Sertifikat</div><div class="g-val">Emas + Serial</div></div>
 </div>
-<div class="g-count"><small>Bulan ini tersisa</small><b id="gc">— hari</b></div>
 <button class="btn btn-p" onclick="addC('Golden Croissant',321000,'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=400&q=90')">Pesan Golden Croissant</button>
 </div>
 </div>
 </section>
 
-<!-- LOYALTY TIER -->
 <section class="sec" id="loyalty">
 <div class="c">
-<h2 class="gold">Membership & Loyalty</h2>
-<p class="sub">Semakin sering order, semakin banyak untungnya.</p>
+<h2 class="gold">Loyalty & Membership</h2>
+<p class="sub">Beli 5 box, gratis 1 box. Berlaku kumulatif.</p>
 <div class="loyalty">
-<div class="tier-row">
-<div class="tier silver">
-<div class="tier-icon">🥈</div>
-<div class="tier-name">Silver</div>
-<div class="tier-benefit">0-4 box<br>Menu standar</div>
-</div>
-<div class="tier gold active">
-<div class="tier-icon">🥇</div>
-<div class="tier-name">Gold</div>
-<div class="tier-benefit">5-9 box<br>Diskon 5% + Free 1 pcs</div>
-</div>
-<div class="tier platinum">
-<div class="tier-icon">💎</div>
-<div class="tier-name">Platinum</div>
-<div class="tier-benefit">10+ box<br>Diskon 10% + Free 1 box</div>
-</div>
-</div>
 <h3 style="font-family:'Cinzel',serif;font-size:1rem;margin-bottom:.5rem">Kartu Loyalitas Kamu</h3>
-<div class="stamp-row" id="stampRow">
-<div class="stamp on">🥐</div><div class="stamp on">🥐</div><div class="stamp on">🥐</div>
-<div class="stamp">🥐</div><div class="stamp">🥐</div>
+<div class="stamp-row">
+<div class="stamp on">🥐</div><div class="stamp on">🥐</div><div class="stamp on">🥐</div><div class="stamp">🥐</div><div class="stamp">🥐</div>
 </div>
-<div class="loyalty-prog"><div class="loyalty-prog-f" style="width:60%"></div></div>
-<p style="font-size:.85rem;color:var(--muted)">Kamu punya <b style="color:#D4AF37">3 dari 5</b> stamp</p>
-<p style="font-size:.8rem;color:var(--dim);margin-top:.5rem">2 box lagi → GRATIS 1 box 🎁</p>
-</div>
-</div>
-</section>
-
-<!-- PRE-ORDER CALENDAR -->
-<section class="sec" id="preorder">
-<div class="c">
-<h2 class="gold">Pilih Tanggal Pengambilan</h2>
-<p class="sub">Booking slot pickup H+1 sampai H+7 dari hari ini.</p>
-<div class="calendar">
-<div class="cal-header">
-<div class="cal-title" id="calTitle">Bulan Ini</div>
-</div>
-<div class="cal-grid" id="calGrid"></div>
-<div style="margin-top:1.5rem">
-<div style="font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem">Pilih Jam</div>
-<div class="time-slots" id="timeSlots">
-<div class="time-slot" onclick="pickSlot(this)">09:00</div>
-<div class="time-slot" onclick="pickSlot(this)">10:00</div>
-<div class="time-slot" onclick="pickSlot(this)">11:00</div>
-<div class="time-slot" onclick="pickSlot(this)">13:00</div>
-<div class="time-slot" onclick="pickSlot(this)">15:00</div>
-<div class="time-slot" onclick="pickSlot(this)">17:00</div>
-<div class="time-slot" onclick="pickSlot(this)">19:00</div>
-</div>
-</div>
-<div style="margin-top:1.5rem;text-align:center">
-<button class="btn btn-p" onclick="confirmPreorder()">Konfirmasi Jadwal</button>
-</div>
+<div class="loyalty-prog"><div class="loyalty-prog-f"></div></div>
+<p style="font-size:.82rem;color:var(--muted)">Kamu punya <b style="color:#D4AF37">3 dari 5</b> stamp</p>
+<p style="font-size:.78rem;color:var(--dim);margin-top:.5rem">2 box lagi → GRATIS 1 box 🎁</p>
 </div>
 </div>
 </section>
 
-<!-- BUNDLING -->
-<section class="sec">
+<section class="sec" id="bundling">
 <div class="c">
 <h2 class="gold">Pilih Paket Box Favoritmu</h2>
 <p class="sub">Tiga pilihan box sesuai kebutuhan.</p>
 <div class="grid-3">
-<div class="card" style="padding:2.2rem 1.5rem;text-align:center">
-<div style="font-size:2.4rem;margin-bottom:1rem">🥐</div>
-<h3 style="font-family:'Cinzel',serif;font-size:1.05rem">Box Personal</h3>
-<div style="color:var(--muted);font-style:italic;margin:.5rem 0 1rem">Isi 2–3 pcs</div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:#D4AF37;margin-bottom:1.3rem">Rp 55.000</div>
+<div class="card b-card">
+<div style="font-size:2.2rem;margin-bottom:.8rem">🥐</div>
+<h3 style="font-family:'Cinzel',serif;font-size:1rem">Box Personal</h3>
+<div style="color:var(--muted);font-style:italic;margin:.5rem 0 .8rem;font-size:.85rem">Isi 2–3 pcs</div>
+<div style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:#D4AF37;margin-bottom:1.2rem">Rp 55.000</div>
 <button class="btn btn-o" onclick="addC('Box Personal',55000,'')">Pesan Paket</button>
 </div>
-<div class="card" style="padding:2.2rem 1.5rem;text-align:center;border-color:rgba(212,175,55,.4)">
-<div style="position:absolute;top:1rem;right:1rem;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:#0A0A0A;background:#D4AF37;padding:.3rem .8rem;border-radius:50px;font-weight:600">Best Value</div>
-<div style="font-size:2.4rem;margin-bottom:1rem">🎁</div>
-<h3 style="font-family:'Cinzel',serif;font-size:1.05rem">Box Sharing</h3>
-<div style="color:var(--muted);font-style:italic;margin:.5rem 0 1rem">Isi 6 pcs</div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:#D4AF37;margin-bottom:1.3rem">Rp 110.000</div>
+<div class="card b-card" style="border-color:rgba(212,175,55,.4)">
+<div style="position:absolute;top:.9rem;right:.9rem;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:#0A0A0A;background:#D4AF37;padding:.25rem .7rem;border-radius:50px;font-weight:600">Best Value</div>
+<div style="font-size:2.2rem;margin-bottom:.8rem">🎁</div>
+<h3 style="font-family:'Cinzel',serif;font-size:1rem">Box Sharing</h3>
+<div style="color:var(--muted);font-style:italic;margin:.5rem 0 .8rem;font-size:.85rem">Isi 6 pcs</div>
+<div style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:#D4AF37;margin-bottom:1.2rem">Rp 110.000</div>
 <button class="btn btn-p" onclick="addC('Box Sharing',110000,'')">Pesan Paket</button>
 </div>
-<div class="card" style="padding:2.2rem 1.5rem;text-align:center">
-<div style="font-size:2.4rem;margin-bottom:1rem">👑</div>
-<h3 style="font-family:'Cinzel',serif;font-size:1.05rem">Box Hampers</h3>
-<div style="color:var(--muted);font-style:italic;margin:.5rem 0 1rem">Isi 12 pcs</div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:#D4AF37;margin-bottom:1.3rem">Rp 210.000</div>
+<div class="card b-card">
+<div style="font-size:2.2rem;margin-bottom:.8rem">👑</div>
+<h3 style="font-family:'Cinzel',serif;font-size:1rem">Box Hampers</h3>
+<div style="color:var(--muted);font-style:italic;margin:.5rem 0 .8rem;font-size:.85rem">Isi 12 pcs</div>
+<div style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:#D4AF37;margin-bottom:1.2rem">Rp 210.000</div>
 <button class="btn btn-o" onclick="addC('Box Hampers',210000,'')">Pesan Paket</button>
 </div>
 </div>
 </div>
 </section>
 
-<!-- SUBSCRIPTION -->
-<section class="sec">
-<div class="c">
-<h2 class="gold">Langganan Bulanan</h2>
-<p class="sub">Croissant fresh dikirim rutin tanpa perlu order ulang.</p>
-<div style="max-width:600px;margin:0 auto">
-<div class="sub-option" onclick="pickSub(this,1)">
-<div><div style="font-family:'Cinzel',serif;font-size:1rem">Paket Mingguan</div><div style="font-size:.75rem;color:var(--muted)">4x kirim per bulan</div></div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#D4AF37;font-weight:700">Rp 200.000</div>
-</div>
-<div class="sub-option" onclick="pickSub(this,2)">
-<div><div style="font-family:'Cinzel',serif;font-size:1rem">Paket Bi-weekly</div><div style="font-size:.75rem;color:var(--muted)">2x kirim per bulan</div></div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#D4AF37;font-weight:700">Rp 110.000</div>
-</div>
-<div class="sub-option" onclick="pickSub(this,3)">
-<div><div style="font-family:'Cinzel',serif;font-size:1rem">Paket Bulanan</div><div style="font-size:.75rem;color:var(--muted)">1x kirim per bulan (6 pcs)</div></div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#D4AF37;font-weight:700">Rp 65.000</div>
-</div>
-<div style="text-align:center;margin-top:1.5rem">
-<button class="btn btn-p" onclick="subOrder()">Langganan Sekarang</button>
-</div>
-</div>
-</div>
-</section>
-
-<!-- QUIZ -->
-<section class="sec" id="quiz">
-<div class="c">
-<h2 class="gold">Varian Mana yang Cocok?</h2>
-<p class="sub">Jawab 3 pertanyaan, kami rekomendasi varian untukmu.</p>
-<div class="quiz-box" id="quizBox">
-<div class="quiz-q" id="quizQ">Kamu tim manis atau gurih?</div>
-<div id="quizOpts">
-<div class="quiz-opt" onclick="quizAns(0)">🍯 Manis</div>
-<div class="quiz-opt" onclick="quizAns(1)">🧀 Gurih</div>
-<div class="quiz-opt" onclick="quizAns(2)">🤔 Dua-duanya</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- GIFT CARD -->
-<section class="sec">
-<div class="c">
-<h2 class="gold">Gift Card Digital</h2>
-<p class="sub">Kirim ke teman tersayang, langsung via WhatsApp.</p>
-<div class="grid-3">
-<div class="card" style="padding:2rem;text-align:center">
-<div style="font-size:2rem;margin-bottom:.5rem">💳</div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:#D4AF37;margin:.5rem 0">Rp 50.000</div>
-<p style="font-size:.8rem;color:var(--muted);margin-bottom:1rem">Untuk camilan pribadi</p>
-<button class="btn btn-o" onclick="buyGift(50000)">Beli Voucher</button>
-</div>
-<div class="card" style="padding:2rem;text-align:center;border-color:rgba(212,175,55,.4)">
-<div style="font-size:2rem;margin-bottom:.5rem">🎁</div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:#D4AF37;margin:.5rem 0">Rp 100.000</div>
-<p style="font-size:.8rem;color:var(--muted);margin-bottom:1rem">Untuk hadiah teman</p>
-<button class="btn btn-p" onclick="buyGift(100000)">Beli Voucher</button>
-</div>
-<div class="card" style="padding:2rem;text-align:center">
-<div style="font-size:2rem;margin-bottom:.5rem">👑</div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:#D4AF37;margin:.5rem 0">Rp 200.000</div>
-<p style="font-size:.8rem;color:var(--muted);margin-bottom:1rem">Untuk hampers mewah</p>
-<button class="btn btn-o" onclick="buyGift(200000)">Beli Voucher</button>
-</div>
-</div>
-</div>
-</section>
-
-<!-- BTS VIDEO -->
-<section class="sec">
-<div class="c">
-<h2 class="gold">Behind The Scenes</h2>
-<p class="sub">Proses croissant dari adonan sampai ke tanganmu.</p>
-<div class="grid-4" style="margin-top:2rem">
-<div style="border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.2);aspect-ratio:16/9;background:#000;position:relative">
-<video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover"><source src="https://cdn.pixabay.com/video/2023/10/22/186089-877698384_large.mp4" type="video/mp4"></video>
-<div style="position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(10,10,10,.9));font-family:'Italiana',sans-serif;color:#D4AF37;font-size:.95rem">Butter Prancis</div>
-</div>
-<div style="border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.2);aspect-ratio:16/9;background:#000;position:relative">
-<video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover"><source src="https://cdn.pixabay.com/video/2024/01/30/199110-908247728_large.mp4" type="video/mp4"></video>
-<div style="position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(10,10,10,.9));font-family:'Italiana',sans-serif;color:#D4AF37;font-size:.95rem">Laminasi 24 Lapis</div>
-</div>
-<div style="border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.2);aspect-ratio:16/9;background:#000;position:relative">
-<video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover"><source src="https://cdn.pixabay.com/video/2023/10/22/186089-877698384_large.mp4" type="video/mp4"></video>
-<div style="position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(10,10,10,.9));font-family:'Italiana',sans-serif;color:#D4AF37;font-size:.95rem">Fresh dari Oven</div>
-</div>
-<div style="border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.2);aspect-ratio:16/9;background:#000;position:relative">
-<video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover"><source src="https://cdn.pixabay.com/video/2024/01/30/199110-908247728_large.mp4" type="video/mp4"></video>
-<div style="position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(10,10,10,.9));font-family:'Italiana',sans-serif;color:#D4AF37;font-size:.95rem">Packing Mewah</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- TIMELINE -->
 <section class="sec">
 <div class="c">
 <h2 class="gold">Cara Pesan Mudah</h2>
 <p class="sub">Tujuh langkah simpel.</p>
-<div class="tl" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;margin-top:2rem">
-<div class="tl-step reveal" style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:#0A0A0A;margin:0 auto 1rem">01</div><div style="font-size:.7rem;color:var(--muted)">Kunjungi Website</div></div>
-<div class="tl-step reveal" style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:#0A0A0A;margin:0 auto 1rem">02</div><div style="font-size:.7rem;color:var(--muted)">Pilih Varian</div></div>
-<div class="tl-step reveal" style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:#0A0A0A;margin:0 auto 1rem">03</div><div style="font-size:.7rem;color:var(--muted)">Pilih Paket</div></div>
-<div class="tl-step reveal" style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:#0A0A0A;margin:0 auto 1rem">04</div><div style="font-size:.7rem;color:var(--muted)">Cek Harga</div></div>
-<div class="tl-step reveal" style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:#0A0A0A;margin:0 auto 1rem">05</div><div style="font-size:.7rem;color:var(--muted)">Order Online</div></div>
-<div class="tl-step reveal" style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:#0A0A0A;margin:0 auto 1rem">06</div><div style="font-size:.7rem;color:var(--muted)">Konfirmasi</div></div>
-<div class="tl-step reveal" style="text-align:center"><div style="width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:#0A0A0A;margin:0 auto 1rem">07</div><div style="font-size:.7rem;color:var(--muted)">Siap Dinikmati</div></div>
+<div class="tl">
+<div class="tl-step"><div class="tl-num">01</div><div class="tl-lbl">Kunjungi Website</div></div>
+<div class="tl-step"><div class="tl-num">02</div><div class="tl-lbl">Pilih Varian</div></div>
+<div class="tl-step"><div class="tl-num">03</div><div class="tl-lbl">Pilih Paket</div></div>
+<div class="tl-step"><div class="tl-num">04</div><div class="tl-lbl">Cek Harga</div></div>
+<div class="tl-step"><div class="tl-num">05</div><div class="tl-lbl">Order Online</div></div>
+<div class="tl-step"><div class="tl-num">06</div><div class="tl-lbl">Konfirmasi</div></div>
+<div class="tl-step"><div class="tl-num">07</div><div class="tl-lbl">Siap Dinikmati</div></div>
 </div>
 </div>
 </section>
 
-<!-- ABOUT -->
-<section class="sec">
+<section class="sec" id="tentang">
 <div class="c">
 <h2 class="gold">Cerita CROISSANTÉ</h2>
 <p class="sub">Dari dapur sederhana di Cimahi untuk kamu.</p>
 <div class="about">
-<div class="about-img reveal"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=85" alt="Hendra Lesmana"></div>
-<div class="reveal">
-<p class="about-story">CROISSANTÉ lahir dari kecintaan mendalam pada croissant Prancis asli. Setiap hari, kami memanggang dalam batch kecil agar setiap croissant sampai ke tanganmu dalam kondisi terbaik.</p>
-<p class="about-story">Dari dapur sederhana di Cimahi, kami percaya bahwa croissant bukan sekadar pastry — ia adalah momen untuk dinikmati perlahan.</p>
+<div class="about-img"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=85" alt="Hendra Lesmana"></div>
+<div>
+<p class="about-story">CROISSANTÉ lahir dari kecintaan mendalam pada croissant Prancis asli — laminasi butter yang renyah di luar, lembut di dalam.</p>
+<p class="about-story">Dari dapur sederhana di Cimahi, kami percaya croissant bukan sekadar pastry — ia adalah momen untuk dinikmati perlahan.</p>
 <p class="quote">"Setiap croissant kami adalah hasil dari cinta, ketelitian, dan dedikasi."</p>
 <div class="sig">Hendra Lesmana</div>
 <div class="sig-sub">Founder & Head Baker</div>
@@ -741,135 +433,59 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 </div>
 </section>
 
-<!-- TESTIMONI -->
 <section class="sec">
 <div class="c">
 <h2 class="gold">Kata Mereka</h2>
 <p class="sub">Cerita dari pelanggan setia kami.</p>
 <div class="testi-slider">
 <div class="testi-track" id="testiTrack">
-<div class="testi-slide"><div class="card" style="padding:2rem;text-align:center"><div class="stars">★★★★★</div><p class="testi-text">"Classic Butter-nya juara. Renyah di luar, lembut di dalam."</p><div class="testi-auth"><div class="testi-av">A</div><div><div style="font-size:.85rem;font-weight:500">Ayu P.</div><div style="font-size:.7rem;color:var(--dim)">Cimahi ✓ verified</div></div></div></div></div>
-<div class="testi-slide"><div class="card" style="padding:2rem;text-align:center"><div class="stars">★★★★★</div><p class="testi-text">"Pesan Box Sharing buat keluarga, semua pada rebutan!"</p><div class="testi-auth"><div class="testi-av">R</div><div><div style="font-size:.85rem;font-weight:500">Rizky H.</div><div style="font-size:.7rem;color:var(--dim)">Bandung ✓ verified</div></div></div></div></div>
-<div class="testi-slide"><div class="card" style="padding:2rem;text-align:center"><div class="stars">★★★★★</div><p class="testi-text">"Packaging-nya cantik, cocok buat hampers."</p><div class="testi-auth"><div class="testi-av">S</div><div><div style="font-size:.85rem;font-weight:500">Sarah M.</div><div style="font-size:.7rem;color:var(--dim)">Cimahi ✓ verified</div></div></div></div></div>
+<div class="testi-slide"><div class="card" style="padding:1.8rem;text-align:center"><div class="stars">★★★★★</div><p class="testi-text">"Classic Butter-nya juara. Renyah di luar, lembut di dalam."</p><div class="testi-auth"><div class="testi-av">A</div><div><div style="font-size:.82rem;font-weight:500">Ayu P.</div><div style="font-size:.68rem;color:var(--dim)">Cimahi ✓</div></div></div></div></div>
+<div class="testi-slide"><div class="card" style="padding:1.8rem;text-align:center"><div class="stars">★★★★★</div><p class="testi-text">"Pesan Box Sharing buat keluarga, semua pada rebutan!"</p><div class="testi-auth"><div class="testi-av">R</div><div><div style="font-size:.82rem;font-weight:500">Rizky H.</div><div style="font-size:.68rem;color:var(--dim)">Bandung ✓</div></div></div></div></div>
+<div class="testi-slide"><div class="card" style="padding:1.8rem;text-align:center"><div class="stars">★★★★★</div><p class="testi-text">"Packaging-nya cantik banget, cocok buat hampers."</p><div class="testi-auth"><div class="testi-av">S</div><div><div style="font-size:.82rem;font-weight:500">Sarah M.</div><div style="font-size:.68rem;color:var(--dim)">Cimahi ✓</div></div></div></div></div>
 </div>
 <div class="testi-dots" id="testiDots"></div>
 </div>
 </div>
 </section>
 
-<!-- BLOG -->
 <section class="sec">
-<div class="c">
-<h2 class="gold">Cerita & Tips</h2>
-<p class="sub">Hal menarik tentang dunia croissant.</p>
-<div class="grid-3">
-<div class="card reveal" style="overflow:hidden"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80" style="width:100%;aspect-ratio:16/10;object-fit:cover"><div style="padding:1.5rem"><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:#D4AF37;margin-bottom:.5rem">Tips · 5 min</div><div style="font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;margin-bottom:.6rem">Cara Menyimpan Croissant Agar Tetap Renyah</div><p style="font-size:.82rem;color:var(--muted);line-height:1.7">Simpan di tempat tertutup, jangan di kulkas langsung...</p></div></div>
-<div class="card reveal" style="overflow:hidden"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=800&q=80" style="width:100%;aspect-ratio:16/10;object-fit:cover"><div style="padding:1.5rem"><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:#D4AF37;margin-bottom:.5rem">Cerita · 4 min</div><div style="font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;margin-bottom:.6rem">Mengapa Butter Prancis Lebih Istimewa</div><p style="font-size:.82rem;color:var(--muted);line-height:1.7">Butter Prancis mengandung lebih banyak lemak...</p></div></div>
-<div class="card reveal" style="overflow:hidden"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80" style="width:100%;aspect-ratio:16/10;object-fit:cover"><div style="padding:1.5rem"><div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:#D4AF37;margin-bottom:.5rem">Behind · 6 min</div><div style="font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;margin-bottom:.6rem">Rahasia Laminasi 24 Lapis</div><p style="font-size:.82rem;color:var(--muted);line-height:1.7">Setiap croissant melalui 24 lapis laminasi butter...</p></div></div>
-</div>
-</div>
-</section>
-
-<!-- RECIPE -->
-<section class="sec" id="recipe">
-<div class="c">
-<h2 class="gold">Resep Croissant Rumahan</h2>
-<p class="sub">Coba bikin sendiri di rumah — resep gratis dari kami.</p>
-<div class="recipe-grid">
-<div class="card" style="padding:2rem">
-<h3 style="font-family:'Cinzel',serif;color:#D4AF37;margin-bottom:1rem">🥐 Classic Butter</h3>
-<ol class="step-list">
-<li>500g tepung protein tinggi</li>
-<li>300g butter Prancis (dingin)</li>
-<li>10g ragi instan</li>
-<li>60g gula pasir</li>
-<li>10g garam</li>
-<li>250ml susu hangat</li>
-<li>Laminasi 3x lipat 3x putar</li>
-<li>Diamkan 2 jam, panggang 200°C 18 menit</li>
-</ol>
-</div>
-<div class="card" style="padding:2rem">
-<h3 style="font-family:'Cinzel',serif;color:#D4AF37;margin-bottom:1rem">🍫 Chocolate</h3>
-<ol class="step-list">
-<li>Resep dasar classic butter</li>
-<li>Tambahkan dark chocolate batang</li>
-<li>Lipat 2 batang per croissant</li>
-<li>Panggang seperti biasa</li>
-<li>Glaze cokelat leleh di atasnya</li>
-</ol>
-</div>
-<div class="card" style="padding:2rem">
-<h3 style="font-family:'Cinzel',serif;color:#D4AF37;margin-bottom:1rem">🧀 Cheese Savory</h3>
-<ol class="step-list">
-<li>Resep dasar classic butter</li>
-<li>Isi gruyère + ham sapi</li>
-<li>Taburi keju parut di atas</li>
-<li>Panggang 200°C 20 menit</li>
-<li>Sajikan hangat</li>
-</ol>
-</div>
-</div>
-</div>
-</section>
-
-<!-- CORPORATE -->
-<section class="sec" id="corporate">
-<div class="c">
-<h2 class="gold">Corporate & Bulk Order</h2>
-<p class="sub">Untuk acara kantor, seminar, atau hampers corporate.</p>
-<div style="max-width:700px;margin:0 auto;background:linear-gradient(135deg,rgba(212,175,55,.1),transparent);border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:2rem;text-align:center">
-<p style="font-size:.95rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem">Order 20+ box untuk acara corporate dengan harga spesial, custom packaging logo perusahaan, dan pengiriman terjadwal.</p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem">
-<div style="text-align:left"><div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)">Minimal Order</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#D4AF37;font-weight:600">20 Box</div></div>
-<div style="text-align:left"><div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)">Diskon</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#D4AF37;font-weight:600">s/d 25%</div></div>
-</div>
-<button class="btn btn-p" onclick="corporateOrder()">Ajukan Corporate Order</button>
-</div>
-</div>
-</section>
-
-<!-- FAQ -->
-<section class="sec">
-<div class="c" style="max-width:800px">
+<div class="c" style="max-width:750px">
 <h2 class="gold">Pertanyaan Umum</h2>
-<div style="margin-top:2rem">
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Berapa lama waktu pengambilan? <span class="faq-icon">+</span></div><div class="faq-a">Pengambilan H+1 sampai H+7 setelah order.</div></div>
+<div style="margin-top:1.5rem">
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Berapa lama waktu pengambilan? <span class="faq-icon">+</span></div><div class="faq-a">Pengambilan H+1 sampai H+7 setelah order. Kami memanggang fresh di hari pengambilan.</div></div>
 <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Bisa kirim ke luar Cimahi? <span class="faq-icon">+</span></div><div class="faq-a">Bisa. Untuk area Bandung & sekitarnya, ongkir menyesuaikan jarak.</div></div>
 <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Metode pembayaran? <span class="faq-icon">+</span></div><div class="faq-a">Transfer bank (BCA, Mandiri, BRI), QRIS, dan COD untuk area Cimahi.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Bisa custom varian? <span class="faq-icon">+</span></div><div class="faq-a">Bisa! Untuk order 10+ box, kami terima custom varian.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Minimum order? <span class="faq-icon">+</span></div><div class="faq-a">Minimum 1 box. Free ongkir area Cimahi minimal 3 box.</div></div>
 <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Ada diskon pembelian berulang? <span class="faq-icon">+</span></div><div class="faq-a">Ya! Beli 5 box, gratis 1 box. Berlaku kumulatif per pelanggan.</div></div>
 </div>
 </div>
 </section>
 
-<!-- PAYMENT -->
 <section class="sec">
 <div class="c">
 <h2 class="gold">Cara Pembayaran</h2>
-<div class="pay-grid" style="margin-top:2rem">
-<div class="card pay-card reveal"><span class="pay-icon">💳</span><h3>Transfer Bank</h3><p>BCA: 1234567890<br>Mandiri: 0987654321<br>BRI: 1122334455<br><em style="color:#D4AF37;font-size:.7rem">a.n. Hendra Lesmana</em></p></div>
-<div class="card pay-card reveal"><span class="pay-icon">📱</span><h3>QRIS</h3><p>Scan kode QRIS<br>Semua e-wallet<br>Konfirmasi via WhatsApp</p></div>
-<div class="card pay-card reveal"><span class="pay-icon">💰</span><h3>E-Wallet</h3><p>GoPay: 089668211725<br>OVO: 089668211725<br>Dana: 089668211725</p></div>
-<div class="card pay-card reveal"><span class="pay-icon">₿</span><h3>Crypto</h3><p>BTC/ETH/USDT<br>Kontak admin dulu<br>Konfirmasi 1x24 jam</p></div>
+<div class="pay-grid" style="margin-top:1.5rem">
+<div class="card pay-card"><span class="pay-icon">💳</span><h3>Transfer Bank</h3><p>BCA: 1234567890<br>Mandiri: 0987654321<br>BRI: 1122334455<br><em style="color:#D4AF37;font-size:.68rem">a.n. Hendra Lesmana</em></p></div>
+<div class="card pay-card"><span class="pay-icon">📱</span><h3>QRIS</h3><p>Scan kode QRIS<br>Semua e-wallet<br>Konfirmasi via WhatsApp</p></div>
+<div class="card pay-card"><span class="pay-icon">💰</span><h3>E-Wallet</h3><p>GoPay: 089668211725<br>OVO: 089668211725<br>Dana: 089668211725</p></div>
+<div class="card pay-card"><span class="pay-icon">🏠</span><h3>COD</h3><p>Area Cimahi<br>Bayar saat pickup<br>Maks Rp 500.000</p></div>
 </div>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section class="sec" id="kontak">
 <div class="c">
 <h2 class="gold">Pesan Sekarang</h2>
-<p class="sub">Isi form, pesanan langsung terkirim via WhatsApp.</p>
+<p class="sub">Isi form di bawah, pesanan langsung terkirim via WhatsApp.</p>
 <div class="contact-grid">
-<div class="reveal">
+<div>
 <div class="ci"><div class="ci-ic">📞</div><div><div class="ci-lb">Contact Person</div><a class="ci-val" href="https://wa.me/6289668211725">Hendra Lesmana — 0896 6821 1725</a></div></div>
 <div class="ci"><div class="ci-ic">📍</div><div><div class="ci-lb">Lokasi</div><div class="ci-val">Cimahi, Jawa Barat</div></div></div>
 <div class="ci"><div class="ci-ic">👤</div><div><div class="ci-lb">Owner</div><div class="ci-val">Hendra Lesmana</div></div></div>
 <div class="ci"><div class="ci-ic">🎵</div><div><div class="ci-lb">TikTok</div><a class="ci-val" href="https://tiktok.com" target="_blank">@croissante.cimahi</a></div></div>
 <div class="map-wrap"><iframe src="https://www.google.com/maps?q=Cimahi,Indonesia&output=embed" loading="lazy"></iframe></div>
 </div>
-<form class="reveal" onsubmit="return order(event)">
+<form onsubmit="return order(event)">
 <div class="fg"><label class="fl">Nama Lengkap</label><input type="text" class="fi" id="fn" required></div>
 <div class="fg"><label class="fl">No. HP / WhatsApp</label><input type="tel" class="fi" id="fp" required></div>
 <div class="fr">
@@ -888,7 +504,6 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
 <div class="c">
 <div class="ft-logo">CROISSANTÉ</div>
@@ -911,24 +526,13 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 
 <div class="cart-float" onclick="openCart()">🛒<span class="badge" id="cartBadge">0</span></div>
 <div class="back-top" id="backTop">⬆</div>
-<a href="javascript:;" onclick="waVoice()" class="wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTE" target="_blank" class="wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
 <div class="admin-chat" onclick="openBot()" title="Chatbot">🤖</div>
 
-<!-- STORY MODAL -->
-<div class="story-modal" id="storyModal">
-<div class="story-content">
-<div class="story-close" onclick="closeStory()">✕</div>
-<img id="storyImg" src="" style="width:100%;height:auto;border-radius:12px;margin-bottom:1.5rem">
-<h3 class="gold" id="storyTitle" style="margin-bottom:1rem">Story</h3>
-<p style="font-size:.9rem;color:var(--muted);line-height:1.7" id="storyText"></p>
-</div>
-</div>
-
-<!-- CHATBOT -->
 <div class="bot-window" id="botWindow">
 <div class="bot-head">🤖 CROISSANTÉ Bot <span onclick="closeBot()" style="cursor:pointer">✕</span></div>
 <div class="bot-body" id="botBody">
-<div class="bot-msg bot">Halo! Saya asisten CROISSANTÉ 🥐<br>Ada yang bisa saya bantu? Coba tanya: <b>menu</b>, <b>harga</b>, <b>lokasi</b>, <b>wa</b></div>
+<div class="bot-msg bot">Halo! Saya asisten CROISSANTÉ 🥐<br>Tanya: <b>menu</b>, <b>harga</b>, <b>lokasi</b>, <b>order</b></div>
 </div>
 <div class="bot-input">
 <input type="text" id="botInput" placeholder="Tanya sesuatu..." onkeypress="if(event.key==='Enter')botSend()">
@@ -936,7 +540,6 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 </div>
 </div>
 
-<!-- LOGIN MODAL -->
 <div class="modal-bg" id="loginModal">
 <div class="modal">
 <button class="mc" onclick="closeLogin()">✕</button>
@@ -947,17 +550,16 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 <button class="m-tab" onclick="switchTab('register',event)">Daftar</button>
 </div>
 <div id="tabLogin">
-<div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="nama@email.com"></div>
-<div class="fg"><label class="fl">Password</label><input type="password" class="fi" placeholder="••••••••"></div>
+<div class="fg"><label class="fl">Email</label><input type="email" class="fi"></div>
+<div class="fg"><label class="fl">Password</label><input type="password" class="fi"></div>
 <button class="btn btn-p" style="width:100%" onclick="fakeLogin()">Masuk</button>
 </div>
 <div id="tabRegister" style="display:none">
 <div class="fg"><label class="fl">Nama Lengkap</label><input type="text" class="fi"></div>
 <div class="fg"><label class="fl">Email</label><input type="email" class="fi"></div>
 <div class="fg"><label class="fl">No. HP</label><input type="tel" class="fi"></div>
-<div class="fg"><label class="fl">Tanggal Lahir</label><input type="date" class="fi" id="bdayInput"></div>
 <div class="fg"><label class="fl">Password</label><input type="password" class="fi"></div>
-<button class="btn btn-p" style="width:100%" onclick="fakeRegister()">Daftar</button>
+<button class="btn btn-p" style="width:100%" onclick="fakeLogin()">Daftar</button>
 </div>
 </div>
 </div>
@@ -965,42 +567,13 @@ Promo <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 <div class="modal-bg" id="successModal">
 <div class="modal">
 <button class="mc" onclick="closeSuccess()">✕</button>
-<div class="order-success">
+<div style="text-align:center">
 <div class="success-icon">✓</div>
 <h3 class="gold">Pesanan Terkirim!</h3>
 <p class="modal-sub">Silakan konfirmasi via WhatsApp</p>
 <div class="order-code" id="orderCode">CR-2026-001</div>
-<button class="btn btn-p" style="width:100%;margin-top:1.5rem" onclick="closeSuccess()">OK</button>
+<button class="btn btn-p" style="width:100%;margin-top:1rem" onclick="closeSuccess()">OK</button>
 </div>
-</div>
-</div>
-
-<div class="modal-bg" id="bdayModal">
-<div class="modal bday-modal">
-<button class="mc" onclick="closeBday()">✕</button>
-<div class="bday-cake">🎂</div>
-<h3 class="gold">Happy Birthday!</h3>
-<p class="modal-sub">Terima kasih setia bersama kami 🥐</p>
-<p style="font-size:.95rem;color:#F5F0EB;margin-bottom:1.5rem">Nikmati <b class="gold">1 box GRATIS</b> dari kami!</p>
-<div class="order-code">BDAY-2026-08</div>
-<button class="btn btn-p" style="width:100%;margin-top:1.5rem" onclick="closeBday()">Klaim Sekarang</button>
-</div>
-</div>
-
-<div class="modal-bg" id="giftModal">
-<div class="modal">
-<button class="mc" onclick="closeGift()">✕</button>
-<h3>Beli Gift Card</h3>
-<p class="modal-sub">Kartu digital, dikirim via WhatsApp</p>
-<div class="gc-visual">
-<h4>CROISSANTÉ</h4>
-<div class="amt" id="gcAmt">Rp 50.000</div>
-<small>Gift Card</small>
-</div>
-<div class="fg"><label class="fl">Nama Penerima</label><input type="text" class="fi" id="gcName"></div>
-<div class="fg"><label class="fl">No. HP Penerima</label><input type="tel" class="fi" id="gcPhone"></div>
-<div class="fg"><label class="fl">Ucapan</label><textarea class="fi" id="gcMsg" rows="2"></textarea></div>
-<button class="btn btn-p" style="width:100%" onclick="sendGift()">Kirim via WhatsApp</button>
 </div>
 </div>
 
@@ -1027,7 +600,7 @@ function renderMenu(f){
 f=f||'all';
 var g=document.getElementById('mg'),html='';
 MENU.filter(function(m){return f==='all'||m.cat===f;}).forEach(function(m){
-html+='<div class="m-card card"><div class="m-card-img" onclick="zoomImage(\''+m.img+'\')">'+(m.tag?'<span class="m-tag">'+m.tag+'</span>':'')+'<span class="m-share" onclick="event.stopPropagation();shareProduct(\''+m.name+'\','+m.price+')">↗</span><span class="m-compare" onclick="event.stopPropagation();addCompare(\''+m.name+'\','+m.price+')">⚖️ Banding</span><img src="'+m.img+'" alt="'+m.name+'" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80\'"></div><div class="m-body"><div class="m-cat">'+m.cat+'</div><div class="m-name">'+m.name+'</div><div class="m-desc">'+m.desc+'</div><div class="m-foot"><div class="m-price"><small>Mulai dari</small>Rp '+m.price.toLocaleString('id-ID')+'</div><button class="m-add" onclick="addC(\''+m.name+'\','+m.price+',\''+m.img+'\')">+</button></div></div></div>';
+html+='<div class="m-card card"><div class="m-card-img" onclick="zoomImage(\''+m.img+'\')">'+(m.tag?'<span class="m-tag">'+m.tag+'</span>':'')+'<img src="'+m.img+'" alt="'+m.name+'" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80\'"></div><div class="m-body"><div class="m-cat">'+m.cat+'</div><div class="m-name">'+m.name+'</div><div class="m-desc">'+m.desc+'</div><div class="m-foot"><div class="m-price"><small>Mulai dari</small>Rp '+m.price.toLocaleString('id-ID')+'</div><button class="m-add" onclick="addC(\''+m.name+'\','+m.price+',\''+m.img+'\')">+</button></div></div></div>';
 });
 g.innerHTML=html;
 }
@@ -1037,19 +610,36 @@ document.querySelectorAll('.f-btn').forEach(function(x){x.classList.remove('acti
 b.classList.add('active');renderMenu(b.dataset.c);
 };
 });
-
-var cart=[];try{cart=JSON.parse(localStorage.getItem('croissante_cart')||'[]');}catch(e){cart=[];}
-function addC(n,p,i){var e=null;for(var k=0;k<cart.length;k++){if(cart[k].name===n){e=cart[k];break;}}if(e)e.qty++;else cart.push({name:n,price:p,img:i,qty:1});saveC();renderCart();showToast(n+' ditambahkan ✓');}
+var cart=[];
+try{cart=JSON.parse(localStorage.getItem('croissante_cart')||'[]');}catch(e){cart=[];}
+function addC(n,p,i){
+var e=null;
+for(var k=0;k<cart.length;k++){if(cart[k].name===n){e=cart[k];break;}}
+if(e)e.qty++;else cart.push({name:n,price:p,img:i,qty:1});
+saveC();renderCart();showToast(n+' ditambahkan ✓');
+}
 function saveC(){try{localStorage.setItem('croissante_cart',JSON.stringify(cart));}catch(e){}}
 function rmC(n){cart=cart.filter(function(x){return x.name!==n;});saveC();renderCart();}
-function chQ(n,d){for(var k=0;k<cart.length;k++){if(cart[k].name===n){cart[k].qty+=d;if(cart[k].qty<=0)rmC(n);else{saveC();renderCart();}return;}}}
+function chQ(n,d){
+for(var k=0;k<cart.length;k++){
+if(cart[k].name===n){
+cart[k].qty+=d;
+if(cart[k].qty<=0)rmC(n);
+else{saveC();renderCart();}
+return;
+}
+}
+}
 function renderCart(){
 var b=document.getElementById('cartBody'),t=0,qty=0;
 cart.forEach(function(i){t+=i.price*i.qty;qty+=i.qty;});
 document.getElementById('cartTotal').textContent='Rp '+t.toLocaleString('id-ID');
 document.getElementById('cartBadge').textContent=qty;
-if(!cart.length){b.innerHTML='<div class="cart-empty">Keranjang masih kosong 🥐</div>';return;}
-var html='';cart.forEach(function(i){html+='<div class="cart-item"><div class="cart-info"><div class="cart-nm">'+i.name+'</div><div class="cart-pr">Rp '+i.price.toLocaleString('id-ID')+' x '+i.qty+'</div><div style="display:flex;gap:.5rem;margin-top:.6rem;align-items:center"><button class="mc" style="position:static;width:26px;height:26px" onclick="chQ(\''+i.name+'\',-1)">−</button><span style="min-width:24px;text-align:center">'+i.qty+'</span><button class="mc" style="position:static;width:26px;height:26px" onclick="chQ(\''+i.name+'\',1)">+</button><button class="mc" style="position:static;width:26px;height:26px;margin-left:auto" onclick="rmC(\''+i.name+'\')">✕</button></div></div></div>';});
+if(!cart.length){b.innerHTML='<div class="cart-empty">Keranjang masih kosong.<br>Yuk pilih croissant favoritmu 🥐</div>';return;}
+var html='';
+cart.forEach(function(i){
+html+='<div class="cart-item"><div class="cart-info"><div class="cart-nm">'+i.name+'</div><div class="cart-pr">Rp '+i.price.toLocaleString('id-ID')+' x '+i.qty+'</div><div style="display:flex;gap:.5rem;margin-top:.6rem;align-items:center"><button class="mc" style="position:static;width:26px;height:26px" onclick="chQ(\''+i.name+'\',-1)">−</button><span style="min-width:24px;text-align:center">'+i.qty+'</span><button class="mc" style="position:static;width:26px;height:26px" onclick="chQ(\''+i.name+'\',1)">+</button><button class="mc" style="position:static;width:26px;height:26px;margin-left:auto" onclick="rmC(\''+i.name+'\')">✕</button></div></div></div>';
+});
 b.innerHTML=html;
 }
 function openCart(){renderCart();document.getElementById('cartDrawer').classList.add('show');}
@@ -1057,35 +647,24 @@ function closeCart(){document.getElementById('cartDrawer').classList.remove('sho
 function checkout(){
 if(!cart.length){showToast('Keranjang kosong');return;}
 var code='CR-'+new Date().getFullYear()+'-'+String(Math.floor(Math.random()*999)+1).padStart(3,'0');
-var m='Halo CROISSANTÉ, saya ingin pre-order:%0A📦 '+code+'%0A%0A',t=0;
+var m='Halo CROISSANTÉ, saya ingin pre-order:%0A📦 Kode: '+code+'%0A%0A',t=0;
 cart.forEach(function(i){m+='• '+i.name+' x'+i.qty+' — Rp '+(i.price*i.qty).toLocaleString('id-ID')+'%0A';t+=i.price*i.qty;});
-m+='%0ATotal: Rp '+t.toLocaleString('id-ID');
+m+='%0ATotal: Rp '+t.toLocaleString('id-ID')+'%0A%0ATerima kasih!';
 window.open('https://wa.me/6289668211725?text='+m,'_blank');
 document.getElementById('orderCode').textContent=code;
 document.getElementById('successModal').classList.add('show');
 cart=[];saveC();renderCart();
 }
 function closeSuccess(){document.getElementById('successModal').classList.remove('show');}
-
-/* COMPARE */
-var compareList=[];
-function addCompare(n,p){
-if(compareList.find(function(x){return x.n===n;})){showToast('Sudah di daftar banding');return;}
-compareList.push({n:n,p:p});
-renderCompare();
+function openLogin(){document.getElementById('loginModal').classList.add('show');}
+function closeLogin(){document.getElementById('loginModal').classList.remove('show');}
+function switchTab(t,e){
+document.querySelectorAll('.m-tab').forEach(function(x){x.classList.remove('active');});
+e.target.classList.add('active');
+document.getElementById('tabLogin').style.display=t==='login'?'block':'none';
+document.getElementById('tabRegister').style.display=t==='register'?'block':'none';
 }
-function renderCompare(){
-var bar=document.getElementById('compareBar');
-if(!bar){bar=document.createElement('div');bar.id='compareBar';bar.className='compare-bar';document.body.appendChild(bar);}
-if(!compareList.length){bar.classList.remove('show');return;}
-bar.classList.add('show');
-var html='<span style="font-size:.75rem;color:#8A7E6E;letter-spacing:.1em">BANDING:</span>';
-compareList.forEach(function(c){html+='<span class="item">'+c.n+' (Rp '+c.p.toLocaleString('id-ID')+')</span>';});
-html+='<button onclick="compareList=[];renderCompare()" style="background:none;border:1px solid #D4AF37;color:#D4AF37;border-radius:20px;padding:.3rem .8rem;font-size:.7rem;cursor:pointer">Reset</button>';
-bar.innerHTML=html;
-}
-
-/* FAQ */
+function fakeLogin(){showToast('Login berhasil 🥐');closeLogin();}
 function toggleFaq(el){
 var item=el.parentElement;
 var wasOpen=item.classList.contains('open');
@@ -1099,140 +678,149 @@ document.getElementById('totalHarga').textContent='Rp '+total.toLocaleString('id
 }
 function showToast(msg){
 var t=document.getElementById('toast');
-t.textContent=msg;t.classList.add('show');
+t.textContent=msg;
+t.classList.add('show');
 setTimeout(function(){t.classList.remove('show');},2200);
 }
 function subscribe(){
 var e=document.getElementById('nl').value;
 if(!e||e.indexOf('@')<0){showToast('Email tidak valid');return;}
-showToast('Terima kasih! 🥐');
+showToast('Terima kasih! Kami akan kirim update 🥐');
 document.getElementById('nl').value='';
 }
 function order(e){
 e.preventDefault();
-var n=document.getElementById('fn').value,p=document.getElementById('fp').value,v=document.getElementById('fv').value.split('|')[0],q=document.getElementById('fq').value,d=document.getElementById('fd').value,j=document.getElementById('fj').value,note=document.getElementById('fnote').value||'-';
+var n=document.getElementById('fn').value,
+p=document.getElementById('fp').value,
+v=document.getElementById('fv').value.split('|')[0],
+q=document.getElementById('fq').value,
+d=document.getElementById('fd').value,
+j=document.getElementById('fj').value,
+note=document.getElementById('fnote').value||'-';
 var code='CR-'+new Date().getFullYear()+'-'+String(Math.floor(Math.random()*999)+1).padStart(3,'0');
-var m='Halo CROISSANTÉ, saya ingin pre-order:%0A📦 '+code+'%0A%0A👤 '+n+'%0A📱 '+p+'%0A🥐 '+v+'%0A📦 '+q+' box%0A📅 '+d+' jam '+j+'%0A📝 '+note;
+var m='Halo CROISSANTÉ, saya ingin pre-order croissant:%0A📦 Kode: '+code+'%0A%0A👤 Nama: '+n+'%0A📱 No. HP: '+p+'%0A🥐 Varian: '+v+'%0A📦 Jumlah Box: '+q+'%0A📅 Tanggal Ambil: '+d+'%0A⏰ Jam Ambil: '+j+'%0A📝 Catatan: '+note+'%0A%0ATerima kasih!';
 window.open('https://wa.me/6289668211725?text='+m,'_blank');
 document.getElementById('orderCode').textContent=code;
 document.getElementById('successModal').classList.add('show');
 return false;
 }
-(function(){var d=document.getElementById('fd');if(!d)return;var t=new Date(),mn=new Date(t),mx=new Date(t);mn.setDate(mn.getDate()+1);mx.setDate(mx.getDate()+7);d.min=mn.toISOString().split('T')[0];d.max=mx.toISOString().split('T')[0];})();
+(function(){
+var d=document.getElementById('fd');
+if(!d)return;
+var t=new Date(),mn=new Date(t),mx=new Date(t);
+mn.setDate(mn.getDate()+1);mx.setDate(mx.getDate()+7);
+d.min=mn.toISOString().split('T')[0];
+d.max=mx.toISOString().split('T')[0];
+})();
 window.addEventListener('scroll',function(){
 document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
 document.getElementById('backTop').classList.toggle('show',window.scrollY>400);
 });
 document.getElementById('backTop').onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
 if('IntersectionObserver' in window){
-var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1});
+var obs=new IntersectionObserver(function(es){
+es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+});
+},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+}else{
+document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
 }
-document.querySelectorAll('.nav-menu a').forEach(function(a){a.onclick=function(){document.getElementById('nm').classList.remove('show');};});
-(function(){var n=new Date(),l=new Date(n.getFullYear(),n.getMonth()+1,0);var d=Math.ceil((l-n)/86400000);var el=document.getElementById('gc');if(el)el.textContent=d+' hari';})();
-(function(){var end=new Date();end.setHours(end.getHours()+2);setInterval(function(){var now=new Date(),diff=end-now;if(diff<0)diff=0;var h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);document.getElementById('flashTimer').textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');},1000);})();
-(function(){var base=23;setInterval(function(){base+=(Math.random()>.7?1:0);document.getElementById('liveCount').textContent=base;},15000);})();
+document.querySelectorAll('.nav-menu a').forEach(function(a){
+a.onclick=function(){document.getElementById('nm').classList.remove('show');};
+});
+(function(){
+var end=new Date();
+end.setHours(end.getHours()+2);
+setInterval(function(){
+var now=new Date(),diff=end-now;
+if(diff<0)diff=0;
+var h=Math.floor(diff/3600000),
+m=Math.floor((diff%3600000)/60000),
+s=Math.floor((diff%60000)/1000);
+document.getElementById('flashTimer').textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+},1000);
+})();
+(function(){
+var base=23;
+setInterval(function(){
+base+=(Math.random()>.7?1:0);
+document.getElementById('liveCount').textContent=base;
+},15000);
+})();
 function openSearch(){document.getElementById('searchOv').classList.add('show');document.getElementById('searchInput').focus();}
 function closeSearch(){document.getElementById('searchOv').classList.remove('show');}
 function doSearch(){
-var q=document.getElementById('searchInput').value.toLowerCase().trim(),r=document.getElementById('searchRes');
+var q=document.getElementById('searchInput').value.toLowerCase().trim();
+var r=document.getElementById('searchRes');
 if(!q){r.innerHTML='';return;}
 var found=MENU.filter(function(m){return m.name.toLowerCase().indexOf(q)>=0||m.desc.toLowerCase().indexOf(q)>=0;});
 if(!found.length){r.innerHTML='<div style="padding:1rem;color:var(--muted);text-align:center">Tidak ditemukan 😔</div>';return;}
-r.innerHTML=found.map(function(m){return '<div class="search-item" onclick="closeSearch();document.getElementById(\'menu\').scrollIntoView({behavior:\'smooth\'})"><img src="'+m.img+'"><div><div style="font-family:Cinzel,serif;font-size:.9rem">'+m.name+'</div><div style="font-size:.75rem;color:#8A7E6E">Rp '+m.price.toLocaleString('id-ID')+'</div></div></div>';}).join('');
+r.innerHTML=found.map(function(m){
+return '<div class="search-item" onclick="closeSearch();document.getElementById(\'menu\').scrollIntoView({behavior:\'smooth\'})"><img src="'+m.img+'"><div><div style="font-family:Cinzel,serif;font-size:.88rem">'+m.name+'</div><div style="font-size:.72rem;color:#8A7E6E">Rp '+m.price.toLocaleString('id-ID')+'</div></div></div>';
+}).join('');
 }
-function voiceSearch(){
-var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-if(!SR){showToast('Browser tidak support voice search');return;}
-var sr=new SR();sr.lang='id-ID';
-document.getElementById('micBtn').style.color='#F59E0B';
-sr.onresult=function(e){document.getElementById('searchInput').value=e.results[0][0].transcript;doSearch();document.getElementById('micBtn').style.color='#D4AF37';};
-sr.onerror=function(){document.getElementById('micBtn').style.color='#D4AF37';};
-sr.start();
+function zoomImage(src){
+document.getElementById('zoomImg').src=src;
+document.getElementById('zoomOv').classList.add('show');
 }
-function zoomImage(src){document.getElementById('zoomImg').src=src;document.getElementById('zoomOv').classList.add('show');}
 function closeZoom(){document.getElementById('zoomOv').classList.remove('show');}
-function shareProduct(name,price){
-var txt='🥐 CROISSANTÉ - '+name+' (Rp '+price.toLocaleString('id-ID')+')';
-if(navigator.share){navigator.share({title:name,text:txt}).catch(function(){});}
-else{window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank');}
+var testiIdx=0;
+(function(){
+var track=document.getElementById('testiTrack'),
+dots=document.getElementById('testiDots');
+if(!track)return;
+var slides=track.children.length;
+for(var i=0;i<slides;i++){
+var d=document.createElement('div');
+d.className='testi-dot'+(i===0?' active':'');
+d.dataset.i=i;
+d.onclick=function(){goTesti(parseInt(this.dataset.i));};
+dots.appendChild(d);
 }
-function waVoice(){
-var txt='Halo CROISSANTÉ 🥐 saya ingin tanya produk';
-window.open('https://wa.me/6289668211725?text='+encodeURIComponent(txt),'_blank');
-}
-
-/* LOGIN */
-function openLogin(){document.getElementById('loginModal').classList.add('show');}
-function closeLogin(){document.getElementById('loginModal').classList.remove('show');}
-function switchTab(t,e){
-document.querySelectorAll('.m-tab').forEach(function(x){x.classList.remove('active');});
-e.target.classList.add('active');
-document.getElementById('tabLogin').style.display=t==='login'?'block':'none';
-document.getElementById('tabRegister').style.display=t==='register'?'block':'none';
-}
-function fakeLogin(){showToast('Login berhasil 🥐');closeLogin();}
-function fakeRegister(){
-var bday=document.getElementById('bdayInput').value;
-if(bday){var today=new Date(),bd=new Date(bday);if(today.getMonth()===bd.getMonth()&&today.getDate()===bd.getDate())setTimeout(showBday,500);}
-showToast('Daftar berhasil 🥐');closeLogin();
-}
-function showBday(){
-document.getElementById('bdayModal').classList.add('show');
-var c=document.createElement('div');c.className='confetti';
-for(var i=0;i<30;i++){var s=document.createElement('span');s.style.left=Math.random()*100+'%';s.style.animationDelay=Math.random()*2+'s';s.style.background=['#D4AF37','#F59E0B','#F5E6A3'][Math.floor(Math.random()*3)];c.appendChild(s);}
-document.body.appendChild(c);setTimeout(function(){c.remove();},5000);
-}
-function closeBday(){document.getElementById('bdayModal').classList.remove('show');}
-
-/* GIFT */
-var giftAmt=0;
-function buyGift(amt){giftAmt=amt;document.getElementById('gcAmt').textContent='Rp '+amt.toLocaleString('id-ID');document.getElementById('giftModal').classList.add('show');}
-function closeGift(){document.getElementById('giftModal').classList.remove('show');}
-function sendGift(){
-var n=document.getElementById('gcName').value,ph=document.getElementById('gcPhone').value,msg=document.getElementById('gcMsg').value;
-var m='Halo CROISSANTÉ, saya ingin beli Gift Card:%0A%0A💰 Rp '+giftAmt.toLocaleString('id-ID')+'%0A👤 '+n+'%0A📱 '+ph+'%0A💌 '+msg;
-window.open('https://wa.me/6289668211725?text='+m,'_blank');closeGift();
-}
-
-/* CHATBOT */
+window.goTesti=function(i){
+testiIdx=i;
+track.style.transform='translateX(-'+i*100+'%)';
+document.querySelectorAll('.testi-dot').forEach(function(d,j){d.classList.toggle('active',j===i);});
+};
+setInterval(function(){goTesti((testiIdx+1)%slides);},5000);
+})();
 function openBot(){document.getElementById('botWindow').classList.add('show');}
 function closeBot(){document.getElementById('botWindow').classList.remove('show');}
 function botSend(){
-var inp=document.getElementById('botInput'),txt=inp.value.trim();if(!txt)return;
-addBotMsg(txt,'user');inp.value='';
+var inp=document.getElementById('botInput'),
+txt=inp.value.trim();
+if(!txt)return;
+addBotMsg(txt,'user');
+inp.value='';
 setTimeout(function(){addBotMsg(getBotReply(txt),'bot');},600);
 }
 function addBotMsg(txt,who){
 var b=document.getElementById('botBody');
-var d=document.createElement('div');d.className='bot-msg '+who;d.innerHTML=txt;b.appendChild(d);b.scrollTop=b.scrollHeight;
+var d=document.createElement('div');
+d.className='bot-msg '+who;
+d.innerHTML=txt;
+b.appendChild(d);
+b.scrollTop=b.scrollHeight;
 }
 function getBotReply(t){
 t=t.toLowerCase();
 if(t.indexOf('menu')>=0||t.indexOf('varian')>=0)return 'Kami punya 5 varian: Classic Butter, Chocolate, Cheese, Matcha Velvet, dan Almond. Mau yang mana? 🥐';
-if(t.indexOf('harga')>=0||t.indexOf('price')>=0)return 'Harga mulai Rp 18.000 — Rp 321.000 (Golden Croissant 24K). Lihat detail di menu ya!';
-if(t.indexOf('lokasi')>=0||t.indexOf('alamat')>=0)return 'Kami di Cimahi, Jawa Barat 📍 Bisa pickup atau kirim (ongkir menyesuaikan).';
+if(t.indexOf('harga')>=0)return 'Harga mulai Rp 18.000 — Rp 321.000 (Golden Croissant 24K). Lihat detail di menu ya!';
+if(t.indexOf('lokasi')>=0||t.indexOf('alamat')>=0)return 'Kami di Cimahi, Jawa Barat 📍 Bisa pickup atau kirim.';
 if(t.indexOf('wa')>=0||t.indexOf('whatsapp')>=0||t.indexOf('order')>=0)return 'Order cepat via WhatsApp: <a href="https://wa.me/6289668211725" target="_blank" style="color:#D4AF37">Klik di sini</a> 🥐';
 if(t.indexOf('golden')>=0)return 'Golden Croissant — edible 24K gold leaf, Rp 321.000. Limited 20 pcs/bulan ✨';
-if(t.indexOf('jam')>=0||t.indexOf('buka')>=0)return 'Open order setiap hari. Pengambilan H+1 s/d H+7 (jam 09:00-20:00).';
+if(t.indexOf('jam')>=0||t.indexOf('buka')>=0)return 'Open order setiap hari. Pengambilan H+1 s/d H+7 (09:00-20:00).';
 if(t.indexOf('halo')>=0||t.indexOf('hai')>=0)return 'Halo! Selamat datang di CROISSANTÉ 🥐 Ada yang bisa dibantu?';
 return 'Coba tanya: <b>menu</b>, <b>harga</b>, <b>lokasi</b>, <b>order</b>, atau <b>golden</b>';
 }
-
-/* STORY */
-function openStory(title,text,img){
-document.getElementById('storyTitle').textContent=title;
-document.getElementById('storyText').textContent=text;
-document.getElementById('storyImg').src=img;
-document.getElementById('storyModal').classList.add('show');
-}
-function closeStory(){document.getElementById('storyModal').classList.remove('show');}
-
-/* CALENDAR */
-(function(){
-var cal=document.getElementById('calGrid');
-var days=['Min','Sen','Sel','Rab','Kam','Jum','Sab'];
-days.forEach(function(d){var e=document.createElement('div');e.className='cal-day head';e.textContent=d;cal.appendChild(e);});
-var today=new Date();var start=new Date(today);start.setDate(start.getDate()+1);
-var firstDay=start.getDay();var daysInMonth=new Date(today.getFullYear(),today.getMonth()+1,0).getDate();
-for(var i=0;i<firstDay;i++){var e=document.createElement('div');e.className='cal-day';cal.appendChild(e);
+document.getElementById('loginModal').addEventListener('click',function(e){if(e.target.id==='loginModal')closeLogin();});
+document.getElementById('successModal').addEventListener('click',function(e){if(e.target.id==='successModal')closeSuccess();});
+document.getElementById('searchOv').addEventListener('click',function(e){if(e.target.id==='searchOv')closeSearch();});
+document.getElementById('cartDrawer').addEventListener('click',function(e){if(e.target.id==='cartDrawer')closeCart();});
+renderMenu('all');
+renderCart();
+</script>
+</body>
+</html>
