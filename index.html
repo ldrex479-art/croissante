@@ -101,10 +101,10 @@ h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;text-align:center}
 .f-btn{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.55rem 1.2rem;border-radius:50px;border:1px solid rgba(212,175,55,.2);background:transparent;color:var(--muted);transition:.3s;cursor:pointer}
 .f-btn:hover,.f-btn.active{border-color:#D4AF37;color:#D4AF37;background:rgba(212,175,55,.08)}
 .m-card{overflow:hidden;display:flex;flex-direction:column}
-.m-card-img{position:relative;overflow:hidden}
-.m-card img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s}
+.m-card-img{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--elev)}
+.m-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s;position:absolute;top:0;left:0}
 .m-card:hover img{transform:scale(1.06)}
-.m-tag{position:absolute;top:.8rem;left:.8rem;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .8rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A}
+.m-tag{position:absolute;top:.8rem;left:.8rem;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .8rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;z-index:2}
 .m-body{padding:1.4rem;display:flex;flex-direction:column;flex-grow:1}
 .m-cat{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:.5rem}
 .m-name{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.05em}
@@ -512,7 +512,7 @@ Cimahi, Jawa Barat
 </div>
 </footer>
 
-<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTE,%20saya%20ingin%20tanya%20tentang%20produk%20🥐" target="_blank" class="wa">
+<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTE,%20saya%20ingin%20tanya%20tentang%20produk" target="_blank" class="wa">
 <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
@@ -553,18 +553,18 @@ Cimahi, Jawa Barat
 
 <script>
 var MENU=[
-{name:'Classic Butter',cat:'classic',desc:'Laminasi butter Prancis 24 lapis, renyah keemasan, lembut di dalam.',price:18000,img:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=85',tag:'Best Seller'},
-{name:'Chocolate',cat:'sweet',desc:'Dark chocolate Belgia meleleh di lipatan croissant renyah.',price:22000,img:'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&q=85',tag:''},
-{name:'Cheese',cat:'savory',desc:'Gruyère meleleh dengan sentuhan butter karamel.',price:24000,img:'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=85',tag:''},
-{name:'Matcha Velvet',cat:'seasonal',desc:'Matcha uji premium dengan red velvet lembut.',price:26000,img:'https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=600&q=85',tag:'New'},
-{name:'Almond',cat:'sweet',desc:'Almond panggang dengan taburan gula halus.',price:24000,img:'https://images.unsplash.com/photo-1592842232653-1e0baebf4a21?w=600&q=85',tag:''}
+{name:'Classic Butter',cat:'classic',desc:'Laminasi butter Prancis 24 lapis, renyah keemasan, lembut di dalam.',price:18000,img:'https://nibble-images.b-cdn.net/nibble/original_images/sejarah_croissant_6_e30b8c8ed3_Bt489iShY-.jpg?class=large',tag:'Best Seller'},
+{name:'Chocolate',cat:'sweet',desc:'Dark chocolate Belgia meleleh di lipatan croissant renyah.',price:22000,img:'https://everydaypie.com/wp-content/uploads/2023/05/Homemade-Croissants-119.jpg',tag:''},
+{name:'Cheese',cat:'savory',desc:'Gruyère meleleh dengan sentuhan butter karamel.',price:24000,img:'https://www.okonomikitchen.com/wp-content/uploads/2025/11/shio-croissant-salt-bread-croissant-17.jpg',tag:''},
+{name:'Matcha Velvet',cat:'seasonal',desc:'Matcha uji premium dengan red velvet lembut.',price:26000,img:'https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=800&q=85',tag:'New'},
+{name:'Almond',cat:'sweet',desc:'Almond panggang dengan taburan gula halus.',price:24000,img:'https://www.coricapastries.co.id/795-superlarge_default/croissant-almond-cream.jpg',tag:''}
 ];
 function renderMenu(f){
 f=f||'all';
 var g=document.getElementById('mg');
 var html='';
 MENU.filter(function(m){return f==='all'||m.cat===f;}).forEach(function(m){
-html+='<div class="m-card card"><div class="m-card-img">'+(m.tag?'<span class="m-tag">'+m.tag+'</span>':'')+'<img src="'+m.img+'" alt="'+m.name+'" loading="lazy"></div><div class="m-body"><div class="m-cat">'+m.cat+'</div><div class="m-name">'+m.name+'</div><div class="m-desc">'+m.desc+'</div><div class="m-foot"><div class="m-price"><small>Mulai dari</small>Rp '+m.price.toLocaleString('id-ID')+'</div><button class="m-add" onclick="addC(\''+m.name+'\','+m.price+',\''+m.img+'\')">+</button></div></div></div>';
+html+='<div class="m-card card"><div class="m-card-img">'+(m.tag?'<span class="m-tag">'+m.tag+'</span>':'')+'<img src="'+m.img+'" alt="'+m.name+'" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80\'"></div><div class="m-body"><div class="m-cat">'+m.cat+'</div><div class="m-name">'+m.name+'</div><div class="m-desc">'+m.desc+'</div><div class="m-foot"><div class="m-price"><small>Mulai dari</small>Rp '+m.price.toLocaleString('id-ID')+'</div><button class="m-add" onclick="addC(\''+m.name+'\','+m.price+',\''+m.img+'\')">+</button></div></div></div>';
 });
 g.innerHTML=html;
 }
