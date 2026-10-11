@@ -8,6 +8,7 @@
 <meta property="og:title" content="CROISSANTÉ - Croissant Fresh Premium di Cimahi">
 <meta property="og:description" content="Croissant premium, dipanggang fresh setiap hari.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1200&q=85">
+<link rel="manifest" href="data:application/json,%7B%22name%22%3A%22CROISSANT%C3%89%22%2C%22short_name%22%3A%22CROISSANT%C3%89%22%2C%22theme_color%22%3A%22%23D4AF37%22%2C%22background_color%22%3A%22%230A0A0A%22%2C%22display%22%3A%22standalone%22%2C%22start_url%22%3A%22.%22%7D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Italiana&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -16,58 +17,60 @@
 :root{--bg:#0A0A0A;--dark:#141414;--gold:#D4AF37;--amber:#F59E0B;--txt:#F5F0EB;--muted:#8A7E6E;--dim:#5A5045;--tr:.4s cubic-bezier(.25,.46,.45,.94)}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden}
-body.light{--bg:#FAF6F0;--dark:#F5EFE6;--txt:#1A1A1A;--muted:#5A5045;--dim:#8A7E6E}
 body::after{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 input,select,textarea{font-family:inherit}
 .c{width:min(1200px,92%);margin:0 auto}
-.sec{padding:6rem 0}
+.sec{padding:6rem 0;position:relative}
 .gold{background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 h1,h2,h3{font-family:'Cinzel',serif;letter-spacing:.08em;line-height:1.25;font-weight:700}
 h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;text-align:center}
+.divider{text-align:center;font-size:1rem;color:#D4AF37;margin:2rem 0;letter-spacing:1rem}
 .sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.1rem;margin:.5rem auto 3rem;max-width:600px;text-align:center;display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 2.2rem;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-radius:50px;transition:var(--tr);cursor:pointer;border:none;position:relative;overflow:hidden}
 .btn-p{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;font-weight:600;box-shadow:0 4px 24px rgba(212,175,55,.3)}
 .btn-p:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(212,175,55,.5)}
 .btn-o{background:transparent;color:#D4AF37;border:1px solid #D4AF37}
 .btn-o:hover{background:#D4AF37;color:#0A0A0A;transform:translateY(-3px)}
-.card{background:rgba(20,20,20,.6);border:1px solid rgba(212,175,55,.15);border-radius:16px;transition:var(--tr);position:relative;overflow:hidden;backdrop-filter:blur(16px)}
-body.light .card{background:rgba(255,255,255,.7)}
-.card:hover{border-color:rgba(212,175,55,.4);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(212,175,55,.1)}
+.card{background:linear-gradient(135deg,rgba(30,30,30,.7),rgba(15,15,15,.9));border:1px solid rgba(212,175,55,.15);border-radius:16px;transition:var(--tr);position:relative;overflow:hidden;backdrop-filter:blur(16px)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.5),transparent)}
+.card:hover{border-color:rgba(212,175,55,.4);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(212,175,55,.15)}
 
-/* FLASH SALE BANNER */
-.flash{position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,#8B6914,#D4AF37,#8B6914);color:#0A0A0A;text-align:center;padding:.6rem 1rem;font-size:.8rem;font-weight:500;letter-spacing:.08em;animation:fadeIn .5s}
+/* FLASH BANNER */
+.flash{position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,#8B6914,#D4AF37,#F59E0B,#D4AF37,#8B6914);background-size:200% auto;color:#0A0A0A;text-align:center;padding:.6rem 1rem;font-size:.8rem;font-weight:600;letter-spacing:.08em;animation:shine 3s linear infinite}
+@keyframes shine{0%{background-position:0% center}100%{background-position:200% center}}
 .flash b{font-family:'Cinzel',serif;font-weight:700}
-#flashTimer{font-family:'Courier New',monospace;font-weight:700;color:#0A0A0A;background:rgba(255,255,255,.4);padding:.15rem .5rem;border-radius:4px;margin:0 .3rem}
-.flash .cls{position:absolute;right:1rem;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.2rem;opacity:.6}
+#flashTimer{font-family:'Courier New',monospace;font-weight:700;color:#0A0A0A;background:rgba(255,255,255,.5);padding:.15rem .5rem;border-radius:4px;margin:0 .3rem}
+.flash .cls{position:absolute;right:1rem;top:50%;transform:translateY(-50%);cursor:pointer;font-size:1.2rem;opacity:.7}
 .flash .cls:hover{opacity:1}
 
 /* NAV */
 .nav{position:fixed;top:35px;left:0;right:0;z-index:100;padding:1rem 0;transition:var(--tr)}
 .nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.1);padding:.6rem 0;top:0}
-body.light .nav.scrolled{background:rgba(250,246,240,.92)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .logo{display:flex;flex-direction:column}
 .logo-t{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:700;letter-spacing:.16em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .logo-s{font-size:.55rem;letter-spacing:.35em;color:var(--muted);text-transform:uppercase}
 .nav-menu{display:flex;gap:1.6rem;list-style:none}
-.nav-menu a{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);transition:.3s;padding:.3rem 0}
+.nav-menu a{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);transition:.3s;padding:.3rem 0;position:relative}
+.nav-menu a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:#D4AF37;transition:width .3s}
 .nav-menu a:hover{color:#D4AF37}
+.nav-menu a:hover::after{width:100%}
 .nav-r{display:flex;gap:.5rem;align-items:center}
-.icon-btn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.3s;font-size:1rem}
+.icon-btn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.3s;font-size:1rem;background:transparent}
 .icon-btn:hover{border-color:#D4AF37;color:#D4AF37;transform:scale(1.05)}
 .btn-log{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid rgba(212,175,55,.25);border-radius:50px;padding:.5rem 1.1rem;cursor:pointer;transition:.3s}
 .btn-log:hover{border-color:#D4AF37;color:#D4AF37}
 .ham{display:none;flex-direction:column;gap:5px;padding:5px;cursor:pointer}
 .ham span{width:24px;height:1.5px;background:#D4AF37;display:block}
 
-/* SEARCH OVERLAY */
+/* SEARCH */
 .search-ov{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding-top:15vh;backdrop-filter:blur(10px)}
-.search-ov.show{display:flex;animation:fadeIn .3s}
+.search-ov.show{display:flex}
 .search-box{width:min(600px,92%);position:relative}
-.search-box input{width:100%;padding:1.5rem 1.5rem;background:rgba(20,20,20,.8);border:2px solid rgba(212,175,55,.3);border-radius:16px;color:var(--txt);font-size:1.1rem;outline:none}
+.search-box input{width:100%;padding:1.5rem;background:rgba(20,20,20,.8);border:2px solid rgba(212,175,55,.3);border-radius:16px;color:var(--txt);font-size:1.1rem;outline:none}
 .search-box input:focus{border-color:#D4AF37;box-shadow:0 0 40px rgba(212,175,55,.3)}
 .search-close{position:absolute;top:-50px;right:0;color:var(--muted);font-size:2rem;cursor:pointer}
 .search-res{margin-top:1rem;max-height:50vh;overflow-y:auto;background:rgba(20,20,20,.9);border-radius:16px;border:1px solid rgba(212,175,55,.2)}
@@ -79,36 +82,28 @@ body.light .nav.scrolled{background:rgba(250,246,240,.92)}
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:150px 1.5rem 3rem;position:relative;overflow:hidden}
 .hero-glow{position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.15),rgba(245,158,11,.05) 30%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pls 6s ease-in-out infinite;pointer-events:none}
 @keyframes pls{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
+.aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:.5}
+.aurora::before{content:'';position:absolute;width:150%;height:150%;top:-25%;left:-25%;background:conic-gradient(from 0deg,transparent,rgba(212,175,55,.15),transparent,rgba(245,158,11,.1),transparent);animation:rotate 30s linear infinite}
+@keyframes rotate{to{transform:rotate(360deg)}}
 .particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .particles span{position:absolute;width:4px;height:4px;background:#D4AF37;border-radius:50%;opacity:.5;animation:float 15s linear infinite;box-shadow:0 0 10px #D4AF37}
-.particles span:nth-child(1){left:10%}.particles span:nth-child(2){left:25%;animation-delay:2s}.particles span:nth-child(3){left:40%;animation-delay:4s}.particles span:nth-child(4){left:60%;animation-delay:1s}.particles span:nth-child(5){left:75%;animation-delay:3s}.particles span:nth-child(6){left:90%;animation-delay:5s}
+.particles span:nth-child(1){left:10%}.particles span:nth-child(2){left:25%;animation-delay:2s}.particles span:nth-child(3){left:40%;animation-delay:4s}.particles span:nth-child(4){left:60%;animation-delay:1s}.particles span:nth-child(5){left:75%;animation-delay:3s}.particles span:nth-child(6){left:90%;animation-delay:5s}.particles span:nth-child(7){left:50%;animation-delay:7s}.particles span:nth-child(8){left:15%;animation-delay:6s}
 @keyframes float{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(-10vh) scale(1);opacity:0}}
 .hero-c{position:relative;z-index:2;max-width:900px}
 .bdg-row{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
-.bdg{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.3rem;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:50px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;animation:fadeIn 1s .3s both}
+.bdg{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.3rem;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:50px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37}
 .bdg-dot{width:6px;height:6px;border-radius:50%;background:#F59E0B;animation:bl 1.5s infinite;box-shadow:0 0 10px #F59E0B}
 .bdg-live{background:rgba(37,211,102,.1);border-color:rgba(37,211,102,.4);color:#25D366}
 .bdg-live .bdg-dot{background:#25D366;box-shadow:0 0 10px #25D366}
 @keyframes bl{0%,100%{opacity:1}50%{opacity:.2}}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .hero h1{font-size:clamp(3rem,10vw,7rem);font-weight:900;letter-spacing:.12em;line-height:1;background:linear-gradient(135deg,#D4AF37 0%,#F5E6A3 30%,#D4AF37 60%,#F59E0B 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;filter:drop-shadow(0 0 40px rgba(212,175,55,.3));animation:shine 3s linear infinite}
-@keyframes shine{0%{background-position:0% center}100%{background-position:200% center}}
 .script{font-family:'Italiana',sans-serif;font-size:clamp(1.2rem,2.8vw,1.9rem);color:#D4AF37;margin-bottom:1.5rem}
 .hero-sub{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 2.5rem}
 .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .scroll-ind{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:#D4AF37;font-size:.7rem;letter-spacing:.2em;animation:bounce 2s infinite}
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
 
-/* RECENTLY VIEWED */
-.recent{position:fixed;left:1.5rem;bottom:1.5rem;z-index:98;display:none;flex-direction:column;gap:.5rem;max-width:180px}
-.recent.show{display:flex}
-.recent-h{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
-.recent-item{display:flex;gap:.5rem;align-items:center;background:rgba(20,20,20,.8);backdrop-filter:blur(10px);border:1px solid rgba(212,175,55,.2);border-radius:8px;padding:.4rem;cursor:pointer;transition:.3s}
-.recent-item:hover{border-color:#D4AF37;transform:translateX(4px)}
-.recent-item img{width:36px;height:36px;border-radius:6px;object-fit:cover}
-.recent-item span{font-size:.7rem;color:var(--muted)}
-
-/* ICON 3D */
+/* ICON */
 .icon3d{width:80px;height:80px;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 40%,#8B6914 100%);box-shadow:0 8px 24px rgba(212,175,55,.4),inset 0 -3px 8px rgba(0,0,0,.4),inset 0 3px 8px rgba(255,255,255,.3);transition:transform .6s;overflow:hidden;padding:12px}
 .icon3d img{width:100%;height:100%;object-fit:contain}
 .card:hover .icon3d{transform:rotateY(360deg) scale(1.08)}
@@ -121,7 +116,6 @@ body.light .nav.scrolled{background:rgba(250,246,240,.92)}
 .f-card h3{font-size:.95rem;margin-bottom:.6rem}
 .f-card p{font-size:.8rem;color:var(--muted)}
 
-/* MENU */
 .filters{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem}
 .f-btn{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.55rem 1.2rem;border-radius:50px;border:1px solid rgba(212,175,55,.2);color:var(--muted);transition:.3s;cursor:pointer}
 .f-btn:hover,.f-btn.active{border-color:#D4AF37;color:#D4AF37;background:rgba(212,175,55,.08)}
@@ -132,7 +126,7 @@ body.light .nav.scrolled{background:rgba(250,246,240,.92)}
 .m-tag{position:absolute;top:.8rem;left:.8rem;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .8rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;z-index:2}
 .m-share{position:absolute;top:.8rem;right:.8rem;width:34px;height:34px;border-radius:50%;background:rgba(10,10,10,.7);backdrop-filter:blur(10px);border:1px solid rgba(212,175,55,.3);color:#D4AF37;display:flex;align-items:center;justify-content:center;font-size:.9rem;cursor:pointer;opacity:0;transition:.3s;z-index:2}
 .m-card:hover .m-share{opacity:1}
-.m-share:hover{background:#D4AF37;color:#0A0A0A;transform:scale(1.1)}
+.m-share:hover{background:#D4AF37;color:#0A0A0A}
 .m-body{padding:1.4rem;display:flex;flex-direction:column;flex-grow:1}
 .m-cat{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:.5rem}
 .m-name{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;margin-bottom:.5rem}
@@ -143,12 +137,10 @@ body.light .nav.scrolled{background:rgba(250,246,240,.92)}
 .m-add{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:600;transition:.3s;cursor:pointer}
 .m-add:hover{transform:scale(1.1) rotate(90deg)}
 
-/* IMAGE ZOOM */
 .zoom-ov{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:2000;display:none;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
-.zoom-ov.show{display:flex;animation:fadeIn .3s}
+.zoom-ov.show{display:flex}
 .zoom-ov img{max-width:90vw;max-height:90vh;border-radius:12px;border:1px solid rgba(212,175,55,.3);box-shadow:0 0 80px rgba(212,175,55,.3)}
 
-/* GOLDEN */
 .golden{padding:7rem 0;background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.12),transparent 60%);border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15);position:relative;overflow:hidden}
 .golden::before{content:'CROISSANTÉ';position:absolute;font-family:'Cinzel',serif;font-size:20rem;font-weight:900;color:rgba(212,175,55,.03);top:50%;left:50%;transform:translate(-50%,-50%) rotate(-15deg);pointer-events:none;white-space:nowrap}
 .golden-in{position:relative;z-index:2;text-align:center;max-width:800px;margin:0 auto}
@@ -156,7 +148,7 @@ body.light .nav.scrolled{background:rgba(250,246,240,.92)}
 .b-gold{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A}
 .b-line{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;border:1px solid #D4AF37;color:#D4AF37}
 .g-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:.1em;background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;animation:shine 3s linear infinite}
-.g-img{max-width:500px;margin:0 auto 2rem;border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.4);box-shadow:0 20px 60px rgba(0,0,0,.8),0 0 60px rgba(212,175,55,.2)}
+.g-img{max-width:500px;margin:0 auto 2rem;border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.4);box-shadow:0 20px 60px rgba(0,0,0,.8),0 0 60px rgba(212,175,55,.2);cursor:zoom-in}
 .g-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .g-desc{font-size:.95rem;color:var(--muted);line-height:1.9;margin-bottom:2rem;max-width:650px;margin-left:auto;margin-right:auto}
 .g-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto}
@@ -172,7 +164,7 @@ body.light .nav.scrolled{background:rgba(250,246,240,.92)}
 
 .tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;margin-top:2rem}
 .tl-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:1rem .5rem}
-.tl-num{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);border:1px solid #D4AF37;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:#0A0A0A;margin-bottom:1rem;transition:.3s}
+.tl-num{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37 60%,#8B6914);border:1px solid #D4AF37;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:#0A0A0A;margin-bottom:1rem;transition:.3s;box-shadow:0 4px 16px rgba(212,175,55,.3)}
 .tl-step:hover .tl-num{transform:scale(1.12);box-shadow:0 0 30px rgba(212,175,55,.6)}
 .tl-lbl{font-size:.7rem;color:var(--muted);line-height:1.5}
 
@@ -184,7 +176,33 @@ body.light .nav.scrolled{background:rgba(250,246,240,.92)}
 .sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.7rem;color:#D4AF37}
 .sig-sub{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);margin-top:.3rem}
 
-.faq-item{background:rgba(20,20,20,.6);border:1px solid rgba(212,175,55,.15);border-radius:12px;margin-bottom:.8rem;overflow:hidden;transition:.3s}
+/* BLOG */
+.blog-card{overflow:hidden;display:flex;flex-direction:column}
+.blog-card img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:.5s}
+.blog-card:hover img{transform:scale(1.05)}
+.blog-body{padding:1.5rem}
+.blog-meta{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:#D4AF37;margin-bottom:.5rem}
+.blog-title{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;margin-bottom:.6rem;line-height:1.4}
+.blog-excerpt{font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+
+/* GIFT CARD */
+.gift-card{padding:2rem;text-align:center;position:relative;overflow:hidden}
+.gift-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(212,175,55,.1),transparent);transform:translateX(-100%);transition:.6s}
+.gift-card:hover::after{transform:translateX(100%)}
+.gift-amount{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:#D4AF37;margin:.5rem 0}
+
+/* LOYALTY */
+.loyalty{max-width:600px;margin:2rem auto;padding:2rem;background:linear-gradient(135deg,rgba(212,175,55,.1),transparent);border:1px solid rgba(212,175,55,.3);border-radius:16px;text-align:center;position:relative;overflow:hidden}
+.loyalty::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#D4AF37,#F59E0B,#D4AF37);background-size:200%;animation:shine 3s linear infinite}
+.stamp-row{display:flex;gap:1rem;justify-content:center;margin:1.5rem 0}
+.stamp{width:50px;height:50px;border-radius:50%;border:2px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:center;font-size:1.3rem;transition:.3s}
+.stamp.on{background:radial-gradient(circle at 30% 30%,#F5E6A3,#D4AF37);border-color:#D4AF37;box-shadow:0 0 20px rgba(212,175,55,.6)}
+.loyalty-prog{width:100%;height:8px;background:rgba(212,175,55,.1);border-radius:4px;overflow:hidden;margin:1rem 0}
+.loyalty-prog-f{height:100%;background:linear-gradient(90deg,#D4AF37,#F59E0B);border-radius:4px;transition:width 1s ease;box-shadow:0 0 10px #D4AF37}
+
+/* FAQ */
+.faq-item{background:linear-gradient(135deg,rgba(30,30,30,.6),rgba(15,15,15,.8));border:1px solid rgba(212,175,55,.15);border-radius:12px;margin-bottom:.8rem;overflow:hidden;transition:.3s}
+.faq-item:hover{border-color:rgba(212,175,55,.35)}
 .faq-q{padding:1.2rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Cinzel',serif;font-size:.9rem}
 .faq-icon{color:#D4AF37;font-size:1.4rem;transition:transform .3s}
 .faq-item.open .faq-icon{transform:rotate(45deg)}
@@ -197,7 +215,7 @@ body.light .nav.scrolled{background:rgba(250,246,240,.92)}
 .pay-card h3{font-size:.95rem;margin-bottom:.5rem}
 .pay-card p{font-size:.75rem;color:var(--muted);line-height:1.7}
 
-/* TESTIMONIAL SLIDER */
+/* TESTIMONIAL */
 .testi-slider{position:relative;max-width:700px;margin:0 auto;overflow:hidden}
 .testi-track{display:flex;transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
 .testi-slide{min-width:100%;padding:1rem}
@@ -211,13 +229,23 @@ body.light .nav.scrolled{background:rgba(250,246,240,.92)}
 .testi-n{font-size:.85rem;font-weight:500;text-align:left}
 .testi-r{font-size:.7rem;color:var(--dim);text-align:left}
 
-/* INSTAGRAM FEED */
+/* IG */
 .ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem}
 .ig-item{aspect-ratio:1;border-radius:12px;overflow:hidden;position:relative;cursor:pointer;border:1px solid rgba(212,175,55,.2)}
 .ig-item img{width:100%;height:100%;object-fit:cover;transition:.4s}
 .ig-item:hover img{transform:scale(1.1)}
 .ig-overlay{position:absolute;inset:0;background:linear-gradient(transparent,rgba(10,10,10,.8));opacity:0;transition:.3s;display:flex;align-items:flex-end;padding:1rem;color:#D4AF37;font-size:.8rem}
 .ig-item:hover .ig-overlay{opacity:1}
+
+/* BTS VIDEO */
+.bts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
+.bts-item{border-radius:16px;overflow:hidden;position:relative;border:1px solid rgba(212,175,55,.2);aspect-ratio:16/9;background:#000}
+.bts-item video{width:100%;height:100%;object-fit:cover}
+.bts-cap{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(10,10,10,.9));font-family:'Italiana',sans-serif;color:#D4AF37;font-size:1rem}
+
+/* MAP */
+.map-wrap{border-radius:12px;overflow:hidden;border:1px solid rgba(212,175,55,.2);margin-top:1.5rem;filter:grayscale(1) invert(.9) contrast(1.1)}
+.map-wrap iframe{width:100%;height:250px;border:0;display:block}
 
 .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;margin-top:2rem}
 .ci{display:flex;gap:1rem;margin-bottom:1.6rem;align-items:flex-start}
@@ -227,7 +255,6 @@ body.light .nav.scrolled{background:rgba(250,246,240,.92)}
 .fg{margin-bottom:1.1rem}
 .fl{display:block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
 .fi{width:100%;padding:1rem 1.2rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.2);border-radius:10px;color:var(--txt);font-size:.9rem;outline:none;transition:.3s}
-body.light .fi{background:rgba(255,255,255,.9)}
 .fi:focus{border-color:#D4AF37;box-shadow:0 0 0 3px rgba(212,175,55,.15)}
 .fr{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .total-box{padding:1rem 1.2rem;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.3);border-radius:10px;margin-bottom:1.2rem;display:flex;justify-content:space-between;align-items:center}
@@ -250,7 +277,6 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 .ft-sosmed a:hover{background:#D4AF37;color:#0A0A0A;transform:translateY(-3px)}
 .ft-bottom{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(212,175,55,.1);font-size:.75rem;color:var(--dim)}
 
-/* FLOATING BUTTONS */
 .wa{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.5);transition:.3s;animation:wpulse 2.5s infinite;cursor:pointer}
 .wa:hover{transform:scale(1.1)}
 .wa svg{width:30px;height:30px;fill:#fff}
@@ -264,27 +290,43 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 .back-top.show{opacity:1;pointer-events:auto}
 .back-top:hover{background:#D4AF37;color:#0A0A0A;transform:translateY(-4px)}
 
-/* MODALS */
+/* ADMIN CHAT */
+.admin-chat{position:fixed;bottom:1.5rem;left:1.5rem;z-index:98;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#8B6914);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(212,175,55,.4);cursor:pointer;transition:.3s;font-size:1.4rem}
+.admin-chat:hover{transform:scale(1.1)}
+
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.9);backdrop-filter:blur(10px);z-index:1000;display:none;align-items:center;justify-content:center;padding:1.5rem}
-.modal-bg.show{display:flex;animation:fadeIn .3s}
-.modal{background:var(--dark);border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:2.2rem;width:min(440px,100%);box-shadow:0 30px 80px rgba(0,0,0,.8);position:relative;animation:modalIn .5s}
+.modal-bg.show{display:flex}
+.modal{background:linear-gradient(135deg,#1A1A1A,#0F0F0F);border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:2.2rem;width:min(440px,100%);box-shadow:0 30px 80px rgba(0,0,0,.8);position:relative;animation:modalIn .5s}
 @keyframes modalIn{from{opacity:0;transform:rotateY(-90deg)}to{opacity:1;transform:rotateY(0)}}
 .mc{position:absolute;top:1rem;right:1rem;width:34px;height:34px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.3s;background:transparent;font-size:1rem}
 .mc:hover{border-color:#D4AF37;color:#D4AF37;transform:rotate(90deg)}
 .modal h3{text-align:center;font-size:1.3rem;margin-bottom:.5rem;background:linear-gradient(135deg,#D4AF37,#F5E6A3);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .modal-sub{text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:1.8rem}
 .m-tabs{display:flex;gap:.5rem;margin-bottom:1.8rem;border-bottom:1px solid rgba(212,175,55,.15)}
-.m-tab{flex:1;padding:.8rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid transparent;transition:.3s;cursor:pointer;background:transparent;font-family:inherit;border-left:none;border-right:none;border-top:none}
+.m-tab{flex:1;padding:.8rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid transparent;transition:.3s;cursor:pointer;background:transparent;font-family:inherit;border:none}
 .m-tab.active{color:#D4AF37;border-bottom-color:#D4AF37}
 
-/* ORDER SUCCESS */
 .order-success{text-align:center}
 .success-icon{width:80px;height:80px;margin:0 auto 1.5rem;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:#fff;animation:pop .5s}
 @keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.1)}100%{transform:scale(1)}}
 .order-code{font-family:'Courier New',monospace;font-size:1.5rem;color:#D4AF37;background:rgba(212,175,55,.1);padding:.8rem 1.5rem;border-radius:10px;border:1px dashed rgba(212,175,55,.4);margin:1rem 0;letter-spacing:.15em;display:inline-block}
 
+/* BIRTHDAY */
+.bday-modal{text-align:center;background:linear-gradient(135deg,#1A1A1A,#0A0A0A);position:relative;overflow:hidden}
+.bday-cake{font-size:5rem;margin:1rem 0;animation:bounce 1.5s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:1500}
+.confetti span{position:absolute;width:10px;height:10px;background:#D4AF37;animation:fall 3s linear infinite}
+@keyframes fall{0%{transform:translateY(-10vh) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+
+/* GIFT CARD MODAL */
+.gc-visual{background:linear-gradient(135deg,#8B6914,#D4AF37,#F5E6A3,#D4AF37,#8B6914);background-size:200% auto;animation:shine 4s linear infinite;padding:2rem;border-radius:12px;color:#0A0A0A;text-align:left;margin-bottom:1.5rem;box-shadow:0 15px 40px rgba(212,175,55,.4)}
+.gc-visual h4{font-family:'Cinzel',serif;font-size:1.2rem;margin-bottom:.5rem}
+.gc-visual .amt{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700}
+.gc-visual small{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
+
 /* CART */
-.cart{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:var(--dark);border-left:1px solid rgba(212,175,55,.2);z-index:1000;transform:translateX(100%);transition:transform .4s;display:flex;flex-direction:column}
+.cart{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:#0F0F0F;border-left:1px solid rgba(212,175,55,.2);z-index:1000;transform:translateX(100%);transition:transform .4s;display:flex;flex-direction:column}
 .cart.show{transform:translateX(0)}
 .cart-h{padding:1.5rem;border-bottom:1px solid rgba(212,175,55,.15);display:flex;justify-content:space-between;align-items:center}
 .cart-h h3{font-size:1rem;font-family:'Cinzel',serif}
@@ -297,7 +339,7 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 .cart-f{padding:1.5rem;border-top:1px solid rgba(212,175,55,.15)}
 .cart-total{display:flex;justify-content:space-between;margin-bottom:1.2rem;font-size:.9rem}
 .cart-tv{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#D4AF37}
-.toast{position:fixed;bottom:6rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--dark);border:1px solid #D4AF37;border-radius:50px;padding:.9rem 1.6rem;font-size:.85rem;color:#D4AF37;z-index:2000;transition:.4s;opacity:0;pointer-events:none}
+.toast{position:fixed;bottom:6rem;left:50%;transform:translateX(-50%) translateY(100px);background:#141414;border:1px solid #D4AF37;border-radius:50px;padding:.9rem 1.6rem;font-size:.85rem;color:#D4AF37;z-index:2000;transition:.4s;opacity:0;pointer-events:none}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -311,7 +353,6 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 .fr{grid-template-columns:1fr}
 .hero{padding-top:150px}
 .ig-grid{grid-template-columns:repeat(2,1fr)}
-.recent{display:none!important}
 }
 @media(max-width:600px){
 .hero h1{font-size:2.5rem}
@@ -320,46 +361,46 @@ footer::before{content:'◆';position:absolute;top:-.6rem;left:50%;transform:tra
 .flash{font-size:.7rem;padding:.5rem 2rem .5rem .5rem}
 .cart-float{right:5.5rem;width:50px;height:50px}
 .wa{width:52px;height:52px}
+.admin-chat{width:48px;height:48px;font-size:1.2rem}
 }
 </style>
 </head>
 <body>
 
-<!-- FLASH SALE BANNER -->
+<!-- FLASH SALE -->
 <div class="flash" id="flash">
 Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span>
 <span class="cls" onclick="document.getElementById('flash').style.display='none';document.getElementById('nav').style.top='0'">✕</span>
 </div>
 
-<!-- SEARCH OVERLAY -->
+<!-- SEARCH -->
 <div class="search-ov" id="searchOv">
 <div class="search-box">
 <div class="search-close" onclick="closeSearch()">✕</div>
-<input type="text" id="searchInput" placeholder="Cari croissant... (contoh: chocolate, cheese)" oninput="doSearch()">
+<input type="text" id="searchInput" placeholder="Cari croissant..." oninput="doSearch()">
 <div class="search-res" id="searchRes"></div>
 </div>
 </div>
 
-<!-- ZOOM OVERLAY -->
-<div class="zoom-ov" id="zoomOv" onclick="closeZoom()">
-<img id="zoomImg" src="" alt="Zoom">
-</div>
+<!-- ZOOM -->
+<div class="zoom-ov" id="zoomOv" onclick="closeZoom()"><img id="zoomImg" src="" alt=""></div>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav class="nav" id="nav">
 <div class="c nav-in">
 <a href="#" class="logo"><span class="logo-t">CROISSANTÉ</span><span class="logo-s">Est. 2026 · Cimahi</span></a>
 <ul class="nav-menu" id="nm">
 <li><a href="#menu">Menu</a></li>
 <li><a href="#golden">Golden</a></li>
+<li><a href="#loyalty">Loyalty</a></li>
+<li><a href="#bundling">Bundling</a></li>
 <li><a href="#tentang">Tentang</a></li>
-<li><a href="#ig">Galeri</a></li>
-<li><a href="#faq">FAQ</a></li>
+<li><a href="#blog">Blog</a></li>
 <li><a href="#kontak">Kontak</a></li>
 </ul>
 <div class="nav-r">
 <button class="icon-btn" onclick="openSearch()" title="Cari">🔎</button>
-<button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="Dark/Light">🌙</button>
+<button class="icon-btn" onclick="toggleLang()" title="Bahasa" id="langBtn">🇮🇩</button>
 <button class="btn-log" onclick="openLogin()">Login</button>
 <button class="btn btn-p" onclick="openCart()">Pesan</button>
 <button class="ham" onclick="document.getElementById('nm').classList.toggle('show')"><span></span><span></span><span></span></button>
@@ -367,17 +408,15 @@ Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span
 </div>
 </nav>
 
-<!-- RECENTLY VIEWED -->
-<div class="recent" id="recent"></div>
-
 <!-- HERO -->
 <section class="hero">
+<div class="aurora"></div>
 <div class="hero-glow"></div>
-<div class="particles"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<div class="particles"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 <div class="hero-c">
 <div class="bdg-row">
 <div class="bdg"><span class="bdg-dot"></span> Fresh from the oven</div>
-<div class="bdg bdg-live"><span class="bdg-dot"></span> <span id="liveCount">23</span> orang order minggu ini</div>
+<div class="bdg bdg-live"><span class="bdg-dot"></span> <span id="liveCount">23</span> order minggu ini</div>
 </div>
 <h1>CROISSANTÉ</h1>
 <p class="script">"Croissant Fresh, Renyah di Luar, Lembut di Dalam."</p>
@@ -391,7 +430,7 @@ Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span
 </section>
 
 <!-- KEUNGGULAN -->
-<section class="sec" id="keunggulan">
+<section class="sec">
 <div class="c">
 <h2 class="gold">Kenapa CROISSANTÉ?</h2>
 <p class="sub">Empat alasan pelanggan setia memilih kami.</p>
@@ -444,6 +483,28 @@ Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span
 </div>
 </section>
 
+<!-- LOYALTY -->
+<section class="sec" id="loyalty">
+<div class="c">
+<h2 class="gold">Kartu Loyalitas</h2>
+<p class="sub">Beli 5 box, gratis 1 box. Berlaku kumulatif per pelanggan.</p>
+<div class="loyalty">
+<h3 style="font-family:'Cinzel',serif;font-size:1.1rem;margin-bottom:.5rem">CROISSANTÉ LOYALTY</h3>
+<p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem">Kumpulkan stamp setiap pembelian</p>
+<div class="stamp-row" id="stampRow">
+<div class="stamp on">🥐</div>
+<div class="stamp on">🥐</div>
+<div class="stamp on">🥐</div>
+<div class="stamp">🥐</div>
+<div class="stamp">🥐</div>
+</div>
+<div class="loyalty-prog"><div class="loyalty-prog-f" style="width:60%"></div></div>
+<p style="font-size:.85rem;color:var(--muted)">Kamu punya <b style="color:#D4AF37">3 dari 5</b> stamp</p>
+<p style="font-size:.8rem;color:var(--dim);margin-top:.5rem">2 box lagi → GRATIS 1 box 🎁</p>
+</div>
+</div>
+</section>
+
 <!-- BUNDLING -->
 <section class="sec" id="bundling">
 <div class="c">
@@ -472,6 +533,48 @@ Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span
 <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:#D4AF37;margin-bottom:1.3rem">Rp 210.000</div>
 <button class="btn btn-o" onclick="addC('Box Hampers',210000,'')">Pesan Paket</button>
 </div>
+</div>
+</div>
+</section>
+
+<!-- GIFT CARD -->
+<section class="sec">
+<div class="c">
+<h2 class="gold">Gift Card Digital</h2>
+<p class="sub">Kirim ke teman tersayang, langsung via WhatsApp.</p>
+<div class="grid-3">
+<div class="card gift-card">
+<div style="font-size:2rem;margin-bottom:.5rem">💳</div>
+<div class="gift-amount">Rp 50.000</div>
+<p style="font-size:.8rem;color:var(--muted);margin-bottom:1rem">Untuk camilan pribadi</p>
+<button class="btn btn-o" onclick="buyGift(50000)">Beli Voucher</button>
+</div>
+<div class="card gift-card" style="border-color:rgba(212,175,55,.4)">
+<div style="font-size:2rem;margin-bottom:.5rem">🎁</div>
+<div class="gift-amount">Rp 100.000</div>
+<p style="font-size:.8rem;color:var(--muted);margin-bottom:1rem">Untuk hadiah teman</p>
+<button class="btn btn-p" onclick="buyGift(100000)">Beli Voucher</button>
+</div>
+<div class="card gift-card">
+<div style="font-size:2rem;margin-bottom:.5rem">👑</div>
+<div class="gift-amount">Rp 200.000</div>
+<p style="font-size:.8rem;color:var(--muted);margin-bottom:1rem">Untuk hampers mewah</p>
+<button class="btn btn-o" onclick="buyGift(200000)">Beli Voucher</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- BTS VIDEO -->
+<section class="sec">
+<div class="c">
+<h2 class="gold">Behind The Scenes</h2>
+<p class="sub">Proses croissant dari adonan sampai ke tanganmu.</p>
+<div class="bts-grid">
+<div class="bts-item"><video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80"><source src="https://cdn.pixabay.com/video/2023/10/22/186089-877698384_large.mp4" type="video/mp4"></video><div class="bts-cap">Butter Prancis</div></div>
+<div class="bts-item"><video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=800&q=80"><source src="https://cdn.pixabay.com/video/2024/01/30/199110-908247728_large.mp4" type="video/mp4"></video><div class="bts-cap">Laminasi 24 Lapis</div></div>
+<div class="bts-item"><video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80"><source src="https://cdn.pixabay.com/video/2023/10/22/186089-877698384_large.mp4" type="video/mp4"></video><div class="bts-cap">Fresh dari Oven</div></div>
+<div class="bts-item"><video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=800&q=80"><source src="https://cdn.pixabay.com/video/2024/01/30/199110-908247728_large.mp4" type="video/mp4"></video><div class="bts-cap">Packing Mewah</div></div>
 </div>
 </div>
 </section>
@@ -511,7 +614,7 @@ Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span
 </div>
 </section>
 
-<!-- TESTIMONI SLIDER -->
+<!-- TESTIMONI -->
 <section class="sec">
 <div class="c">
 <h2 class="gold">Kata Mereka</h2>
@@ -527,8 +630,21 @@ Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span
 </div>
 </section>
 
-<!-- INSTAGRAM FEED -->
-<section class="sec" id="ig">
+<!-- BLOG -->
+<section class="sec" id="blog">
+<div class="c">
+<h2 class="gold">Cerita & Tips</h2>
+<p class="sub">Hal-hal menarik tentang dunia croissant.</p>
+<div class="grid-3">
+<div class="card blog-card reveal"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80"><div class="blog-body"><div class="blog-meta">Tips · 5 min read</div><div class="blog-title">Cara Menyimpan Croissant Agar Tetap Renyah</div><p class="blog-excerpt">Simpan di tempat tertutup, jangan di kulkas langsung. Baca selengkapnya untuk tips menyimpan croissant agar tetap fresh...</p><a href="#" class="gold" style="font-size:.8rem;letter-spacing:.1em">BACA SELENGKAPNYA →</a></div></div>
+<div class="card blog-card reveal"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=800&q=80"><div class="blog-body"><div class="blog-meta">Cerita · 4 min read</div><div class="blog-title">Mengapa Butter Prancis Lebih Istimewa</div><p class="blog-excerpt">Butter Prancis mengandung lebih banyak lemak dan air lebih sedikit. Inilah yang membuat croissant renyah berlapis...</p><a href="#" class="gold" style="font-size:.8rem;letter-spacing:.1em">BACA SELENGKAPNYA →</a></div></div>
+<div class="card blog-card reveal"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80"><div class="blog-body"><div class="blog-meta">Behind · 6 min read</div><div class="blog-title">Rahasia Laminasi 24 Lapis CROISSANTÉ</div><p class="blog-excerpt">Setiap croissant kami melalui 24 lapis laminasi butter. Proses ini butuh ketelitian dan kesabaran tinggi...</p><a href="#" class="gold" style="font-size:.8rem;letter-spacing:.1em">BACA SELENGKAPNYA →</a></div></div>
+</div>
+</div>
+</section>
+
+<!-- IG FEED -->
+<section class="sec">
 <div class="c">
 <h2 class="gold">Galeri Instagram</h2>
 <p class="sub">Follow @croissante.cimahi untuk update harian.</p>
@@ -558,7 +674,7 @@ Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span
 </section>
 
 <!-- PAYMENT -->
-<section class="sec" id="payment">
+<section class="sec">
 <div class="c">
 <h2 class="gold">Cara Pembayaran</h2>
 <p class="sub">Pilih metode yang paling nyaman untukmu.</p>
@@ -582,6 +698,7 @@ Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span
 <div class="ci"><div class="ci-ic">📍</div><div><div class="ci-lb">Lokasi</div><div class="ci-val">Cimahi, Jawa Barat</div></div></div>
 <div class="ci"><div class="ci-ic">👤</div><div><div class="ci-lb">Owner</div><div class="ci-val">Hendra Lesmana</div></div></div>
 <div class="ci"><div class="ci-ic">🎵</div><div><div class="ci-lb">TikTok</div><a class="ci-val" href="https://tiktok.com" target="_blank">@croissante.cimahi</a></div></div>
+<div class="map-wrap"><iframe src="https://www.google.com/maps?q=Cimahi,Indonesia&output=embed" loading="lazy"></iframe></div>
 </div>
 <form class="reveal" onsubmit="return order(event)">
 <div class="fg"><label class="fl">Nama Lengkap</label><input type="text" class="fi" id="fn" required placeholder="Nama kamu"></div>
@@ -623,12 +740,11 @@ Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span
 </div>
 </footer>
 
-<!-- FLOATING BUTTONS -->
+<!-- FLOATING -->
 <div class="cart-float" onclick="openCart()">🛒<span class="badge" id="cartBadge">0</span></div>
-<div class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</div>
-<a href="javascript:;" onclick="waVoice()" class="wa" title="Chat Concierge">
-<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-</a>
+<div class="back-top" id="backTop">⬆</div>
+<a href="javascript:;" onclick="waVoice()" class="wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+<div class="admin-chat" onclick="openAdmin()" title="Admin">💬</div>
 
 <!-- LOGIN MODAL -->
 <div class="modal-bg" id="loginModal">
@@ -649,13 +765,14 @@ Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span
 <div class="fg"><label class="fl">Nama Lengkap</label><input type="text" class="fi" placeholder="Nama kamu"></div>
 <div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="nama@email.com"></div>
 <div class="fg"><label class="fl">No. HP</label><input type="tel" class="fi" placeholder="08xxxxxxxxxx"></div>
+<div class="fg"><label class="fl">Tanggal Lahir</label><input type="date" class="fi" id="bdayInput"></div>
 <div class="fg"><label class="fl">Password</label><input type="password" class="fi" placeholder="Min. 8 karakter"></div>
-<button class="btn btn-p" style="width:100%" onclick="fakeLogin()">Daftar</button>
+<button class="btn btn-p" style="width:100%" onclick="fakeRegister()">Daftar</button>
 </div>
 </div>
 </div>
 
-<!-- ORDER SUCCESS MODAL -->
+<!-- SUCCESS MODAL -->
 <div class="modal-bg" id="successModal">
 <div class="modal">
 <button class="mc" onclick="closeSuccess()">✕</button>
@@ -670,7 +787,56 @@ Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span
 </div>
 </div>
 
-<!-- CART DRAWER -->
+<!-- BIRTHDAY MODAL -->
+<div class="modal-bg" id="bdayModal">
+<div class="modal bday-modal">
+<button class="mc" onclick="closeBday()">✕</button>
+<div class="bday-cake">🎂</div>
+<h3 class="gold">Happy Birthday!</h3>
+<p class="modal-sub">Terima kasih sudah setia bersama kami 🥐</p>
+<p style="font-size:.95rem;color:#F5F0EB;margin-bottom:1.5rem">Nikmati <b class="gold">1 box GRATIS</b> dari kami!</p>
+<div class="order-code">Voucher: BDAY-2026-08</div>
+<p style="font-size:.75rem;color:var(--muted);margin-top:1rem">Berlaku 7 hari sejak diterima</p>
+<button class="btn btn-p" style="width:100%;margin-top:1.5rem" onclick="closeBday()">Klaim Sekarang</button>
+</div>
+</div>
+
+<!-- GIFT CARD MODAL -->
+<div class="modal-bg" id="giftModal">
+<div class="modal">
+<button class="mc" onclick="closeGift()">✕</button>
+<h3>Beli Gift Card</h3>
+<p class="modal-sub">Kartu digital cantik, dikirim via WhatsApp</p>
+<div class="gc-visual">
+<h4>CROISSANTÉ</h4>
+<div class="amt" id="gcAmt">Rp 50.000</div>
+<small>Gift Card</small>
+</div>
+<div class="fg"><label class="fl">Nama Penerima</label><input type="text" class="fi" id="gcName" placeholder="Nama temanmu"></div>
+<div class="fg"><label class="fl">No. HP Penerima</label><input type="tel" class="fi" id="gcPhone" placeholder="08xxxxxxxxxx"></div>
+<div class="fg"><label class="fl">Ucapan (opsional)</label><textarea class="fi" id="gcMsg" rows="2" placeholder="Selamat ulang tahun! 🥐"></textarea></div>
+<button class="btn btn-p" style="width:100%" onclick="sendGift()">Kirim via WhatsApp</button>
+</div>
+</div>
+
+<!-- ADMIN MODAL -->
+<div class="modal-bg" id="adminModal">
+<div class="modal" style="width:min(500px,100%)">
+<button class="mc" onclick="closeAdmin()">✕</button>
+<h3>Admin Dashboard</h3>
+<p class="modal-sub">Ringkasan order hari ini</p>
+<div style="background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.3);border-radius:12px;padding:1.5rem;margin-bottom:1rem">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;text-align:center">
+<div><div style="font-size:1.8rem;font-family:'Cormorant Garamond',serif;color:#D4AF37;font-weight:700" id="adminOrders">0</div><div style="font-size:.7rem;color:#8A7E6E;text-transform:uppercase;letter-spacing:.1em">Order Hari Ini</div></div>
+<div><div style="font-size:1.8rem;font-family:'Cormorant Garamond',serif;color:#D4AF37;font-weight:700" id="adminRevenue">Rp 0</div><div style="font-size:.7rem;color:#8A7E6E;text-transform:uppercase;letter-spacing:.1em">Pendapatan</div></div>
+</div>
+</div>
+<div style="font-size:.8rem;color:#8A7E6E;text-align:center;margin-bottom:1rem">Login sebagai admin untuk lihat detail</div>
+<button class="btn btn-o" style="width:100%" onclick="showToast('Fitur login admin — segera hadir 🚀');closeAdmin()">Login Admin</button>
+</div>
+</div>
+
+<!-- CART -->
 <div class="cart" id="cartDrawer">
 <div class="cart-h"><h3>Pesanan Kamu</h3><button class="mc" style="position:static" onclick="closeCart()">✕</button></div>
 <div class="cart-b" id="cartBody"></div>
@@ -683,7 +849,6 @@ Promo opening <b>10% OFF</b> berakhir dalam <span id="flashTimer">02:00:00</span
 <div class="toast" id="toast">Ditambahkan ✓</div>
 
 <script>
-/* ===== MENU DATA ===== */
 var MENU=[
 {name:'Classic Butter',cat:'classic',desc:'Laminasi butter Prancis 24 lapis, renyah keemasan, lembut di dalam.',price:18000,img:'https://www.aliceboulangerie.com.sg/wp-content/uploads/2023/01/Classic-Croissant--scaled-600x600.jpg',tag:'Best Seller'},
 {name:'Chocolate',cat:'sweet',desc:'Dark chocolate Belgia meleleh di lipatan croissant renyah.',price:22000,img:'https://www.homemadeinterest.com/wp-content/uploads/2021/10/Easy-Chocolate-Croissant_IG-3.jpg',tag:''},
@@ -691,8 +856,6 @@ var MENU=[
 {name:'Matcha Velvet',cat:'seasonal',desc:'Matcha uji premium dengan red velvet lembut.',price:26000,img:'https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=800&q=85',tag:'New'},
 {name:'Almond',cat:'sweet',desc:'Almond panggang dengan taburan gula halus.',price:24000,img:'https://teakandthyme.com/wp-content/uploads/2025/05/chocolate-almond-croissants-DSC_4863-1x1-1200.jpg',tag:''}
 ];
-
-/* ===== RENDER MENU ===== */
 function renderMenu(f){
 f=f||'all';
 var g=document.getElementById('mg'),html='';
@@ -708,7 +871,6 @@ b.classList.add('active');renderMenu(b.dataset.c);
 };
 });
 
-/* ===== CART ===== */
 var cart=[];
 try{cart=JSON.parse(localStorage.getItem('croissante_cart')||'[]');}catch(e){cart=[];}
 function addC(n,p,i){
@@ -716,6 +878,16 @@ var e=null;
 for(var k=0;k<cart.length;k++){if(cart[k].name===n){e=cart[k];break;}}
 if(e)e.qty++;else cart.push({name:n,price:p,img:i,qty:1});
 saveC();renderCart();showToast(n+' ditambahkan ✓');
+addView(n,p,i);
+}
+function addView(n,p,i){
+try{
+var v=JSON.parse(localStorage.getItem('viewed')||'[]');
+v=v.filter(function(x){return x.name!==n;});
+v.unshift({name:n,img:i});
+v=v.slice(0,3);
+localStorage.setItem('viewed',JSON.stringify(v));
+}catch(e){}
 }
 function saveC(){try{localStorage.setItem('croissante_cart',JSON.stringify(cart));}catch(e){}}
 function rmC(n){cart=cart.filter(function(x){return x.name!==n;});saveC();renderCart();}
@@ -749,9 +921,7 @@ document.getElementById('successModal').classList.add('show');
 cart=[];saveC();renderCart();
 }
 function closeSuccess(){document.getElementById('successModal').classList.remove('show');}
-document.getElementById('successModal').addEventListener('click',function(e){if(e.target.id==='successModal')closeSuccess();});
 
-/* ===== LOGIN ===== */
 function openLogin(){document.getElementById('loginModal').classList.add('show');}
 function closeLogin(){document.getElementById('loginModal').classList.remove('show');}
 function switchTab(t,e){
@@ -761,18 +931,59 @@ document.getElementById('tabLogin').style.display=t==='login'?'block':'none';
 document.getElementById('tabRegister').style.display=t==='register'?'block':'none';
 }
 function fakeLogin(){showToast('Login berhasil 🥐');closeLogin();}
-document.getElementById('loginModal').addEventListener('click',function(e){if(e.target.id==='loginModal')closeLogin();});
-document.getElementById('cartDrawer').addEventListener('click',function(e){if(e.target.id==='cartDrawer')closeCart();});
+function fakeRegister(){
+var bday=document.getElementById('bdayInput').value;
+if(bday){
+var today=new Date(),bd=new Date(bday);
+if(today.getMonth()===bd.getMonth()&&today.getDate()===bd.getDate()){
+setTimeout(showBday,500);
+}
+}
+showToast('Daftar berhasil! Selamat datang 🥐');
+closeLogin();
+}
 
-/* ===== FAQ ===== */
+function showBday(){
+document.getElementById('bdayModal').classList.add('show');
+var c=document.createElement('div');
+c.className='confetti';
+for(var i=0;i<30;i++){
+var s=document.createElement('span');
+s.style.left=Math.random()*100+'%';
+s.style.animationDelay=Math.random()*2+'s';
+s.style.background=['#D4AF37','#F59E0B','#F5E6A3'][Math.floor(Math.random()*3)];
+c.appendChild(s);
+}
+document.body.appendChild(c);
+setTimeout(function(){c.remove();},5000);
+}
+function closeBday(){document.getElementById('bdayModal').classList.remove('show');}
+
+function buyGift(amt){
+document.getElementById('gcAmt').textContent='Rp '+amt.toLocaleString('id-ID');
+document.getElementById('giftModal').classList.add('show');
+document.getElementById('giftModal').dataset.amt=amt;
+}
+function closeGift(){document.getElementById('giftModal').classList.remove('show');}
+function sendGift(){
+var amt=document.getElementById('giftModal').dataset.amt;
+var name=document.getElementById('gcName').value||'-';
+var phone=document.getElementById('gcPhone').value||'-';
+var msg=document.getElementById('gcMsg').value||'-';
+var m='Halo CROISSANTÉ, saya ingin beli Gift Card:%0A%0A💰 Nominal: Rp '+parseInt(amt).toLocaleString('id-ID')+'%0A👤 Penerima: '+name+'%0A📱 No. HP: '+phone+'%0A💌 Ucapan: '+msg+'%0A%0ATerima kasih!';
+window.open('https://wa.me/6289668211725?text='+m,'_blank');
+closeGift();
+}
+
+function openAdmin(){document.getElementById('adminModal').classList.add('show');}
+function closeAdmin(){document.getElementById('adminModal').classList.remove('show');}
+
 function toggleFaq(el){
 var item=el.parentElement;
 var wasOpen=item.classList.contains('open');
 document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
 if(!wasOpen)item.classList.add('open');
 }
-
-/* ===== FORM ===== */
 function updateTotal(){
 var v=document.getElementById('fv').value,q=parseInt(document.getElementById('fq').value)||0,total=0;
 if(v){var p=v.split('|');total=parseInt(p[1])*q;}
@@ -805,15 +1016,11 @@ var t=new Date(),mn=new Date(t),mx=new Date(t);
 mn.setDate(mn.getDate()+1);mx.setDate(mx.getDate()+7);
 d.min=mn.toISOString().split('T')[0];d.max=mx.toISOString().split('T')[0];
 })();
-
-/* ===== SCROLL ===== */
 window.addEventListener('scroll',function(){
 document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
 document.getElementById('backTop').classList.toggle('show',window.scrollY>400);
 });
 document.getElementById('backTop').onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
-
-/* ===== REVEAL ===== */
 if('IntersectionObserver' in window){
 var obs=new IntersectionObserver(function(es){
 es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
@@ -823,27 +1030,20 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 document.querySelectorAll('.nav-menu a').forEach(function(a){
 a.onclick=function(){document.getElementById('nm').classList.remove('show');};
 });
-
-/* ===== COUNTDOWN ===== */
 (function(){
 var n=new Date(),l=new Date(n.getFullYear(),n.getMonth()+1,0);
 var d=Math.ceil((l-n)/86400000);
 var el=document.getElementById('gc');
 if(el)el.textContent=d+' hari';
 })();
-
-/* ===== FLASH SALE TIMER ===== */
 (function(){
 var end=new Date();end.setHours(end.getHours()+2);
 setInterval(function(){
-var now=new Date(),diff=end-now;
-if(diff<0)diff=0;
+var now=new Date(),diff=end-now;if(diff<0)diff=0;
 var h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
 document.getElementById('flashTimer').textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
 },1000);
 })();
-
-/* ===== LIVE ORDER COUNTER ===== */
 (function(){
 var base=23;
 setInterval(function(){
@@ -851,53 +1051,34 @@ base+=(Math.random()>.7?1:0);
 document.getElementById('liveCount').textContent=base;
 },15000);
 })();
-
-/* ===== SEARCH ===== */
 function openSearch(){document.getElementById('searchOv').classList.add('show');document.getElementById('searchInput').focus();}
 function closeSearch(){document.getElementById('searchOv').classList.remove('show');document.getElementById('searchRes').innerHTML='';document.getElementById('searchInput').value='';}
 function doSearch(){
 var q=document.getElementById('searchInput').value.toLowerCase().trim();
 var r=document.getElementById('searchRes');
 if(!q){r.innerHTML='';return;}
-var found=MENU.filter(function(m){return m.name.toLowerCase().indexOf(q)>=0||m.desc.toLowerCase().indexOf(q)>=0||m.cat.toLowerCase().indexOf(q)>=0;});
+var found=MENU.filter(function(m){return m.name.toLowerCase().indexOf(q)>=0||m.desc.toLowerCase().indexOf(q)>=0;});
 if(!found.length){r.innerHTML='<div style="padding:1rem 1.5rem;color:var(--muted);text-align:center">Tidak ditemukan 😔</div>';return;}
 r.innerHTML=found.map(function(m){return '<div class="search-item" onclick="closeSearch();document.getElementById(\'menu\').scrollIntoView({behavior:\'smooth\'})"><img src="'+m.img+'"><div><div style="font-family:Cinzel,serif;font-size:.9rem">'+m.name+'</div><div style="font-size:.75rem;color:#8A7E6E">Rp '+m.price.toLocaleString('id-ID')+'</div></div></div>';}).join('');
 }
 document.getElementById('searchOv').addEventListener('click',function(e){if(e.target.id==='searchOv')closeSearch();});
-
-/* ===== ZOOM ===== */
-function zoomImage(src){
-document.getElementById('zoomImg').src=src;
-document.getElementById('zoomOv').classList.add('show');
-}
+function zoomImage(src){document.getElementById('zoomImg').src=src;document.getElementById('zoomOv').classList.add('show');}
 function closeZoom(){document.getElementById('zoomOv').classList.remove('show');}
-
-/* ===== THEME ===== */
-function toggleTheme(){
-document.body.classList.toggle('light');
-var isLight=document.body.classList.contains('light');
-document.getElementById('themeBtn').textContent=isLight?'☀️':'🌙';
-try{localStorage.setItem('theme',isLight?'light':'dark');}catch(e){}
-}
-try{if(localStorage.getItem('theme')==='light'){document.body.classList.add('light');document.getElementById('themeBtn').textContent='☀️';}}catch(e){}
-
-/* ===== SHARE ===== */
 function shareProduct(name,price){
-var txt='🥐 CROISSANTÉ - '+name+' (Rp '+price.toLocaleString('id-ID')+')%0A%0ACek di: https://croissante.netlify.app';
-if(navigator.share){
-navigator.share({title:name,text:txt}).catch(function(){});
-}else{
-window.open('https://wa.me/?text='+txt,'_blank');
+var txt='🥐 CROISSANTÉ - '+name+' (Rp '+price.toLocaleString('id-ID')+')%0A%0ACek: https://croissante.netlify.app';
+if(navigator.share){navigator.share({title:name,text:txt}).catch(function(){});}
+else{window.open('https://wa.me/?text='+txt,'_blank');}
 }
-}
-
-/* ===== WA VOICE NOTE GREETING ===== */
 function waVoice(){
 var txt='Halo CROISSANTÉ 🥐 saya ingin tanya tentang produk';
 window.open('https://wa.me/6289668211725?text='+encodeURIComponent(txt),'_blank');
 }
-
-/* ===== TESTIMONIAL SLIDER ===== */
+var lang='id';
+function toggleLang(){
+lang=lang==='id'?'en':'id';
+document.getElementById('langBtn').textContent=lang==='id'?'🇮🇩':'🇬🇧';
+showToast(lang==='id'?'Bahasa Indonesia':'English (Coming Soon)');
+}
 var testiIdx=0;
 (function(){
 var track=document.getElementById('testiTrack'),dots=document.getElementById('testiDots');
@@ -909,30 +1090,19 @@ d.dataset.i=i;
 d.onclick=function(){goTesti(parseInt(this.dataset.i));};
 dots.appendChild(d);
 }
-function goTesti(i){
+window.goTesti=function(i){
 testiIdx=i;
 track.style.transform='translateX(-'+i*100+'%)';
 document.querySelectorAll('.testi-dot').forEach(function(d,j){d.classList.toggle('active',j===i);});
-}
+};
 setInterval(function(){goTesti((testiIdx+1)%slides);},5000);
-window.goTesti=goTesti;
 })();
-
-/* ===== RECENTLY VIEWED ===== */
-(function(){
-var viewed=[];
-try{viewed=JSON.parse(localStorage.getItem('viewed')||'[]');}catch(e){}
-function renderRecent(){
-if(!viewed.length){document.getElementById('recent').classList.remove('show');return;}
-document.getElementById('recent').classList.add('show');
-document.getElementById('recent').innerHTML='<div class="recent-h">Baru Dilihat</div>'+viewed.slice(0,3).map(function(v){
-return '<div class="recent-item" onclick="document.getElementById(\'menu\').scrollIntoView({behavior:\'smooth\'})"><img src="'+v.img+'"><span>'+v.name+'</span></div>';
-}).join('');
-}
-renderRecent();
-})();
-
-/* ===== INIT ===== */
+document.getElementById('loginModal').addEventListener('click',function(e){if(e.target.id==='loginModal')closeLogin();});
+document.getElementById('successModal').addEventListener('click',function(e){if(e.target.id==='successModal')closeSuccess();});
+document.getElementById('bdayModal').addEventListener('click',function(e){if(e.target.id==='bdayModal')closeBday();});
+document.getElementById('giftModal').addEventListener('click',function(e){if(e.target.id==='giftModal')closeGift();});
+document.getElementById('adminModal').addEventListener('click',function(e){if(e.target.id==='adminModal')closeAdmin();});
+document.getElementById('cartDrawer').addEventListener('click',function(e){if(e.target.id==='cartDrawer')closeCart();});
 renderMenu('all');
 renderCart();
 </script>
