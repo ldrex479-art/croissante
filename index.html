@@ -3,408 +3,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CROISSANTÉ - Croissant Fresh Premium Cimahi</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+<title>CROISSANTÉ - Croissant Premium Cimahi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital@0;1&family=Inter:wght@300;400;500&family=Italiana&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0A0A0A;--dark:#141414;--gold:#D4AF37;--gold2:#F5E6A3;--amber:#F59E0B;--txt:#F5F0EB;--muted:#8A7E6E;--dim:#5A5045}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;background-image:radial-gradient(ellipse at top,rgba(212,175,55,.08),transparent 50%)}
+body{background:#0A0A0A;color:#F5F0EB;font-family:'Inter',sans-serif;font-weight:300;line-height:1.7}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .container{width:min(1200px,92%);margin:0 auto}
-section{padding:5rem 0;position:relative}
-.gold-text{background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.label{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
-.label::before{content:'';width:32px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+section{padding:5rem 0}
+.label{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:#D4AF37;margin-bottom:1rem}
+.label::before{content:'';display:inline-block;width:30px;height:1px;background:#D4AF37;vertical-align:middle;margin-right:.8rem}
 h1,h2,h3{font-family:'Cinzel',serif;letter-spacing:.08em;line-height:1.25}
-h2.title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1rem}
-.sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.1rem;max-width:600px;margin-top:.5rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.9rem 2rem;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-radius:50px;transition:.4s;cursor:pointer}
-.btn-p{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;font-weight:600;box-shadow:0 4px 24px rgba(212,175,55,.25)}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:1rem}
+.gold{background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:#8A7E6E;font-size:1.1rem;margin-top:.5rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.9rem 2rem;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-radius:50px;transition:.4s;cursor:pointer;border:none}
+.btn-p{background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;font-weight:600}
 .btn-p:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(212,175,55,.5)}
-.btn-o{background:transparent;color:var(--gold);border:1px solid var(--gold)}
-.btn-o:hover{background:var(--gold);color:var(--bg)}
-.glass{background:rgba(20,20,20,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(212,175,55,.15);border-radius:16px;transition:.4s;position:relative;overflow:hidden}
-.glass::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.4),transparent)}
-.glass:hover{border-color:rgba(212,175,55,.35);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(212,175,55,.1)}
+.btn-o{background:transparent;color:#D4AF37;border:1px solid #D4AF37}
+.btn-o:hover{background:#D4AF37;color:#0A0A0A}
+.card{background:rgba(20,20,20,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(212,175,55,.15);border-radius:16px;transition:.4s;overflow:hidden}
+.card:hover{border-color:rgba(212,175,55,.4);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(212,175,55,.1)}
+
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:.4s;background:rgba(10,10,10,.6);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.08)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.logo{display:flex;align-items:center;gap:.6rem}
-.logo svg{width:36px;height:36px;color:var(--gold)}
-.logo-t{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:700;letter-spacing:.16em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;background:rgba(10,10,10,.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.1)}
+.nav-in{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:700;letter-spacing:.16em;background:linear-gradient(135deg,#D4AF37,#E8C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-menu{display:flex;gap:1.6rem;list-style:none}
-.nav-menu a{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);transition:.3s}
-.nav-menu a:hover{color:var(--gold)}
-.nav-r{display:flex;gap:.8rem;align-items:center}
-.btn-log{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid rgba(212,175,55,.25);border-radius:50px;padding:.5rem 1.1rem;transition:.3s}
-.btn-log:hover{border-color:var(--gold);color:var(--gold)}
-.ham{display:none;flex-direction:column;gap:5px;padding:5px}
-.ham span{width:24px;height:1.5px;background:var(--gold);display:block}
+.nav-menu a{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#8A7E6E;transition:.3s}
+.nav-menu a:hover{color:#D4AF37}
+
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 1.5rem 3rem;position:relative;overflow:hidden}
-.hero-glow{position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.15),rgba(245,158,11,.05) 30%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 6s ease-in-out infinite;pointer-events:none}
-@keyframes pulse{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
-.hero-c{position:relative;z-index:2;max-width:900px}
-.badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1.2rem;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:50px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
-.badge .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);animation:blink 1.5s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 1.5rem 3rem;position:relative;overflow:hidden;background:radial-gradient(circle at center,rgba(212,175,55,.12),transparent 60%)}
 .hero h1{font-size:clamp(3rem,10vw,7rem);font-weight:900;letter-spacing:.12em;line-height:1;background:linear-gradient(135deg,#D4AF37,#F5E6A3 30%,#D4AF37 60%,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem;filter:drop-shadow(0 0 40px rgba(212,175,55,.3))}
-.script{font-family:'Italiana',sans-serif;font-size:clamp(1.2rem,2.8vw,1.9rem);color:var(--gold);margin-bottom:1.3rem}
-.hero p.sub{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 2.5rem}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-/* VIDEO */
-.vid-wrap{max-width:820px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.2);box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 60px rgba(212,175,55,.1);position:relative}
-.vid-wrap video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#000}
-.vid-cap{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(transparent,rgba(10,10,10,.9));font-family:'Italiana',sans-serif;color:var(--gold);font-size:1.05rem}
-/* FEATURES */
-.f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem;margin-top:3rem}
-.f-card{padding:2rem 1.5rem;text-align:center}
-.f-ico{width:52px;height:52px;margin:0 auto 1.2rem;border-radius:50%;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.3rem}
-.f-card h3{font-size:.95rem;margin-bottom:.5rem}
-.f-card p{font-size:.8rem;color:var(--muted)}
+.script{font-family:'Italiana',sans-serif;font-size:clamp(1.2rem,2.8vw,1.9rem);color:#D4AF37;margin-bottom:1.5rem}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem}
+.badge{display:inline-block;padding:.4rem 1.2rem;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:50px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:2rem}
+
 /* MENU */
-.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;justify-content:center}
-.f-btn{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.5rem 1.1rem;border-radius:50px;border:1px solid rgba(212,175,55,.2);background:transparent;color:var(--muted);transition:.3s}
-.f-btn:hover,.f-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,.08)}
-.m-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.3rem}
-.m-card{overflow:hidden;display:flex;flex-direction:column}
-.m-card img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s}
-.m-card:hover img{transform:scale(1.06)}
-.m-body{padding:1.3rem;display:flex;flex-direction:column;flex-grow:1}
-.m-cat{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
-.m-name{font-family:'Cinzel',serif;font-size:.95rem;font-weight:600;margin-bottom:.4rem}
-.m-desc{font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:1rem;flex-grow:1}
-.m-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
-.m-price{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--gold)}
-.m-price small{display:block;font-size:.6rem;color:var(--dim);text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:400}
-.m-add{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:600;transition:.3s;box-shadow:0 4px 16px rgba(212,175,55,.3)}
-.m-add:hover{transform:scale(1.1) rotate(90deg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.3rem;margin-top:3rem}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.card-body{padding:1.3rem}
+.cat{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;margin-bottom:.4rem}
+.name{font-family:'Cinzel',serif;font-size:.95rem;font-weight:600;margin-bottom:.4rem}
+.desc{font-size:.78rem;color:#8A7E6E;line-height:1.6;margin-bottom:1rem}
+.price{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:#D4AF37}
+.price small{display:block;font-size:.6rem;color:#5A5045;text-transform:uppercase;font-family:'Inter',sans-serif}
+
 /* GOLDEN */
-.golden{padding:6rem 0;background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.1),transparent 60%);border-top:1px solid rgba(212,175,55,.12);border-bottom:1px solid rgba(212,175,55,.12);position:relative;overflow:hidden}
-.golden-glow{position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.2),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 8s ease-in-out infinite;pointer-events:none}
-.g-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:2}
-.g-img{border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.4);box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 80px rgba(212,175,55,.2)}
-.g-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.g-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
-.b-gold{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .85rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A}
-.b-line{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .85rem;border-radius:50px;border:1px solid var(--gold);color:var(--gold)}
-.g-title{font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:.1em;background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem}
-.g-desc{font-size:.9rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem}
-.g-info{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.5rem}
-.g-item{padding:1rem;background:rgba(10,10,10,.6);border:1px solid rgba(212,175,55,.15);border-radius:10px}
-.g-lbl{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:.3rem}
-.g-val{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--gold)}
-.g-count{text-align:center;padding:1rem;background:rgba(212,175,55,.05);border:1px dashed rgba(212,175,55,.3);border-radius:10px;margin-bottom:1.5rem}
-.g-count small{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem}
-.g-count b{font-family:'Cinzel',serif;font-size:1.15rem;color:var(--gold)}
-/* BUNDLE */
-.b-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.3rem;margin-top:3rem}
-.b-card{padding:2rem 1.5rem;text-align:center;position:relative;display:flex;flex-direction:column}
-.b-card.feat{border-color:rgba(212,175,55,.4);box-shadow:0 0 50px rgba(212,175,55,.12)}
-.b-tag{position:absolute;top:1rem;right:1rem;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:#0A0A0A;background:var(--gold);padding:.25rem .7rem;border-radius:50px;font-weight:600}
-.b-emoji{font-size:2.2rem;margin-bottom:.8rem}
-.b-name{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;margin-bottom:.3rem}
-.b-qty{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);margin-bottom:.9rem}
-.b-price{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:var(--gold);margin-bottom:1.2rem}
-/* TIMELINE */
-.tl{display:grid;grid-template-columns:repeat(7,1fr);gap:0;margin-top:3rem;position:relative}
-.tl::before{content:'';position:absolute;top:26px;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold),transparent)}
-.tl-step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;padding:0 .3rem}
-.tl-num{width:52px;height:52px;border-radius:50%;background:var(--dark);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;color:var(--gold);margin-bottom:.9rem;transition:.3s}
-.tl-step:hover .tl-num{background:var(--gold);color:var(--bg);box-shadow:0 0 30px rgba(212,175,55,.6);transform:scale(1.12)}
-.tl-lbl{font-size:.7rem;color:var(--muted);line-height:1.5}
-/* TARGET */
-.t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.3rem;margin-top:3rem}
-.t-card{padding:2rem 1.2rem;text-align:center}
-.t-emoji{font-size:2rem;margin-bottom:.8rem;display:block}
-.t-card h3{font-size:.92rem;margin-bottom:.4rem}
-.t-card p{font-size:.78rem;color:var(--muted)}
-/* ABOUT */
-.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:3rem}
-.about-img{border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,.2);box-shadow:0 30px 80px rgba(0,0,0,.7)}
-.about-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.about-story{font-size:.9rem;color:var(--muted);line-height:1.9;margin-bottom:1.3rem}
-.quote{font-family:'Italiana',sans-serif;font-size:1.3rem;color:var(--gold);border-left:2px solid var(--gold);padding-left:1.4rem;margin:2rem 0;line-height:1.6}
-.sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;color:var(--gold);letter-spacing:.05em}
-.sig-sub{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-top:.2rem}
-/* TESTI */
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.3rem;margin-top:3rem}
-.testi-card{padding:2rem}
-.stars{color:var(--gold);letter-spacing:.15em;margin-bottom:1rem;font-size:.9rem}
-.testi-text{font-size:.85rem;color:var(--muted);font-style:italic;line-height:1.8;margin-bottom:1.3rem}
-.testi-author{display:flex;align-items:center;gap:.8rem}
-.testi-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#D4AF37,#F59E0B);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;color:#0A0A0A}
-.testi-n{font-size:.85rem;font-weight:500}
-.testi-r{font-size:.72rem;color:var(--dim)}
+.golden{padding:6rem 0;background:radial-gradient(circle,rgba(212,175,55,.1),transparent 60%);border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15);text-align:center}
+.golden h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;letter-spacing:.1em;background:linear-gradient(135deg,#D4AF37,#F5E6A3,#D4AF37,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem}
+.badges{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.5rem}
+.badge-g{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .85rem;border-radius:50px;font-weight:600;background:linear-gradient(135deg,#D4AF37,#F59E0B);color:#0A0A0A}
+.badge-l{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .85rem;border-radius:50px;border:1px solid #D4AF37;color:#D4AF37}
+
 /* CONTACT */
-.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;margin-top:3rem}
-.ci{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
-.ci-ico{width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.18);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem}
-.ci-lbl{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:.2rem}
-.ci-val{font-size:.9rem}
-a.ci-val:hover{color:var(--gold)}
+.ci{display:flex;gap:1rem;margin-bottom:1.5rem}
+.ci-ico{width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;color:#D4AF37;font-size:1.1rem}
+.ci-lbl{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:#5A5045;margin-bottom:.2rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem}
 .fg{margin-bottom:1.1rem}
-.fl{display:block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-.fi,.fs,.ft{width:100%;padding:.9rem 1.1rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.18);border-radius:10px;color:var(--txt);font-family:inherit;font-size:.88rem;transition:.3s;outline:none;-webkit-appearance:none;appearance:none}
-.fs{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23D4AF37' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
-.fi:focus,.fs:focus,.ft:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.15)}
-.ft{resize:vertical;min-height:90px}
-.fr{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fl{display:block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:#8A7E6E;margin-bottom:.5rem}
+.fi,.fs,.ft{width:100%;padding:.9rem 1.1rem;background:rgba(20,20,20,.7);border:1px solid rgba(212,175,55,.2);border-radius:10px;color:#F5F0EB;font-family:inherit;font-size:.88rem;outline:none}
+.fi:focus,.fs:focus{border-color:#D4AF37}
+
 /* FOOTER */
-footer{padding:4rem 0 2rem;border-top:1px solid rgba(212,175,55,.1);background:linear-gradient(180deg,#0A0A0A,#0d0d0d)}
-.ft-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem}
-.ft-grid h4{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.15em;margin-bottom:1rem;color:var(--gold)}
-.ft-grid p,.ft-grid li{font-size:.82rem;color:var(--muted);line-height:1.9}
-.ft-grid ul{list-style:none}
-.ft-grid a:hover{color:var(--gold)}
-.ft-script{font-family:'Italiana',sans-serif;color:var(--gold);font-size:1.05rem;margin-bottom:1rem}
-.ft-sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--gold);margin-top:.5rem}
-.ft-bottom{padding-top:1.5rem;border-top:1px solid rgba(212,175,55,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.75rem;color:var(--dim)}
+footer{padding:4rem 0 2rem;border-top:1px solid rgba(212,175,55,.1);text-align:center}
+.ft-script{font-family:'Italiana',sans-serif;color:#D4AF37;font-size:1.05rem;margin:1rem 0}
+.ft-sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;color:#D4AF37;margin-top:.5rem}
+
 /* WA */
-.wa{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.5);transition:.3s;animation:wpulse 2.5s infinite}
-.wa:hover{transform:scale(1.1)}
+.wa{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.5)}
 .wa svg{width:30px;height:30px;fill:#fff}
-@keyframes wpulse{0%,100%{box-shadow:0 8px 32px rgba(37,211,102,.5)}50%{box-shadow:0 8px 40px rgba(37,211,102,.8)}}
-/* MODAL */
-.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.9);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:1.5rem}
-.modal-bg.show{display:flex}
-.modal{background:var(--dark);border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:2rem;width:min(420px,100%);box-shadow:0 30px 80px rgba(0,0,0,.8);position:relative}
-.mc{position:absolute;top:1rem;right:1rem;width:32px;height:32px;border-radius:50%;border:1px solid rgba(212,175,55,.25);color:var(--muted);display:flex;align-items:center;justify-content:center}
-.mc:hover{border-color:var(--gold);color:var(--gold)}
-/* RESPONSIVE */
-@media(max-width:900px){
-.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(10,10,10,.98);padding:1.5rem;gap:1rem;border-bottom:1px solid rgba(212,175,55,.15)}
-.nav-menu.show{display:flex}
-.ham{display:flex}
-.g-wrap,.about,.contact{grid-template-columns:1fr}
-.tl{grid-template-columns:repeat(2,1fr);gap:1rem;row-gap:1.5rem}
-.tl::before{display:none}
-.ft-grid{grid-template-columns:1fr}
-.fr{grid-template-columns:1fr}
+
+@media(max-width:768px){
+.nav-menu{display:none}
+.contact-grid{grid-template-columns:1fr}
 }
-@media(max-width:600px){
-.tl{grid-template-columns:1fr}
-}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
-.reveal.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
 
 <nav class="nav">
 <div class="container nav-in">
-<a href="#" class="logo">
-<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 42 Q32 20 56 42 Q50 54 32 54 Q14 54 8 42 Z"/><path d="M20 40 Q32 26 44 40"/></svg>
-<span class="logo-t">CROISSANTÉ</span>
-</a>
-<ul class="nav-menu" id="nm">
-<li><a href="#home">Home</a></li>
+<div class="logo">CROISSANTÉ</div>
+<ul class="nav-menu">
 <li><a href="#menu">Menu</a></li>
 <li><a href="#golden">Golden</a></li>
-<li><a href="#bundling">Bundling</a></li>
-<li><a href="#tentang">Tentang</a></li>
 <li><a href="#kontak">Kontak</a></li>
 </ul>
-<div class="nav-r">
-<button class="btn-log" onclick="openLogin()">Login</button>
-<button class="btn btn-p" onclick="openCart()">Pesan Sekarang</button>
-<button class="ham" onclick="document.getElementById('nm').classList.toggle('show')"><span></span><span></span><span></span></button>
-</div>
 </div>
 </nav>
 
-<section class="hero" id="home">
-<div class="hero-glow"></div>
-<div class="hero-c">
-<div class="badge"><span class="dot"></span> Fresh from the oven</div>
+<section class="hero">
+<div>
+<div class="badge">Fresh from the oven</div>
 <h1>CROISSANTÉ</h1>
 <p class="script">"Croissant Fresh, Renyah di Luar, Lembut di Dalam."</p>
-<p class="sub">Croissant premium, dipanggang fresh setiap hari. Kini hadir di Cimahi.</p>
+<p class="sub" style="max-width:520px;margin:0 auto 2rem">Croissant premium, dipanggang fresh setiap hari. Kini hadir di Cimahi.</p>
 <div class="hero-btns">
 <a href="#menu" class="btn btn-p">Lihat Menu</a>
-<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTÉ,%20saya%20ingin%20pre-order%20croissant." target="_blank" class="btn btn-o">Pesan via WhatsApp</a>
-</div>
-</div>
-</section>
-
-<section style="padding:2rem 1.5rem 4rem">
-<div class="container">
-<div class="vid-wrap reveal">
-<video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1600&q=80">
-<source src="https://cdn.pixabay.com/video/2023/10/22/186089-877698384_large.mp4" type="video/mp4">
-</video>
-<div class="vid-cap">— Fresh from the oven, setiap hari.</div>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<div class="reveal" style="text-align:center">
-<div class="label" style="justify-content:center">Kenapa Kami</div>
-<h2 class="title gold-text">Kenapa CROISSANTÉ?</h2>
-<p class="sub" style="margin-left:auto;margin-right:auto">Empat alasan pelanggan setia memilih kami setiap hari.</p>
-</div>
-<div class="f-grid">
-<div class="f-card glass reveal"><div class="f-ico">🥐</div><h3>Varian Beragam</h3><p>13+ varian croissant dari classic hingga seasonal, jelas & lengkap.</p></div>
-<div class="f-card glass reveal"><div class="f-ico">🔥</div><h3>Dipanggang Fresh</h3><p>Setiap box dipanggang hari yang sama, renyah di luar, lembut di dalam.</p></div>
-<div class="f-card glass reveal"><div class="f-ico">🎁</div><h3>Bundling Praktis</h3><p>Pilih paket box sesuai kebutuhan — personal, sharing, atau hampers.</p></div>
-<div class="f-card glass reveal"><div class="f-ico">💰</div><h3>Harga Transparan</h3><p>Semua harga tertera jelas. Tanpa biaya tersembunyi, tanpa kejutan.</p></div>
+<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTÉ,%20saya%20ingin%20pre-order%20croissant." class="btn btn-o">Pesan via WhatsApp</a>
 </div>
 </div>
 </section>
 
 <section id="menu">
 <div class="container">
-<div class="reveal" style="text-align:center">
-<div class="label" style="justify-content:center">Katalog</div>
-<h2 class="title gold-text">Varian Croissant</h2>
-<p class="sub" style="margin-left:auto;margin-right:auto">Pilih favoritmu dari 13 varian yang dipanggang fresh setiap hari.</p>
+<div class="label">Katalog</div>
+<h2 class="gold">Varian Croissant</h2>
+<p class="sub">Pilih favoritmu dari 13 varian yang dipanggang fresh setiap hari.</p>
+<div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80"><div class="card-body"><div class="cat">Classic</div><div class="name">Classic Butter</div><div class="desc">Laminasi butter Prancis 24 lapis, renyah keemasan, lembut di dalam.</div><div class="price"><small>Mulai dari</small>Rp 18.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&q=80"><div class="card-body"><div class="cat">Sweet</div><div class="name">Chocolate</div><div class="desc">Dark chocolate Belgia meleleh di lipatan croissant renyah.</div><div class="price"><small>Mulai dari</small>Rp 22.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80"><div class="card-body"><div class="cat">Savory</div><div class="name">Cheese</div><div class="desc">Gruyère meleleh dengan sentuhan butter karamel.</div><div class="price"><small>Mulai dari</small>Rp 24.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=600&q=80"><div class="card-body"><div class="cat">Seasonal</div><div class="name">Matcha Velvet</div><div class="desc">Matcha uji premium dengan red velvet lembut.</div><div class="price"><small>Mulai dari</small>Rp 26.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1592842232653-1e0baebf4a21?w=600&q=80"><div class="card-body"><div class="cat">Sweet</div><div class="name">Almond</div><div class="desc">Almond panggang dengan taburan gula halus.</div><div class="price"><small>Mulai dari</small>Rp 24.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600&q=80"><div class="card-body"><div class="cat">Classic</div><div class="name">Pain au Chocolat</div><div class="desc">Dua batang dark chocolate Prancis di dalam laminasi butter.</div><div class="price"><small>Mulai dari</small>Rp 23.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=600&q=80"><div class="card-body"><div class="cat">Savory</div><div class="name">Ham & Cheese</div><div class="desc">Ham sapi pilihan + mozzarella meleleh sempurna.</div><div class="price"><small>Mulai dari</small>Rp 25.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=600&q=80"><div class="card-body"><div class="cat">Sweet</div><div class="name">Raspberry</div><div class="desc">Selai raspberry homemade, asam-manis seimbang.</div><div class="price"><small>Mulai dari</small>Rp 25.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80"><div class="card-body"><div class="cat">Sweet</div><div class="name">Pistachio</div><div class="desc">Krim pistachio Sisilia, creamy & aromatic.</div><div class="price"><small>Mulai dari</small>Rp 27.000</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80"><div class="card-body"><div class="cat">Sweet</div><div class="name">Tiramisu</div><div class="desc">Krim mascarpone + kopi espresso Italia.</div><div class="price"><small>Mulai dari</small>Rp 26.000</div></div></div>
 </div>
-<div class="filters reveal">
-<button class="f-btn active" data-c="all">Semua</button>
-<button class="f-btn" data-c="classic">Classic</button>
-<button class="f-btn" data-c="sweet">Sweet</button>
-<button class="f-btn" data-c="savory">Savory</button>
-<button class="f-btn" data-c="seasonal">Seasonal</button>
-</div>
-<div class="m-grid" id="mg"></div>
 </div>
 </section>
 
 <section class="golden" id="golden">
-<div class="golden-glow"></div>
 <div class="container">
-<div class="g-wrap">
-<div class="g-img reveal"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=1000&q=85" alt="Golden Croissant"></div>
-<div class="reveal">
-<div class="g-badges">
-<span class="b-gold">Limited 1x Per Bulan</span>
-<span class="b-line">24K Edible Gold</span>
-<span class="b-line">Member Only</span>
+<div class="badges">
+<span class="badge-g">Limited 1x Per Bulan</span>
+<span class="badge-l">24K Edible Gold</span>
+<span class="badge-l">Member Only</span>
 </div>
-<h2 class="g-title">GOLDEN CROISSANT</h2>
-<p class="g-desc">Croissant 24 lapis butter Prancis, dilapisi edible 24K gold leaf, diisi truffle butter & crème de marrons, ditaburi sea salt Guérande. Disajikan dalam box hitam matte dengan wax seal emas.</p>
-<div class="g-info">
-<div class="g-item"><div class="g-lbl">Harga</div><div class="g-val">Rp 275.000</div></div>
-<div class="g-item"><div class="g-lbl">Sisa Bulan Ini</div><div class="g-val">7/20</div></div>
-<div class="g-item"><div class="g-lbl">Pengambilan</div><div class="g-val">H+3 s/d H+7</div></div>
-<div class="g-item"><div class="g-lbl">Sertifikat</div><div class="g-val">Emas + Serial</div></div>
-</div>
-<div class="g-count"><small>Bulan ini tersisa</small><b id="gc">— hari</b></div>
-<button class="btn btn-p" onclick="addC('Golden Croissant',275000,'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=400&q=80')">Pesan Golden Croissant</button>
-</div>
-</div>
-</div>
-</section>
-
-<section id="bundling">
-<div class="container">
-<div class="reveal" style="text-align:center">
-<div class="label" style="justify-content:center">Paket</div>
-<h2 class="title gold-text">Pilih Paket Box Favoritmu</h2>
-<p class="sub" style="margin-left:auto;margin-right:auto">Tiga pilihan box sesuai kebutuhan.</p>
-</div>
-<div class="b-grid">
-<div class="b-card glass reveal"><div class="b-emoji">🥐</div><div class="b-name">Box Personal</div><div class="b-qty">Isi 2–3 pcs</div><div class="b-price">Rp 55.000</div><button class="btn btn-o" onclick="addC('Box Personal',55000,'')">Pesan Paket</button></div>
-<div class="b-card glass feat reveal"><div class="b-tag">Best Value</div><div class="b-emoji">🎁</div><div class="b-name">Box Sharing</div><div class="b-qty">Isi 6 pcs</div><div class="b-price">Rp 110.000</div><button class="btn btn-p" onclick="addC('Box Sharing',110000,'')">Pesan Paket</button></div>
-<div class="b-card glass reveal"><div class="b-emoji">👑</div><div class="b-name">Box Hampers</div><div class="b-qty">Isi 12 pcs</div><div class="b-price">Rp 210.000</div><button class="btn btn-o" onclick="addC('Box Hampers',210000,'')">Pesan Paket</button></div>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<div class="reveal" style="text-align:center">
-<div class="label" style="justify-content:center">Proses</div>
-<h2 class="title gold-text">Cara Pesan Mudah</h2>
-</div>
-<div class="tl reveal">
-<div class="tl-step"><div class="tl-num">01</div><div class="tl-lbl">Kunjungi Website</div></div>
-<div class="tl-step"><div class="tl-num">02</div><div class="tl-lbl">Pilih Varian</div></div>
-<div class="tl-step"><div class="tl-num">03</div><div class="tl-lbl">Pilih Paket</div></div>
-<div class="tl-step"><div class="tl-num">04</div><div class="tl-lbl">Cek Harga</div></div>
-<div class="tl-step"><div class="tl-num">05</div><div class="tl-lbl">Order Online</div></div>
-<div class="tl-step"><div class="tl-num">06</div><div class="tl-lbl">Konfirmasi</div></div>
-<div class="tl-step"><div class="tl-num">07</div><div class="tl-lbl">Siap Dinikmati</div></div>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<div class="reveal" style="text-align:center">
-<div class="label" style="justify-content:center">Untuk Siapa</div>
-<h2 class="title gold-text">Untuk Siapa CROISSANTÉ?</h2>
-</div>
-<div class="t-grid">
-<div class="t-card glass reveal"><span class="t-emoji">🎓</span><h3>Pelajar & Mahasiswa</h3><p>Snack manis untuk belajar & nongkrong.</p></div>
-<div class="t-card glass reveal"><span class="t-emoji">💼</span><h3>Pekerja Kantoran</h3><p>Breakfast elegan atau camilan rapat.</p></div>
-<div class="t-card glass reveal"><span class="t-emoji">👨‍👩‍👧</span><h3>Keluarga & Teman</h3><p>Sharing box untuk momen hangat.</p></div>
-<div class="t-card glass reveal"><span class="t-emoji">🥐</span><h3>Pecinta Pastry</h3><p>Yang tahu croissant Prancis asli.</p></div>
-</div>
-</div>
-</section>
-
-<section id="tentang">
-<div class="container">
-<div class="reveal" style="text-align:center">
-<div class="label" style="justify-content:center">Tentang Kami</div>
-<h2 class="title gold-text">Cerita CROISSANTÉ</h2>
-</div>
-<div class="about">
-<div class="about-img reveal"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=85" alt="Hendra Lesmana"></div>
-<div class="reveal">
-<p class="about-story">CROISSANTÉ lahir dari kecintaan mendalam pada croissant Prancis asli — laminasi butter yang renyah di luar, lembut di dalam. Setiap hari, kami memanggang dalam batch kecil agar setiap croissant sampai ke tanganmu dalam kondisi terbaik.</p>
-<p class="about-story">Dari dapur sederhana di Cimahi, kami percaya bahwa croissant bukan sekadar pastry — ia adalah momen. Momen untuk dinikmati perlahan, ditemani kopi hangat, atau dibagikan pada orang tersayang.</p>
-<p class="quote">"Setiap croissant kami adalah hasil dari cinta, ketelitian, dan dedikasi."</p>
-<div class="sig">Hendra Lesmana</div>
-<div class="sig-sub">Founder & Head Baker</div>
-</div>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<div class="reveal" style="text-align:center">
-<div class="label" style="justify-content:center">Testimoni</div>
-<h2 class="title gold-text">Kata Mereka</h2>
-</div>
-<div class="testi-grid">
-<div class="testi-card glass reveal"><div class="stars">★★★★★</div><p class="testi-text">"Classic Butter-nya juara. Renyah di luar, lembut di dalam."</p><div class="testi-author"><div class="testi-av">A</div><div><div class="testi-n">Ayu P.</div><div class="testi-r">Cimahi</div></div></div></div>
-<div class="testi-card glass reveal"><div class="stars">★★★★★</div><p class="testi-text">"Pesan Box Sharing buat keluarga, semua pada rebutan."</p><div class="testi-author"><div class="testi-av">R</div><div><div class="testi-n">Rizky H.</div><div class="testi-r">Bandung</div></div></div></div>
-<div class="testi-card glass reveal"><div class="stars">★★★★★</div><p class="testi-text">"Packaging-nya cantik banget, cocok buat hampers."</p><div class="testi-author"><div class="testi-av">S</div><div><div class="testi-n">Sarah M.</div><div class="testi-r">Cimahi</div></div></div></div>
-</div>
+<h2>GOLDEN CROISSANT</h2>
+<p class="sub" style="max-width:600px;margin:0 auto 1.5rem">Croissant 24 lapis butter Prancis, dilapisi edible 24K gold leaf, diisi truffle butter & crème de marrons, ditaburi sea salt Guérande.</p>
+<p style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:#D4AF37;margin-bottom:1.5rem">Rp 275.000</p>
+<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTÉ,%20saya%20ingin%20pre-order%20Golden%20Croissant." class="btn btn-p">Pesan Golden Croissant</a>
 </div>
 </section>
 
 <section id="kontak">
 <div class="container">
-<div class="reveal" style="text-align:center">
-<div class="label" style="justify-content:center">Kontak</div>
-<h2 class="title gold-text">Pesan Sekarang</h2>
-<p class="sub" style="margin-left:auto;margin-right:auto">Isi form, pesanan langsung terkirim via WhatsApp.</p>
+<div class="label">Kontak</div>
+<h2 class="gold">Pesan Sekarang</h2>
+<p class="sub">Isi form, pesanan langsung terkirim via WhatsApp.</p>
+<div class="contact-grid">
+<div>
+<div class="ci"><div class="ci-ico">📞</div><div><div class="ci-lbl">Contact Person</div><div>Hendra Lesmana — 0896 6821 1725</div></div></div>
+<div class="ci"><div class="ci-ico">📍</div><div><div class="ci-lbl">Lokasi</div><div>Cimahi, Jawa Barat</div></div></div>
+<div class="ci"><div class="ci-ico">👤</div><div><div class="ci-lbl">Owner</div><div>Hendra Lesmana</div></div></div>
 </div>
-<div class="contact">
-<div class="reveal">
-<div class="ci"><div class="ci-ico">📞</div><div><div class="ci-lbl">Contact Person</div><a class="ci-val" href="https://wa.me/6289668211725">Hendra Lesmana — 0896 6821 1725</a></div></div>
-<div class="ci"><div class="ci-ico">📍</div><div><div class="ci-lbl">Lokasi</div><div class="ci-val">Cimahi, Jawa Barat</div></div></div>
-<div class="ci"><div class="ci-ico">👤</div><div><div class="ci-lbl">Owner</div><div class="ci-val">Hendra Lesmana</div></div></div>
-<div class="ci"><div class="ci-ico">🎵</div><div><div class="ci-lbl">TikTok</div><a class="ci-val" href="https://tiktok.com" target="_blank">@croissante.cimahi</a></div></div>
-</div>
-<form class="reveal" onsubmit="return submitOrder(event)">
-<div class="fg"><label class="fl">Nama Lengkap</label><input type="text" class="fi" id="fn" required placeholder="Nama kamu"></div>
-<div class="fg"><label class="fl">No. HP / WhatsApp</label><input type="tel" class="fi" id="fp" required placeholder="08xxxxxxxxxx"></div>
-<div class="fr">
-<div class="fg"><label class="fl">Varian</label><select class="fs" id="fv" required><option value="">Pilih varian...</option><option>Classic Butter</option><option>Chocolate</option><option>Cheese</option><option>Matcha Velvet</option><option>Almond</option><option>Pain au Chocolat</option><option>Ham & Cheese</option><option>Spinach Feta</option><option>Cinnamon Roll</option><option>Raspberry</option><option>Pistachio</option><option>Tiramisu</option><option>Croffle</option><option>Golden Croissant (24K)</option><option>Box Bundling</option></select></div>
+<form onsubmit="return order(event)">
+<div class="fg"><label class="fl">Nama</label><input type="text" class="fi" id="fn" required></div>
+<div class="fg"><label class="fl">No. HP</label><input type="tel" class="fi" id="fp" required></div>
+<div class="fg"><label class="fl">Varian</label><select class="fs" id="fv" required><option value="">Pilih...</option><option>Classic Butter</option><option>Chocolate</option><option>Cheese</option><option>Matcha Velvet</option><option>Golden Croissant</option><option>Box Bundling</option></select></div>
 <div class="fg"><label class="fl">Jumlah Box</label><input type="number" class="fi" id="fq" min="1" value="1" required></div>
-</div>
-<div class="fg"><label class="fl">Tanggal Pengambilan</label><input type="date" class="fi" id="fd" required></div>
-<div class="fg"><label class="fl">Catatan (opsional)</label><textarea class="ft" id="fnote" placeholder="Alamat atau permintaan khusus..."></textarea></div>
+<div class="fg"><label class="fl">Tanggal Ambil</label><input type="date" class="fi" id="fd" required></div>
 <button type="submit" class="btn btn-p" style="width:100%">Kirim Pesanan via WhatsApp</button>
 </form>
 </div>
@@ -413,146 +168,25 @@ footer{padding:4rem 0 2rem;border-top:1px solid rgba(212,175,55,.1);background:l
 
 <footer>
 <div class="container">
-<div class="ft-grid">
-<div>
-<div class="logo" style="margin-bottom:1rem">
-<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" style="width:36px;height:36px;color:#D4AF37"><path d="M8 42 Q32 20 56 42 Q50 54 32 54 Q14 54 8 42 Z"/><path d="M20 40 Q32 26 44 40"/></svg>
-<span class="logo-t">CROISSANTÉ</span>
-</div>
-<p class="ft-script">"Choose your flavor.<br>Choose your box.<br>Enjoy your croissant."</p>
-<p style="margin-top:1rem"><strong style="color:#D4AF37">Owner:</strong> Hendra Lesmana</p>
+<div class="logo" style="font-size:1.5rem;margin-bottom:1rem">CROISSANTÉ</div>
+<p class="ft-script">"Choose your flavor. Choose your box. Enjoy your croissant."</p>
 <div class="ft-sig">Hendra Lesmana</div>
-<div style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:#5A5045;margin-top:.2rem">Founder & Head Baker</div>
-</div>
-<div>
-<h4>Menu Cepat</h4>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#menu">Menu Varian</a></li>
-<li><a href="#golden">Golden Croissant</a></li>
-<li><a href="#bundling">Bundling</a></li>
-<li><a href="#tentang">Tentang</a></li>
-<li><a href="#kontak">Kontak</a></li>
-</ul>
-</div>
-<div>
-<h4>Kontak</h4>
-<p>CP: Hendra Lesmana<br>0896 6821 1725</p>
-<p style="margin-top:.8rem">Cimahi, Jawa Barat</p>
-<p style="margin-top:.8rem"><a href="https://wa.me/6289668211725">WhatsApp</a></p>
-<p><a href="https://tiktok.com" target="_blank">TikTok</a></p>
-</div>
-</div>
-<div class="ft-bottom">
-<span>© 2026 CROISSANTÉ. All rights reserved.</span>
-<span>Crafted with 🥐 in Cimahi</span>
-</div>
+<div style="font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#5A5045;margin-top:.3rem">Founder & Head Baker</div>
+<p style="margin-top:2rem;font-size:.8rem;color:#8A7E6E">© 2026 CROISSANTÉ · Cimahi · CP: 0896 6821 1725</p>
 </div>
 </footer>
 
-<a href="https://wa.me/6289668211725?text=Halo%20CROISSANTÉ,%20saya%20ingin%20pre-order%20croissant." target="_blank" class="wa">
-<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-</a>
-
-<div class="modal-bg" id="lm">
-<div class="modal">
-<button class="mc" onclick="closeLogin()">✕</button>
-<h2 class="gold-text" style="text-align:center;font-size:1.2rem;margin-bottom:.5rem">Selamat Datang</h2>
-<p style="text-align:center;color:#8A7E6E;font-size:.85rem;margin-bottom:1.5rem">Masuk untuk akses Golden Croissant</p>
-<div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="nama@email.com"></div>
-<div class="fg"><label class="fl">Password</label><input type="password" class="fi" placeholder="••••••••"></div>
-<button class="btn btn-p" style="width:100%" onclick="fakeLogin()">Masuk</button>
-</div>
-</div>
-
-<div class="modal-bg" id="cm">
-<div class="modal">
-<button class="mc" onclick="closeCart()">✕</button>
-<h2 class="gold-text" style="text-align:center;font-size:1.2rem;margin-bottom:.5rem">Pesanan Kamu</h2>
-<div id="cartBody" style="margin:1rem 0;max-height:300px;overflow-y:auto"></div>
-<div style="display:flex;justify-content:space-between;margin-bottom:1rem;padding-top:1rem;border-top:1px solid rgba(212,175,55,.2)">
-<span>Total</span><strong id="cartTotal" style="color:#D4AF37;font-family:'Cormorant Garamond',serif;font-size:1.4rem">Rp 0</strong>
-</div>
-<button class="btn btn-p" style="width:100%" onclick="checkout()">Checkout via WhatsApp</button>
-</div>
-</div>
-
-<div id="toast" style="position:fixed;bottom:6rem;left:50%;transform:translateX(-50%) translateY(100px);background:#141414;border:1px solid #D4AF37;border-radius:50px;padding:.8rem 1.5rem;font-size:.85rem;color:#D4AF37;z-index:2000;transition:.4s;opacity:0;pointer-events:none">Ditambahkan ✓</div>
+<a href="https://wa.me/6289668211725" class="wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
 
 <script>
-const MENU=[
-{name:'Classic Butter',cat:'classic',desc:'Laminasi butter Prancis 24 lapis, renyah keemasan, lembut di dalam.',price:18000,img:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80'},
-{name:'Chocolate',cat:'sweet',desc:'Dark chocolate Belgia meleleh di lipatan croissant renyah.',price:22000,img:'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&q=80'},
-{name:'Cheese',cat:'savory',desc:'Gruyère meleleh dengan sentuhan butter karamel.',price:24000,img:'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80'},
-{name:'Matcha Velvet',cat:'seasonal',desc:'Matcha uji premium dengan red velvet lembut.',price:26000,img:'https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=600&q=80'},
-{name:'Almond',cat:'sweet',desc:'Almond panggang dengan taburan gula halus.',price:24000,img:'https://images.unsplash.com/photo-1592842232653-1e0baebf4a21?w=600&q=80'},
-{name:'Pain au Chocolat',cat:'classic',desc:'Dua batang dark chocolate Prancis di dalam laminasi butter.',price:23000,img:'https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600&q=80'},
-{name:'Ham & Cheese',cat:'savory',desc:'Ham sapi pilihan + mozzarella meleleh sempurna.',price:25000,img:'https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=600&q=80'},
-{name:'Spinach Feta',cat:'savory',desc:'Bayam segar + feta Yunani, gurih & creamy.',price:24000,img:'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80'},
-{name:'Cinnamon Roll',cat:'sweet',desc:'Kayu manis hangat dengan glaze gula manis.',price:22000,img:'https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600&q=80'},
-{name:'Raspberry',cat:'sweet',desc:'Selai raspberry homemade, asam-manis seimbang.',price:25000,img:'https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=600&q=80'},
-{name:'Pistachio',cat:'sweet',desc:'Krim pistachio Sisilia, creamy & aromatic.',price:27000,img:'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80'},
-{name:'Tiramisu',cat:'sweet',desc:'Krim mascarpone + kopi espresso Italia.',price:26000,img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80'},
-{name:'Croffle',cat:'seasonal',desc:'Croissant waffle, crispy di luar lembut di dalam.',price:24000,img:'https://images.unsplash.com/photo-1568051243851-f9b136146e97?w=600&q=80'}
-];
-function renderMenu(f='all'){
-const g=document.getElementById('mg');g.innerHTML='';
-MENU.filter(m=>f==='all'||m.cat===f).forEach(m=>{
-g.innerHTML+=`<div class="m-card glass"><img src="${m.img}" alt="${m.name}" loading="lazy"><div class="m-body"><div class="m-cat">${m.cat}</div><div class="m-name">${m.name}</div><div class="m-desc">${m.desc}</div><div class="m-foot"><div class="m-price"><small>Mulai dari</small>Rp ${m.price.toLocaleString('id-ID')}</div><button class="m-add" onclick="addC('${m.name}',${m.price},'${m.img}')">+</button></div></div></div>`;
-});
-}
-document.querySelectorAll('.f-btn').forEach(b=>{
-b.onclick=()=>{document.querySelectorAll('.f-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderMenu(b.dataset.c);};
-});
-let cart=JSON.parse(localStorage.getItem('croissante_cart')||'[]');
-function addC(n,p,i){
-const e=cart.find(x=>x.name===n);
-if(e)e.qty++;else cart.push({name:n,price:p,img:i,qty:1});
-localStorage.setItem('croissante_cart',JSON.stringify(cart));
-showToast(n+' ditambahkan ✓');
-}
-function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.style.opacity=1;t.style.transform='translateX(-50%) translateY(0)';setTimeout(()=>{t.style.opacity=0;t.style.transform='translateX(-50%) translateY(100px)';},2000);}
-function openCart(){
-const b=document.getElementById('cartBody');
-const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
-document.getElementById('cartTotal').textContent='Rp '+total.toLocaleString('id-ID');
-if(!cart.length){b.innerHTML='<p style="text-align:center;color:#5A5045;padding:2rem;font-style:italic">Keranjang kosong 🥐</p>';}
-else{b.innerHTML=cart.map(i=>`<div style="display:flex;justify-content:space-between;padding:.8rem 0;border-bottom:1px solid rgba(212,175,55,.1)"><div><div style="font-family:'Cinzel',serif;font-size:.85rem">${i.name}</div><div style="color:#D4AF37;font-size:.82rem">Rp ${i.price.toLocaleString('id-ID')} x ${i.qty}</div></div><button onclick="rmC('${i.name}')" style="color:#8A7E6E;font-size:1.2rem">×</button></div>`).join('');}
-document.getElementById('cm').classList.add('show');
-}
-function rmC(n){cart=cart.filter(x=>x.name!==n);localStorage.setItem('croissante_cart',JSON.stringify(cart));openCart();}
-function closeCart(){document.getElementById('cm').classList.remove('show');}
-function checkout(){
-if(!cart.length){showToast('Keranjang kosong');return;}
-let m='Halo CROISSANTÉ, saya ingin pre-order croissant:%0A%0A';
-cart.forEach(i=>{m+=`• ${i.name} x${i.qty} — Rp ${(i.price*i.qty).toLocaleString('id-ID')}%0A`;});
-const t=cart.reduce((s,i)=>s+i.price*i.qty,0);
-m+=`%0ATotal: Rp ${t.toLocaleString('id-ID')}%0A%0ATerima kasih!`;
-window.open('https://wa.me/6289668211725?text='+m,'_blank');
-}
-function openLogin(){document.getElementById('lm').classList.add('show');}
-function closeLogin(){document.getElementById('lm').classList.remove('show');}
-function fakeLogin(){showToast('Login berhasil 🥐');closeLogin();}
-document.getElementById('lm').addEventListener('click',e=>{if(e.target.id==='lm')closeLogin();});
-document.getElementById('cm').addEventListener('click',e=>{if(e.target.id==='cm')closeCart();});
-function submitOrder(e){
+function order(e){
 e.preventDefault();
-const n=document.getElementById('fn').value,p=document.getElementById('fp').value,v=document.getElementById('fv').value,q=document.getElementById('fq').value,d=document.getElementById('fd').value,note=document.getElementById('fnote').value||'-';
-const m=`Halo CROISSANTÉ, saya ingin pre-order croissant:%0A%0ANama: ${n}%0ANo. HP: ${p}%0AVarian: ${v}%0AJumlah Box: ${q}%0ATanggal Ambil: ${d}%0ACatatan: ${note}%0A%0ATerima kasih!`;
+const n=document.getElementById('fn').value,p=document.getElementById('fp').value,v=document.getElementById('fv').value,q=document.getElementById('fq').value,d=document.getElementById('fd').value;
+const m=`Halo CROISSANTÉ, saya ingin pre-order croissant:%0A%0ANama: ${n}%0ANo. HP: ${p}%0AVarian: ${v}%0AJumlah: ${q}%0ATanggal Ambil: ${d}%0A%0ATerima kasih!`;
 window.open('https://wa.me/6289668211725?text='+m,'_blank');
 return false;
 }
-(function(){
-const d=document.getElementById('fd');const t=new Date();
-const mn=new Date(t);mn.setDate(mn.getDate()+1);
-const mx=new Date(t);mx.setDate(mx.getDate()+7);
-d.min=mn.toISOString().split('T')[0];d.max=mx.toISOString().split('T')[0];
-})();
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-document.querySelectorAll('.nav-menu a').forEach(a=>{a.onclick=()=>document.getElementById('nm').classList.remove('show');});
-(function(){const n=new Date();const l=new Date(n.getFullYear(),n.getMonth()+1,0);const d=Math.ceil((l-n)/86400000);document.getElementById('gc').textContent=d+' hari';})();
-renderMenu();
+(function(){const d=document.getElementById('fd');const t=new Date();const mn=new Date(t);mn.setDate(mn.getDate()+1);const mx=new Date(t);mx.setDate(mx.getDate()+7);d.min=mn.toISOString().split('T')[0];d.max=mx.toISOString().split('T')[0];})();
 </script>
 </body>
 </html>
