@@ -3,376 +3,384 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CROISSANTÉ — L'Art du Croissant</title>
-<meta name="description" content="Croissant premium handmade, dipanggang segar setiap hari di Cimahi.">
+<title>CROISSANTÉ — L'Édition Noire</title>
+<meta name="description" content="Artisan boulangerie. Edisi hitam eksklusif.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
-    --bg:#0a0a0a;
-    --bg2:#111111;
-    --gold:#D4AF37;
-    --gold-soft:#b8952e;
-    --cream:#f5f1e8;
-    --muted:#8a8578;
-    --line:rgba(212,175,55,0.18);
+    --black:#0B0B0B;
+    --black-soft:#141414;
+    --black-card:#1A1A1A;
+    --copper:#C5A059;
+    --copper-soft:#9e7e3f;
+    --cream:#F4F1EA;
+    --muted:#7A7A7A;
+    --line:rgba(197,160,89,0.2);
   }
   html{scroll-behavior:smooth;}
   body{
-    background:var(--bg);
+    background:var(--black);
     color:var(--cream);
     font-family:'Inter',sans-serif;
     font-weight:300;
+    line-height:1.6;
     overflow-x:hidden;
-    line-height:1.7;
     -webkit-font-smoothing:antialiased;
-    cursor:none;
   }
-  a{color:inherit;text-decoration:none;cursor:none;}
+  a{color:inherit;text-decoration:none;}
   img{max-width:100%;display:block;}
 
   /* ===== PRELOADER ===== */
   #loader{
-    position:fixed;inset:0;background:var(--bg);z-index:9999;
+    position:fixed;inset:0;background:var(--black);z-index:9999;
     display:flex;align-items:center;justify-content:center;flex-direction:column;
-    transition:opacity 1s ease, visibility 1s ease;
+    transition:opacity 1.2s ease, visibility 1.2s ease;
   }
   #loader.hide{opacity:0;visibility:hidden;}
-  #loader .mono{
-    font-family:'Cinzel',serif;font-size:38px;letter-spacing:12px;
-    color:var(--gold);padding-left:12px;
-    animation:fadeUp 1.5s ease forwards;opacity:0;
+  #loader .logo{
+    font-family:'Playfair Display',serif;font-size:32px;letter-spacing:14px;
+    color:var(--copper);padding-left:14px;opacity:0;
+    animation:fadeIn 1.8s ease forwards;
   }
-  #loader .sub{
-    font-family:'Cormorant Garamond',serif;font-style:italic;
-    color:var(--muted);font-size:14px;letter-spacing:3px;margin-top:15px;
-    animation:fadeUp 1.5s 0.4s ease forwards;opacity:0;
+  #loader .line{
+    width:0;height:1px;background:var(--copper);margin-top:25px;
+    animation:lineGrow 2s 0.5s ease forwards;
   }
-  @keyframes fadeUp{from{opacity:0;transform:translateY(15px);}to{opacity:1;transform:translateY(0);}}
-
-  /* ===== CUSTOM CURSOR ===== */
-  .cursor-dot,.cursor-ring{
-    position:fixed;top:0;left:0;pointer-events:none;z-index:10000;
-    border-radius:50%;transform:translate(-50%,-50%);
-    transition:width .3s ease,height .3s ease,background .3s ease,border-color .3s;
-  }
-  .cursor-dot{width:6px;height:6px;background:var(--gold);}
-  .cursor-ring{width:36px;height:36px;border:1px solid var(--gold);opacity:.5;}
-  .cursor-ring.hover{width:60px;height:60px;background:rgba(212,175,55,0.08);opacity:.8;}
-  @media (max-width:768px){.cursor-dot,.cursor-ring{display:none;} body,a{cursor:auto;}}
-
-  /* ===== SCROLL PROGRESS ===== */
-  #progress{
-    position:fixed;top:0;left:0;height:1px;background:var(--gold);
-    width:0%;z-index:9998;transition:width .1s linear;
-  }
+  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+  @keyframes lineGrow{from{width:0;}to{width:120px;}}
 
   /* ===== NAV ===== */
   nav{
     position:fixed;top:0;left:0;width:100%;z-index:900;
-    padding:30px 60px;display:flex;justify-content:space-between;align-items:center;
-    transition:background .5s ease,padding .5s ease,border-color .5s ease;
-    border-bottom:1px solid transparent;
+    padding:35px 60px;display:flex;justify-content:space-between;align-items:center;
+    transition:background .6s ease,padding .6s ease,backdrop-filter .6s ease;
   }
   nav.scrolled{
-    background:rgba(10,10,10,0.9);backdrop-filter:blur(15px);
-    padding:20px 60px;border-bottom:1px solid var(--line);
+    background:rgba(11,11,11,0.85);backdrop-filter:blur(20px);
+    padding:22px 60px;border-bottom:1px solid var(--line);
   }
   nav .logo{
-    font-family:'Cinzel',serif;font-size:20px;letter-spacing:8px;
-    color:var(--gold);padding-left:8px;
+    font-family:'Playfair Display',serif;font-size:18px;letter-spacing:10px;
+    color:var(--copper);padding-left:10px;font-weight:400;
   }
-  nav ul{display:flex;gap:45px;list-style:none;}
+  nav ul{display:flex;gap:50px;list-style:none;}
   nav ul a{
-    font-size:11px;letter-spacing:3px;text-transform:uppercase;
-    color:var(--cream);opacity:.75;transition:opacity .3s,color .3s;
+    font-size:10px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--cream);opacity:.7;transition:opacity .4s,color .4s;
     position:relative;font-weight:400;
   }
-  nav ul a:hover{opacity:1;color:var(--gold);}
-  nav ul a::after{
-    content:'';position:absolute;bottom:-6px;left:0;width:0;height:1px;
-    background:var(--gold);transition:width .4s ease;
+  nav ul a:hover{opacity:1;color:var(--copper);}
+  nav .nav-cta{
+    font-size:10px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--copper);border:1px solid var(--copper);padding:12px 25px;
+    transition:all .5s ease;
   }
-  nav ul a:hover::after{width:100%;}
-  .nav-right{display:flex;gap:35px;align-items:center;}
-  .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;}
-  .menu-toggle span{width:24px;height:1px;background:var(--cream);}
+  nav .nav-cta:hover{background:var(--copper);color:var(--black);}
+  .menu-toggle{display:none;flex-direction:column;gap:6px;background:none;border:none;cursor:pointer;}
+  .menu-toggle span{width:26px;height:1px;background:var(--cream);}
   @media (max-width:900px){
-    nav{padding:20px 25px;}
-    nav.scrolled{padding:15px 25px;}
+    nav, nav.scrolled{padding:20px 25px;}
     nav ul{display:none;}
     .menu-toggle{display:flex;}
   }
 
   /* ===== HERO ===== */
   .hero{
-    height:100vh;min-height:700px;position:relative;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:0 20px;overflow:hidden;
+    min-height:100vh;padding:180px 60px 100px;
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+    position:relative;overflow:hidden;
   }
   .hero::before{
-    content:'';position:absolute;inset:0;
-    background:
-      radial-gradient(circle at 50% 40%, rgba(212,175,55,0.08), transparent 60%),
-      linear-gradient(180deg, #0a0a0a 0%, #0f0e0a 50%, #0a0a0a 100%);
-    z-index:-2;
+    content:'';position:absolute;top:-30%;right:-20%;width:80%;height:160%;
+    background:radial-gradient(circle, rgba(197,160,89,0.06), transparent 60%);
+    pointer-events:none;
   }
-  .hero::after{
-    content:'';position:absolute;inset:0;
-    background-image:url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1600&q=80');
-    background-size:cover;background-position:center;
-    opacity:0.18;z-index:-1;
-    animation:slowZoom 20s ease-in-out infinite alternate;
-  }
-  @keyframes slowZoom{from{transform:scale(1);}to{transform:scale(1.1);}}
-
+  .hero-left{position:relative;z-index:2;}
   .hero .eyebrow{
-    font-size:11px;letter-spacing:8px;text-transform:uppercase;
-    color:var(--gold);margin-bottom:30px;opacity:0;
-    animation:fadeUp 1.5s 1.8s ease forwards;
+    font-size:10px;letter-spacing:6px;text-transform:uppercase;
+    color:var(--copper);margin-bottom:30px;display:flex;align-items:center;gap:15px;
   }
+  .hero .eyebrow::before{content:'';width:40px;height:1px;background:var(--copper);}
   .hero h1{
-    font-family:'Cormorant Garamond',serif;font-weight:300;
-    font-size:clamp(48px,9vw,130px);line-height:0.95;letter-spacing:2px;
-    color:var(--cream);opacity:0;
-    animation:fadeUp 1.8s 2s ease forwards;
+    font-family:'Playfair Display',serif;font-weight:400;
+    font-size:clamp(48px,7vw,110px);line-height:0.95;letter-spacing:-1px;
+    margin-bottom:35px;
   }
-  .hero h1 em{font-style:italic;color:var(--gold);font-weight:300;}
-  .hero .tagline{
+  .hero h1 em{
     font-family:'Cormorant Garamond',serif;font-style:italic;
-    font-size:clamp(16px,2vw,22px);color:var(--muted);
-    margin-top:35px;max-width:600px;opacity:0;
-    animation:fadeUp 1.5s 2.4s ease forwards;
+    color:var(--copper);font-weight:300;
   }
-  .hero .cta{
-    margin-top:60px;display:inline-flex;align-items:center;gap:15px;
-    font-size:11px;letter-spacing:5px;text-transform:uppercase;
-    color:var(--gold);padding:18px 40px;border:1px solid var(--gold);
-    position:relative;overflow:hidden;opacity:0;
-    animation:fadeUp 1.5s 2.8s ease forwards;
-    transition:color .5s ease;
+  .hero p{
+    font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;
+    color:#b0b0b0;max-width:450px;margin-bottom:50px;line-height:1.7;
   }
-  .hero .cta span{position:relative;z-index:2;}
-  .hero .cta::before{
-    content:'';position:absolute;inset:0;background:var(--gold);
-    transform:translateY(100%);transition:transform .5s cubic-bezier(.7,0,.3,1);
+  .hero .btn{
+    display:inline-flex;align-items:center;gap:20px;
+    font-size:10px;letter-spacing:5px;text-transform:uppercase;
+    color:var(--cream);padding:20px 0;border-bottom:1px solid var(--line);
+    transition:all .5s ease;position:relative;
   }
-  .hero .cta:hover{color:#0a0a0a;}
-  .hero .cta:hover::before{transform:translateY(0);}
+  .hero .btn::after{
+    content:'→';font-size:16px;color:var(--copper);
+    transition:transform .5s ease;
+  }
+  .hero .btn:hover{border-color:var(--copper);padding-left:15px;}
+  .hero .btn:hover::after{transform:translateX(10px);}
 
-  .scroll-indicator{
-    position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
-    display:flex;flex-direction:column;align-items:center;gap:15px;
-    font-size:10px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;
-    opacity:0;animation:fadeUp 1.5s 3.2s ease forwards;
+  .hero-right{
+    position:relative;aspect-ratio:3/4;overflow:hidden;
   }
-  .scroll-indicator .line{
-    width:1px;height:50px;background:linear-gradient(180deg,var(--gold),transparent);
-    animation:scrollLine 2s ease-in-out infinite;
+  .hero-right img{
+    width:100%;height:100%;object-fit:cover;
+    filter:grayscale(40%) brightness(0.85) contrast(1.1);
+    transition:transform 2s ease,filter 2s ease;
   }
-  @keyframes scrollLine{0%,100%{transform:scaleY(0.3);transform-origin:top;}50%{transform:scaleY(1);}}
+  .hero-right:hover img{transform:scale(1.06);filter:grayscale(0%) brightness(1);}
+  .hero-right::after{
+    content:'';position:absolute;inset:20px;border:1px solid var(--line);
+    pointer-events:none;z-index:2;
+  }
+  .hero-right .caption{
+    position:absolute;bottom:40px;left:40px;z-index:3;
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:14px;color:var(--cream);letter-spacing:1px;
+  }
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;padding:140px 25px 80px;gap:50px;min-height:auto;}
+    .hero h1{font-size:clamp(44px,12vw,80px);}
+  }
+
+  /* ===== MARQUEE ===== */
+  .marquee{
+    padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    overflow:hidden;white-space:nowrap;background:var(--black-soft);
+  }
+  .marquee-track{
+    display:inline-block;animation:scroll 40s linear infinite;
+  }
+  .marquee span{
+    font-family:'Playfair Display',serif;font-size:60px;font-weight:400;
+    color:transparent;-webkit-text-stroke:1px rgba(197,160,89,0.4);
+    margin:0 40px;letter-spacing:4px;
+  }
+  .marquee span.fill{color:var(--copper);-webkit-text-stroke:0;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
   /* ===== SECTION COMMON ===== */
   section{padding:140px 60px;position:relative;}
   .container{max-width:1400px;margin:0 auto;}
   .section-label{
-    font-size:11px;letter-spacing:6px;text-transform:uppercase;
-    color:var(--gold);margin-bottom:25px;display:flex;align-items:center;gap:15px;
+    font-size:10px;letter-spacing:6px;text-transform:uppercase;
+    color:var(--copper);margin-bottom:25px;display:flex;align-items:center;gap:15px;
   }
-  .section-label::before{content:'';width:40px;height:1px;background:var(--gold);}
+  .section-label::before{content:'';width:40px;height:1px;background:var(--copper);}
   h2{
-    font-family:'Cormorant Garamond',serif;font-weight:300;
-    font-size:clamp(36px,5vw,72px);line-height:1.05;letter-spacing:1px;
+    font-family:'Playfair Display',serif;font-weight:400;
+    font-size:clamp(34px,4.5vw,68px);line-height:1.1;letter-spacing:-1px;
     margin-bottom:30px;
   }
-  h2 em{font-style:italic;color:var(--gold);}
-  .reveal{opacity:0;transform:translateY(40px);transition:opacity 1.2s ease,transform 1.2s ease;}
+  h2 em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--copper);}
+  .reveal{opacity:0;transform:translateY(50px);transition:opacity 1.4s ease,transform 1.4s ease;}
   .reveal.in{opacity:1;transform:translateY(0);}
+  @media (max-width:900px){section{padding:90px 25px;}}
 
-  /* ===== STORY ===== */
-  .story{padding-top:180px;}
-  .story-grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;
+  /* ===== EDITORIAL 01 ===== */
+  .editorial{background:var(--black-soft);}
+  .editorial-grid{
+    display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:50px;align-items:center;
   }
-  .story-text p{
-    color:#c9c4b8;font-size:16px;margin-bottom:25px;font-weight:300;
+  .editorial-img{
+    aspect-ratio:3/4;overflow:hidden;position:relative;
   }
-  .story-text .signature{
-    font-family:'Cormorant Garamond',serif;font-style:italic;
-    color:var(--gold);font-size:20px;margin-top:20px;
-  }
-  .story-img{
-    position:relative;aspect-ratio:3/4;overflow:hidden;
-  }
-  .story-img img{
+  .editorial-img img{
     width:100%;height:100%;object-fit:cover;
-    filter:grayscale(20%) contrast(1.05);
-    transition:transform 1.5s ease,filter 1.5s ease;
+    filter:grayscale(60%) brightness(0.8);
+    transition:filter 1.5s ease,transform 1.5s ease;
   }
-  .story-img:hover img{transform:scale(1.05);filter:grayscale(0%) contrast(1.1);}
-  .story-img::after{
-    content:'';position:absolute;inset:15px;border:1px solid var(--line);pointer-events:none;
+  .editorial-img:hover img{filter:grayscale(0%) brightness(0.95);transform:scale(1.05);}
+  .editorial-text h2{font-size:clamp(30px,3.5vw,52px);}
+  .editorial-text p{color:#a8a8a8;font-size:15px;margin-bottom:25px;line-height:1.8;}
+  .editorial-text .num{
+    font-family:'Playfair Display',serif;font-size:80px;
+    color:var(--copper);opacity:0.15;line-height:0.8;margin-bottom:20px;
   }
   @media (max-width:900px){
-    .story-grid{grid-template-columns:1fr;gap:60px;}
+    .editorial-grid{grid-template-columns:1fr;gap:40px;}
+    .editorial-img{aspect-ratio:4/3;}
   }
 
   /* ===== COLLECTION ===== */
-  .collection{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .collection-head{text-align:center;margin-bottom:90px;}
   .collection-head .section-label{justify-content:center;}
   .collection-head .section-label::before{display:none;}
-  .collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
-  .card{position:relative;cursor:none;text-align:center;}
+  .collection-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:60px;max-width:1100px;margin:0 auto;
+  }
+  .card{position:relative;}
   .card-img{
-    aspect-ratio:1/1;overflow:hidden;position:relative;background:#161616;margin-bottom:30px;
+    aspect-ratio:4/5;overflow:hidden;position:relative;background:#181818;
   }
   .card-img img{
     width:100%;height:100%;object-fit:cover;
-    filter:grayscale(40%) brightness(0.9);
-    transition:transform 1.4s ease,filter 1.4s ease;
+    filter:grayscale(50%) brightness(0.85);
+    transition:transform 1.6s ease,filter 1.6s ease;
   }
-  .card:hover .card-img img{transform:scale(1.08);filter:grayscale(0%) brightness(1);}
-  .card-img::after{
-    content:'';position:absolute;inset:0;
-    background:linear-gradient(180deg,transparent 60%,rgba(10,10,10,0.6));
-    pointer-events:none;
+  .card:hover .card-img img{transform:scale(1.07);filter:grayscale(0%) brightness(1);}
+  .card-info{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    padding-top:25px;border-top:1px solid var(--line);margin-top:25px;
   }
-  .card h3{
-    font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;
-    letter-spacing:1px;margin-bottom:12px;
+  .card-info h3{
+    font-family:'Playfair Display',serif;font-size:24px;font-weight:400;
+    letter-spacing:0.5px;margin-bottom:8px;
   }
-  .card .price{
-    font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;
+  .card-info .sub{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:var(--muted);font-size:14px;
   }
-  .card .desc{color:var(--muted);font-size:13px;margin-top:15px;font-style:italic;font-family:'Cormorant Garamond',serif;}
+  .card-info .price{
+    font-size:11px;letter-spacing:3px;color:var(--copper);
+    text-transform:uppercase;white-space:nowrap;
+  }
   @media (max-width:900px){
-    .collection-grid{grid-template-columns:1fr;gap:60px;max-width:400px;margin:0 auto;}
+    .collection-grid{grid-template-columns:1fr;gap:60px;}
   }
 
   /* ===== QUOTE ===== */
   .quote{
-    text-align:center;padding:180px 60px;
-    background:linear-gradient(180deg,#0a0a0a,#0f0e0a,#0a0a0a);
+    text-align:center;padding:200px 60px;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
     position:relative;overflow:hidden;
   }
   .quote::before{
-    content:'"';position:absolute;top:60px;left:50%;transform:translateX(-50%);
-    font-family:'Cormorant Garamond',serif;font-size:300px;color:var(--gold);
-    opacity:0.06;line-height:1;pointer-events:none;
+    content:'“';position:absolute;top:50px;left:50%;transform:translateX(-50%);
+    font-family:'Playfair Display',serif;font-size:400px;color:var(--copper);
+    opacity:0.05;line-height:1;pointer-events:none;
   }
   .quote blockquote{
-    font-family:'Cormorant Garamond',serif;font-style:italic;
-    font-weight:300;font-size:clamp(24px,3.5vw,48px);
-    line-height:1.4;max-width:900px;margin:0 auto;color:var(--cream);
-    position:relative;z-index:1;
+    font-family:'Playfair Display',serif;font-weight:400;
+    font-size:clamp(24px,3.2vw,44px);line-height:1.35;
+    max-width:950px;margin:0 auto;position:relative;z-index:1;
   }
+  .quote blockquote em{font-style:italic;color:var(--copper);font-family:'Cormorant Garamond',serif;}
   .quote cite{
-    display:block;margin-top:40px;font-family:'Inter',sans-serif;
-    font-style:normal;font-size:11px;letter-spacing:5px;
-    text-transform:uppercase;color:var(--gold);
+    display:block;margin-top:45px;font-family:'Inter',sans-serif;
+    font-style:normal;font-size:10px;letter-spacing:6px;
+    text-transform:uppercase;color:var(--copper);
   }
 
   /* ===== VISIT ===== */
-  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;}
-  .visit-info .item{margin-bottom:35px;}
+  .visit-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:100px;align-items:center;}
+  .visit-img{aspect-ratio:4/3;overflow:hidden;position:relative;}
+  .visit-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(40%) brightness(0.8);transition:filter 1.5s ease;}
+  .visit-img:hover img{filter:grayscale(0%) brightness(0.95);}
+  .visit-img::after{content:'';position:absolute;inset:20px;border:1px solid var(--line);}
+  .visit-info .item{margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--line);}
+  .visit-info .item:last-child{border-bottom:none;}
   .visit-info .item h4{
-    font-size:11px;letter-spacing:4px;text-transform:uppercase;
-    color:var(--gold);margin-bottom:12px;font-weight:400;
+    font-size:10px;letter-spacing:5px;text-transform:uppercase;
+    color:var(--copper);margin-bottom:15px;font-weight:400;
   }
-  .visit-info .item p{color:#c9c4b8;font-size:15px;}
-  .visit-img{aspect-ratio:4/5;overflow:hidden;position:relative;}
-  .visit-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(30%) brightness(0.85);transition:filter 1.5s ease;}
-  .visit-img:hover img{filter:grayscale(0%) brightness(1);}
-  .visit-img::after{content:'';position:absolute;inset:15px;border:1px solid var(--line);}
+  .visit-info .item p{color:#c0c0c0;font-size:15px;line-height:1.8;}
   @media (max-width:900px){.visit-grid{grid-template-columns:1fr;gap:60px;}}
 
   /* ===== FOOTER ===== */
-  footer{
-    background:#050505;padding:80px 60px 40px;
-    border-top:1px solid var(--line);
-  }
+  footer{background:#050505;padding:90px 60px 40px;border-top:1px solid var(--line);}
   .foot-top{
     max-width:1400px;margin:0 auto;
-    display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;
-    padding-bottom:60px;border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:2fr 1fr 1fr;gap:80px;
+    padding-bottom:70px;border-bottom:1px solid var(--line);
   }
   .foot-brand .logo{
-    font-family:'Cinzel',serif;font-size:24px;letter-spacing:10px;
-    color:var(--gold);margin-bottom:20px;padding-left:10px;
+    font-family:'Playfair Display',serif;font-size:22px;letter-spacing:12px;
+    color:var(--copper);margin-bottom:25px;padding-left:12px;
   }
-  .foot-brand p{color:var(--muted);font-size:13px;max-width:350px;}
+  .foot-brand p{color:var(--muted);font-size:13px;max-width:350px;line-height:1.8;}
   .foot-col h5{
-    font-size:11px;letter-spacing:4px;text-transform:uppercase;
-    color:var(--gold);margin-bottom:20px;font-weight:400;
+    font-size:10px;letter-spacing:5px;text-transform:uppercase;
+    color:var(--copper);margin-bottom:25px;font-weight:400;
   }
   .foot-col ul{list-style:none;}
-  .foot-col ul li{margin-bottom:12px;}
+  .foot-col ul li{margin-bottom:14px;}
   .foot-col ul a{color:var(--muted);font-size:13px;transition:color .3s;}
-  .foot-col ul a:hover{color:var(--gold);}
+  .foot-col ul a:hover{color:var(--copper);}
   .foot-bottom{
-    max-width:1400px;margin:0 auto;padding-top:30px;
-    display:flex;justify-content:space-between;font-size:11px;
-    letter-spacing:2px;color:var(--muted);text-transform:uppercase;
+    max-width:1400px;margin:0 auto;padding-top:35px;
+    display:flex;justify-content:space-between;font-size:10px;
+    letter-spacing:3px;color:var(--muted);text-transform:uppercase;
   }
   @media (max-width:900px){
     footer{padding:60px 25px 30px;}
     .foot-top{grid-template-columns:1fr;gap:40px;}
     .foot-bottom{flex-direction:column;gap:15px;text-align:center;}
   }
-  section{padding:140px 60px;}
-  @media (max-width:900px){section{padding:100px 25px;}}
+
+  /* ===== CUSTOM CURSOR ===== */
+  .cursor{position:fixed;width:8px;height:8px;background:var(--copper);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;}
+  .cursor-ring{position:fixed;width:40px;height:40px;border:1px solid var(--copper);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .4s ease,height .4s ease,opacity .4s ease;opacity:0.4;}
+  .cursor-ring.hover{width:70px;height:70px;background:rgba(197,160,89,0.08);opacity:0.8;}
+  @media (max-width:768px){.cursor,.cursor-ring{display:none;}}
 </style>
 </head>
 <body>
 
 <div id="loader">
-  <div class="mono">CROISSANTÉ</div>
-  <div class="sub">— depuis 2024 —</div>
+  <div class="logo">CROISSANTÉ</div>
+  <div class="line"></div>
 </div>
 
-<div id="progress"></div>
-<div class="cursor-dot"></div>
+<div class="cursor"></div>
 <div class="cursor-ring"></div>
 
 <nav id="nav">
   <a href="#" class="logo">CROISSANTÉ</a>
   <ul>
-    <li><a href="#story">Sejarah</a></li>
-    <li><a href="#collection">Koleksi</a></li>
-    <li><a href="#visit">Kunjungi</a></li>
+    <li><a href="#story">Maison</a></li>
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#visit">Visite</a></li>
   </ul>
-  <div class="nav-right">
-    <a href="#visit" style="font-size:11px;letter-spacing:3px;color:var(--gold);">PESAN</a>
-  </div>
+  <a href="#visit" class="nav-cta">Réserver</a>
+  <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
 </nav>
 
 <section class="hero">
-  <div class="eyebrow">Artisan Boulangerie · Cimahi</div>
-  <h1>L'Art du<br><em>Croissant</em></h1>
-  <p class="tagline">Setiap lembar, dilipat dengan tangan. Setiap pagi, dipanggang dengan jiwa.</p>
-  <a href="#collection" class="cta"><span>Jelajahi Koleksi</span></a>
-  <div class="scroll-indicator">
-    <span>Scroll</span>
-    <div class="line"></div>
+  <div class="hero-left reveal">
+    <div class="eyebrow">L'Édition Noire · MMXXIV</div>
+    <h1>L'art de<br>la <em>patience.</em></h1>
+    <p>Di balik setiap lapisan keemasan, tersimpan cerita tentang waktu, ketelitian, dan cinta pada detail yang tak tergesa-gesa.</p>
+    <a href="#collection" class="btn">Découvrir la Collection</a>
+  </div>
+  <div class="hero-right reveal">
+    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=900&q=80" alt="Croissant signature" loading="lazy">
+    <div class="caption">— Le Classique, dipanggang setiap pagi</div>
   </div>
 </section>
 
-<section class="story" id="story">
+<div class="marquee">
+  <div class="marquee-track">
+    <span>PATIENCE</span><span class="fill">·</span><span>PRÉCISION</span><span class="fill">·</span><span>PASSION</span><span class="fill">·</span>
+    <span>PATIENCE</span><span class="fill">·</span><span>PRÉCISION</span><span class="fill">·</span><span>PASSION</span><span class="fill">·</span>
+  </div>
+</div>
+
+<section class="editorial" id="story">
   <div class="container">
-    <div class="story-grid">
-      <div class="story-text reveal">
-        <div class="section-label">Sejarah Kami</div>
-        <h2>Kesempurnaan<br>dalam <em>72 Lapisan</em></h2>
-        <p>Dimulai dari dapur kecil di Cimahi, kami percaya bahwa croissant bukan sekadar roti—ia adalah karya seni yang lahir dari kesabaran, mentega Prancis premium, dan teknik lipat yang diwariskan turun-temurun.</p>
-        <p>Setiap croissant kami melewati fermentasi 24 jam, dilipat 27 kali, dan dipanggang dua kali sehari. Hasilnya: kerak keemasan yang renyah, dengan interior berongga lembut yang meleleh di mulut.</p>
-        <p>Kami tidak terburu-buru. Karena kemewahan sejati butuh waktu.</p>
-        <div class="signature">— Chef Antoine & Tim Croissanté</div>
+    <div class="editorial-grid">
+      <div class="editorial-img reveal">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80" alt="Proses" loading="lazy">
       </div>
-      <div class="story-img reveal">
-        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80" alt="Proses pembuatan croissant" loading="lazy">
+      <div class="editorial-text reveal">
+        <div class="num">01</div>
+        <div class="section-label">La Maison</div>
+        <h2>Di mana waktu<br>berhenti <em>sejenak.</em></h2>
+        <p>Kami percaya bahwa croissant terbaik tidak lahir dari kecepatan, melainkan dari kesabaran. Setiap pagi pukul 03.00, dapur kami mulai bernyanyi—mentega Prancis dilelehkan, adonan dilipat, dan waktu mulai berjalan.</p>
+        <p>Dua puluh tujuh lapisan. Fermentasi 24 jam. Dipanggang dua kali. Bukan resep rahasia, tapi dedikasi yang jujur.</p>
+      </div>
+      <div class="editorial-img reveal">
+        <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=800&q=80" alt="Detail" loading="lazy">
       </div>
     </div>
   </div>
@@ -382,32 +390,56 @@
   <div class="container">
     <div class="collection-head reveal">
       <div class="section-label">Signature Collection</div>
-      <h2>Koleksi <em>Istimewa</em></h2>
+      <h2>Empat <em>Mahakarya.</em></h2>
     </div>
     <div class="collection-grid">
       <div class="card reveal">
         <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80" alt="Croissant Classique" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80" alt="Le Classique" loading="lazy">
         </div>
-        <h3>Le Classique</h3>
-        <div class="price">Rp 28.000</div>
-        <p class="desc">Mentega Prancis murni, 27 lapisan, kerak keemasan sempurna.</p>
+        <div class="card-info">
+          <div>
+            <h3>Le Classique</h3>
+            <div class="sub">Mentega Prancis murni</div>
+          </div>
+          <div class="price">Rp 28.000</div>
+        </div>
       </div>
       <div class="card reveal">
         <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80" alt="Pain au Chocolat" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80" alt="Pain au Chocolat" loading="lazy">
         </div>
-        <h3>Pain au Chocolat</h3>
-        <div class="price">Rp 32.000</div>
-        <p class="desc">Cokelat single-origin 70% dari Jawa, dibalut adonan butter.</p>
+        <div class="card-info">
+          <div>
+            <h3>Pain au Chocolat</h3>
+            <div class="sub">Cokelat single-origin 70%</div>
+          </div>
+          <div class="price">Rp 32.000</div>
+        </div>
       </div>
       <div class="card reveal">
         <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&q=80" alt="Almond Croissant" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=800&q=80" alt="Amande Royale" loading="lazy">
         </div>
-        <h3>Amande Royale</h3>
-        <div class="price">Rp 35.000</div>
-        <p class="desc">Krim almond panggang, gula halus, dan taburan kacang premium.</p>
+        <div class="card-info">
+          <div>
+            <h3>Amande Royale</h3>
+            <div class="sub">Krim almond & gula halus</div>
+          </div>
+          <div class="price">Rp 35.000</div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80" alt="Édition Limitée" loading="lazy">
+        </div>
+        <div class="card-info">
+          <div>
+            <h3>Édition Limitée</h3>
+            <div class="sub">Rasa berganti setiap bulan</div>
+          </div>
+          <div class="price">Rp 42.000</div>
+        </div>
       </div>
     </div>
   </div>
@@ -415,8 +447,8 @@
 
 <section class="quote">
   <blockquote>
-    "Le vrai luxe n'est pas dans l'abondance,<br>mais dans la perfection du détail."
-    <cite>— Croissanté Philosophy</cite>
+    "Le luxe véritable, c'est le temps<br>que l'on <em>offre</em> à chaque détail."
+    <cite>— La philosophie de la Maison</cite>
   </blockquote>
 </section>
 
@@ -424,11 +456,11 @@
   <div class="container">
     <div class="visit-grid">
       <div class="visit-img reveal">
-        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800&q=80" alt="Butik Croissanté" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=900&q=80" alt="Butik" loading="lazy">
       </div>
       <div class="visit-info reveal">
-        <div class="section-label">Kunjungi Kami</div>
-        <h2>Temukan Kami<br>di <em>Cimahi</em></h2>
+        <div class="section-label">Visite</div>
+        <h2>Temukan kami<br>di <em>Cimahi.</em></h2>
         <div class="item">
           <h4>Butik Utama</h4>
           <p>Jl. Raya Cimahi No. 24<br>Cimahi, Jawa Barat 40511</p>
@@ -438,7 +470,7 @@
           <p>Senin – Sabtu · 06.00 – 21.00<br>Minggu · 07.00 – 20.00</p>
         </div>
         <div class="item">
-          <h4>Reservasi</h4>
+          <h4>Réservation</h4>
           <p>+62 812 3456 7890<br>hello@croissante.id</p>
         </div>
       </div>
@@ -450,18 +482,18 @@
   <div class="foot-top">
     <div class="foot-brand">
       <div class="logo">CROISSANTÉ</div>
-      <p>Artisan boulangerie yang mendedikasikan diri pada seni croissant. Dibuat dengan tangan, disajikan dengan cinta.</p>
+      <p>Artisan boulangerie. Edisi hitam eksklusif untuk mereka yang menghargai detail dan waktu.</p>
     </div>
     <div class="foot-col">
-      <h5>Jelajahi</h5>
+      <h5>Explorer</h5>
       <ul>
-        <li><a href="#story">Sejarah</a></li>
-        <li><a href="#collection">Koleksi</a></li>
-        <li><a href="#visit">Kunjungi</a></li>
+        <li><a href="#story">Maison</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#visit">Visite</a></li>
       </ul>
     </div>
     <div class="foot-col">
-      <h5>Ikuti</h5>
+      <h5>Suivre</h5>
       <ul>
         <li><a href="#">Instagram</a></li>
         <li><a href="#">TikTok</a></li>
@@ -470,59 +502,59 @@
     </div>
   </div>
   <div class="foot-bottom">
-    <span>© 2024 Croissanté</span>
-    <span>Crafted with patience</span>
+    <span>© MMXXIV Croissanté</span>
+    <span>L'Édition Noire</span>
   </div>
 </footer>
 
 <script>
   // Preloader
   window.addEventListener('load', () => {
-    setTimeout(() => document.getElementById('loader').classList.add('hide'), 2200);
+    setTimeout(() => document.getElementById('loader').classList.add('hide'), 2400);
   });
 
   // Nav scroll
   const nav = document.getElementById('nav');
-  const progress = document.getElementById('progress');
   window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y > 80) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
-    const docH = document.body.scrollHeight - window.innerHeight;
-    progress.style.width = (y / docH * 100) + '%';
+    if (window.scrollY > 80) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
   });
 
-  // Reveal on scroll
+  // Reveal
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   // Custom cursor
-  const dot = document.querySelector('.cursor-dot');
+  const cur = document.querySelector('.cursor');
   const ring = document.querySelector('.cursor-ring');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  function animateCursor(){
-    rx += (mx - rx) * 0.15;
-    ry += (my - ry) * 0.15;
-    dot.style.left = mx + 'px'; dot.style.top = my + 'px';
-    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    requestAnimationFrame(animateCursor);
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+  function loop(){
+    rx+=(mx-rx)*0.15; ry+=(my-ry)*0.15;
+    cur.style.left=mx+'px'; cur.style.top=my+'px';
+    ring.style.left=rx+'px'; ring.style.top=ry+'px';
+    requestAnimationFrame(loop);
   }
-  animateCursor();
-  document.querySelectorAll('a, .card, .cta, button').forEach(el => {
-    el.addEventListener('mouseenter', () => ring.classList.add('hover'));
-    el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+  loop();
+  document.querySelectorAll('a, .card, .btn, button').forEach(el=>{
+    el.addEventListener('mouseenter', ()=>ring.classList.add('hover'));
+    el.addEventListener('mouseleave', ()=>ring.classList.remove('hover'));
   });
 
-  // Smooth scroll nav
-  document.querySelectorAll('nav a[href^="#"], .cta').forEach(a => {
-    a.addEventListener('click', e => {
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
       const t = document.querySelector(a.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
     });
   });
-</script>
 
+  // Menu toggle (mobile - simple)
+  document.getElementById('menuToggle').addEventListener('click', ()=>{
+    alert('Menu: Maison, Collection, Visite');
+  });
+</script>
 </body>
 </html>
